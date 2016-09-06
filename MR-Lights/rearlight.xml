@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		For Motorbikes in Flightgear March 2016
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+<path>rearlight.ac</path>
+	<animation>
+		 <type>material</type>
+		 <object-name>rearlight.001</object-name>
+		 <emission>
+		  <red>1</red>
+		  <green>1</green>
+		  <blue>1</blue>
+		  <factor>2</factor>
+	   	</emission>
+	</animation>
+	
+	<animation>
+	  <type>select</type>
+	  <object-name>rearlight.001</object-name>
+	  <condition>
+	 	<property>engines/engine/rpm</property>
+	 </condition>
+	</animation>
+
+</PropertyList>

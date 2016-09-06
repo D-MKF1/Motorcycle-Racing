@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Motorcycles for Flightgear September 2016
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+  <name>config</name>
+  <modal>false</modal>
+  <layout>vbox</layout>
+  <padding>20</padding>
+
+  <group>
+    <layout>hbox</layout>
+    <empty>
+      <stretch>1</stretch>
+    </empty>		
+    <text>
+      <label>Roadrace settings</label>
+    </text>
+    <empty>
+      <stretch>1</stretch>
+    </empty>
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+      <layout>hbox</layout>
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Isle of Man - Tourist Trophy (EGNS) ..............................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/TT/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+	  
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Isle of Man - Southern 100 (EGNS) ...............................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/S100/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+	  
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Northern Ireland - North West 200 (EGAE) ..................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/NW200/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Northern Ireland - Ulster Grand Prix (EGAA) ...............................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/UGP/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>China - Macau Grand Prix (VMMC) ..............................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/MGP/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Estland - Piritat-Kose-Klostrimetas Kalevi Circuit (EETN) ... </label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/KAL/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>New Zealand - Hampton Downs (NZME)  ................................ </label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/HD/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>New Zealand - Manfeild (NZPM)  ............................................... </label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/MF/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>New Zealand - Wanganui - Cemetery Circuit (NZWU)  ....... </label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/CC/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Czech - Terlicko (LKMT) ..................................................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/CT/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Qatar - Losail Circuit (OTBK) .........................................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/QA/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Argentina - Termas de Rio Hondo (SANR) .................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/TE/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Texas - Circuit of the Americas (02XS) .......................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/CA/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>	
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Espagna - Circuito de Jerez (LEJR) ..............................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/JE/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>	
+	  	  
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Czech - Automotodrom Brno (LKCM) ............................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/BC/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>	  
+	  	  
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Great Britain - Silverstone (EGBT) .................................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/SC/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>		
+	  
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Bopfingen - Germany (EDPA) .........................................................</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/BO/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>	  
+	  <hrule/>	
+	    
+      <group>
+        <layout>hbox</layout>
+        <button>
+          <legend>New Race</legend>
+          <default>false</default>
+          <binding>
+            <command>nasal</command>
+            <script>motorcycle.clear_race_datas();</script>
+          </binding>
+        </button>
+      </group>
+
+	  <hrule/>	  
+	  <hrule/>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <slider>		  
+		  <row>0</row>
+		  <col>0</col>
+  	      <halign>left</halign>
+  	      <property>/controls/hang-off-speed</property>
+  	      <binding>
+			  <command>dialog-apply</command>
+		  </binding>
+  	      <min>0.0</min>
+		  <max>320.0</max>
+  	    </slider>
+  	    <text>
+  		  <row>0</row>
+  		  <col>0</col>
+    	  <halign>left</halign>
+  	      <property>/controls/hang-off-speed</property>
+  	      <label>0123456</label>
+  	      <format>%.1f</format>
+  	      <live>true</live>
+  	    </text>
+  	    <text>  		 
+		  <row>0</row>
+  		  <col>1</col>
+    	  <halign>right</halign>
+  	      <label>............... max . hang-off speed in mph</label>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <slider>  		  
+		  <row>1</row>
+  		  <col>0</col>
+    	  <halign>left</halign>
+  	      <property>/controls/hang-off-view-deg</property>
+  	      <binding>
+			  <command>dialog-apply</command>
+		  </binding>
+  	      <min>0.0</min>
+		  <max>90.0</max>
+  	    </slider>
+  	    <text>  		  
+		  <row>1</row>
+  		  <col>0</col>
+    	  <halign>left</halign>
+  	      <property>/controls/hang-off-view-deg</property>
+  	      <label>0123456</label>
+  	      <format>%1.0f</format>
+  	      <live>true</live>
+  	    </text>
+  	    <text>  		  
+		  <row>1</row>
+  		  <col>1</col>
+    	  <halign>right</halign>
+  	      <label>................... max . hang-off view angle</label>
+  	    </text>
+  	  </group>	
+	  
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <slider>  		  
+		  <row>2</row>
+  		  <col>0</col>
+    	  <halign>left</halign>
+  	      <property>/controls/steering-damper</property>
+  	      <binding>
+			  <command>dialog-apply</command>
+		  </binding>
+  	      <min>1</min>
+		  <max>16</max>
+  	    </slider>
+  	    <text>  		  
+		  <row>2</row>
+  		  <col>0</col>
+    	  <halign>left</halign>
+  	      <property>/controls/steering-damper</property>
+  	      <label>0123456</label>
+  	      <format>%1.0f</format>
+  	      <live>1</live>
+  	    </text>
+  	    <text>  		  
+		  <row>2</row>
+  		  <col>1</col>
+    	  <halign>right</halign>
+  	      <label>...... 16clicks Oehlins steering damper</label>
+  	    </text>
+  	  </group>	   	  
+  <hrule/>
+
+  <button>
+    <legend>Close</legend>
+    <default>true</default>
+    <key>Esc</key>
+    <binding>
+      <command>dialog-apply</command>
+    </binding>
+    <binding>
+      <command>dialog-close</command>
+    </binding>
+  </button>
+
+  <nasal>
+    <open></open>
+  </nasal>
+</PropertyList>

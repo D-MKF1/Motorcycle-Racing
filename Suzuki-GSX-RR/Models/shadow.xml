@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>shadow.ac</path>
+
+	<animation>
+		<object-name>shadow</object-name>
+		<nopreview/>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>shadow</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>0.5</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+	  <type>scale</type>
+	  <object-name>shadow</object-name>
+	  <property>surface-positions/left-aileron-pos-norm</property>
+	  <x-min>1.0</x-min>
+	  <y-min>1.0</y-min>
+	  <z-min>1.0</z-min>
+	  <x-factor>1.0</x-factor>
+	  <y-factor>1.8</y-factor>
+	  <z-factor>0.0</z-factor>
+	 </animation>
+	 
+ 	<animation>
+ 	  <type>scale</type>
+ 	  <object-name>shadow</object-name>
+ 	  <property>surface-positions/right-aileron-pos-norm</property>
+ 	  <x-min>1.0</x-min>
+ 	  <y-min>1.0</y-min>
+ 	  <z-min>1.0</z-min>
+ 	  <x-factor>1.0</x-factor>
+ 	  <y-factor>1.8</y-factor>
+ 	  <z-factor>0.0</z-factor>
+ 	 </animation>
+	
+</PropertyList>
