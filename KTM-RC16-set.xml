@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+	This file is part of Motorcycle-Racing for flightgear from the Lake of Constance Hangar
+
+	This Motorcycle basis package is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 2 of the License, or
+	(at your option) any later version.
+
+	The extra500 is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with extra500.  If not, see <http://www.gnu.org/licenses/>.
+
+	Author: Marc Kraus
+	Date: 2016-09-10
+
+	Lake of Constance Hangar
+	http://www.marc-kraus.de/fg/
+	###################################################################################
+-->
+<PropertyList include="motorcycle-basis.xml">
+ <sim>
+		<description>KTM-RC16</description>
+		<author>LAKE OF CONSTANCE HANGAR :: Marc Kraus</author>
+		<aircraft-version>0.0.1</aircraft-version>
+		<status>alpha</status>
+		<flight-model>yasim</flight-model>
+		<aero>KTM-RC16-yasim</aero>
+
+		<sound>
+			<path>Aircraft/Motorcycle-Racing/KTM-RC16/Sounds/sound.xml</path>
+		</sound>
+
+		<model>
+			<path>Aircraft/Motorcycle-Racing/KTM-RC16/Models/KTM-RC16.xml</path>
+		</model> 
+
+		<startup>
+			<splash-texture>Aircraft/Motorcycle-Racing/KTM-RC16/splash-KTM-RC16.png</splash-texture>
+		</startup>
+
+		<virtual-cockpit archive="y">true</virtual-cockpit>
+		<allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+		<view n="0">
+			<internal archive="y">true</internal>
+			<config>
+			 <limits>
+			    <enabled archive="y" type="bool">false</enabled>
+			 </limits>
+			  <!-- x/y/z == right/up/back -->
+				<x-offset-m archive="y" type="double">0.0</x-offset-m>
+				<y-offset-m archive="y" type="double">1.35</y-offset-m>  <!-- up-down -->
+				<z-offset-m archive="y" type="double">-0.13</z-offset-m> <!-- fore-back -->
+				<pitch-offset-deg>-8</pitch-offset-deg>
+				<default-field-of-view-deg type="double">72</default-field-of-view-deg>
+			</config>
+		</view>
+
+		<view n="1">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="2">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="3">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="4">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="5">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="6">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+
+
+	<menubar>
+		<default>
+		<menu n="10">
+			<label>KTM-RC16</label>
+			<enabled type="bool">true</enabled>
+			<item>
+				<label>--- Tools ---</label>
+				<enabled>false</enabled>
+			</item>			
+			<item>
+				<label>Autostart / shutdown</label>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/start-idling</property>
+				</binding>
+			</item> 		
+			<enabled type="bool">true</enabled>
+			<item>
+				<label>Repair engine</label>
+				<binding>
+					<command>nasal</command>
+					<script>
+						var iskilled = getprop("/engines/engine/killed") or 0;
+						if(iskilled > 0.2){
+							settimer(func{ setprop("/engines/engine/killed",0); }, 20);
+				    		screen.log.write(sprintf("Please wait 20 sec. for engine overhaul."), 1, 1, 0.0);
+						}else{
+				    		screen.log.write(sprintf("Everything is ok with your engine - nothing to do."), 1, 1, 0.0);
+						}
+					</script>
+				</binding>
+			</item>
+			<enabled type="bool">true</enabled>				
+			<item>
+				<label>Show Sector/Lap Results</label>
+				<binding>
+					<command>property-toggle</command>
+					<property>/Motorcycle/show-race-times</property>
+				</binding>
+			</item>	
+			<enabled type="bool">true</enabled>				
+			<item>
+				<label>Switch last or fastest Results</label>
+				<binding>
+					<command>property-toggle</command>
+					<property>/Motorcycle/switch-last-fastest</property>
+				</binding>
+			</item>		
+			<item>
+				<label>--- Painting ---</label>
+				<enabled>false</enabled>
+			</item>
+			<item>
+				<label>Select Livery</label>
+				<binding>
+					<command>nasal</command>
+					<script>aircraft.livery.dialog.toggle()</script>
+				</binding>
+			</item>
+			<enabled type="bool">true</enabled>
+			<item>
+				<label>--- Old mens mode ---</label>
+				<enabled>false</enabled>
+			</item>			
+			<item>
+				<label>Toggle greybeard view</label>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/Motorcycle/old-mens-mode</property>
+				</binding>
+			</item> 			
+			<item>
+				<label>Toggle throttle input axis</label>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/flight/select-throttle-input</property>
+				</binding>
+			</item>
+			<item>
+				<label>--- Roadraces ---</label>
+				<enabled>false</enabled>
+			</item>				
+	        <item>
+	          <label>Race settings</label>
+	          <binding>
+	            <command>nasal</command>
+	            <script>motorcycle.config_dlg.open()</script>
+	          </binding>
+	        </item>
+		</menu>
+
+		</default>
+	</menubar>
+
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>170</weight-lb>
+      <max-lb>230</max-lb>
+      <min-lb>140</min-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Backwheel</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>200</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+		
+	<flaps>
+	 <setting>0.6</setting>
+	 <setting>0.5</setting> 
+	 <setting>0.4</setting> 
+	 <setting>0.3</setting> 
+	 <setting>0.2</setting> 
+	 <setting>0.1</setting> 
+	 <setting>0.0</setting> 
+	</flaps>
+
+ </sim>
+
+<!-- -NASAL- -->
+ <nasal>
+  <motorcycle>
+   <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
+   <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
+   <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
+
+   <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/view.nas</file>
+   <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/gearbox.nas</file>
+   <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/liveries.nas</file>
+  </motorcycle>
+ </nasal>
+ 
+</PropertyList>
+
+
+
+

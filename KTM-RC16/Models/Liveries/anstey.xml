@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+	Lake of Constance Hangar :: M.Kraus
+	Honda-RC213V-S for Flightgear Mai 2016
+	This file is licenced under the terms of the GNU General Public Licence V2 or later
+	###################################################################################
+-->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">No.2 Bruce Anstey</name>
+            <texture>Liveries/Honda-RC213V-S-Anstey.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>
