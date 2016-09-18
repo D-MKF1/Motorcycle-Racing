@@ -464,12 +464,12 @@
           <entry><ind>  1 </ind><dep>  20 </dep></entry>
         </interpolation>
         <axis>   
-          <x1-m> -0.4961</x1-m>
+          <x1-m> -0.5201</x1-m>
           <y1-m>  0.0</y1-m>
-          <z1-m>  0.9231</z1-m>
-          <x2-m> -0.6059</x2-m>
+          <z1-m>  0.9373</z1-m>
+          <x2-m> -0.5894</x2-m>
           <y2-m>  0.00</y2-m>
-          <z2-m>  0.6766</z2-m>
+          <z2-m>  0.7708</z2-m>
         </axis>
       </animation>
 	  
@@ -530,12 +530,12 @@
       <property>/controls/flight/throttle-input</property>
          <factor>-90</factor>
          <axis>   
-          <x1-m> -0.52</x1-m>
+          <x1-m> -0.4987</x1-m>
           <y1-m>  0.38</y1-m>
-          <z1-m>  0.752</z1-m>
-          <x2-m> -0.593</x2-m>
-          <y2-m>  0.224</y2-m>
-          <z2-m>  0.819</z2-m>
+          <z1-m>  0.773</z1-m>
+          <x2-m> -0.575</x2-m>
+          <y2-m>  0.2188</y2-m>
+          <z2-m>  0.8441</z2-m>
          </axis>
        </animation>
 
