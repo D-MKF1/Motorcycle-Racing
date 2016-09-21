@@ -1,12 +1,12 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1.0000 1.0000 1.0000  amb 0.2000 0.2000 0.2000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 10 trans 0.0000
-MATERIAL "oehlins" rgb 0.8000 0.8000 0.8000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 50 trans 0.0000
+MATERIAL "oehlins" rgb 0.8000 0.8000 0.8000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.2500 0.2500 0.2500  shi 50 trans 0.0000
 OBJECT world
 name "Blender_export__oehlins.ac"
 kids 3
 OBJECT poly
 name "cylinder"
-loc -0.0037159 0.0013015 0.0567445
+loc -0.0037159 0.0013015 0.1859031
 texture "oehlins.png"
 texrep 1 1
 numvert 48
@@ -494,7 +494,7 @@ refs 3
 kids 0
 OBJECT poly
 name "damper"
-loc -0.0252437 -0.0489232 -0.1026836
+loc -0.0252437 -0.0489232 0.0264750
 texture "oehlins.png"
 texrep 1 1
 numvert 120
@@ -734,9 +734,9 @@ refs 4
 SURF 0X0
 mat 1
 refs 3
-1 0.857205 0.459027
-2 0.860696 0.357888
-0 0.858819 0.563155
+2 0.857205 0.459027
+0 0.860696 0.357888
+1 0.858819 0.563155
 SURF 0X0
 mat 1
 refs 3
@@ -806,9 +806,9 @@ refs 3
 SURF 0X0
 mat 1
 refs 3
-2 0.860696 0.357888
-15 0.865290 0.654418
-0 0.858819 0.563155
+15 0.860696 0.357888
+0 0.865290 0.654418
+2 0.858819 0.563155
 SURF 0X0
 mat 1
 refs 3
@@ -1450,7 +1450,7 @@ refs 4
 kids 0
 OBJECT poly
 name "setting"
-loc -0.0201277 -0.0181003 0.0164330
+loc -0.0201277 -0.0181003 0.1455916
 texture "oehlins.png"
 texrep 1 1
 numvert 32
@@ -1614,9 +1614,9 @@ refs 3
 SURF 0X0
 mat 1
 refs 3
-1 0.124098 0.694682
-2 0.126461 0.666384
-0 0.123268 0.728061
+2 0.124098 0.694682
+0 0.126461 0.666384
+1 0.123268 0.728061
 SURF 0X0
 mat 1
 refs 3
@@ -1758,9 +1758,9 @@ refs 3
 SURF 0X0
 mat 1
 refs 3
-2 0.126461 0.666384
-15 0.124098 0.761440
-0 0.123268 0.728061
+15 0.126461 0.666384
+0 0.124098 0.761440
+2 0.123268 0.728061
 SURF 0X0
 mat 1
 refs 3

@@ -29,6 +29,8 @@
     <type>material</type>
     <object-name>oehlinssup</object-name>
     <object-name>oehlinssup.001</object-name>
+    <object-name>lenkkopf</object-name>
+    <object-name>verschraubungen</object-name>
     <object-name>verkleidung</object-name>
     <object-name>verkleidung.inner</object-name>
     <object-name>schrauben</object-name>
@@ -152,11 +154,37 @@
 	<name>OEHLINS</name>
     <path>Aircraft/Motorcycle-Racing/KTM-RC16/Models/Instruments/oehlins/oehlins.xml</path>
     <offsets>
-        <x-m> -0.46 </x-m>
-        <y-m> 0.0</y-m>
-        <z-m> 0.91 </z-m>
+        <x-m> -0.63 </x-m>
+        <y-m> -0.19</y-m>
+        <z-m> 0.80 </z-m>
+      	<heading-deg>70</heading-deg>
+		<roll-deg> 20 </roll-deg>
     </offsets>
   </model>
+  
+  <!-- right left -->
+  <animation>
+	  <type>rotate</type>
+      <object-name>OEHLINS</object-name>
+      <property>surface-positions/left-aileron-pos-norm</property>
+      <interpolation>
+		<entry><ind>-1.0 </ind><dep>    57 </dep></entry>
+        <entry><ind>-0.3 </ind><dep>    57 </dep></entry>
+        <entry><ind> 0 </ind><dep>     0 </dep></entry>
+        <entry><ind> 0.3 </ind><dep>   -57 </dep></entry>
+        <entry><ind> 1.0 </ind><dep>   -57 </dep></entry>
+      </interpolation>
+      <center>
+       <x-m> 0.0</x-m>
+       <y-m> 0.128</y-m>
+       <z-m> 0.0</z-m>
+      </center>
+      <axis>
+        <x>  0 </x>
+        <y>  0 </y>
+        <z>  1 </z>
+      </axis>
+    </animation>
   
   <animation>
     <type>select</type>
@@ -308,6 +336,8 @@
       <object-name>Driver_quick_glance_over_shoulder</object-name>
       <object-name>oehlinssup</object-name>
       <object-name>oehlinssup.001</object-name>
+      <object-name>lenkkopf</object-name>
+      <object-name>verschraubungen</object-name>
       <object-name>verkleidung</object-name>
       <object-name>verkleidung.inner</object-name>
       <object-name>schrauben</object-name>
@@ -379,6 +409,8 @@
         <object-name>Driver_quick_glance_over_shoulder</object-name>
         <object-name>oehlinssup</object-name>
         <object-name>oehlinssup.001</object-name>
+        <object-name>lenkkopf</object-name>
+        <object-name>verschraubungen</object-name>
         <object-name>verkleidung</object-name>
         <object-name>verkleidung.inner</object-name>
         <object-name>schrauben</object-name>
@@ -439,8 +471,7 @@
     <!-- front fork -->
     <animation>
   	  <type>rotate</type>
-        <object-name>OEHLINS</object-name>
-        <object-name>oehlinssup.001</object-name>
+        <object-name>verschraubungen</object-name>
         <object-name>radabdeckung</object-name>
         <object-name>stummelLi</object-name>
         <object-name>stummelRe</object-name>
@@ -564,9 +595,9 @@
             <property>/controls/gear/brake-left</property>
             <factor>-15</factor>
 		      <center>
-		       <x-m> -0.594</x-m>
-		       <y-m>  0.155</y-m>
-		       <z-m>0.908</z-m>
+		       <x-m>-0.676</x-m>
+		       <y-m> 0.177</y-m>
+		       <z-m> 0.8673</z-m>
 		      </center>
 		      <axis>
 		        <x>  0 </x>
