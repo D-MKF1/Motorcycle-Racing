@@ -222,6 +222,7 @@
 <!-- -NASAL- -->
  <nasal>
   <motorcycle>
+   <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/ktm.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>

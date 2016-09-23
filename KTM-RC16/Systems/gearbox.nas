@@ -257,7 +257,7 @@ var loop = func {
 			setprop("/controls/Motorcycle/ctrl-light-overspeed", 0);
 		}
 
-		# Anti - slip regulation Honda called SCS
+		# Anti - slip regulation KTM called TC
 		if(comp_m < 0.06 and brake_ctrl_right <= 0.5 and brake_ctrl_left <= 0.5 and gspeed > 70 and ascon.getValue() == 1){
 			propulsion.setValue(propulsion.getValue() + 0.25);
 			setprop("/controls/Motorcycle/SCS/ctrl-light", 1);
