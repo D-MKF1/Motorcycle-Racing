@@ -74,7 +74,7 @@
 
   <!-- frontwheel -->
 
-    <gear x="0.856" y="0.0" z="-0.21"
+    <gear x="0.893" y="0.0" z="-0.21"
 			compression="0.2"
 			sfric="0.7"
 			dfric="0.8"
@@ -88,7 +88,7 @@
 
   <!-- rearwheel -->
 
-    <gear x="-0.785" y="0.0" z="-0.21"
+    <gear x="-0.882" y="0.0" z="-0.21"
 			compression="0.2"
 			sfric="0.8"
 			dfric="3.0"
