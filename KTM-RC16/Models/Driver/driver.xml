@@ -83,9 +83,9 @@
     <property>surface-positions/rudder-pos-norm</property>
     <factor>-30</factor>
     <center>
-      <x-m>-0.141 </x-m>
+      <x-m>-0.16 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 1.039 </z-m>
+      <z-m> 1.09 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -108,9 +108,9 @@
     <property>surface-positions/rudder-pos-norm</property>
     <factor>-6</factor>
     <center>
-      <x-m>-0.118 </x-m>
+      <x-m>-0.136 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 1.0154 </z-m>
+      <z-m> 1.084 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -133,9 +133,9 @@
     <property>surface-positions/rudder-pos-norm</property>
     <factor>6</factor>
     <center>
-        <x-m>-0.118 </x-m>
+        <x-m>-0.136 </x-m>
         <y-m> 0.0 </y-m>
-        <z-m> 1.0154 </z-m>
+        <z-m> 1.084 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -157,8 +157,8 @@
     <property>surface-positions/rudder-pos-norm</property>
     <factor>-7</factor>
     <center>
-      <x-m>-0.161 </x-m>
-      <y-m> 0.244 </y-m>
+      <x-m>-0.137 </x-m>
+      <y-m> 0.264 </y-m>
       <z-m> 0.0 </z-m>
     </center>
     <axis>
@@ -181,8 +181,8 @@
     <property>surface-positions/rudder-pos-norm</property>
     <factor>-7</factor>
     <center>
-        <x-m>-0.161 </x-m>
-        <y-m>-0.244 </y-m>
+        <x-m>-0.137 </x-m>
+        <y-m>-0.264 </y-m>
         <z-m> 0.0 </z-m>
     </center>
     <axis>
@@ -210,9 +210,9 @@
       <entry><ind>  1 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
-      <x-m> 0.24 </x-m>
+      <x-m> 0.41 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 1.12 </z-m>
+      <z-m> 1.188 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -242,9 +242,9 @@
       <entry><ind>  1 </ind><dep> -15 </dep></entry>
     </interpolation>
     <center>
-        <x-m>-0.141 </x-m>
+        <x-m>-0.136 </x-m>
         <y-m> 0.0 </y-m>
-        <z-m> 1.039 </z-m>
+        <z-m> 1.084 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -303,8 +303,8 @@
       <entry><ind>  1 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
-      <x-m>-0.4858 </x-m>
-      <y-m> 0.234 </y-m>
+      <x-m>-0.53 </x-m>
+      <y-m> 0.296 </y-m>
       <z-m> 0.0 </z-m>
     </center>
     <axis>
@@ -390,8 +390,8 @@
       <entry><ind>  1 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
-      <x-m>-0.4858 </x-m>
-      <y-m>-0.234 </y-m>
+      <x-m>-0.53 </x-m>
+      <y-m>-0.296 </y-m>
       <z-m> 0.0 </z-m>
     </center>
     <axis>
@@ -693,13 +693,29 @@
     </axis>
   </animation>
   
-  <!-- animation in stand on wheelsholder -->  
+  <!-- animation in stand on wheelsholder --> 
   <animation>
     <type>rotate</type>
     <object-name>head</object-name>
-    <object-name>body</object-name>
     <object-name>helm</object-name>
     <object-name>helm.001</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>63</factor>
+    <center>
+      <x-m> 0.47 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.84 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+   
+  <animation>
+    <type>rotate</type>
+    <object-name>body</object-name>
     <object-name>l_upperarm</object-name>
     <object-name>l_forearm</object-name>
     <object-name>l_glove</object-name>
@@ -707,11 +723,11 @@
     <object-name>r_forearm</object-name>
     <object-name>r_glove</object-name>
     <property>sim/multiplay/generic/float[3]</property>
-    <factor>48</factor>
+    <factor>70</factor>
     <center>
-      <x-m> 0.41 </x-m>
+      <x-m> 0.47 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 0.865 </z-m>
+      <z-m> 0.9 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -731,9 +747,9 @@
     <property>sim/multiplay/generic/float[3]</property>
     <factor>-70</factor>
     <center>
-      <x-m>-0.112 </x-m>
+      <x-m>-0.108 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 1.008 </z-m>
+      <z-m> 1.056 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -764,10 +780,7 @@
  
   <animation>
     <type>rotate</type>
-    <object-name>l_thigh</object-name>
-    <object-name>l_lowerleg</object-name>
-    <object-name>l_boot</object-name>
-    <object-name>l_feet</object-name>
+
     <object-name>r_thigh</object-name>
     <object-name>r_lowerleg</object-name>
     <object-name>r_boot</object-name>
@@ -775,9 +788,9 @@
     <property>sim/multiplay/generic/float[3]</property>
     <factor>-46</factor>
     <center>
-      <x-m> 0.294 </x-m>
+      <x-m> 0.387 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 0.833 </z-m>
+      <z-m> 0.898 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -788,36 +801,65 @@
 	  
   <animation>
     <type>rotate</type>
-    <object-name>l_lowerleg</object-name>
-    <object-name>l_boot</object-name>
-    <object-name>l_feet</object-name>
     <object-name>r_lowerleg</object-name>
     <object-name>r_boot</object-name>
     <object-name>r_feet</object-name>
     <property>sim/multiplay/generic/float[3]</property>
     <factor>85</factor>
     <center>
-      <x-m> -0.02 </x-m>
+      <x-m> 0.01 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 0.698 </z-m>
+      <z-m> 0.643 </z-m>
     </center>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
       <z> 0 </z>
     </axis>
-  </animation>	
+  </animation>
+
+  <animation>
+	<type>translate</type>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_boot</object-name>
+    <object-name>l_feet</object-name>
+      <property>sim/multiplay/generic/float[3]</property>
+	<factor>0.15</factor>
+	<axis>
+		<x>1</x>
+		<y>0</y>
+		<z>0.6</z>
+	</axis>
+  </animation>
   
   <animation>
     <type>rotate</type>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_boot</object-name>
     <object-name>l_feet</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-18</factor>
+    <center>
+      <x-m> 0.35 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.33 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>		
+  
+  <animation>
+    <type>rotate</type>
     <object-name>r_feet</object-name>
     <property>sim/multiplay/generic/float[3]</property>
-    <factor>-60</factor>
+    <factor>-8</factor>
     <center>
-      <x-m> 0.19 </x-m>
+      <x-m> 0.4 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 0.43 </z-m>
+      <z-m> 0.39 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -900,14 +942,14 @@
     <object-name>helm.001</object-name>
     <property>engines/engine/rpm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> 50 </dep></entry>
-      <entry><ind> 1000 </ind><dep> 50 </dep></entry>
+      <entry><ind> 0 </ind><dep> 40 </dep></entry>
+      <entry><ind> 1000 </ind><dep> 40 </dep></entry>
       <entry><ind> 3000 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
-      <x-m>-0.302</x-m>
+      <x-m>-0.278</x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 1.167 </z-m>
+      <z-m> 1.22 </z-m>
     </center>
     <axis>
       <x> 0 </x>

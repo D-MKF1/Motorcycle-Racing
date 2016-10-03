@@ -470,6 +470,18 @@
   		<name>Driver</name>
   		<path>Aircraft/Motorcycle-Racing/KTM-RC16/Models/Driver/driver.xml</path>
   	</model>
+
+	<animation>
+		<type>translate</type>
+	    <object-name>Driver</object-name>
+        <property>sim/multiplay/generic/float[3]</property>
+		<factor>-0.15</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0.6</z>
+		</axis>
+	</animation>	
 	
     <animation>
       <type>select</type>
