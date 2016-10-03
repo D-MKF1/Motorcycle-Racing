@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--###################################################################################
-	Lake of Constance Hangar :: M.Kraus
-	BMW S 1000 RR for Flightgear September 2014
-	This file is licenced under the terms of the GNU General Public Licence V2 or later
-	###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		KTM-RC16 for Flightgear October 2016
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
 -->
 
 <PropertyList>
@@ -23,157 +23,40 @@
 
   <animation>
     <type>material</type>
-    <object-name>tete</object-name>
-    <object-name>corps</object-name>
-    <object-name>corpsMichael</object-name>
+    <object-name>head</object-name>
+    <object-name>body</object-name>
     <object-name>helm</object-name>
-  	<object-name>hair</object-name>
-    <object-name>brasG</object-name>
-    <object-name>brasD</object-name>
-    <object-name>avantbrasG</object-name>
-    <object-name>avantbrasD</object-name>
-    <object-name>cuisseG</object-name>
-    <object-name>cuisseD</object-name>
-    <object-name>jambeG</object-name>
-    <object-name>jambeD</object-name>
-    <object-name>piedG</object-name>
-    <object-name>piedD</object-name>
+    <object-name>l_boot</object-name>
+    <object-name>l_feet</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_thigh</object-name>
+    <object-name>l_upperarm</object-name>    
+	<object-name>r_boot</object-name>  
+    <object-name>r_feet</object-name> 
+	<object-name>r_forearm</object-name>   
+	<object-name>r_glove</object-name>
+    <object-name>r_lowerleg</object-name>
+    <object-name>r_thigh</object-name>
+    <object-name>r_upperarm</object-name>
     <condition>
       <equals>
         <property>sim/model/livery/file</property>
-        <value>default</value>
+        <value>beirer</value>
       </equals>
     </condition>
     <texture>driver.png</texture>
   </animation>
 
   <animation>
-    <type>material</type>
-    <object-name>tete</object-name>
-    <object-name>corps</object-name>
-    <object-name>corpsMichael</object-name>
-    <object-name>helm</object-name>
-  	<object-name>hair</object-name>
-    <object-name>brasG</object-name>
-    <object-name>brasD</object-name>
-    <object-name>avantbrasG</object-name>
-    <object-name>avantbrasD</object-name>
-    <object-name>cuisseG</object-name>
-    <object-name>cuisseD</object-name>
-    <object-name>jambeG</object-name>
-    <object-name>jambeD</object-name>
-    <object-name>piedG</object-name>
-    <object-name>piedD</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/livery/file</property>
-        <value>vinales</value>
-      </equals>
-    </condition>
-    <texture>Vinales_driver.png</texture>
-  </animation>
-    
-  <animation>
-    <type>material</type>
-    <object-name>tete</object-name>
-    <object-name>corps</object-name>
-    <object-name>corpsMichael</object-name>
-    <object-name>helm</object-name>
-  	<object-name>hair</object-name>
-    <object-name>brasG</object-name>
-    <object-name>brasD</object-name>
-    <object-name>avantbrasG</object-name>
-    <object-name>avantbrasD</object-name>
-    <object-name>cuisseG</object-name>
-    <object-name>cuisseD</object-name>
-    <object-name>jambeG</object-name>
-    <object-name>jambeD</object-name>
-    <object-name>piedG</object-name>
-    <object-name>piedD</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/livery/file</property>
-        <value>dunlop</value>
-      </equals>
-    </condition>
-    <texture>MichaelDunlop_driver.png</texture>
-  </animation>
-  
-  <animation>
-    <type>material</type>
-    <object-name>tete</object-name>
-    <object-name>corps</object-name>
-    <object-name>corpsMichael</object-name>
-    <object-name>helm</object-name>
-  	<object-name>hair</object-name>
-    <object-name>brasG</object-name>
-    <object-name>brasD</object-name>
-    <object-name>avantbrasG</object-name>
-    <object-name>avantbrasD</object-name>
-    <object-name>cuisseG</object-name>
-    <object-name>cuisseD</object-name>
-    <object-name>jambeG</object-name>
-    <object-name>jambeD</object-name>
-    <object-name>piedG</object-name>
-    <object-name>piedD</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/livery/file</property>
-        <value>espargaro</value>
-      </equals>
-    </condition>
-    <texture>Espargaro_driver.png</texture>
-  </animation> 
-  
-  <animation>
-    <type>material</type>
-    <object-name>tete</object-name>
-    <object-name>corps</object-name>
-    <object-name>corpsMichael</object-name>
-    <object-name>helm</object-name>
-  	<object-name>hair</object-name>
-    <object-name>brasG</object-name>
-    <object-name>brasD</object-name>
-    <object-name>avantbrasG</object-name>
-    <object-name>avantbrasD</object-name>
-    <object-name>cuisseG</object-name>
-    <object-name>cuisseD</object-name>
-    <object-name>jambeG</object-name>
-    <object-name>jambeD</object-name>
-    <object-name>piedG</object-name>
-    <object-name>piedD</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/livery/file</property>
-        <value>anstey</value>
-      </equals>
-    </condition>
-    <texture>Anstey_driver.png</texture>
-  </animation>
-  
-  <animation>
   <type>select</type>
-  <object-name>hair</object-name>
-	  <condition>
-	    <equals>
-	      <property>sim/model/livery/file</property>
-	      <value>simoncelli</value>
-	    </equals>
-	  </condition>
-  </animation>
-
-  <animation>
-  <type>select</type>
-  <object-name>tete</object-name>
+  <object-name>head</object-name>
   <object-name>helm</object-name>
   <object-name>helm.001</object-name>
-  <object-name>corps</object-name>
-  <object-name>corpsMichael</object-name>
-  <object-name>gilet</object-name>
-  <object-name>giletMichael</object-name>
-  <object-name>hair</object-name>
-  <object-name>brasD</object-name>
-  <object-name>brasG</object-name>
+  <object-name>body</object-name>
+  <object-name>l_upperarm</object-name>
+  <object-name>r_upperarm</object-name>
     <condition>
       <not>
         <equals>
@@ -184,74 +67,25 @@
     </condition>
   </animation>
   
-  <animation>
-  <type>select</type>
-    <object-name>corps</object-name>
-    <condition>
-	      <not>
-	        <equals>
-		        <property>sim/model/livery/file</property>
-		        <value>dunlop</value>
-	        </equals>
-	      </not>
-    </condition>
-  </animation>
-  
-  <animation>
-  <type>select</type>
-    <object-name>corpsMichael</object-name>
-    <condition>
-	        <equals>
-		        <property>sim/model/livery/file</property>
-		        <value>dunlop</value>
-	        </equals>
-    </condition>
-  </animation>
-    
-  <animation>
-  <type>select</type>
-  <object-name>gilet</object-name>
-    <condition>
-		<and>
-      	  <property>sim/multiplay/generic/int[0]</property>
-	      <not>
-	        <equals>
-		        <property>sim/model/livery/file</property>
-		        <value>dunlop</value>
-	        </equals>
-	      </not>
-	  </and>
-    </condition>
-  </animation>
-  
-  <animation>
-  <type>select</type>
-  <object-name>giletMichael</object-name>
-    <condition>
-		<and>
-      	  <property>sim/multiplay/generic/int[0]</property>
-	        <equals>
-		        <property>sim/model/livery/file</property>
-		        <value>dunlop</value>
-	        </equals>
-	  </and>
-    </condition>
-  </animation>
-  
   <!-- animation while driving -->
   
   <animation>
     <type>rotate</type>
-    <object-name>tete</object-name>
+    <object-name>head</object-name>
     <object-name>helm</object-name>
-    <object-name>helm.001</object-name>
-    <object-name>hair</object-name>
+    <object-name>helm.001</object-name>	
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor>-10</factor>
+    <factor>-30</factor>
     <center>
-      <x-m>-0.134 </x-m>
+      <x-m>-0.141 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 1.21 </z-m>
+      <z-m> 1.039 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -262,14 +96,21 @@
      
   <animation>
     <type>rotate</type>
-    <object-name>brasD</object-name>
-    <object-name>avantbrasD</object-name>
+    <object-name>r_upperarm</object-name>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
     <property>surface-positions/rudder-pos-norm</property>
     <factor>-6</factor>
     <center>
-      <x-m>-0.363 </x-m>
+      <x-m>-0.118 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 1.148 </z-m>
+      <z-m> 1.0154 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -280,14 +121,21 @@
      
   <animation>
     <type>rotate</type>
-    <object-name>brasG</object-name>
-    <object-name>avantbrasG</object-name>
+    <object-name>l_upperarm</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
     <property>surface-positions/rudder-pos-norm</property>
     <factor>6</factor>
     <center>
-      <x-m>-0.363 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 1.148 </z-m>
+        <x-m>-0.118 </x-m>
+        <y-m> 0.0 </y-m>
+        <z-m> 1.0154 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -298,30 +146,137 @@
     
   <animation>
     <type>rotate</type>
-    <object-name>avantbrasD</object-name>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor>-6</factor>
+    <factor>-7</factor>
     <center>
-      <x-m>-0.132 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.769 </z-m>
+      <x-m>-0.161 </x-m>
+      <y-m> 0.244 </y-m>
+      <z-m> 0.0 </z-m>
     </center>
     <axis>
       <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation> 
 
   <animation>
     <type>rotate</type>
-    <object-name>avantbrasG</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor>4</factor>
+    <factor>-7</factor>
     <center>
-      <x-m>-0.132 </x-m>
+        <x-m>-0.161 </x-m>
+        <y-m>-0.244 </y-m>
+        <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <!-- tinki winki with his arm in stand -->
+  <animation>
+    <type>rotate</type>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>
+	<condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 138 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.24 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 0.769 </z-m>
+      <z-m> 1.12 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <!-- head while driving -->
+  <animation>
+    <type>rotate</type>
+    <object-name>head</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name> 
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>   
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 15 </dep></entry>
+      <entry><ind> -0.05</ind><dep> 15 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.05</ind><dep> -15 </dep></entry>
+      <entry><ind>  1 </ind><dep> -15 </dep></entry>
+    </interpolation>
+    <center>
+        <x-m>-0.141 </x-m>
+        <y-m> 0.0 </y-m>
+        <z-m> 1.039 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <!-- legs and arms while driving -->
+  
+  <!-- right arm -->
+  <animation>
+    <type>rotate</type>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -25 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> -25 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.4813 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.848 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -331,47 +286,201 @@
   </animation>
   
   <animation>
-      <type>translate</type>
-      <object-name>avantbrasD</object-name>
-      <property>surface-positions/rudder-pos-norm</property>
-      <factor>0.046</factor>
-      <axis>
-        <x> 1 </x>
-        <y> 0 </y>
-        <z> 0 </z>
-      </axis>
-  </animation>  
-  
-  <animation>
-      <type>translate</type>
-      <object-name>avantbrasG</object-name>
-      <property>surface-positions/rudder-pos-norm</property>
-      <factor>-0.052</factor>
-      <axis>
-        <x> 1 </x>
-        <y> 0 </y>
-        <z> 0 </z>
-      </axis>
-  </animation>
-  
-  <!-- legs while driving -->
-  
-  <animation>
     <type>rotate</type>
-    <object-name>cuisseG</object-name>
-    <object-name>jambeG</object-name>
-    <property>surface-positions/left-aileron-pos-norm</property>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
     <interpolation>
-      <entry><ind> -1 </ind><dep> 45 </dep></entry>
-      <entry><ind> -0.35 </ind><dep> 45 </dep></entry>
-      <entry><ind> -0.2 </ind><dep> 50 </dep></entry>
+      <entry><ind> -1 </ind><dep> 28 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> 28 </dep></entry>
       <entry><ind>  0 </ind><dep> 0 </dep></entry>
       <entry><ind>  1 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
-	    <x-m> 0.401 </x-m>
-	    <y-m>-0.153 </y-m>
-	    <z-m> 0.457 </z-m>
+      <x-m>-0.4858 </x-m>
+      <y-m> 0.234 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>r_upperarm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 50 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> 50 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.18 </y-m>
+      <z-m> 1.001 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+  
+  <!-- left arm -->
+  <animation>
+    <type>rotate</type>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -25 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> -25 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.4813 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.848 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -28 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> -28 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.4858 </x-m>
+      <y-m>-0.234 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>l_upperarm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -50 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> -50 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m>-0.18 </y-m>
+      <z-m> 1.001 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+   
+  <!-- body left right turn -->
+  <animation>
+    <type>rotate</type>
+    <object-name>body</object-name>
+    <object-name>r_thigh</object-name>
+    <object-name>l_thigh</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -15 </dep></entry>
+      <entry><ind> -0.05</ind><dep> -15 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.05</ind><dep> 15 </dep></entry>
+      <entry><ind>  1 </ind><dep> 15 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.114 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>l_thigh</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 33 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> 33 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m> 0.384 </x-m>
+	    <y-m>-0.113 </y-m>
+	    <z-m> 0.0 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -382,20 +491,24 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>cuisseG</object-name>
-    <object-name>jambeG</object-name>
+    <object-name>l_thigh</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
     <property>surface-positions/left-aileron-pos-norm</property>
     <interpolation>
-      <entry><ind> -1 </ind><dep> 18 </dep></entry>
-      <entry><ind> -0.35 </ind><dep> 18 </dep></entry>
-      <entry><ind> -0.2 </ind><dep> 0 </dep></entry>
+      <entry><ind> -1 </ind><dep> -11 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> -11 </dep></entry>
       <entry><ind>  0 </ind><dep> 0 </dep></entry>
       <entry><ind>  1 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
-	    <x-m> 0.383 </x-m>
-	    <y-m> 0.0 </y-m>
-	    <z-m> 0.864 </z-m>
+      <x-m> 0.294 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.833 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -406,43 +519,84 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>jambeG</object-name>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_boot</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
     <property>surface-positions/left-aileron-pos-norm</property>
     <interpolation>
-      <entry><ind> -1 </ind><dep> -16 </dep></entry>
-      <entry><ind> -0.35 </ind><dep> -16 </dep></entry>
-      <entry><ind> -0.2 </ind><dep> 0 </dep></entry>
+      <entry><ind> -1 </ind><dep> 43 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> 43 </dep></entry>
       <entry><ind>  0 </ind><dep> 0 </dep></entry>
       <entry><ind>  1 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
-	    <x-m>-0.034 </x-m>
+	    <x-m> 0.0 </x-m>
+	    <y-m>-0.185 </y-m>
+	    <z-m> 0.42 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_boot</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 10 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> 10 </dep></entry>
+      <entry><ind> -0.05 </ind><dep> 0 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  0.04 </ind><dep> 11 </dep></entry>
+      <entry><ind>  1 </ind><dep> 11 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m> 0.232 </x-m>
 	    <y-m> 0.0 </y-m>
-	    <z-m> 0.687 </z-m>
+	    <z-m> 0.402 </z-m>
     </center>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
       <z> 0 </z>
     </axis>
-  </animation> 
-  
+  </animation>
+
   <animation>
     <type>rotate</type>
-    <object-name>cuisseD</object-name>
-    <object-name>jambeD</object-name>
+    <object-name>r_thigh</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
     <property>surface-positions/right-aileron-pos-norm</property>
     <interpolation>
-      <entry><ind> -1 </ind><dep> -40 </dep></entry>
-      <entry><ind> -0.35 </ind><dep> -40 </dep></entry>
-      <entry><ind> -0.2 </ind><dep> -50 </dep></entry>
+      <entry><ind> -1 </ind><dep> -33 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> -33 </dep></entry>
       <entry><ind>  0 </ind><dep> 0 </dep></entry>
       <entry><ind>  1 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
-      <x-m> 0.398 </x-m>
-      <y-m> 0.166 </y-m>
-      <z-m> 0.457 </z-m>
+	    <x-m> 0.384 </x-m>
+	    <y-m> 0.113 </y-m>
+	    <z-m> 0.0 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -453,20 +607,24 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>cuisseD</object-name>
-    <object-name>jambeD</object-name>
+    <object-name>r_thigh</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
     <property>surface-positions/right-aileron-pos-norm</property>
     <interpolation>
-      <entry><ind> -1 </ind><dep> 18 </dep></entry>
-      <entry><ind> -0.35 </ind><dep> 18 </dep></entry>
-      <entry><ind> -0.2 </ind><dep> 0 </dep></entry>
+      <entry><ind> -1 </ind><dep> -11 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> -11 </dep></entry>
       <entry><ind>  0 </ind><dep> 0 </dep></entry>
       <entry><ind>  1 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
-	    <x-m> 0.383 </x-m>
-	    <y-m> 0.0 </y-m>
-	    <z-m> 0.864 </z-m>
+      <x-m> 0.294 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.833 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -477,113 +635,77 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>jambeD</object-name>
+    <object-name>r_lowerleg</object-name>
+    <object-name>r_boot</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
     <property>surface-positions/right-aileron-pos-norm</property>
     <interpolation>
-      <entry><ind> -1 </ind><dep> -16 </dep></entry>
-      <entry><ind> -0.35 </ind><dep> -16 </dep></entry>
-      <entry><ind> -0.2 </ind><dep> 0 </dep></entry>
+      <entry><ind> -1 </ind><dep> -43 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> -43 </dep></entry>
       <entry><ind>  0 </ind><dep> 0 </dep></entry>
       <entry><ind>  1 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
-	    <x-m>-0.034 </x-m>
+	    <x-m> 0.0 </x-m>
+	    <y-m> 0.185 </y-m>
+	    <z-m> 0.42 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>r_lowerleg</object-name>
+    <object-name>r_boot</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 10 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> 10 </dep></entry>
+      <entry><ind> -0.05 </ind><dep> 0 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  0.04 </ind><dep> 11 </dep></entry>
+      <entry><ind>  1 </ind><dep> 11 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m> 0.232 </x-m>
 	    <y-m> 0.0 </y-m>
-	    <z-m> 0.687 </z-m>
+	    <z-m> 0.402 </z-m>
     </center>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
       <z> 0 </z>
     </axis>
-  </animation> 
+  </animation>
   
   <!-- animation in stand on wheelsholder -->  
   <animation>
     <type>rotate</type>
- 	<object-name>hair</object-name>
-    <property>sim/multiplay/generic/float[3]</property>
-    <factor>5</factor>
-    <center>
-      <x-m>-0.16 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 1.24 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>avantbrasG</object-name>
-    <property>sim/multiplay/generic/float[3]</property>
-    <factor>-53</factor>
-    <center>
-      <x-m> 0.325 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 1.075 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>avantbrasD</object-name>
-    <property>sim/multiplay/generic/float[3]</property>
-    <factor>-58</factor>
-    <center>
-      <x-m> 0.232 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 1.068 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-     
-  <animation>
-    <type>rotate</type>
-    <object-name>brasG</object-name>
-    <object-name>brasD</object-name>
-    <object-name>avantbrasG</object-name>
-    <object-name>avantbrasD</object-name>
-    <property>sim/multiplay/generic/float[3]</property>
-    <factor>-62</factor>
-    <center>
-      <x-m> 0.263 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 1.366 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-      
-  <animation>
-    <type>rotate</type>
-    <object-name>tete</object-name>
-    <object-name>corps</object-name>
-    <object-name>corpsMichael</object-name>
-    <object-name>gilet</object-name>
-    <object-name>giletMichael</object-name>
+    <object-name>head</object-name>
+    <object-name>body</object-name>
     <object-name>helm</object-name>
     <object-name>helm.001</object-name>
-    <object-name>brasG</object-name>
-    <object-name>brasD</object-name>
-    <object-name>avantbrasG</object-name>
-    <object-name>avantbrasD</object-name>
- 	<object-name>hair</object-name>
+    <object-name>l_upperarm</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+    <object-name>r_upperarm</object-name>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>
     <property>sim/multiplay/generic/float[3]</property>
     <factor>48</factor>
     <center>
@@ -597,53 +719,21 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
-    <object-name>piedD</object-name>
+    <object-name>l_upperarm</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+    <object-name>r_upperarm</object-name>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>
     <property>sim/multiplay/generic/float[3]</property>
-    <factor>-7</factor>
+    <factor>-70</factor>
     <center>
-      <x-m> 0.337 </x-m>
+      <x-m>-0.112 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m>-0.098 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>jambeD</object-name>
-    <object-name>piedD</object-name>
-    <property>sim/multiplay/generic/float[3]</property>
-    <factor>85</factor>
-    <center>
-      <x-m> 0.184 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.41 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-      
-  <animation>
-    <type>rotate</type>
-    <object-name>cuisseD</object-name>
-    <object-name>jambeD</object-name>
-    <object-name>piedD</object-name>
-    <property>sim/multiplay/generic/float[3]</property>
-    <factor>-43</factor>
-    <center>
-      <x-m> 0.42 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.825 </z-m>
+      <z-m> 1.008 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -654,50 +744,16 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>piedG</object-name>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
     <property>sim/multiplay/generic/float[3]</property>
-    <factor>-7</factor>
+    <factor>-80</factor>
     <center>
-      <x-m> 0.337 </x-m>
+      <x-m> -0.1244 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m>-0.098 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>jambeG</object-name>
-    <object-name>piedG</object-name>
-    <property>sim/multiplay/generic/float[3]</property>
-    <factor>85</factor>
-    <center>
-      <x-m> 0.184 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.41 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-      
-  <animation>
-    <type>rotate</type>
-    <object-name>cuisseG</object-name>
-    <object-name>jambeG</object-name>
-    <object-name>piedG</object-name>
-    <property>sim/multiplay/generic/float[3]</property>
-    <factor>-43</factor>
-    <center>
-      <x-m> 0.42 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.825 </z-m>
+      <z-m> 0.7519 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -708,16 +764,20 @@
  
   <animation>
     <type>rotate</type>
-    <object-name>tete</object-name>
-    <object-name>helm</object-name>
-    <object-name>helm.001</object-name>
-  	<object-name>hair</object-name>
+    <object-name>l_thigh</object-name>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_boot</object-name>
+    <object-name>l_feet</object-name>
+    <object-name>r_thigh</object-name>
+    <object-name>r_lowerleg</object-name>
+    <object-name>r_boot</object-name>
+    <object-name>r_feet</object-name>
     <property>sim/multiplay/generic/float[3]</property>
-    <factor>-40</factor>
+    <factor>-46</factor>
     <center>
-      <x-m>-0.141 </x-m>
+      <x-m> 0.294 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 1.118 </z-m>
+      <z-m> 0.833 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -725,35 +785,39 @@
       <z> 0 </z>
     </axis>
   </animation>
-  
+	  
   <animation>
-    <type>translate</type>
-    <object-name>tete</object-name>
-    <object-name>helm</object-name>
-    <object-name>helm.001</object-name>
-  	<object-name>hair</object-name>
+    <type>rotate</type>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_boot</object-name>
+    <object-name>l_feet</object-name>
+    <object-name>r_lowerleg</object-name>
+    <object-name>r_boot</object-name>
+    <object-name>r_feet</object-name>
     <property>sim/multiplay/generic/float[3]</property>
-    <factor>0.07</factor>
+    <factor>85</factor>
+    <center>
+      <x-m> -0.02 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.698 </z-m>
+    </center>
     <axis>
       <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
-  </animation>
+  </animation>	
   
   <animation>
     <type>rotate</type>
-    <object-name>helm.001</object-name>
-    <property>engines/engine/rpm</property>
-    <interpolation>
-      <entry><ind> 0 </ind><dep> 30 </dep></entry>
-      <entry><ind> 2000 </ind><dep> 30 </dep></entry>
-      <entry><ind> 3000 </ind><dep> 0 </dep></entry>
-    </interpolation>
+    <object-name>l_feet</object-name>
+    <object-name>r_feet</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-60</factor>
     <center>
-      <x-m>-0.345</x-m>
+      <x-m> 0.19 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 1.18 </z-m>
+      <z-m> 0.43 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -761,13 +825,31 @@
       <z> 0 </z>
     </axis>
   </animation>  
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>head</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-40</factor>
+    <center>
+      <x-m>-0.149 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.042 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
   
   <animation>
     <type>rotate</type>
-    <object-name>tete</object-name>
+    <object-name>head</object-name>
     <object-name>helm</object-name>
     <object-name>helm.001</object-name>
- 	<object-name>hair</object-name>
     <property>surface-positions/left-aileron-pos-norm</property>
   	<interpolation>
     	<entry><ind> -1.0</ind><dep>   -50</dep></entry>
@@ -777,9 +859,9 @@
     	<entry><ind>  1.0</ind><dep>    50</dep></entry>
   	</interpolation>
     <center>
-      <x-m> 0.0 </x-m>
+      <x-m> -0.16 </x-m>
       <y-m> 0.0 </y-m>
-      <z-m> 1.1233 </z-m>
+      <z-m> 1.05 </z-m>
     </center>
     <axis>
       <x> 1 </x>
@@ -787,6 +869,51 @@
       <z> 0 </z>
     </axis>
   </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>head</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+  	<interpolation>
+    	<entry><ind> -1.0</ind><dep>   20</dep></entry>
+    	<entry><ind> -0.3</ind><dep>   20</dep></entry>
+    	<entry><ind>  0.0</ind><dep>   0.0</dep></entry>
+    	<entry><ind>  0.3</ind><dep>   20</dep></entry>
+    	<entry><ind>  1.0</ind><dep>   20</dep></entry>
+  	</interpolation>
+    <center>
+      <x-m> -0.12 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.03 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>helm.001</object-name>
+    <property>engines/engine/rpm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 50 </dep></entry>
+      <entry><ind> 1000 </ind><dep> 50 </dep></entry>
+      <entry><ind> 3000 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.302</x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.167 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
 
 </PropertyList>
-

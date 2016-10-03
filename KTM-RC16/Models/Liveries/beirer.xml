@@ -10,7 +10,7 @@
 <sim>
     <model>
         <livery>
-            <name type="string">No.2 Bruce Anstey</name>
+            <name type="string">No.36 Pit Beirer</name>
             <texture>../KTM-RC16.png</texture>
         </livery>
     </model>

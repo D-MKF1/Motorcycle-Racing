@@ -469,11 +469,6 @@
   	<model>
   		<name>Driver</name>
   		<path>Aircraft/Motorcycle-Racing/KTM-RC16/Models/Driver/driver.xml</path>
-	    <offsets>
-	      <x-m>  -0.06 </x-m>
-	      <y-m>  0.0 </y-m>
-	      <z-m>  0.055 </z-m>
-	    </offsets>
   	</model>
 	
     <animation>
