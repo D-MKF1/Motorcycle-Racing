@@ -25,6 +25,9 @@ var messenger_red = func{
 help_win_red.write(arg[0]);
 }
 
+#----- gear to zero at startup ----
+setprop("/sim/flaps/current-setting",6);
+
 #----- view correction and steering helper ------
 # loop for fork control
 setprop("/controls/flight/fork",0.0);

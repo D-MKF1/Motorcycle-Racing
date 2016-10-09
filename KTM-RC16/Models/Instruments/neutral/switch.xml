@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Motorcycles for Flightgear September 2016
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+<path>switch.ac</path>
+<animation>
+    <type>pick</type>
+    <object-name>NSwitch</object-name>
+   <visible>true</visible>
+    <action>
+    <button>0</button>
+	<repeatable>true</repeatable>
+    <binding>	    
+ 		<command>property-assign</command>
+		<property>controls/Motorcycle/neutral</property>
+		<value>0</value>	
+    </binding>           
+    </action>
+</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>NSwitch</object-name>
+    <property>controls/Motorcycle/neutral</property>
+    <factor>5</factor>
+      <center>
+       <x-m>-0.56</x-m>
+       <y-m> 0.19</y-m>
+       <z-m> 0.85</z-m>
+      </center>
+      <axis>
+        <x>  0 </x>
+        <y>  1 </y>
+        <z>  0 </z>
+      </axis>
+</animation>
+</PropertyList>

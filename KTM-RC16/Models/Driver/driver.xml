@@ -25,6 +25,7 @@
     <type>material</type>
     <object-name>head</object-name>
     <object-name>body</object-name>
+    <object-name>newbie</object-name>
     <object-name>helm</object-name>
     <object-name>l_boot</object-name>
     <object-name>l_feet</object-name>
@@ -61,6 +62,7 @@
   <object-name>helm</object-name>
   <object-name>helm.001</object-name>
   <object-name>body</object-name>
+  <object-name>newbie</object-name>
   <object-name>l_upperarm</object-name>
   <object-name>r_upperarm</object-name>
     <condition>
@@ -70,6 +72,14 @@
         <value type="string">Cockpit View</value>
         </equals>
       </not>
+    </condition>
+  </animation>
+  
+  <animation>
+  <type>select</type>
+  <object-name>newbie</object-name>
+    <condition>
+		<property>sim/multiplay/generic/int[0]</property>
     </condition>
   </animation>
   
@@ -546,6 +556,7 @@
   <animation>
     <type>translate</type>
     <object-name>body</object-name>
+    <object-name>newbie</object-name>
     <object-name>r_thigh</object-name>
     <object-name>l_thigh</object-name>
     <object-name>r_upperarm</object-name>
@@ -996,6 +1007,7 @@
   <animation>
     <type>rotate</type>
     <object-name>body</object-name>
+    <object-name>newbie</object-name>
     <object-name>l_upperarm</object-name>
     <object-name>l_forearm</object-name>
     <object-name>l_glove</object-name>

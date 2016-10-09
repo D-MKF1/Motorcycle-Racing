@@ -72,9 +72,9 @@
       <property>sim/multiplay/generic/float[3]</property>
       <factor>48</factor>
       <center>
-       <x-m> 0.884</x-m>
+       <x-m> 0.881</x-m>
        <y-m> 0.0</y-m>
-       <z-m> 0.165</z-m>
+       <z-m> 0.232</z-m>
       </center>
       <axis>
        <x>0</x>
@@ -288,7 +288,6 @@
 	</axis>
 </animation>
 
-
 <animation>
     <type>pick</type>
     <object-name>butMenu</object-name>
@@ -465,6 +464,12 @@
 	</axis>
 </animation>
 
+  <!-- Neutral switch -->
+  <model>
+	<name>Neutral</name>
+	<path>Aircraft/Motorcycle-Racing/KTM-RC16/Models/Instruments/neutral/switch.xml</path>
+  </model>
+	
   <!-- Driver -->
   	<model>
   		<name>Driver</name>
@@ -570,6 +575,7 @@
       <object-name>standrohr</object-name>
       <object-name>stummelLi</object-name>
       <object-name>stummelRe</object-name>
+      <object-name>Neutral</object-name>
       <object-name>verkleidung</object-name>
       <object-name>verschraubungen</object-name>
       <condition>
@@ -640,6 +646,7 @@
 	    <object-name>standrohr</object-name>
 	    <object-name>stummelLi</object-name>
 	    <object-name>stummelRe</object-name>
+	    <object-name>Neutral</object-name>
 	    <object-name>verkleidung</object-name>
 	    <object-name>verschraubungen</object-name>
         <condition>
@@ -693,6 +700,7 @@
 		<object-name>standrohr</object-name>
 		<object-name>stummelLi</object-name>
 		<object-name>stummelRe</object-name>
+	    <object-name>Neutral</object-name>
 		<object-name>verschraubungen</object-name>
         <property>surface-positions/rudder-pos-norm</property>
         <interpolation>

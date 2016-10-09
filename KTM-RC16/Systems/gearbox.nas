@@ -107,7 +107,15 @@ var loop = func {
 		gear.setValue(lastgear);
 	}
 
-	lastgear = gear.getValue();
+	if(getprop("/controls/Motorcycle/neutral") == 0){
+		lastgear = 0;
+		lastfastcircuit = 0;
+		gear.setValue(0);
+		setprop("/sim/flaps/current-setting",6);
+		setprop("/controls/Motorcycle/neutral",1);
+	}else{
+		lastgear = gear.getValue();
+	}
 
 	# ----------- ENGINE IS RUNNING --------------
 	if(running.getValue() == 1){
