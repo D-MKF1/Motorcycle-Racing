@@ -765,7 +765,7 @@
 	    </greater-than>
 	  </condition>
       <property>/controls/flight/throttle-input</property>
-         <factor>-90</factor>
+         <factor>-30</factor>
          <axis>   
           <x1-m> -0.4987</x1-m>
           <y1-m>  0.38</y1-m>

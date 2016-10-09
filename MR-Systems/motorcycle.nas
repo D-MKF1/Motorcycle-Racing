@@ -309,6 +309,7 @@ setlistener("sim/model/start-idling", func()
  
   if (p.getValue() == 1)
    {
+		setprop("/controls/flight/throttle-input", 0);
    		interpolate("/controls/Motorcycle/driver-up", 1, 0.8);
    }
   else
