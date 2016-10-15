@@ -170,10 +170,10 @@
 	<name>TRANSPONDER</name>
     <path>Aircraft/Motorcycle-Racing/KTM-RC16/Models/Instruments/transponder/transponder.xml</path>
     <offsets>
-        <x-m> -0.69 </x-m>
-        <y-m> 0.14</y-m>
-        <z-m> 0.88 </z-m>
-      <heading-deg>50</heading-deg>
+        <x-m> -0.757 </x-m>
+        <y-m>-0.055</y-m>
+        <z-m> 0.86 </z-m>
+      <heading-deg>90</heading-deg>
       <roll-deg> 46 </roll-deg>
     </offsets>
   </model>
