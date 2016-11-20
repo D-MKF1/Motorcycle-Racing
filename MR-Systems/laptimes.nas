@@ -222,6 +222,20 @@ var wp3sc = [52.06800727,-1.02399746,162,"Alntree"];
 # Ground Marker Sector4 - lat,lon,alt in meter
 var wp4sc = [52.07300925,-1.01185486,162,"Woodcote/Finish"];
 
+##### Valencia - Circuit Ricardo Tormo - Spain 
+
+# Ground Marker Position FINISH - lat,lon,alt in meter
+var wp1va = [39.48343964,-0.63123008,160,"Sector1"];
+
+# Ground Marker Sector2 - lat,lon,alt in meter
+var wp2va = [39.48891425,-0.62818705,160,"Sector2"];
+
+# Ground Marker Sector3 - lat,lon,alt in meter
+var wp3va = [39.48678453,-0.63278569,165,"Sector3"];
+
+# Ground Marker Sector4 - lat,lon,alt in meter
+var wp4va = [39.48595564,-0.63067976,165,"Sector4"];
+
 var pa = "TT";
 var sectors = sectors_tt = [wp1tt, wp2tt, wp3tt, wp4tt, wp5tt, wp6tt];
 var sectors_s100 = [wp1s, wp2s, wp3s];
@@ -240,6 +254,7 @@ var sectors_ca = [wp1ca, wp2ca, wp3ca, wp4ca];
 var sectors_je = [wp1je, wp2je, wp3je, wp4je];
 var sectors_bc = [wp1bc, wp2bc, wp3bc, wp4bc];
 var sectors_sc = [wp1sc, wp2sc, wp3sc, wp4sc];
+var sectors_va = [wp1va, wp2va, wp3va, wp4va];
 
 ############################ helper for view ####################################
 var show_helper = func(s) {
@@ -505,6 +520,9 @@ var find_marker = func{
 	
 	marker_wp_pos.set_latlon(wp1sc[0], wp1sc[1], wp1sc[2], wp1sc[3]);
 	var dis_to_SC = marker_wp_pos.distance_to(mypos);
+	
+	marker_wp_pos.set_latlon(wp1va[0], wp1va[1], wp1va[2], wp1va[3]);
+	var dis_to_VA = marker_wp_pos.distance_to(mypos);
 		
 	if(dis_to_TT < 10000){   # if we are far away - 10km - from the Isle of Man stop script
 		#print("We are on the Isle of Man");
@@ -574,6 +592,10 @@ var find_marker = func{
 		#print("Great Britain - Silverstone Circuit");
 		sectors = sectors_sc;
 		pa = "SC";
+	}else if(dis_to_VA < 10000){
+		#print("Spain - Valencia Circuit Ricardo Tormo");
+		sectors = sectors_va;
+		pa = "VA";
 	}
 
 	# newbies have red jackets

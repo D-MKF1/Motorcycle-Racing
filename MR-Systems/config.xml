@@ -261,7 +261,23 @@
   	      <halign>right</halign>
   	    </text>
   	  </group>	
-	  	  
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>Espagna - Circuito Ricardo Tormo - Valencia (LEVC) ............</label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/VA/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>	
+	  	  	  
   	  <group>
   	    <layout>hbox</layout>
   	    <text>
