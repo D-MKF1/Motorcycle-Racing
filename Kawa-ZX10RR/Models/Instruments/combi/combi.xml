@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Kawasaki ZX 10 R for Flightgear December 2014
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+<path>combi.ac</path>
+
+
+	<animation>
+	  <type>translate</type>
+	  <object-name>RPM.btn</object-name>
+	  <property>engines/engine/rpm_regulation</property>
+	  <factor>-0.01</factor>
+	  <axis>
+	    <x>  0 </x>
+	    <y>  0 </y>
+	    <z>  1 </z>
+	  </axis>
+	</animation>
+
+	<animation>
+	    <type>pick</type>
+	    <object-name>RPM.btn</object-name>
+		<visible>true</visible>
+	    <action>
+	    <button>0</button>
+	        <binding>	    
+	    	  <command>property-toggle</command>
+			  <property>engines/engine/rpm_regulation</property>	
+	        </binding>           
+	    </action>
+	</animation>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>digit-1</object-name>
+		<object-name>digit-10</object-name>
+		<object-name>digit-100</object-name>
+		<object-name>digit-gear</object-name>
+		<object-name>select</object-name>
+		<object-name>d-hms</object-name>
+		<object-name>d-km</object-name>
+		<object-name>d-zkm</object-name>
+		<object-name>d-hkm</object-name>
+		<object-name>d-tkm</object-name>
+		<object-name>d-ztkm</object-name>
+		<object-name>d-hms.001</object-name>
+		<object-name>d-km.001</object-name>
+		<object-name>d-zkm.001</object-name>
+		<object-name>d-hkm.001</object-name>
+		<object-name>d-tkm.001</object-name>
+		<object-name>d-ztkm.001</object-name>
+	</animation>
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>digit-1</object-name>
+		<object-name>digit-10</object-name>
+		<object-name>digit-100</object-name>
+		<object-name>digit-gear</object-name>
+		<object-name>select</object-name>
+		<object-name>d-hms</object-name>
+		<object-name>d-km</object-name>
+		<object-name>d-zkm</object-name>
+		<object-name>d-hkm</object-name>
+		<object-name>d-tkm</object-name>
+		<object-name>d-ztkm</object-name>
+		<object-name>d-hms.001</object-name>
+		<object-name>d-km.001</object-name>
+		<object-name>d-zkm.001</object-name>
+		<object-name>d-hkm.001</object-name>
+		<object-name>d-tkm.001</object-name>
+		<object-name>d-ztkm.001</object-name>
+	</effect>
+
+	<model>
+	<path>Aircraft/Motorcycle/Models/Lights/lightcone-mini.xml</path>
+	<name>lights</name>
+	<offsets>   
+	  <x-m> 0.25</x-m>
+	  <y-m> 0.03</y-m>
+	  <z-m> 0.08</z-m>
+	  <pitch-deg>75</pitch-deg>
+	</offsets>
+	</model>
+
+	<animation>
+		 <type>material</type>
+		 <object-name>neutral</object-name>
+		 <emission>
+		  <red>0</red>
+		  <green>1</green>
+		  <blue>0</blue>
+		  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+	   	</emission>
+	</animation>
+	
+	<animation>
+		 <type>material</type>
+		 <object-name>box</object-name>
+		 <emission>
+		  <red>0.0028</red>
+		  <green>0.0014</green>
+		  <blue>0.0007</blue>
+		  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+	   	</emission>
+	</animation>
+
+	<animation>
+		 <type>material</type>
+		 <object-name>fuel</object-name>
+		 <emission>
+		  <red>1</red>
+		  <green>1</green>
+		  <blue>0</blue>
+		  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+	   	</emission>
+	</animation>
+	
+	<animation>
+		 <type>material</type>
+		 <object-name>rpm</object-name>	
+		 <condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+			<property>systems/electrical/outputs/instrument-lights</property>
+		</condition>
+		 <emission>
+   	  <red>0.4</red>
+   	  <green>0.02</green>
+   	  <blue>0.02</blue>
+		  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+       	</emission>
+	</animation>
+	
+    <animation>
+     <type>material</type>
+     <object-name>lcd-back</object-name>		
+		 <condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+			<property>systems/electrical/outputs/instrument-lights</property>
+		</condition>
+     <emission>
+   	  <red>0.3</red>
+   	  <green>0.016</green>
+   	  <blue>0.016</blue>
+   	  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+           </emission>
+    </animation>
+	
+    <animation>
+      <type>select</type>
+		 <object-name>fuel</object-name>
+      <condition>
+		  <or>
+	        <less-than>
+	          <property>consumables/fuel/total-fuel-lbs</property>
+			  <value>5.0</value>
+	        </less-than>
+	        <not>
+	          <property>engines/engine/running</property>
+	        </not>
+		  </or>
+      </condition>
+    </animation>
+ 
+    <animation>
+      <type>select</type>
+      <object-name>neutral</object-name>
+      <condition>
+        <equals>
+          <property>engines/engine/gear</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </animation>
+
+   	 <animation>
+   	    <type>textranslate</type>
+   	    <object-name>digit-1</object-name>
+   	    <property>instrumentation/Motorcycle/speed-indicator/speed-meter</property>
+   	    <factor>0.1</factor>
+   	    <step>1</step>
+   	    <bias>0.005</bias>
+   	    <axis>
+   	        <x>1</x>
+   	        <y>0</y>
+   	        <z>0</z>
+   	    </axis>
+   	</animation>
+	
+       <animation>
+           <type>textranslate</type>
+           <object-name>digit-10</object-name>
+           <property>instrumentation/Motorcycle/speed-indicator/speed-meter</property>
+           <factor>0.01</factor>
+           <step>10</step>
+           <bias>0.005</bias>
+           <axis>
+               <x>1</x>
+               <y>0</y>
+               <z>0</z>
+           </axis>
+       </animation>
+	
+       <animation>
+           <type>textranslate</type>
+           <object-name>digit-100</object-name>
+           <property>instrumentation/Motorcycle/speed-indicator/speed-meter</property>
+           <factor>0.001</factor>
+           <step>100</step>
+           <bias>0.005</bias>
+           <axis>
+               <x>1</x>
+               <y>0</y>
+               <z>0</z>
+           </axis>
+       </animation>
+	
+       <animation>
+           <type>textranslate</type>
+           <object-name>digit-gear</object-name>
+           <property>engines/engine/gear</property>
+           <factor>0.1</factor>
+           <step>1</step>
+           <bias>0.005</bias>
+           <axis>
+               <x>1</x>
+               <y>0</y>
+               <z>0</z>
+           </axis>
+       </animation>
+	   
+	   <!-- distance digits -->
+	   	 <animation>
+	   	    <type>textranslate</type>
+	   	    <object-name>d-hms</object-name>
+	   	    <property>instrumentation/Motorcycle/distance-calculator/miles</property>
+	   	    <factor>0.001</factor>
+	   	    <step>100</step>
+	   	    <bias>0.005</bias>
+	   	    <axis>
+	   	        <x>1</x>
+	   	        <y>0</y>
+	   	        <z>0</z>
+	   	    </axis>
+	   	</animation>
+		
+     	 <animation>
+     	    <type>textranslate</type>
+     	    <object-name>d-km</object-name>
+     	    <property>instrumentation/Motorcycle/distance-calculator/miles</property>
+     	    <factor>0.0001</factor>
+     	    <step>1000</step>
+     	    <bias>0.005</bias>
+     	    <axis>
+     	        <x>1</x>
+     	        <y>0</y>
+     	        <z>0</z>
+     	    </axis>
+     	</animation>
+	
+         <animation>
+             <type>textranslate</type>
+             <object-name>d-zkm</object-name>
+             <property>instrumentation/Motorcycle/distance-calculator/miles</property>
+             <factor>0.00001</factor>
+             <step>10000</step>
+             <bias>0.005</bias>
+             <axis>
+                 <x>1</x>
+                 <y>0</y>
+                 <z>0</z>
+             </axis>
+         </animation>
+		 
+         <animation>
+             <type>textranslate</type>
+             <object-name>d-hkm</object-name>
+             <property>instrumentation/Motorcycle/distance-calculator/miles</property>
+             <factor>0.000001</factor>
+             <step>100000</step>
+             <bias>0.005</bias>
+             <axis>
+                 <x>1</x>
+                 <y>0</y>
+                 <z>0</z>
+             </axis>
+         </animation>
+	
+         <animation>
+             <type>textranslate</type>
+             <object-name>d-tkm</object-name>
+             <property>instrumentation/Motorcycle/distance-calculator/miles</property>
+             <factor>0.0000001</factor>
+             <step>1000000</step>
+             <bias>0.005</bias>
+             <axis>
+                 <x>1</x>
+                 <y>0</y>
+                 <z>0</z>
+             </axis>
+         </animation>
+	
+         <animation>
+             <type>textranslate</type>
+             <object-name>d-ztkm</object-name>
+             <property>instrumentation/Motorcycle/distance-calculator/miles</property>
+             <factor>0.00000001</factor>
+             <step>10000000</step>
+             <bias>0.005</bias>
+             <axis>
+                 <x>1</x>
+                 <y>0</y>
+                 <z>0</z>
+             </axis>
+         </animation>
+		 
+  	   <!-- day distance digits -->
+  	   	 <animation>
+  	   	    <type>textranslate</type>
+  	   	    <object-name>d-hms.001</object-name>
+  	   	    <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
+  	   	    <factor>0.001</factor>
+  	   	    <step>100</step>
+  	   	    <bias>0.005</bias>
+  	   	    <axis>
+  	   	        <x>1</x>
+  	   	        <y>0</y>
+  	   	        <z>0</z>
+  	   	    </axis>
+  	   	</animation>
+		
+       	 <animation>
+       	    <type>textranslate</type>
+       	    <object-name>d-km.001</object-name>
+       	    <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
+       	    <factor>0.0001</factor>
+       	    <step>1000</step>
+       	    <bias>0.005</bias>
+       	    <axis>
+       	        <x>1</x>
+       	        <y>0</y>
+       	        <z>0</z>
+       	    </axis>
+       	</animation>
+	
+           <animation>
+               <type>textranslate</type>
+               <object-name>d-zkm.001</object-name>
+               <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
+               <factor>0.00001</factor>
+               <step>10000</step>
+               <bias>0.005</bias>
+               <axis>
+                   <x>1</x>
+                   <y>0</y>
+                   <z>0</z>
+               </axis>
+           </animation>
+	
+           <animation>
+               <type>textranslate</type>
+               <object-name>d-hkm.001</object-name>
+               <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
+               <factor>0.000001</factor>
+               <step>100000</step>
+               <bias>0.005</bias>
+               <axis>
+                   <x>1</x>
+                   <y>0</y>
+                   <z>0</z>
+               </axis>
+           </animation>
+	
+           <animation>
+               <type>textranslate</type>
+               <object-name>d-tkm.001</object-name>
+               <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
+               <factor>0.0000001</factor>
+               <step>1000000</step>
+               <bias>0.005</bias>
+               <axis>
+                   <x>1</x>
+                   <y>0</y>
+                   <z>0</z>
+               </axis>
+           </animation>
+	
+           <animation>
+               <type>textranslate</type>
+               <object-name>d-ztkm.001</object-name>
+               <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
+               <factor>0.00000001</factor>
+               <step>10000000</step>
+               <bias>0.005</bias>
+               <axis>
+                   <x>1</x>
+                   <y>0</y>
+                   <z>0</z>
+               </axis>
+           </animation>
+	
+	       <animation>
+	           <type>pick</type>
+	           <object-name>srpmop.001</object-name>
+	   		<visible>false</visible>
+	           <action>
+	    	    <button>0</button>
+	               <binding>	    
+	   	    	  <command>property-assign</command>
+	   			  <property>instrumentation/Motorcycle/distance-calculator/dmzaehler</property>
+	   			  <value>0</value>	
+	               </binding>           
+	           </action>
+	       </animation>		
+    
+   <!-- selection -->
+       <animation>
+           <type>pick</type>
+           <object-name>select-button-plane</object-name>
+   		<visible>false</visible>
+           <action>
+    	    <button>0</button>
+               <binding>	    
+   	    	  <command>property-toggle</command>
+   			<property>instrumentation/Motorcycle/speed-indicator/selection</property>
+   			<step>1</step>
+   			<min>0</min>
+   			<max>1</max>
+   			<wrap>1</wrap>		
+               </binding>           
+           </action>
+       </animation>	
+			
+	<!-- rpm -->
+	<animation>
+	  <type>rotate</type>
+	  <object-name>rpm</object-name>
+	  <property>engines/engine/rpm</property>
+	  <interpolation>
+	    <entry><ind>    0</ind><dep>    0</dep></entry>
+		<entry><ind> 2500</ind><dep> 0.28</dep></entry>
+		<entry><ind> 6000</ind><dep> 0.285</dep></entry>
+		<entry><ind> 8000</ind><dep> 0.29</dep></entry>
+		<entry><ind>12000</ind><dep> 0.44</dep></entry>
+		<entry><ind>18500</ind><dep> 1.54</dep></entry>
+		<entry><ind>20000</ind><dep> 4.5</dep></entry>
+	    <entry><ind>40000</ind><dep> 4.5</dep></entry>
+	  </interpolation>
+      <center>
+       <x-m> 0.0</x-m>
+       <y-m> 0.1217</y-m>
+       <z-m> 0.0</z-m>
+      </center>
+	  <axis>
+	    <x>0</x>
+	    <y>0</y>
+	    <z>1</z>
+	  </axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>rpm</object-name>
+		<property>engines/engine/running</property>
+		<factor>-0.001</factor>
+		<axis>
+		    <x>1</x>
+		    <y>0</y>
+		    <z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>select</object-name>
+		<property>instrumentation/Motorcycle/speed-indicator/selection</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+		    <x>1</x>
+		    <y>0</y>
+		    <z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>
+
+

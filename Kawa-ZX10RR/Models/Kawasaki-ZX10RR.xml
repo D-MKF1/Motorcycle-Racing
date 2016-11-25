@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Kawasaki ZX 10 R for Flightgear December 2014
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+  <path>Kawa-ZX-R.ac</path> 
+  
+  <sound><path>Aircraft/Kawa-ZX10R/Sounds/Kawa-ZX10R_mp-sound.xml</path></sound>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Kawa-ZX10R/Models/Liveries", 10);
+    </load>
+
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+  
+  <offsets>
+    <z-m>0.05</z-m>
+  </offsets>
+
+  <animation>
+    <type>material</type>
+    <object-name>oehlinssup</object-name>
+    <object-name>oehlinssup.001</object-name>
+    <object-name>carrd</object-name>
+    <object-name>carrd01</object-name>
+    <object-name>carrd03</object-name>
+    <object-name>screws</object-name>
+    <object-name>carrd04</object-name>
+    <object-name>carrd05</object-name>
+    <object-name>carrd06</object-name>
+    <object-name>carrd07</object-name>
+    <object-name>kawacro</object-name>
+    <object-name>kawadi</object-name>
+    <object-name>kawae</object-name>
+    <object-name>kawae01</object-name>
+    <object-name>kawaex</object-name>
+    <object-name>kawaf</object-name>
+    <object-name>kawagb</object-name>
+    <object-name>kawagb.001</object-name>
+    <object-name>kawagls</object-name>
+    <object-name>kawaholder</object-name>
+    <object-name>kawalk01</object-name>
+    <object-name>kawam01</object-name>
+    <object-name>kawam2</object-name>
+    <object-name>kawam4</object-name>
+    <object-name>kawam5</object-name>
+    <object-name>kawam6</object-name>
+    <object-name>kawam7</object-name>
+    <object-name>kawam8</object-name>
+    <object-name>kawamu</object-name>
+    <object-name>kawap1</object-name>
+    <object-name>kawap2</object-name>
+    <object-name>kawapl3</object-name>
+    <object-name>kawar1</object-name>
+    <object-name>kawaw</object-name>
+    <object-name>kawaw01</object-name>
+    <object-name>starter</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>Kawa-ZX10R.png</texture>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>kawaholder</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+	  <type>rotate</type>
+      <object-name>kawaholder</object-name>
+      <property>sim/multiplay/generic/float[3]</property>
+      <factor>48</factor>
+      <center>
+       <x-m> 0.777</x-m>
+       <y-m> 0.0</y-m>
+       <z-m> 0.251</z-m>
+      </center>
+      <axis>
+       <x>0</x>
+       <y>1</y>
+       <z>0</z>
+      </axis>
+    </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>kawagls03</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>black</value>
+      </equals>
+    </condition>
+    <texture>11.png</texture>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>kawagls03</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>saiger</value>
+      </equals>
+    </condition>
+    <texture>88.png</texture>
+  </animation>
+
+ <animation>
+    <type>material</type>
+    <object-name>kawagls03</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>110</value>
+      </equals>
+    </condition>
+    <texture>110.png</texture>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>kawagls03</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>red</value>
+      </equals>
+    </condition>
+    <texture>7.png</texture>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>kawagls03</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>yellow</value>
+      </equals>
+    </condition>
+    <texture>444.png</texture>
+  </animation>
+  
+<effect>
+	<inherits-from>Effects/model-transparent</inherits-from>
+	<object-name>kawagls03</object-name>
+</effect>
+  
+  <!-- shadow without rembrandt -->
+	<model>
+		<name>NewShadow</name>
+		<path>Aircraft/Kawa-ZX10R/Models/shadow.xml</path>
+	    <offsets>
+	      <x-m>  0.0 </x-m>
+	      <y-m>  0.0 </y-m>
+	      <z-m>  0.02 </z-m>
+	    </offsets>
+	</model>
+
+	<animation>
+		<type>select</type>
+		<object-name>NewShadow</object-name>
+		<condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+			<not><property>sim/multiplay/generic/int[3]</property></not>
+		</condition>
+	</animation>
+
+
+  
+  <!-- 1. SPEED --> 
+  <model>
+	<name>RPM</name>
+    <path>Aircraft/Kawa-ZX10R/Models/Instruments/combi/combi.xml</path>
+    <offsets>
+      <x-m> -0.683 </x-m>
+      <y-m> -0.002 </y-m>
+      <z-m> 0.945 </z-m>
+      <pitch-deg> -35 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>SL</name>
+    <path>Aircraft/Kawa-ZX10R/Models/Instruments/sl/speedlimiter.xml</path>
+    <offsets>
+      <x-m> -0.589 </x-m>
+      <y-m> -0.094 </y-m>
+      <z-m>  0.93 </z-m>
+      <pitch-deg> 20 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>TRANSPONDER</name>
+    <path>Aircraft/Kawa-ZX10R/Models/Instruments/transponder/transponder.xml</path>
+    <offsets>
+        <x-m> -0.68</x-m>
+        <y-m> 0.08</y-m>
+        <z-m> 0.90 </z-m>
+      <roll-deg> -40 </roll-deg>
+      <heading-deg>90</heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>TRANSPONDER</object-name>
+    <condition>
+	 <or>
+		<equals>
+        	<property>sim/menubar/default/menu[14]/item[0]/name</property>
+			<value>Button_1</value>
+		</equals>
+		<equals>
+        	<property>i-am-a-racebike</property>
+			<value>1</value>
+		</equals>		
+	 </or>
+    </condition>
+  </animation>
+  
+  <model>
+	<name>OEHLINS</name>
+    <path>Aircraft/Kawa-ZX10R/Models/Instruments/oehlins/oehlins.xml</path>
+    <offsets>
+        <x-m> -0.48 </x-m>
+        <y-m> 0.0</y-m>
+        <z-m> 0.93 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>SMOKE</name>
+    <path>Aircraft/Kawa-ZX10R/Effects/smoke.xml</path>
+    <offsets>
+      <x-m> -0.352 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  0.43 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>SMOKE-LIGHT</name>
+    <path>Aircraft/Kawa-ZX10R/Effects/smoke-light.xml</path>
+    <offsets>
+      <x-m> -0.352 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  0.43 </z-m>
+    </offsets>
+  </model>
+   
+  <animation>
+    <type>select</type>
+    <object-name>SMOKE</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[4]</property>
+		<value>0.9</value>
+      </greater-than>
+    </condition>
+  </animation>
+   
+  <animation>
+    <type>select</type>
+    <object-name>SMOKE-LIGHT</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[4]</property>
+		<value>0.2</value>
+      </greater-than>
+    </condition>
+  </animation>
+  
+  <model>
+	<name>REARLIGHT</name>
+    <path>Aircraft/Kawa-ZX10R/Models/Lights/rearlight.xml</path>
+    <offsets>
+      <x-m>0.9 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>0.96 </z-m>
+    </offsets>
+  </model>
+  
+<animation>
+  <type>select</type>
+  <object-name>REARLIGHT</object-name>
+  <condition>
+	<greater-than>
+ 		<property>/sim/time/sun-angle-rad</property>
+		<value>1.4</value>
+	</greater-than>
+ </condition>
+</animation>
+   
+  <!-- Driver -->
+  	<model>
+  		<name>Driver</name>
+  		<path>Aircraft/Kawa-ZX10R/Models/Driver/driver.xml</path>
+  	</model>
+	
+    <animation>
+      <type>select</type>
+      <object-name>Driver</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <not>
+          <property>sim/multiplay/generic/int[4]</property>
+        </not>
+      </condition>
+    </animation>
+	
+  	<model>
+  		<name>Driver_quick_glance_over_shoulder</name>
+  		<path>Aircraft/Kawa-ZX10R/Models/Driver/driver_special.xml</path>
+  	</model>
+
+    <animation>
+      <type>select</type>
+      <object-name>Driver_quick_glance_over_shoulder</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <property>sim/multiplay/generic/int[4]</property>
+      </condition>
+    </animation>
+	
+  	<model>
+  		<name>Driver_quick_glance_over_shoulder_right</name>
+  		<path>Aircraft/Kawa-ZX10R/Models/Driver/driver_special_r.xml</path>
+  	</model>
+
+    <animation>
+      <type>select</type>
+      <object-name>Driver_quick_glance_over_shoulder_right</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <property>sim/multiplay/generic/int[5]</property>
+      </condition>
+    </animation>
+ 
+  <!-- right left -->
+  <animation>
+	  <type>rotate</type>
+      <object-name>RPM</object-name>
+      <object-name>SI</object-name>
+      <object-name>SL</object-name>
+      <object-name>TRANSPONDER</object-name>
+      <object-name>REARLIGHT</object-name>
+      <object-name>OEHLINS</object-name>
+      <object-name>oehlinssup</object-name>
+      <object-name>oehlinssup.001</object-name>
+      <object-name>Driver</object-name>
+      <object-name>Driver_quick_glance_over_shoulder</object-name>
+      <object-name>Driver_quick_glance_over_shoulder_right</object-name>
+      <object-name>carrd</object-name>
+      <object-name>carrd01</object-name>
+      <object-name>carrd03</object-name>
+      <object-name>screws</object-name>
+      <object-name>carrd04</object-name>
+      <object-name>carrd05</object-name>
+      <object-name>carrd06</object-name>
+      <object-name>carrd07</object-name>
+      <object-name>kawacro</object-name>
+      <object-name>kawadi</object-name>
+      <object-name>kawae</object-name>
+      <object-name>kawae01</object-name>
+      <object-name>kawaex</object-name>
+      <object-name>kawaf</object-name>
+      <object-name>kawagb</object-name>
+      <object-name>kawagb.001</object-name>
+      <object-name>kawagls</object-name>
+      <object-name>kawagls03</object-name>
+      <object-name>kawaholder</object-name>
+      <object-name>kawalk01</object-name>
+      <object-name>kawam01</object-name>
+      <object-name>kawam2</object-name>
+      <object-name>kawam4</object-name>
+      <object-name>kawam5</object-name>
+      <object-name>kawam6</object-name>
+      <object-name>kawam7</object-name>
+      <object-name>kawam8</object-name>
+      <object-name>kawamu</object-name>
+      <object-name>kawap1</object-name>
+      <object-name>kawap2</object-name>
+      <object-name>kawapl3</object-name>
+      <object-name>kawar1</object-name>
+      <object-name>kawaw</object-name>
+      <object-name>kawaw01</object-name>
+      <object-name>starter</object-name> 
+      <condition>
+        <not>
+          <equals>
+          <property>sim/current-view/name</property>
+          <value type="string">Cockpit View</value>
+          </equals>
+        </not>
+      </condition>
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <interpolation>
+  		  <entry><ind>-1.0 </ind><dep>    57 </dep></entry>
+          <entry><ind>-0.3 </ind><dep>    57 </dep></entry>
+          <entry><ind> 0 </ind><dep>     0 </dep></entry>
+          <entry><ind> 0.3 </ind><dep>   -57 </dep></entry>
+          <entry><ind> 1.0 </ind><dep>   -57 </dep></entry>
+        </interpolation>
+        <center>
+         <x-m> 0.0</x-m>
+         <y-m> 0.0</y-m>
+         <z-m>-0.175</z-m>
+        </center>
+        <axis>
+          <x>  1 </x>
+          <y>  0 </y>
+          <z>  0 </z>
+        </axis>
+      </animation>
+	
+  <animation>
+	  <type>rotate</type>
+      <object-name>RPM</object-name>
+      <object-name>SI</object-name>
+      <object-name>SL</object-name>
+      <object-name>TRANSPONDER</object-name>
+	  <object-name>REARLIGHT</object-name>
+      <object-name>OEHLINS</object-name>
+      <object-name>oehlinssup</object-name>
+      <object-name>oehlinssup.001</object-name>
+      <object-name>Driver</object-name>
+      <object-name>Driver_quick_glance_over_shoulder</object-name>
+      <object-name>Driver_quick_glance_over_shoulder_right</object-name>
+      <object-name>carrd</object-name>
+      <object-name>carrd01</object-name>
+      <object-name>carrd03</object-name>
+      <object-name>screws</object-name>
+      <object-name>carrd04</object-name>
+      <object-name>carrd05</object-name>
+      <object-name>carrd06</object-name>
+      <object-name>carrd07</object-name>
+      <object-name>kawacro</object-name>
+      <object-name>kawadi</object-name>
+      <object-name>kawae</object-name>
+      <object-name>kawae01</object-name>
+      <object-name>kawaex</object-name>
+      <object-name>kawaf</object-name>
+      <object-name>kawagb</object-name>
+      <object-name>kawagb.001</object-name>
+      <object-name>kawagls</object-name>
+      <object-name>kawagls03</object-name>
+      <object-name>kawaholder</object-name>
+      <object-name>kawalk01</object-name>
+      <object-name>kawam01</object-name>
+      <object-name>kawam2</object-name>
+      <object-name>kawam4</object-name>
+      <object-name>kawam5</object-name>
+      <object-name>kawam6</object-name>
+      <object-name>kawam7</object-name>
+      <object-name>kawam8</object-name>
+      <object-name>kawamu</object-name>
+      <object-name>kawap1</object-name>
+      <object-name>kawap2</object-name>
+      <object-name>kawapl3</object-name>
+      <object-name>kawar1</object-name>
+      <object-name>kawaw</object-name>
+      <object-name>kawaw01</object-name>
+      <object-name>starter</object-name> 
+      <condition>
+        <equals>
+          <property>sim/current-view/name</property>
+          <value type="string">Cockpit View</value>
+        </equals>
+      </condition> 
+      <property>surface-positions/left-aileron-pos-norm</property>
+      <interpolation>
+		<entry><ind>-1.0 </ind><dep>    42 </dep></entry>
+        <entry><ind>-0.2 </ind><dep>    42 </dep></entry>
+        <entry><ind> 0 </ind><dep>     0 </dep></entry>
+        <entry><ind> 0.2 </ind><dep>   -42 </dep></entry>
+        <entry><ind> 1.0 </ind><dep>   -42 </dep></entry>
+      </interpolation>
+      <center>
+       <x-m> 0.0</x-m>
+       <y-m> 0.0</y-m>
+       <z-m>-0.175</z-m>
+      </center>
+      <axis>
+        <x>  1 </x>
+        <y>  0 </y>
+        <z>  0 </z>
+      </axis>
+    </animation>
+
+    <!-- front fork -->
+    <animation>
+  	  <type>rotate</type>
+        <object-name>SL</object-name>
+        <object-name>OEHLINS</object-name>
+        <object-name>oehlinssup.001</object-name>
+        <object-name>carrd05</object-name>
+        <object-name>carrd06</object-name>
+        <object-name>carrd07</object-name>
+        <object-name>kawadi</object-name>
+        <object-name>kawae</object-name>
+        <object-name>kawam2</object-name>
+        <object-name>kawam4</object-name>
+        <object-name>kawam5</object-name>
+        <object-name>kawam6</object-name>
+        <object-name>kawam7</object-name>
+        <object-name>kawam8</object-name>
+        <object-name>kawap1</object-name>
+        <object-name>kawap2</object-name>
+        <object-name>kawaw</object-name>
+	    <object-name>starter</object-name>
+        <property>surface-positions/rudder-pos-norm</property>
+        <interpolation>
+          <entry><ind> -1 </ind><dep> -20 </dep></entry>
+          <entry><ind>  0 </ind><dep>  0 </dep></entry>
+          <entry><ind>  1 </ind><dep>  20 </dep></entry>
+        </interpolation>
+        <axis>   
+          <x1-m> -0.4961</x1-m>
+          <y1-m>  0.0</y1-m>
+          <z1-m>  0.9231</z1-m>
+          <x2-m> -0.6059</x2-m>
+          <y2-m>  0.00</y2-m>
+          <z2-m>  0.6766</z2-m>
+        </axis>
+      </animation>
+	  
+      <animation>
+          <type>translate</type>
+          <object-name>carrd05</object-name>
+          <object-name>kawadi</object-name>
+          <object-name>kawae</object-name>
+          <object-name>kawam2</object-name>
+          <object-name>kawam4</object-name>
+          <object-name>kawap1</object-name>
+          <object-name>kawap2</object-name>
+          <object-name>kawaw</object-name>
+          <property>sim/multiplay/generic/float[2]</property>
+          <factor>-0.08</factor>
+	          <axis>   
+	            <x1-m> -0.4961</x1-m>
+	            <y1-m>  0.0</y1-m>
+	            <z1-m>  0.9231</z1-m>
+	            <x2-m> -0.6059</x2-m>
+	            <y2-m>  0.00</y2-m>
+	            <z2-m>  0.6766</z2-m>
+	          </axis>
+      </animation>
+	  
+	  <!-- rear wheel suspension -->
+      <animation>
+          <type>rotate</type>
+          <object-name>kawae01</object-name>
+          <object-name>kawagb.001</object-name>
+          <object-name>kawagls</object-name>
+          <object-name>kawaex</object-name>
+          <object-name>kawapl3</object-name>
+          <object-name>kawaw01</object-name>
+          <object-name>kawaholder</object-name>
+          <property>sim/multiplay/generic/float[5]</property>
+          <factor>-10</factor>
+	      <center>
+	       <x-m>0.17</x-m>
+	       <y-m>0.0</y-m>
+	       <z-m>0.252</z-m>
+	      </center>
+	      <axis>
+	        <x>  0 </x>
+	        <y>  1 </y>
+	        <z>  0 </z>
+	      </axis>
+      </animation>
+
+     <animation>
+         <type>rotate</type>
+         <object-name>carrd07</object-name>
+	  <condition>
+	    <greater-than>
+	      <property>/controls/flight/throttle-input</property>
+	     <value>0</value>
+	    </greater-than>
+	  </condition>
+      <property>/controls/flight/throttle-input</property>
+         <factor>-90</factor>
+         <axis>   
+          <x1-m> -0.4703</x1-m>
+          <y1-m>  0.3574</y1-m>
+          <z1-m>  0.8301</z1-m>
+          <x2-m> -0.5583</x2-m>
+          <y2-m>  0.1752</y2-m>
+          <z2-m>  0.8785</z2-m>
+         </axis>
+       </animation>
+
+		<!-- clutch -->
+        <animation>
+            <type>rotate</type>
+            <object-name>kawam7</object-name>
+            <property>/engines/engine/clutch</property>
+            <factor>15/</factor>
+		      <center>
+		       <x-m> -0.593</x-m>
+		       <y-m> -0.164</y-m>
+		       <z-m>0.891</z-m>
+		      </center>
+		      <axis>
+		        <x>  0 </x>
+		        <y>  0 </y>
+		        <z>  1 </z>
+		      </axis>
+		    </animation>
+			
+		<!-- front brake -->
+        <animation>
+            <type>rotate</type>
+            <object-name>kawam8</object-name>
+            <property>/controls/gear/brake-left</property>
+            <factor>-15</factor>
+		      <center>
+		       <x-m> -0.594</x-m>
+		       <y-m>  0.155</y-m>
+		       <z-m>0.908</z-m>
+		      </center>
+		      <axis>
+		        <x>  0 </x>
+		        <y>  0 </y>
+		        <z>  1 </z>
+		      </axis>
+		    </animation>
+
+		    <animation>
+		        <type>pick</type>
+		        <object-name>starter</object-name>
+				<visible>true</visible>
+		        <action>
+		 	    <button>0</button>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/start-idling</property>
+				</binding>         
+		        </action>
+		    </animation>	
+
+	        <animation>
+	            <type>rotate</type>
+	            <object-name>starter</object-name>
+                <property>/controls/engines/engine/starter</property>
+	            <factor>2</factor>
+			      <center>
+			       <x-m> -0.587</x-m>
+			       <y-m>  0.121</y-m>
+			       <z-m>0.931</z-m>
+			      </center>
+			      <axis>
+			        <x>  1 </x>
+			        <y>  0 </y>
+			        <z>  0 </z>
+			      </axis>
+			    </animation>  
+	  
+ <!-- Wheel rollspeed -->
+
+  <animation>
+   <object-name>kawae</object-name>
+   <object-name>kawap2</object-name>
+   <object-name>kawaw</object-name>
+   <property>sim/multiplay/generic/float[0]</property>
+   <type>spin</type>
+   <factor>26</factor>
+   <center>
+    <x-m> -0.8694</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 0.182</z-m>
+   </center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+  </animation>
+  
+  <animation>
+   <object-name>kawae01</object-name>
+   <object-name>kawapl3</object-name>
+   <object-name>kawaw01</object-name>
+   <object-name>kawagls</object-name>
+   <property>sim/multiplay/generic/float[1]</property>
+   <type>spin</type>
+   <factor>26</factor>
+   <center>
+    <x-m> 0.7641</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 0.198</z-m>
+   </center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+  </animation>
+
+</PropertyList>
