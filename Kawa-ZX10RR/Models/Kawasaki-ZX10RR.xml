@@ -7,13 +7,13 @@
 -->
 
 <PropertyList>
-  <path>Kawa-ZX-R.ac</path> 
+  <path>Kawa-ZX-RR.ac</path> 
   
-  <sound><path>Aircraft/Kawa-ZX10R/Sounds/Kawa-ZX10R_mp-sound.xml</path></sound>
+  <sound><path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Sounds/mp-sound.xml</path></sound>
 
   <nasal>
     <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/Kawa-ZX10R/Models/Liveries", 10);
+      var livery_update = aircraft.livery_update.new("Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Models/Liveries", 10);
     </load>
 
     <unload>
@@ -164,7 +164,7 @@
   <!-- shadow without rembrandt -->
 	<model>
 		<name>NewShadow</name>
-		<path>Aircraft/Kawa-ZX10R/Models/shadow.xml</path>
+		<path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Models/shadow.xml</path>
 	    <offsets>
 	      <x-m>  0.0 </x-m>
 	      <y-m>  0.0 </y-m>
@@ -186,7 +186,7 @@
   <!-- 1. SPEED --> 
   <model>
 	<name>RPM</name>
-    <path>Aircraft/Kawa-ZX10R/Models/Instruments/combi/combi.xml</path>
+    <path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Models/Instruments/combi/combi.xml</path>
     <offsets>
       <x-m> -0.683 </x-m>
       <y-m> -0.002 </y-m>
@@ -197,7 +197,7 @@
   
   <model>
 	<name>SL</name>
-    <path>Aircraft/Kawa-ZX10R/Models/Instruments/sl/speedlimiter.xml</path>
+    <path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Models/Instruments/sl/speedlimiter.xml</path>
     <offsets>
       <x-m> -0.589 </x-m>
       <y-m> -0.094 </y-m>
@@ -208,7 +208,7 @@
   
   <model>
 	<name>TRANSPONDER</name>
-    <path>Aircraft/Kawa-ZX10R/Models/Instruments/transponder/transponder.xml</path>
+    <path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Models/Instruments/transponder/transponder.xml</path>
     <offsets>
         <x-m> -0.68</x-m>
         <y-m> 0.08</y-m>
@@ -237,7 +237,7 @@
   
   <model>
 	<name>OEHLINS</name>
-    <path>Aircraft/Kawa-ZX10R/Models/Instruments/oehlins/oehlins.xml</path>
+    <path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Models/Instruments/oehlins/oehlins.xml</path>
     <offsets>
         <x-m> -0.48 </x-m>
         <y-m> 0.0</y-m>
@@ -247,7 +247,7 @@
   
   <model>
 	<name>SMOKE</name>
-    <path>Aircraft/Kawa-ZX10R/Effects/smoke.xml</path>
+    <path>Aircraft/Motorcycle-Racing/MR-Effects/smoke.xml</path>
     <offsets>
       <x-m> -0.352 </x-m>
       <y-m>  0.0 </y-m>
@@ -257,7 +257,7 @@
   
   <model>
 	<name>SMOKE-LIGHT</name>
-    <path>Aircraft/Kawa-ZX10R/Effects/smoke-light.xml</path>
+    <path>Aircraft/Motorcycle-Racing/MR-Effects/smoke-light.xml</path>
     <offsets>
       <x-m> -0.352 </x-m>
       <y-m>  0.0 </y-m>
@@ -289,7 +289,7 @@
   
   <model>
 	<name>REARLIGHT</name>
-    <path>Aircraft/Kawa-ZX10R/Models/Lights/rearlight.xml</path>
+    <path>Aircraft/Motorcycle-Racing/MR-Lights/rearlight.xml</path>
     <offsets>
       <x-m>0.9 </x-m>
       <y-m>  0.0 </y-m>
@@ -311,7 +311,7 @@
   <!-- Driver -->
   	<model>
   		<name>Driver</name>
-  		<path>Aircraft/Kawa-ZX10R/Models/Driver/driver.xml</path>
+  		<path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Models/Driver/driver.xml</path>
   	</model>
 	
     <animation>
@@ -329,7 +329,7 @@
 	
   	<model>
   		<name>Driver_quick_glance_over_shoulder</name>
-  		<path>Aircraft/Kawa-ZX10R/Models/Driver/driver_special.xml</path>
+  		<path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Models/Driver/driver_special.xml</path>
   	</model>
 
     <animation>
@@ -345,7 +345,7 @@
 	
   	<model>
   		<name>Driver_quick_glance_over_shoulder_right</name>
-  		<path>Aircraft/Kawa-ZX10R/Models/Driver/driver_special_r.xml</path>
+  		<path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Models/Driver/driver_special_r.xml</path>
   	</model>
 
     <animation>
