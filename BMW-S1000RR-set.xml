@@ -1,47 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--###################################################################################
-	This file is part of Motorcycle-Racing for flightgear from the Lake of Constance Hangar
-
-	This Motorcycle basis package is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 2 of the License, or
-	(at your option) any later version.
-
-	The extra500 is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with extra500.  If not, see <http://www.gnu.org/licenses/>.
-
-	Author: Marc Kraus
-	Date: 2016-09-10
-
-	Lake of Constance Hangar
-	http://www.marc-kraus.de/fg/
-	###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		BMW-S-1000-RR for Flightgear September 2014
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
 -->
 <PropertyList include="motorcycle-basis.xml">
  <sim>
-		<description>Kawa-ZX10RR</description>
-		<author>LAKE OF CONSTANCE HANGAR :: Marc Kraus</author>
+		<description>BMW-S1000RR</description>
+		<author>LAKE OF CONSTANCE HANGAR :: M.Kraus</author>
 		<aircraft-version>0.0.1</aircraft-version>
 		<status>alpha</status>
 		<flight-model>yasim</flight-model>
-		<aero>Kawa-ZX10RR-yasim</aero>
+		<aero>BMW-S1000RR-yasim</aero>
 
 		<sound>
-			<path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Sounds/sound.xml</path>
+			<path>Aircraft/Motorcycle-Racing/BMW-S-RR/Sounds/sound.xml</path>
 		</sound>
 
 		<model>
-			<path>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Models/Kawa-ZX10RR.xml</path>
+			<path>Aircraft/Motorcycle-Racing/BMW-S-RR/Models/BMW-S1000RR.xml</path>
 		</model> 
 
 		<startup>
-			<splash-texture>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/splash-Kawa-ZX10RR.png</splash-texture>
+			<splash-texture>Aircraft/Motorcycle-Racing/BMW-S-RR/splash-S-1000-RR.png</splash-texture>
 		</startup>
+
+		<fuel-fraction>1.0</fuel-fraction>
 
 		<virtual-cockpit archive="y">true</virtual-cockpit>
 		<allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
@@ -54,9 +39,9 @@
 			 </limits>
 			  <!-- x/y/z == right/up/back -->
 				<x-offset-m archive="y" type="double">0.0</x-offset-m>
-				<y-offset-m archive="y" type="double">2.19</y-offset-m>  <!-- up-down -->
+				<y-offset-m archive="y" type="double">1.32</y-offset-m>  <!-- up-down -->
 				<z-offset-m archive="y" type="double">-0.13</z-offset-m> <!-- fore-back -->
-				<pitch-offset-deg>-6</pitch-offset-deg>
+				<pitch-offset-deg>-8</pitch-offset-deg>
 				<default-field-of-view-deg type="double">72</default-field-of-view-deg>
 			</config>
 		</view>
@@ -97,12 +82,14 @@
 			</config>
 		</view>
 
-
+		<hud>
+		<enable3d>false</enable3d>
+		</hud>
 
 	<menubar>
 		<default>
 		<menu n="10">
-			<label>Kawa-ZX10RR</label>
+			<label>S-1000-RR</label>
 			<enabled type="bool">true</enabled>
 			<item>
 				<label>--- Tools ---</label>
@@ -203,7 +190,7 @@
     <weight n="1">
       <name>Backwheel</name>
       <weight-lb>0</weight-lb>
-      <max-lb>300</max-lb>
+      <max-lb>200</max-lb>
       <min-lb>0</min-lb>
     </weight>
 		
@@ -217,21 +204,21 @@
 	 <setting>0.0</setting> 
 	</flaps>
 
- </sim>
+</sim>
 
 <!-- -NASAL- -->
- <nasal>
-  <motorcycle>
-   <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
-   <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
-   <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
+<nasal>
+ <motorcycle>
+  <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
+  <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
+  <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
 
-   <file>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Systems/view.nas</file>
-   <file>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Systems/gearbox.nas</file>
-   <file>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Systems/liveries.nas</file>
-  </motorcycle>
- </nasal>
- 
+  <file>Aircraft/Motorcycle-Racing/BMW-S-RR/Systems/view.nas</file>
+  <file>Aircraft/Motorcycle-Racing/BMW-S-RR/Systems/gearbox.nas</file>
+  <file>Aircraft/Motorcycle-Racing/BMW-S-RR/Systems/liveries.nas</file>
+ </motorcycle>
+</nasal>
+
 </PropertyList>
 
 

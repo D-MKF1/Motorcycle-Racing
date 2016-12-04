@@ -119,6 +119,14 @@ var wp1cc = [-39.93776583,175.05011601,9.0,"Start/Finish"];
 # Ground Marker Position Heads Rd - lat,lon,alt in meter
 var wp2cc = [-39.93978927,175.04952614,7.0,"Heads Road"];
 
+##### New Zealand - Taupo - Bruce McLarren Sportpark
+
+# Ground Marker Position Start/Finish - lat,lon,alt in meter
+var wp1ta = [-38.66251437,176.14646883,9.0,"Start/Finish"];
+
+# Ground Marker Position 2 - lat,lon,alt in meter
+var wp2ta = [-38.66478676,176.14327962,7.0,"Turn 8 to 9"];
+
 ##### Czech - Terlicko
 
 # Ground Marker Position Start/Finish - lat,lon,alt in meter
@@ -244,6 +252,7 @@ var sectors_ugp = [wp1ugp, wp2ugp];
 var sectors_mgp = [wp1mgp, wp2mgp, wp3mgp];
 var sectors_kal = [wp1kal, wp2kal, wp3kal];
 var sectors_hd = [wp1hd, wp2hd];
+var sectors_ta = [wp1ta, wp2ta];
 var sectors_mf = [wp1mf, wp2mf];
 var sectors_cc = [wp1cc, wp2cc];
 var sectors_ct = [wp1ct, wp2ct, wp3ct];
@@ -494,6 +503,9 @@ var find_marker = func{
 	marker_wp_pos.set_latlon(wp1cc[0], wp1cc[1]);
 	var dis_to_CC = marker_wp_pos.distance_to(mypos);
 	
+	marker_wp_pos.set_latlon(wp1ta[0], wp1ta[1]);
+	var dis_to_TA = marker_wp_pos.distance_to(mypos);
+	
 	marker_wp_pos.set_latlon(wp1mf[0], wp1mf[1]);
 	var dis_to_MF = marker_wp_pos.distance_to(mypos);
 	
@@ -552,6 +564,10 @@ var find_marker = func{
 		#print("Hampton Downs Welcome");
 		sectors = sectors_hd;
 		pa = "HD";
+	}else if(dis_to_TA < 10000){
+		#print("Lake Taupo - Welcome");
+		sectors = sectors_ta;
+		pa = "TA";
 	}else if(dis_to_MF < 10000){
 		#print("Manfeild - New Zealand");
 		sectors = sectors_mf;

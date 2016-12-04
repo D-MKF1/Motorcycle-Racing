@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: L.Negrassus 
+		Honda-CBR1000RR for Flightgear Januar 2016
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">No.8 Guy Martin</name>
+            <texture>Liveries/Honda-CBR1000RR-GMartin.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

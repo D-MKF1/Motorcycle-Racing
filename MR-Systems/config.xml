@@ -121,11 +121,27 @@
   	  <group>
   	    <layout>hbox</layout>
   	    <text>
-  	      <label>Estland - Piritat-Kose-Klostrimetas Kalevi Circuit (EETN) ... </label>
+  	      <label>Estland - Piritat-Kose-Klostrimetsa Kalevi Circuit (EETN) ... </label>
   	      <halign>left</halign>
   	    </text>
   	    <input>
   	      <property>/Motorcycle/KAL/race-laps</property>
+  	      <type>INTEGER</type>
+  	    </input>
+  	    <text>
+  	      <label>laps</label>
+  	      <halign>right</halign>
+  	    </text>
+  	  </group>
+
+  	  <group>
+  	    <layout>hbox</layout>
+  	    <text>
+  	      <label>New Zealand - Taupo - Bruce McLaren Sportpark (NZAP)  </label>
+  	      <halign>left</halign>
+  	    </text>
+  	    <input>
+  	      <property>/Motorcycle/TA/race-laps</property>
   	      <type>INTEGER</type>
   	    </input>
   	    <text>

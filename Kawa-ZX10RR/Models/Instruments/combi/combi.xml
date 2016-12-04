@@ -78,7 +78,7 @@
 	</effect>
 
 	<model>
-	<path>Aircraft/Motorcycle/Models/Lights/lightcone-mini.xml</path>
+	<path>Aircraft/Motorcycle-Racing/MR-Lights/lightcone-mini.xml</path>
 	<name>lights</name>
 	<offsets>   
 	  <x-m> 0.25</x-m>

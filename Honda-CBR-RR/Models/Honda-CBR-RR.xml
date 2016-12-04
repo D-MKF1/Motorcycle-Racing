@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: L.Negrassus 
+		Honda-CBR1000RR for Flightgear Januar 2016
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+
+  <path>Honda-CBR1000RR.ac</path>  
+  
+  <sound><path>Aircraft/Motorcycle-Racing/Honda-CBR-RR/Sounds/mp-sound.xml</path></sound>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Motorcycle-Racing/Honda-CBR-RR/Models/Liveries", 10);
+    </load>
+
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+  
+  <offsets>
+    <z-m>0.1</z-m>
+  </offsets>
+
+  <animation>
+    <type>material</type>
+    <object-name>oehlinssup</object-name>
+    <object-name>oehlinssup.001</object-name>
+    <object-name>carrd</object-name>
+    <object-name>carrd01</object-name>
+    <object-name>carrd03</object-name>
+    <object-name>carrd03.inner</object-name>
+    <object-name>carrd04</object-name>
+    <object-name>carrd05</object-name>
+    <object-name>carrd06</object-name>
+    <object-name>carrd07</object-name>
+    <object-name>duccro</object-name>
+    <object-name>ducdi</object-name>
+    <object-name>duce</object-name>
+    <object-name>duce01</object-name>
+    <object-name>ducex</object-name>
+    <object-name>ducf</object-name>
+    <object-name>ducgb</object-name>
+    <object-name>ducgb.001</object-name>
+    <object-name>ducgls</object-name>
+    <object-name>ducholder</object-name>
+    <object-name>duclk01</object-name>
+    <object-name>ducm01</object-name>
+    <object-name>ducm2</object-name>
+    <object-name>ducm3</object-name>
+    <object-name>ducm4</object-name>
+    <object-name>ducm5</object-name>
+    <object-name>ducm6</object-name>
+    <object-name>ducm7</object-name>
+    <object-name>ducm8</object-name>
+    <object-name>ducmu</object-name>
+    <object-name>ducp1</object-name>
+    <object-name>ducp2</object-name>
+    <object-name>ducpl3</object-name>
+    <object-name>ducr1</object-name>
+    <object-name>ducw</object-name>
+    <object-name>ducw01</object-name>
+    <object-name>starter</object-name>
+    <object-name>tube2</object-name>
+    <object-name>tube3</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>Honda-CBR1000RR.png</texture>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>ducholder</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+	  <type>rotate</type>
+      <object-name>ducholder</object-name>
+      <property>sim/multiplay/generic/float[3]</property>
+      <factor>50</factor>
+      <center>
+       <x-m> 0.83</x-m>
+       <y-m> 0.0</y-m>
+       <z-m> 0.215</z-m>
+      </center>
+      <axis>
+       <x>0</x>
+       <y>1</y>
+       <z>0</z>
+      </axis>
+    </animation>
+	
+    <effect>
+    	<inherits-from>Effects/model-transparent</inherits-from>
+    	<object-name>ducgls03</object-name>
+    </effect>
+  
+  <!-- shadow without rembrandt -->
+	<model>
+		<name>NewShadow</name>
+		<path>Aircraft/Motorcycle-Racing/Honda-CBR-RR/Models/shadow.xml</path>
+	    <offsets>
+	       <x-m> 0 </x-m>
+	       <y-m> 0 </y-m>
+	       <z-m> 0.02 </z-m>
+      	   <pitch-deg>2</pitch-deg>
+	    </offsets>
+	</model>
+
+	<animation>
+		<type>select</type>
+		<object-name>NewShadow</object-name>
+		<condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+			<not><property>sim/multiplay/generic/int[3]</property></not>
+		</condition>
+	</animation>
+  
+  <!-- 1. SPEED --> 
+  <model>
+	<name>COMBI</name>
+    <path>Aircraft/Motorcycle-Racing/Honda-CBR-RR/Models/Instruments/combi/combi.xml</path>
+    <offsets>
+       <x-m> -0.70 </x-m>
+       <y-m>-0.01 </y-m>
+       <z-m> 0.92 </z-m>
+      <pitch-deg> -50 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>TACHO</name>
+    <path>Aircraft/Motorcycle-Racing/Honda-CBR-RR/Models/Instruments/tacho/tacho.xml</path>
+    <offsets>
+       <x-m> -0.70 </x-m>
+       <y-m> 0.0 </y-m>
+       <z-m> 0.91 </z-m>
+      <pitch-deg> -50 </pitch-deg>
+    </offsets>
+  </model>
+  
+
+<animation>
+	<type>select</type>
+	<object-name>COMBI</object-name>
+    <condition>
+      <not>
+	      <equals>
+	        <property>sim/model/livery/file</property>
+	        <value>martin</value>
+	      </equals>
+      </not>
+      <not>
+	      <equals>
+	        <property>sim/model/livery/file</property>
+	        <value>mcguinness</value>
+	      </equals>
+      </not>
+    </condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>TACHO</object-name>
+    <condition>
+		<or>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>martin</value>
+      </equals>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>mcguinness</value>
+      </equals>
+  </or>
+    </condition>
+</animation> 
+
+  <model>
+	<name>SL</name>
+    <path>Aircraft/Motorcycle-Racing/Honda-CBR-RR/Models/Instruments/sl/speedlimiter.xml</path>
+    <offsets>
+        <x-m> -0.58 </x-m>
+        <y-m>-0.17 </y-m>
+        <z-m> 0.9 </z-m>
+      <heading-deg>22 </heading-deg>
+      <roll-deg> 10 </roll-deg>
+    </offsets>
+  </model>
+ 
+  <model>
+	<name>TRANSPONDER</name>
+    <path>Aircraft/Motorcycle-Racing/Honda-CBR-RR/Models/Instruments/transponder/transponder.xml</path>
+    <offsets>
+        <x-m> -0.67 </x-m>
+        <y-m> 0.02</y-m>
+        <z-m> 0.815 </z-m>
+      <roll-deg> 45 </roll-deg>
+      <heading-deg> 90 </heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>TRANSPONDER</object-name>
+    <condition>
+	 <or>
+		<equals>
+        	<property>sim/menubar/default/menu[14]/item[0]/name</property>
+			<value>Button_1</value>
+		</equals>
+		<equals>
+        	<property>i-am-a-racebike</property>
+			<value>1</value>
+		</equals>		
+	 </or>
+    </condition>
+  </animation>  
+  
+  <model>
+	<name>OEHLINS</name>
+    <path>Aircraft/Motorcycle-Racing/Honda-CBR-RR/Models/Instruments/oehlins/oehlins.xml</path>
+    <offsets>
+        <x-m> -0.46 </x-m>
+        <y-m> 0.0</y-m>
+        <z-m> 0.915 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+	<name>SMOKE</name>
+    <path>Aircraft/Motorcycle-Racing/MR-Effects/smoke.xml</path>
+    <offsets>
+      <x-m> -0.352 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  0.43 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>SMOKE-LIGHT</name>
+    <path>Aircraft/Motorcycle-Racing/MR-Effects/smoke-light.xml</path>
+    <offsets>
+      <x-m> -0.352 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  0.43 </z-m>
+    </offsets>
+  </model>
+   
+  <animation>
+    <type>select</type>
+    <object-name>SMOKE</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[4]</property>
+		<value>0.9</value>
+      </greater-than>
+    </condition>
+  </animation>
+   
+  <animation>
+    <type>select</type>
+    <object-name>SMOKE-LIGHT</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[4]</property>
+		<value>0.2</value>
+      </greater-than>
+    </condition>
+  </animation>
+  
+  <model>
+	<name>REARLIGHT</name>
+    <path>Aircraft/Motorcycle-Racing/MR-Lights/rearlight.xml</path>
+    <offsets>
+      <x-m>0.77 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>0.85 </z-m>
+    </offsets>
+  </model>
+  
+<animation>
+  <type>select</type>
+  <object-name>REARLIGHT</object-name>
+  <condition>
+	<greater-than>
+ 		<property>/sim/time/sun-angle-rad</property>
+		<value>1.4</value>
+	</greater-than>
+ </condition>
+</animation>
+   
+  <!-- Driver -->
+  	<model>
+  		<name>Driver</name>
+  		<path>Aircraft/Motorcycle-Racing/Honda-CBR-RR/Models/Driver/driver.xml</path>
+  	</model>
+	
+    <animation>
+      <type>select</type>
+      <object-name>Driver</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <not>
+          <property>sim/multiplay/generic/int[4]</property>
+        </not>
+        <not>
+          <property>sim/multiplay/generic/int[5]</property>
+        </not>
+      </condition>
+    </animation>
+	
+  	<model>
+  		<name>Driver_quick_glance_over_shoulder</name>
+  		<path>Aircraft/Motorcycle-Racing/Honda-CBR-RR/Models/Driver/driver_special.xml</path>
+  	</model>
+
+    <animation>
+      <type>select</type>
+      <object-name>Driver_quick_glance_over_shoulder</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <property>sim/multiplay/generic/int[4]</property>
+      </condition>
+    </animation>
+	
+  	<model>
+  		<name>Driver_quick_glance_over_shoulder_right</name>
+  		<path>Aircraft/Motorcycle-Racing/Honda-CBR-RR/Models/Driver/driver_special_r.xml</path>
+  	</model>
+
+    <animation>
+      <type>select</type>
+      <object-name>Driver_quick_glance_over_shoulder_right</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <property>sim/multiplay/generic/int[5]</property>
+      </condition>
+    </animation>	
+		
+ 
+  <!-- right left -->
+  <animation>
+	  <type>rotate</type>
+      <object-name>COMBI</object-name>
+      <object-name>TACHO</object-name>
+      <object-name>SL</object-name>
+      <object-name>TRANSPONDER</object-name>
+      <object-name>REARLIGHT</object-name>
+      <object-name>OEHLINS</object-name>
+      <object-name>oehlinssup</object-name>
+      <object-name>oehlinssup.001</object-name>
+      <object-name>Driver</object-name>
+  	  <object-name>Driver_quick_glance_over_shoulder</object-name>
+  	  <object-name>Driver_quick_glance_over_shoulder_right</object-name>
+      <object-name>carrd</object-name>
+      <object-name>carrd01</object-name>
+      <object-name>carrd03</object-name>
+      <object-name>carrd03.inner</object-name>
+      <object-name>carrd04</object-name>
+      <object-name>carrd05</object-name>
+      <object-name>carrd06</object-name>
+      <object-name>carrd07</object-name>
+      <object-name>duccro</object-name>
+      <object-name>ducdi</object-name>
+      <object-name>duce</object-name>
+      <object-name>duce01</object-name>
+      <object-name>ducex</object-name>
+      <object-name>ducf</object-name>
+      <object-name>ducgb</object-name>
+      <object-name>ducgb.001</object-name>
+      <object-name>ducgls</object-name>
+      <object-name>ducgls03</object-name>
+      <object-name>ducholder</object-name>
+      <object-name>duclk01</object-name>
+      <object-name>ducm01</object-name>
+      <object-name>ducm2</object-name>
+      <object-name>ducm3</object-name>
+      <object-name>ducm4</object-name>
+      <object-name>ducm5</object-name>
+      <object-name>ducm6</object-name>
+      <object-name>ducm7</object-name>
+      <object-name>ducm8</object-name>
+      <object-name>ducmu</object-name>
+      <object-name>ducp1</object-name>
+      <object-name>ducp2</object-name>
+      <object-name>ducpl3</object-name>
+      <object-name>ducr1</object-name>
+      <object-name>ducw</object-name>
+      <object-name>ducw01</object-name>
+      <object-name>starter</object-name> 
+      <object-name>tube2</object-name>
+      <object-name>tube3</object-name>
+    <condition>
+      <not>
+        <equals>
+        <property>sim/current-view/name</property>
+        <value type="string">Cockpit View</value>
+        </equals>
+      </not>
+    </condition>
+      <property>surface-positions/left-aileron-pos-norm</property>
+      <interpolation>
+		  <entry><ind>-1.0 </ind><dep>    57 </dep></entry>
+        <entry><ind>-0.3 </ind><dep>    57 </dep></entry>
+        <entry><ind> 0 </ind><dep>     0 </dep></entry>
+        <entry><ind> 0.3 </ind><dep>   -57 </dep></entry>
+        <entry><ind> 1.0 </ind><dep>   -57 </dep></entry>
+      </interpolation>
+      <center>
+       <x-m> 0.0</x-m>
+       <y-m> 0.0</y-m>
+       <z-m>-0.175</z-m>
+      </center>
+      <axis>
+        <x>  1 </x>
+        <y>  0 </y>
+        <z>  0 </z>
+      </axis>
+    </animation>
+	
+  <animation>
+	  <type>rotate</type>
+      <object-name>COMBI</object-name>
+      <object-name>TACHO</object-name>
+      <object-name>SL</object-name>
+      <object-name>TRANSPONDER</object-name>
+	  <object-name>REARLIGHT</object-name>
+      <object-name>OEHLINS</object-name>
+      <object-name>oehlinssup</object-name>
+      <object-name>oehlinssup.001</object-name>
+      <object-name>Driver</object-name>
+  	  <object-name>Driver_quick_glance_over_shoulder</object-name>
+  	  <object-name>Driver_quick_glance_over_shoulder_right</object-name>
+      <object-name>carrd</object-name>
+      <object-name>carrd01</object-name>
+      <object-name>carrd03</object-name>
+      <object-name>carrd03.inner</object-name>
+      <object-name>carrd04</object-name>
+      <object-name>carrd05</object-name>
+      <object-name>carrd06</object-name>
+      <object-name>carrd07</object-name>
+      <object-name>duccro</object-name>
+      <object-name>ducdi</object-name>
+      <object-name>duce</object-name>
+      <object-name>duce01</object-name>
+      <object-name>ducex</object-name>
+      <object-name>ducf</object-name>
+      <object-name>ducgb</object-name>
+      <object-name>ducgb.001</object-name>
+      <object-name>ducgls</object-name>
+      <object-name>ducgls03</object-name>
+      <object-name>ducholder</object-name>
+      <object-name>duclk01</object-name>
+      <object-name>ducm01</object-name>
+      <object-name>ducm2</object-name>
+      <object-name>ducm3</object-name>
+      <object-name>ducm4</object-name>
+      <object-name>ducm5</object-name>
+      <object-name>ducm6</object-name>
+      <object-name>ducm7</object-name>
+      <object-name>ducm8</object-name>
+      <object-name>ducmu</object-name>
+      <object-name>ducp1</object-name>
+      <object-name>ducp2</object-name>
+      <object-name>ducpl3</object-name>
+      <object-name>ducr1</object-name>
+      <object-name>ducw</object-name>
+      <object-name>ducw01</object-name>
+      <object-name>starter</object-name> 
+      <object-name>tube2</object-name>
+      <object-name>tube3</object-name>
+      <condition>
+        <equals>
+          <property>sim/current-view/name</property>
+          <value type="string">Cockpit View</value>
+        </equals>
+      </condition> 
+      <property>surface-positions/left-aileron-pos-norm</property>
+      <interpolation>
+		<entry><ind>-1.0 </ind><dep>    42 </dep></entry>
+        <entry><ind>-0.2 </ind><dep>    42 </dep></entry>
+        <entry><ind> 0 </ind><dep>     0 </dep></entry>
+        <entry><ind> 0.2 </ind><dep>   -42 </dep></entry>
+        <entry><ind> 1.0 </ind><dep>   -42 </dep></entry>
+      </interpolation>
+      <center>
+       <x-m> 0.0</x-m>
+       <y-m> 0.0</y-m>
+       <z-m>-0.175</z-m>
+      </center>
+      <axis>
+        <x>  1 </x>
+        <y>  0 </y>
+        <z>  0 </z>
+      </axis>
+    </animation>
+
+    <!-- front fork -->
+    <animation>
+  	  <type>rotate</type>
+        <object-name>SL</object-name>
+        <object-name>OEHLINS</object-name>
+        <object-name>oehlinssup.001</object-name>
+        <object-name>carrd05</object-name>
+        <object-name>carrd06</object-name>
+        <object-name>carrd07</object-name>
+        <object-name>ducdi</object-name>
+        <object-name>duce</object-name>
+        <object-name>ducm2</object-name>
+        <object-name>ducm4</object-name>
+        <object-name>ducm5</object-name>
+        <object-name>ducm6</object-name>
+        <object-name>ducm7</object-name>
+        <object-name>ducm8</object-name>
+        <object-name>ducp1</object-name>
+        <object-name>ducp2</object-name>
+        <object-name>ducw</object-name>
+	    <object-name>starter</object-name>
+        <object-name>tube2</object-name>
+        <property>surface-positions/rudder-pos-norm</property>
+        <interpolation>
+          <entry><ind> -1 </ind><dep> -20 </dep></entry>
+          <entry><ind>  0 </ind><dep>  0 </dep></entry>
+          <entry><ind>  1 </ind><dep>  20 </dep></entry>
+        </interpolation>
+        <axis>   
+          <x1-m> -0.4961</x1-m>
+          <y1-m>  0.0</y1-m>
+          <z1-m>  0.9231</z1-m>
+          <x2-m> -0.6059</x2-m>
+          <y2-m>  0.00</y2-m>
+          <z2-m>  0.6766</z2-m>
+        </axis>
+      </animation>
+	  
+      <animation>
+          <type>translate</type>
+          <object-name>carrd05</object-name>
+          <object-name>ducdi</object-name>
+          <object-name>duce</object-name>
+          <object-name>ducm2</object-name>
+          <object-name>ducm4</object-name>
+          <object-name>ducp1</object-name>
+          <object-name>ducp2</object-name>
+          <object-name>ducw</object-name>
+          <property>sim/multiplay/generic/float[2]</property>
+          <factor>-0.05</factor>
+	          <axis>   
+	            <x1-m> -0.4961</x1-m>
+	            <y1-m>  0.0</y1-m>
+	            <z1-m>  0.9231</z1-m>
+	            <x2-m> -0.6059</x2-m>
+	            <y2-m>  0.00</y2-m>
+	            <z2-m>  0.6766</z2-m>
+	          </axis>
+      </animation>
+
+  	  <!-- rear wheel suspension -->
+        <animation>
+            <type>rotate</type>
+            <object-name>duce01</object-name>
+            <object-name>ducgb.001</object-name>
+            <object-name>ducgls</object-name>
+            <object-name>ducex</object-name>
+            <object-name>ducpl3</object-name>
+            <object-name>ducw01</object-name>
+            <object-name>ducholder</object-name>
+            <property>sim/multiplay/generic/float[5]</property>
+            <factor>-7</factor>
+  	      <center>
+  	       <x-m>0.176</x-m>
+  	       <y-m>0.0</y-m>
+  	       <z-m>0.262</z-m>
+  	      </center>
+  	      <axis>
+  	        <x>  0 </x>
+  	        <y>  1 </y>
+  	        <z>  0 </z>
+  	      </axis>
+        </animation>
+
+      <animation>
+          <type>rotate</type>
+          <object-name>carrd07</object-name>
+		  <condition>
+		    <greater-than>
+		     <property>/controls/flight/throttle-input</property>
+		     <value>0</value>
+		    </greater-than>
+		  </condition>
+	     <property>/controls/flight/throttle-input</property>
+          <factor>-90</factor>
+          <axis>   
+	          <x1-m> -0.4703</x1-m>
+	          <y1-m>  0.3574</y1-m>
+	          <z1-m>  0.8301</z1-m>
+	          <x2-m> -0.5583</x2-m>
+	          <y2-m>  0.1752</y2-m>
+	          <z2-m>  0.8785</z2-m>
+          </axis>
+        </animation>
+
+		<!-- clutch -->
+        <animation>
+            <type>rotate</type>
+            <object-name>ducm7</object-name>
+            <property>/engines/engine/clutch</property>
+            <factor>15/</factor>
+		      <center>
+		       <x-m> -0.593</x-m>
+		       <y-m> -0.164</y-m>
+		       <z-m>0.891</z-m>
+		      </center>
+		      <axis>
+		        <x>  0 </x>
+		        <y>  0 </y>
+		        <z>  1 </z>
+		      </axis>
+		    </animation>
+			
+		<!-- front brake -->
+        <animation>
+            <type>rotate</type>
+            <object-name>ducm8</object-name>
+            <property>/controls/gear/brake-left</property>
+            <factor>-15</factor>
+		      <center>
+		       <x-m> -0.594</x-m>
+		       <y-m>  0.155</y-m>
+		       <z-m>0.908</z-m>
+		      </center>
+		      <axis>
+		        <x>  0 </x>
+		        <y>  0 </y>
+		        <z>  1 </z>
+		      </axis>
+		    </animation>
+
+		    <animation>
+		        <type>pick</type>
+		        <object-name>starter</object-name>
+				<visible>true</visible>
+		        <action>
+		 	    <button>0</button>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/start-idling</property>
+				</binding>         
+		        </action>
+		    </animation>	
+
+	        <animation>
+	            <type>rotate</type>
+	            <object-name>starter</object-name>
+                <property>/controls/engines/engine/starter</property>
+	            <factor>3</factor>
+			      <center>
+			       <x-m> -0.587</x-m>
+			       <y-m>  0.121</y-m>
+			       <z-m>0.931</z-m>
+			      </center>
+			      <axis>
+			        <x>  0 </x>
+			        <y>  0 </y>
+			        <z>  -1 </z>
+			      </axis>
+			    </animation>  
+	  
+ <!-- Wheel rollspeed -->
+
+  <animation>
+   <object-name>duce</object-name>
+   <object-name>ducp2</object-name>
+   <object-name>ducw</object-name>
+   <property>sim/multiplay/generic/float[0]</property>
+   <type>spin</type>
+   <factor>26</factor>
+   <center>
+    <x-m> -0.8694</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 0.182</z-m>
+   </center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+  </animation>
+  
+  <animation>
+   <object-name>duce01</object-name>
+   <object-name>ducpl3</object-name>
+   <object-name>ducw01</object-name>
+   <object-name>ducgls</object-name>
+   <property>sim/multiplay/generic/float[1]</property>
+   <type>spin</type>
+   <factor>26</factor>
+   <center>
+       <x-m> 0.83</x-m>
+       <y-m> 0.0</y-m>
+       <z-m> 0.215</z-m>
+   </center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+  </animation>
+
+</PropertyList>

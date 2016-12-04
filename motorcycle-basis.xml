@@ -135,6 +135,9 @@ and have fun!</text>
 		<path>/Motorcycle/KAL/sector[0]/fastest-time</path>
 		<path>/Motorcycle/KAL/sector[1]/fastest-time</path>
 		<path>/Motorcycle/KAL/sector[2]/fastest-time</path>
+		<path>/Motorcycle/TA/fastest-lap</path>
+		<path>/Motorcycle/TA/sector[0]/fastest-time</path>
+		<path>/Motorcycle/TA/sector[1]/fastest-time</path>
 		<path>/Motorcycle/HD/fastest-lap</path>
 		<path>/Motorcycle/HD/sector[0]/fastest-time</path>
 		<path>/Motorcycle/HD/sector[1]/fastest-time</path>
@@ -534,7 +537,63 @@ and have fun!</text>
 		<lap n="11">
 			<actual-time type="float">0.0</actual-time>
 		</lap>
-	</KAL>
+	</KAL>	
+	<TA>
+		<race-laps type="int">12</race-laps>
+		<fastest-lap type="float">0.0</fastest-lap>
+		<sector n="0">
+			<start-time type="float">0.0</start-time>
+			<last-time type="float">0.0</last-time>	
+			<fastest-time type="float">0.0</fastest-time>
+		</sector>
+		<sector n="1">
+			<start-time type="float">0.0</start-time>
+			<last-time type="float">0.0</last-time>		
+			<fastest-time type="float">0.0</fastest-time>
+		</sector>
+		<lap n="0">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="1">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="2">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="3">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="4">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="5">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="6">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="7">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="8">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="9">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="10">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="11">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="12">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+		<lap n="13">
+			<actual-time type="float">0.0</actual-time>
+		</lap>
+	</TA>
 	<HD>
 		<race-laps type="int">12</race-laps>
 		<fastest-lap type="float">0.0</fastest-lap>
