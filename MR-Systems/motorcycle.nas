@@ -332,6 +332,8 @@ setlistener("sim/model/start-idling", func()
    {
    		if( !waiting.getValue() ){
 			setprop("/controls/waiting", 1);
+			setprop("/sim/presets/parkpos","");
+			setprop("/sim/presets/heading-deg", getprop("/orientation/heading-deg"));
 			setprop("/devices/status/keyboard/event/key",60); # overwrite the key event
 			setprop("sim/current-view/view-number", 1);
 			shutdown();
