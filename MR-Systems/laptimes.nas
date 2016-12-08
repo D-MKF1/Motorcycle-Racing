@@ -505,6 +505,8 @@ var find_marker = func{
 	
 	marker_wp_pos.set_latlon(wp1ta[0], wp1ta[1]);
 	var dis_to_TA = marker_wp_pos.distance_to(mypos);
+
+	screen.log.write("Welcome to NW200 "~dis_to_NW200, 1.0, 0.0, 0.0);
 	
 	marker_wp_pos.set_latlon(wp1mf[0], wp1mf[1]);
 	var dis_to_MF = marker_wp_pos.distance_to(mypos);
@@ -721,9 +723,11 @@ var find_marker = func{
 }
 
 ###################### START RESULT CALCULATION ###########################
-
-find_marker();
-
+MotorINIT = setlistener("/sim/signals/fdm-initialized", func {
+  find_marker();
+  removelistener(MotorINIT);
+  }
+);
 
 var clear_race_datas = func{
 
