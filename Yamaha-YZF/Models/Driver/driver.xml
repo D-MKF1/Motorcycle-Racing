@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+	Lake of Constance Hangar :: M.Kraus
+	BMW S 1000 RR for Flightgear September 2014
+	This file is licenced under the terms of the GNU General Public Licence V2 or later
+	###################################################################################
+-->
+
+<PropertyList>
+
+  <path>driver.ac</path>	
+  <animation>
+    <type>noshadow</type>
+    <object-name>helm.001</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>helm.001</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>corpsMichael</object-name>
+    <object-name>helm</object-name>
+  	<object-name>hair</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeG</object-name>
+    <object-name>jambeD</object-name>
+    <object-name>piedG</object-name>
+    <object-name>piedD</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>rossi</value>
+      </equals>
+    </condition>
+    <texture>ValentinoRossi_driver.png</texture>
+  </animation>
+  
+
+  <animation>
+    <type>material</type>
+    <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>corpsMichael</object-name>
+    <object-name>helm</object-name>
+  	<object-name>hair</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeG</object-name>
+    <object-name>jambeD</object-name>
+    <object-name>piedG</object-name>
+    <object-name>piedD</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>lorenzo</value>
+      </equals>
+    </condition>
+    <texture>JorgeLorenzo_driver.png</texture>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>corpsMichael</object-name>
+    <object-name>helm</object-name>
+  	<object-name>hair</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeG</object-name>
+    <object-name>jambeD</object-name>
+    <object-name>piedG</object-name>
+    <object-name>piedD</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>dunlop</value>
+      </equals>
+    </condition>
+    <texture>MichaelDunlop_driver.png</texture>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>corpsMichael</object-name>
+    <object-name>helm</object-name>
+  	<object-name>hair</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeG</object-name>
+    <object-name>jambeD</object-name>
+    <object-name>piedG</object-name>
+    <object-name>piedD</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>team</value>
+      </equals>
+    </condition>
+    <texture>Team_driver.png</texture>
+  </animation>
+  
+  <animation>
+  <type>select</type>
+  <object-name>hair</object-name>
+	  <condition>
+	    <equals>
+	      <property>sim/model/livery/file</property>
+	      <value>tinmouth</value>
+	    </equals>
+	  </condition>
+  </animation>
+
+  <animation>
+  <type>select</type>
+  <object-name>tete</object-name>
+  <object-name>helm</object-name>
+  <object-name>helm.001</object-name>
+  <object-name>corps</object-name>
+  <object-name>corpsMichael</object-name>
+  <object-name>gilet</object-name>
+  <object-name>giletMichael</object-name>
+  <object-name>hair</object-name>
+  <object-name>brasD</object-name>
+  <object-name>brasG</object-name>
+    <condition>
+      <not>
+        <equals>
+        <property>sim/current-view/name</property>
+        <value type="string">Cockpit View</value>
+        </equals>
+      </not>
+    </condition>
+  </animation>
+  
+  <animation>
+  <type>select</type>
+    <object-name>corps</object-name>
+    <condition>
+	      <not>
+	        <equals>
+		        <property>sim/model/livery/file</property>
+		        <value>dunlop</value>
+	        </equals>
+	      </not>
+    </condition>
+  </animation>
+  
+  <animation>
+  <type>select</type>
+    <object-name>corpsMichael</object-name>
+    <condition>
+	        <equals>
+		        <property>sim/model/livery/file</property>
+		        <value>dunlop</value>
+	        </equals>
+    </condition>
+  </animation>
+    
+  <animation>
+  <type>select</type>
+  <object-name>gilet</object-name>
+    <condition>
+		<and>
+      	  <property>sim/multiplay/generic/int[0]</property>
+	      <not>
+	        <equals>
+		        <property>sim/model/livery/file</property>
+		        <value>dunlop</value>
+	        </equals>
+	      </not>
+	  </and>
+    </condition>
+  </animation>
+  
+  <animation>
+  <type>select</type>
+  <object-name>giletMichael</object-name>
+    <condition>
+		<and>
+      	  <property>sim/multiplay/generic/int[0]</property>
+	        <equals>
+		        <property>sim/model/livery/file</property>
+		        <value>dunlop</value>
+	        </equals>
+	  </and>
+    </condition>
+  </animation>
+  
+  <!-- animation while driving -->
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+    <object-name>hair</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-10</factor>
+    <center>
+      <x-m>-0.134 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.21 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+     
+  <animation>
+    <type>rotate</type>
+    <object-name>brasD</object-name>
+    <object-name>avantbrasD</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-6</factor>
+    <center>
+      <x-m>-0.363 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.148 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+     
+  <animation>
+    <type>rotate</type>
+    <object-name>brasG</object-name>
+    <object-name>avantbrasG</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>6</factor>
+    <center>
+      <x-m>-0.363 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.148 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>avantbrasD</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-6</factor>
+    <center>
+      <x-m>-0.132 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.769 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+
+  <animation>
+    <type>rotate</type>
+    <object-name>avantbrasG</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>4</factor>
+    <center>
+      <x-m>-0.132 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.769 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+      <type>translate</type>
+      <object-name>avantbrasD</object-name>
+      <property>surface-positions/rudder-pos-norm</property>
+      <factor>0.046</factor>
+      <axis>
+        <x> 1 </x>
+        <y> 0 </y>
+        <z> 0 </z>
+      </axis>
+  </animation>  
+  
+  <animation>
+      <type>translate</type>
+      <object-name>avantbrasG</object-name>
+      <property>surface-positions/rudder-pos-norm</property>
+      <factor>-0.052</factor>
+      <axis>
+        <x> 1 </x>
+        <y> 0 </y>
+        <z> 0 </z>
+      </axis>
+  </animation>
+  
+  <!-- legs while driving -->
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>cuisseG</object-name>
+    <object-name>jambeG</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 45 </dep></entry>
+      <entry><ind> -0.35 </ind><dep> 45 </dep></entry>
+      <entry><ind> -0.2 </ind><dep> 50 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m> 0.401 </x-m>
+	    <y-m>-0.153 </y-m>
+	    <z-m> 0.457 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>cuisseG</object-name>
+    <object-name>jambeG</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 18 </dep></entry>
+      <entry><ind> -0.35 </ind><dep> 18 </dep></entry>
+      <entry><ind> -0.2 </ind><dep> 0 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m> 0.383 </x-m>
+	    <y-m> 0.0 </y-m>
+	    <z-m> 0.864 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>jambeG</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -16 </dep></entry>
+      <entry><ind> -0.35 </ind><dep> -16 </dep></entry>
+      <entry><ind> -0.2 </ind><dep> 0 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m>-0.034 </x-m>
+	    <y-m> 0.0 </y-m>
+	    <z-m> 0.687 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeD</object-name>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -40 </dep></entry>
+      <entry><ind> -0.35 </ind><dep> -40 </dep></entry>
+      <entry><ind> -0.2 </ind><dep> -50 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.398 </x-m>
+      <y-m> 0.166 </y-m>
+      <z-m> 0.457 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeD</object-name>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 18 </dep></entry>
+      <entry><ind> -0.35 </ind><dep> 18 </dep></entry>
+      <entry><ind> -0.2 </ind><dep> 0 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m> 0.383 </x-m>
+	    <y-m> 0.0 </y-m>
+	    <z-m> 0.864 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>jambeD</object-name>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -16 </dep></entry>
+      <entry><ind> -0.35 </ind><dep> -16 </dep></entry>
+      <entry><ind> -0.2 </ind><dep> 0 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m>-0.034 </x-m>
+	    <y-m> 0.0 </y-m>
+	    <z-m> 0.687 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+  
+  <!-- animation in stand on wheelsholder -->  
+  <animation>
+    <type>rotate</type>
+ 	<object-name>hair</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>5</factor>
+    <center>
+      <x-m>-0.16 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.24 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>avantbrasG</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-53</factor>
+    <center>
+      <x-m> 0.325 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.075 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>avantbrasD</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-58</factor>
+    <center>
+      <x-m> 0.232 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.068 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+     
+  <animation>
+    <type>rotate</type>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-62</factor>
+    <center>
+      <x-m> 0.263 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.366 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+      
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>corpsMichael</object-name>
+    <object-name>gilet</object-name>
+    <object-name>giletMichael</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+ 	<object-name>hair</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>48</factor>
+    <center>
+      <x-m> 0.41 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.865 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>piedD</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-7</factor>
+    <center>
+      <x-m> 0.337 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m>-0.098 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>jambeD</object-name>
+    <object-name>piedD</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>85</factor>
+    <center>
+      <x-m> 0.184 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.41 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+      
+  <animation>
+    <type>rotate</type>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeD</object-name>
+    <object-name>piedD</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-43</factor>
+    <center>
+      <x-m> 0.42 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.825 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>piedG</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-7</factor>
+    <center>
+      <x-m> 0.337 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m>-0.098 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>jambeG</object-name>
+    <object-name>piedG</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>85</factor>
+    <center>
+      <x-m> 0.184 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.41 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+      
+  <animation>
+    <type>rotate</type>
+    <object-name>cuisseG</object-name>
+    <object-name>jambeG</object-name>
+    <object-name>piedG</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-43</factor>
+    <center>
+      <x-m> 0.42 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.825 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+  	<object-name>hair</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-40</factor>
+    <center>
+      <x-m>-0.141 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.118 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>tete</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+  	<object-name>hair</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>0.07</factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>helm.001</object-name>
+    <property>engines/engine/rpm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 30 </dep></entry>
+      <entry><ind> 2000 </ind><dep> 30 </dep></entry>
+      <entry><ind> 3000 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.345</x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.18 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>  
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+ 	<object-name>hair</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+  	<interpolation>
+    	<entry><ind> -1.0</ind><dep>   -50</dep></entry>
+    	<entry><ind> -0.3</ind><dep>   -50</dep></entry>
+    	<entry><ind>  0.0</ind><dep>    0.0</dep></entry>
+    	<entry><ind>  0.3</ind><dep>    50</dep></entry>
+    	<entry><ind>  1.0</ind><dep>    50</dep></entry>
+  	</interpolation>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.1233 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+
