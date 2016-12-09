@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+	Lake of Constance Hangar :: M.Kraus
+	Honda-RC213V for Flightgear August 2016
+	This file is licenced under the terms of the GNU General Public Licence V2 or later
+	###################################################################################
+	Tribute livery for the italian racer Marco Simoncellin. Killed in 2011 SCI
+-->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">No.58 Marco Simoncelli</name>
+            <texture>Liveries/Honda-RC211V-Simoncelli.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

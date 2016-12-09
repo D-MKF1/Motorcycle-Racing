@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Honda-RC213V for Flightgear April 2015
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+
+ <path>speedlimiter.ac</path>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>display</object-name>
+  <emission>
+	  <red>0.03</red>
+	  <green>0.03</green>
+	  <blue>0.03</blue>
+	  <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+ </animation>
+    
+<!-- selection -->
+    <animation>
+        <type>pick</type>
+        <object-name>box</object-name>
+        <object-name>switch</object-name>
+		<visible>true</visible>
+        <action>
+ 	    <button>0</button>
+            <binding>	    
+	    	  <command>property-toggle</command>
+			  <property>/instrumentation/Honda-RC213V/speed-indicator/speed-limiter-switch</property>
+			<step>1</step>
+			<min>0</min>
+			<max>1</max>
+			<wrap>1</wrap>		
+            </binding>           
+        </action>
+    </animation>	
+
+	 <animation>
+	    <type>translate</type>
+	    <object-name>switch</object-name>
+	    <property>/instrumentation/Honda-RC213V/speed-indicator/speed-limiter-switch</property>
+	    <factor>0.02</factor>
+	    <step>1</step>
+	    <axis>
+	        <x>0</x>
+	        <y>1</y>
+	        <z>0</z>
+	    </axis>
+	</animation>
+	
+	<animation>
+	  <type>rotate</type>
+	  <object-name>limiter</object-name>
+	  <property>/instrumentation/Honda-RC213V/speed-indicator/speed-limiter</property>
+	  <interpolation>
+	    <entry><ind>  0</ind><dep>    0</dep></entry>
+	    <entry><ind> 50</ind><dep> 46.0</dep></entry>
+	    <entry><ind>100</ind><dep>102.0</dep></entry>
+	    <entry><ind>150</ind><dep>156.0</dep></entry>
+	    <entry><ind>200</ind><dep>211.0</dep></entry>
+	    <entry><ind>250</ind><dep>268.0</dep></entry>
+	  </interpolation>
+	  <axis>
+	    <x>0</x>
+	    <y>0</y>
+	    <z>-1</z>
+	  </axis>
+	</animation>
+	
+	<!--  speed.set control -->
+	  <animation>
+	    <type>pick</type>
+	    <object-name>limiter</object-name>
+	    <visible>true</visible>
+	    <action>
+	        <button>3</button>
+	        <repeatable>true</repeatable>
+	        <binding>		          
+		          <condition>
+	            <not><property>devices/status/keyboard/shift</property></not>
+	            <not><property>devices/status/keyboard/super</property></not>
+			        </condition>
+		          <command>property-adjust</command>
+		          <property>/instrumentation/Honda-RC213V/speed-indicator/speed-limiter</property>
+		          <step>1</step>
+		          <min>0</min>
+		          <max>250</max>
+		          <wrap>0</wrap>
+	        </binding>
+	        <binding>		          
+		          <condition>
+	           <or>
+	            <property>devices/status/keyboard/shift</property>
+	            <property>devices/status/keyboard/super</property>
+	           </or>
+			        </condition>
+		          <command>property-adjust</command>
+		          <property>/instrumentation/Honda-RC213V/speed-indicator/speed-limiter</property>
+		          <step>5</step>
+		          <min>0</min>
+		          <max>250</max>
+		          <wrap>0</wrap>
+	        </binding>
+	        <binding>
+	          <command>property-toggle</command>
+	          <property>/sim/sound/switch3</property>
+	        </binding>
+	    </action>
+	    <action>
+	        <button>4</button>
+	        <repeatable>true</repeatable>
+	        <binding>		          
+		          <condition>
+	            <not><property>devices/status/keyboard/shift</property></not>
+	            <not><property>devices/status/keyboard/super</property></not>
+			        </condition>
+	        <command>property-adjust</command>
+	        <property>/instrumentation/Honda-RC213V/speed-indicator/speed-limiter</property>
+	        <step>-1</step>
+	        <min>0</min>
+	        <max>250</max>
+	        <wrap>0</wrap>
+	        </binding>            
+	        <binding>		          
+		          <condition>
+	           <or>
+	            <property>devices/status/keyboard/shift</property>
+	            <property>devices/status/keyboard/super</property>
+	           </or>
+			        </condition>
+	        <command>property-adjust</command>
+	        <property>/instrumentation/Honda-RC213V/speed-indicator/speed-limiter</property>
+	        <step>-5</step>
+	        <min>0</min>
+	        <max>250</max>
+	        <wrap>0</wrap>
+	        </binding>
+	    </action>
+	    <action>
+	      <name>increase</name>
+	      <button>0</button>
+	      <repeatable>true</repeatable>
+	      <binding>
+	        <command>property-adjust</command>
+	        <property>/instrumentation/Honda-RC213V/speed-indicator/speed-limiter</property>
+	        <step>10</step>
+	        <min>0</min>
+	        <max>250</max>
+	        <wrap>0</wrap>
+	      </binding>
+	    </action>
+	    <action>
+	      <name>decrease</name>
+	      <button>1</button>
+	      <repeatable>true</repeatable>
+	      <binding>
+	        <command>property-adjust</command>
+	        <property>/instrumentation/Honda-RC213V/speed-indicator/speed-limiter</property>
+	        <step>-10</step>
+	        <min>0</min>
+	        <max>250</max>
+	        <wrap>0</wrap>
+	      </binding>
+	    </action>
+	  </animation>
+  
+</PropertyList>
+
+

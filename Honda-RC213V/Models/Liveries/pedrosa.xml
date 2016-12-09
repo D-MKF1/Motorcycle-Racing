@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+	Lake of Constance Hangar :: M.Kraus
+	Honda-RC213V for Flightgear August 2014
+	This file is licenced under the terms of the GNU General Public Licence V2 or later
+	###################################################################################
+-->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">No.26 Dani Pedrosa</name>
+            <texture>Honda-RC213V.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

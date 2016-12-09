@@ -223,7 +223,7 @@ and have fun!</text>
 	          <label>Race settings</label>
 	          <binding>
 	            <command>nasal</command>
-	            <script>yamaha.config_dlg.open()</script>
+	            <script>motorcycle.config_dlg.open()</script>
 	          </binding>
 	        </item>
 		</menu>
