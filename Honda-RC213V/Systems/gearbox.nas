@@ -33,12 +33,12 @@ var maxrpm = 19500;
 var newrpm = 0;
 var clutchrpm = 0;
 var maxhealth = 40; # for the engine killing, higher is longer live while overspeed rpm
-var speedlimiter = props.globals.getNode("/instrumentation/Honda-RC213V/speed-indicator/speed-limiter");
-var speedlimstate = props.globals.getNode("/instrumentation/Honda-RC213V/speed-indicator/speed-limiter-switch");
+var speedlimiter = props.globals.getNode("/instrumentation/Motorcycle/speed-indicator/speed-limiter");
+var speedlimstate = props.globals.getNode("/instrumentation/Motorcycle/speed-indicator/speed-limiter-switch");
 var speed = 0;
 var gspeed = 0;
-var ascon = props.globals.initNode("/controls/Honda-RC213V/SCS/on-off",1,"BOOL");
-var akrapovic = props.globals.initNode("/controls/Honda-RC213V/Akrapovic/fit",0,"BOOL");
+var ascon = props.globals.initNode("/controls/Motorcycle/SCS/on-off",1,"BOOL");
+var akrapovic = props.globals.initNode("/controls/Motorcycle/Akrapovic/fit",0,"BOOL");
 
 ###########################################################################
 
@@ -46,12 +46,12 @@ var loop = func {
 
 	var msec = getprop("/gear/gear/rollspeed-ms") or 0;
 	var kmh = msec*3600/1000;
-	var gefahrenem = getprop("/instrumentation/Honda-RC213V/distance-calculator/mzaehler") or 0;
-	var tagesm = getprop("/instrumentation/Honda-RC213V/distance-calculator/dmzaehler") or 0;
+	var gefahrenem = getprop("/instrumentation/Motorcycle/distance-calculator/mzaehler") or 0;
+	var tagesm = getprop("/instrumentation/Motorcycle/distance-calculator/dmzaehler") or 0;
 	gefahrenem = gefahrenem + msec/8*1.16;  # 0.125 sec * 8 / 1.16 correction value for the wheel dimension
 	tagesm = tagesm + msec/8*1.16;
-	setprop("/instrumentation/Honda-RC213V/distance-calculator/mzaehler", gefahrenem);
-	setprop("/instrumentation/Honda-RC213V/distance-calculator/dmzaehler", tagesm);
+	setprop("/instrumentation/Motorcycle/distance-calculator/mzaehler", gefahrenem);
+	setprop("/instrumentation/Motorcycle/distance-calculator/dmzaehler", tagesm);
 
 	# properties for ABS and SCS at the bottom of this script
 	var comp_m = getprop("/gear/gear[1]/compression-m") or 0;
@@ -231,7 +231,7 @@ var loop = func {
 			rpm.setValue(clutchrpm);
 		}
 		
-		speed = getprop("/instrumentation/Honda-RC213V/speed-indicator/speed-meter");
+		speed = getprop("/instrumentation/Motorcycle/speed-indicator/speed-meter");
 		
 		if(speed > 5 and (lastthrottle > throttle.getValue() or throttle.getValue() <= 0) and clutch.getValue() == 0 and gear.getValue() > 0){ 
 			propulsion.setValue(0);
@@ -249,21 +249,21 @@ var loop = func {
 				propulsion.setValue(0);
 				if (speed > 20) engine_brake.setValue(1);
 				rpm.setValue(maxrpm-1200);
-				setprop("/controls/Honda-RC213V/ctrl-light-overspeed", 1);
+				setprop("/controls/Motorcycle/ctrl-light-overspeed", 1);
 			}else{
-				setprop("/controls/Honda-RC213V/ctrl-light-overspeed", 1);
+				setprop("/controls/Motorcycle/ctrl-light-overspeed", 1);
 			}
 			
 		}else{
-			setprop("/controls/Honda-RC213V/ctrl-light-overspeed", 0);
+			setprop("/controls/Motorcycle/ctrl-light-overspeed", 0);
 		}
 
 		# Anti - slip regulation Honda called SCS
 		if(comp_m < 0.06 and brake_ctrl_right <= 0.5 and brake_ctrl_left <= 0.5 and gspeed > 70 and ascon.getValue() == 1){
 			propulsion.setValue(propulsion.getValue() + 0.25);
-			setprop("/controls/Honda-RC213V/SCS/ctrl-light", 1);
+			setprop("/controls/Motorcycle/SCS/ctrl-light", 1);
 		}else{
-			setprop("/controls/Honda-RC213V/SCS/ctrl-light", 0);
+			setprop("/controls/Motorcycle/SCS/ctrl-light", 0);
 		}
 		
 		#help_win.write(sprintf("Propulsion: %.2f", propulsion.getValue()));
@@ -291,14 +291,14 @@ var loop = func {
 	
 	# Anti - blog brake regulation
 	if(comp_m < 0.05 and brake_ctrl_right > 0.5 and brake_ctrl_left > 0.5 and gspeed > 50){
-		setprop("/controls/Honda-RC213V/ABS/ctrl-light", 1);
-		setprop("/controls/Honda-RC213V/ctrl-light-overspeed", 1);
-		setprop("/controls/Honda-RC213V/ABS/brake-right", brake_ctrl_right*0.34);
-		setprop("/controls/Honda-RC213V/ABS/brake-left", brake_ctrl_left*0.34);		
+		setprop("/controls/Motorcycle/ABS/ctrl-light", 1);
+		setprop("/controls/Motorcycle/ctrl-light-overspeed", 1);
+		setprop("/controls/Motorcycle/ABS/brake-right", brake_ctrl_right*0.34);
+		setprop("/controls/Motorcycle/ABS/brake-left", brake_ctrl_left*0.34);		
 	}else{
-		setprop("/controls/Honda-RC213V/ABS/ctrl-light", 0);
-		setprop("/controls/Honda-RC213V/ABS/brake-right", brake_ctrl_right);
-		setprop("/controls/Honda-RC213V/ABS/brake-left", brake_ctrl_left);
+		setprop("/controls/Motorcycle/ABS/ctrl-light", 0);
+		setprop("/controls/Motorcycle/ABS/brake-right", brake_ctrl_right);
+		setprop("/controls/Motorcycle/ABS/brake-left", brake_ctrl_left);
 	}
 	
 	lastthrottle = throttle.getValue();

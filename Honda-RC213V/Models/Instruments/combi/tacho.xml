@@ -139,7 +139,7 @@
 	        <not>
 	          <property>engines/engine/running</property>
 	        </not>
-	  	  	<property>controls/Honda-RC213V/SCS/ctrl-light</property>
+	  	  	<property>controls/Motorcycle/SCS/ctrl-light</property>
 		</or>
       </condition>
     </animation>
@@ -152,7 +152,7 @@
 	        <not>
 	          <property>engines/engine/running</property>
 	        </not>
-	        <property>controls/Honda-RC213V/ABS/ctrl-light</property>
+	        <property>controls/Motorcycle/ABS/ctrl-light</property>
 		</or>
       </condition>
     </animation>
@@ -165,7 +165,7 @@
 	        <not>
 	          <property>engines/engine/running</property>
 	        </not>
-	        <property>controls/Honda-RC213V/ctrl-light-overspeed</property>
+	        <property>controls/Motorcycle/ctrl-light-overspeed</property>
 		</or>
       </condition>
     </animation>
@@ -198,7 +198,7 @@
     </animation>
 	
 	<model>
-	<path>Aircraft/Honda-RC213V/Models/Lights/lightcone-mini.xml</path>
+	<path>Aircraft/Motorcycle/Models/Lights/lightcone-mini.xml</path>
 	<name>lights</name>
 	<offsets>   
 	  <x-m> 0.25</x-m>
@@ -245,7 +245,7 @@
       <type>select</type>
 		 <object-name>CTRL.eng</object-name>
       <condition>
-          <property>controls/Honda-RC213V/ctrl-light-overspeed</property>
+          <property>controls/Motorcycle/ctrl-light-overspeed</property>
       </condition>
     </animation>
 -->
@@ -255,7 +255,7 @@
    	 <animation>
    	    <type>textranslate</type>
    	    <object-name>digit-1</object-name>
-   	    <property>instrumentation/Honda-RC213V/speed-indicator/speed-meter</property>
+   	    <property>instrumentation/Motorcycle/speed-indicator/speed-meter</property>
    	    <factor>0.1</factor>
    	    <step>1</step>
    	    <bias>0.005</bias>
@@ -269,7 +269,7 @@
        <animation>
            <type>textranslate</type>
            <object-name>digit-10</object-name>
-           <property>instrumentation/Honda-RC213V/speed-indicator/speed-meter</property>
+           <property>instrumentation/Motorcycle/speed-indicator/speed-meter</property>
            <factor>0.01</factor>
            <step>10</step>
            <bias>0.005</bias>
@@ -283,7 +283,7 @@
        <animation>
            <type>textranslate</type>
            <object-name>digit-100</object-name>
-           <property>instrumentation/Honda-RC213V/speed-indicator/speed-meter</property>
+           <property>instrumentation/Motorcycle/speed-indicator/speed-meter</property>
            <factor>0.001</factor>
            <step>100</step>
            <bias>0.005</bias>
@@ -324,7 +324,7 @@
 	 	<object-name>d-ztkm.001</object-name>
          <condition>
    	        <not>
-				<property>instrumentation/Honda-RC213V/race-mode/selection</property>
+				<property>instrumentation/Motorcycle/race-mode/selection</property>
    	        </not>
          </condition>
        </animation>
@@ -353,7 +353,7 @@
 		 <object-name>dots</object-name>
 		 <object-name>digit-lap</object-name>
          <condition>
-   	        <property>instrumentation/Honda-RC213V/race-mode/selection</property>
+   	        <property>instrumentation/Motorcycle/race-mode/selection</property>
          </condition>
        </animation>	   
 
@@ -361,7 +361,7 @@
 	   	 <animation>
 	   	    <type>textranslate</type>
 	   	    <object-name>d-hms</object-name>
-	   	    <property>instrumentation/Honda-RC213V/distance-calculator/miles</property>
+	   	    <property>instrumentation/Motorcycle/distance-calculator/miles</property>
 	   	    <factor>0.001</factor>
 	   	    <step>100</step>
 	   	    <bias>0.005</bias>
@@ -375,7 +375,7 @@
      	 <animation>
      	    <type>textranslate</type>
      	    <object-name>d-km</object-name>
-     	    <property>instrumentation/Honda-RC213V/distance-calculator/miles</property>
+     	    <property>instrumentation/Motorcycle/distance-calculator/miles</property>
      	    <factor>0.0001</factor>
      	    <step>1000</step>
      	    <bias>0.005</bias>
@@ -389,7 +389,7 @@
          <animation>
              <type>textranslate</type>
              <object-name>d-zkm</object-name>
-             <property>instrumentation/Honda-RC213V/distance-calculator/miles</property>
+             <property>instrumentation/Motorcycle/distance-calculator/miles</property>
              <factor>0.00001</factor>
              <step>10000</step>
              <bias>0.005</bias>
@@ -403,7 +403,7 @@
          <animation>
              <type>textranslate</type>
              <object-name>d-hkm</object-name>
-             <property>instrumentation/Honda-RC213V/distance-calculator/miles</property>
+             <property>instrumentation/Motorcycle/distance-calculator/miles</property>
              <factor>0.000001</factor>
              <step>100000</step>
              <bias>0.005</bias>
@@ -417,7 +417,7 @@
          <animation>
              <type>textranslate</type>
              <object-name>d-tkm</object-name>
-             <property>instrumentation/Honda-RC213V/distance-calculator/miles</property>
+             <property>instrumentation/Motorcycle/distance-calculator/miles</property>
              <factor>0.0000001</factor>
              <step>1000000</step>
              <bias>0.005</bias>
@@ -431,7 +431,7 @@
          <animation>
              <type>textranslate</type>
              <object-name>d-ztkm</object-name>
-             <property>instrumentation/Honda-RC213V/distance-calculator/miles</property>
+             <property>instrumentation/Motorcycle/distance-calculator/miles</property>
              <factor>0.00000001</factor>
              <step>10000000</step>
              <bias>0.005</bias>
@@ -445,7 +445,7 @@
   	   	 <animation>
   	   	    <type>textranslate</type>
   	   	    <object-name>d-hms.001</object-name>
-  	   	    <property>instrumentation/Honda-RC213V/distance-calculator/dmiles</property>
+  	   	    <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
   	   	    <factor>0.001</factor>
   	   	    <step>100</step>
   	   	    <bias>0.005</bias>
@@ -459,7 +459,7 @@
        	 <animation>
        	    <type>textranslate</type>
        	    <object-name>d-km.001</object-name>
-       	    <property>instrumentation/Honda-RC213V/distance-calculator/dmiles</property>
+       	    <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
        	    <factor>0.0001</factor>
        	    <step>1000</step>
        	    <bias>0.005</bias>
@@ -473,7 +473,7 @@
            <animation>
                <type>textranslate</type>
                <object-name>d-zkm.001</object-name>
-               <property>instrumentation/Honda-RC213V/distance-calculator/dmiles</property>
+               <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
                <factor>0.00001</factor>
                <step>10000</step>
                <bias>0.005</bias>
@@ -487,7 +487,7 @@
            <animation>
                <type>textranslate</type>
                <object-name>d-hkm.001</object-name>
-               <property>instrumentation/Honda-RC213V/distance-calculator/dmiles</property>
+               <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
                <factor>0.000001</factor>
                <step>100000</step>
                <bias>0.005</bias>
@@ -501,7 +501,7 @@
            <animation>
                <type>textranslate</type>
                <object-name>d-tkm.001</object-name>
-               <property>instrumentation/Honda-RC213V/distance-calculator/dmiles</property>
+               <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
                <factor>0.0000001</factor>
                <step>1000000</step>
                <bias>0.005</bias>
@@ -515,7 +515,7 @@
            <animation>
                <type>textranslate</type>
                <object-name>d-ztkm.001</object-name>
-               <property>instrumentation/Honda-RC213V/distance-calculator/dmiles</property>
+               <property>instrumentation/Motorcycle/distance-calculator/dmiles</property>
                <factor>0.00000001</factor>
                <step>10000000</step>
                <bias>0.005</bias>
@@ -534,7 +534,7 @@
 	    	    <button>0</button>
 	               <binding>	    
 	   	    	  <command>property-assign</command>
-	   			  <property>instrumentation/Honda-RC213V/distance-calculator/dmzaehler</property>
+	   			  <property>instrumentation/Motorcycle/distance-calculator/dmzaehler</property>
 	   			  <value>0</value>	
 	               </binding>           
 	           </action>
@@ -543,7 +543,7 @@
    	 <animation>
    	    <type>textranslate</type>
    	    <object-name>arrow</object-name>
-   	    <property>instrumentation/Honda-RC213V/speed-indicator/selection</property>
+   	    <property>instrumentation/Motorcycle/speed-indicator/selection</property>
    	    <factor>0.1</factor>
    	    <step>1</step>
    	    <axis>
@@ -558,7 +558,7 @@
   	 <animation>
   	    <type>textranslate</type>
   	    <object-name>t-s-01</object-name>
-  	    <property>Honda-RC213V/this-sector-time-sec</property>
+  	    <property>Motorcycle/this-sector-time-sec</property>
   	    <factor>1</factor>
   	    <step>0.1</step>
   	    <bias>0.005</bias>
@@ -571,7 +571,7 @@
  	 <animation>
  	    <type>textranslate</type>
  	    <object-name>t-s-1</object-name>
- 	    <property>Honda-RC213V/this-sector-time-sec</property>
+ 	    <property>Motorcycle/this-sector-time-sec</property>
  	    <factor>0.1</factor>
  	    <step>1</step>
  	    <bias>0.005</bias>
@@ -584,7 +584,7 @@
  	 <animation>
  	    <type>textranslate</type>
  	    <object-name>t-s-10</object-name>
- 	    <property>Honda-RC213V/this-sector-time-sec</property>
+ 	    <property>Motorcycle/this-sector-time-sec</property>
  	    <factor>0.01</factor>
  	    <step>10</step>
  	    <bias>0.005</bias>
@@ -597,7 +597,7 @@
  	 <animation>
  	    <type>textranslate</type>
  	    <object-name>t-m-1</object-name>
- 	    <property>Honda-RC213V/this-sector-time-min</property>
+ 	    <property>Motorcycle/this-sector-time-min</property>
  	    <factor>0.1</factor>
  	    <step>1</step>
  	    <bias>0.005</bias>
@@ -610,7 +610,7 @@
  	 <animation>
  	    <type>textranslate</type>
  	    <object-name>t-m-10</object-name>
- 	    <property>Honda-RC213V/this-sector-time-min</property>
+ 	    <property>Motorcycle/this-sector-time-min</property>
  	    <factor>0.01</factor>
  	    <step>10</step>
  	    <bias>0.005</bias>
@@ -627,7 +627,7 @@
 		 <object-name>t-m-minus.001</object-name>
       <condition>  
 			 <greater-than>
-	          	<property>Honda-RC213V/this-lap-time-diff</property>
+	          	<property>Motorcycle/this-lap-time-diff</property>
 			  	<value>0</value>
 	        </greater-than>
       </condition>
@@ -638,7 +638,7 @@
 		 <object-name>t-m-plus.001</object-name>
       <condition>  
 			 <less-than>
-	          	<property>Honda-RC213V/this-lap-time-diff</property>
+	          	<property>Motorcycle/this-lap-time-diff</property>
 			  	<value>0</value>
 	        </less-than>
       </condition>
@@ -647,7 +647,7 @@
  	 <animation>
  	    <type>textranslate</type>
  	    <object-name>t-s-01.001</object-name>
- 	    <property>Honda-RC213V/this-lap-time-diff-s</property>
+ 	    <property>Motorcycle/this-lap-time-diff-s</property>
  	    <factor>1</factor>
  	    <step>0.1</step>
  	    <bias>0.005</bias>
@@ -660,7 +660,7 @@
 	 <animation>
 	    <type>textranslate</type>
 	    <object-name>t-s-1.001</object-name>
-	    <property>Honda-RC213V/this-lap-time-diff-s</property>
+	    <property>Motorcycle/this-lap-time-diff-s</property>
 	    <factor>0.1</factor>
 	    <step>1</step>
 	    <bias>0.005</bias>
@@ -673,7 +673,7 @@
 	 <animation>
 	    <type>textranslate</type>
 	    <object-name>t-s-10.001</object-name>
-	    <property>Honda-RC213V/this-lap-time-diff-s</property>
+	    <property>Motorcycle/this-lap-time-diff-s</property>
 	    <factor>0.01</factor>
 	    <step>10</step>
 	    <bias>0.005</bias>
@@ -686,7 +686,7 @@
 	 <animation>
 	    <type>textranslate</type>
 	    <object-name>t-m-1.001</object-name>
-	    <property>Honda-RC213V/this-lap-time-diff-m</property>
+	    <property>Motorcycle/this-lap-time-diff-m</property>
 	    <factor>0.1</factor>
 	    <step>1</step>
 	    <bias>0.005</bias>
@@ -700,7 +700,7 @@
   	 <animation>
   	    <type>textranslate</type>
   	    <object-name>t-m-10.001</object-name>
-  	    <property>Honda-RC213V/this-lap-time-diff-m</property>
+  	    <property>Motorcycle/this-lap-time-diff-m</property>
   	    <factor>1</factor>
   	    <step>0.1</step>
   	    <bias>0.005</bias>
@@ -715,7 +715,7 @@
   	 <animation>
   	    <type>textranslate</type>
   	    <object-name>t-s-01.002</object-name>
-  	    <property>Honda-RC213V/this-lap-time-sec</property>
+  	    <property>Motorcycle/this-lap-time-sec</property>
   	    <factor>1</factor>
   	    <step>0.1</step>
   	    <bias>0.005</bias>
@@ -728,7 +728,7 @@
  	 <animation>
  	    <type>textranslate</type>
  	    <object-name>t-s-1.002</object-name>
- 	    <property>Honda-RC213V/this-lap-time-sec</property>
+ 	    <property>Motorcycle/this-lap-time-sec</property>
  	    <factor>0.1</factor>
  	    <step>1</step>
  	    <bias>0.005</bias>
@@ -741,7 +741,7 @@
  	 <animation>
  	    <type>textranslate</type>
  	    <object-name>t-s-10.002</object-name>
- 	    <property>Honda-RC213V/this-lap-time-sec</property>
+ 	    <property>Motorcycle/this-lap-time-sec</property>
  	    <factor>0.01</factor>
  	    <step>10</step>
  	    <bias>0.005</bias>
@@ -754,7 +754,7 @@
  	 <animation>
  	    <type>textranslate</type>
  	    <object-name>t-m-1.002</object-name>
- 	    <property>Honda-RC213V/this-lap-time-min</property>
+ 	    <property>Motorcycle/this-lap-time-min</property>
  	    <factor>0.1</factor>
  	    <step>1</step>
  	    <bias>0.005</bias>
@@ -767,7 +767,7 @@
  	 <animation>
  	    <type>textranslate</type>
  	    <object-name>t-m-10.002</object-name>
- 	    <property>Honda-RC213V/this-lap-time-min</property>
+ 	    <property>Motorcycle/this-lap-time-min</property>
  	    <factor>0.01</factor>
  	    <step>10</step>
  	    <bias>0.005</bias>
@@ -780,7 +780,7 @@
 	 <animation>
 	    <type>textranslate</type>
 	    <object-name>t-h-1.002</object-name>
-	    <property>Honda-RC213V/this-lap-time-hour</property>
+	    <property>Motorcycle/this-lap-time-hour</property>
 	    <factor>0.1</factor>
 	    <step>1</step>
 	    <bias>0.005</bias>
@@ -793,7 +793,7 @@
 	 <animation>
 	    <type>textranslate</type>
 	    <object-name>t-h-10.002</object-name>
-	    <property>Honda-RC213V/this-lap-time-hour</property>
+	    <property>Motorcycle/this-lap-time-hour</property>
 	    <factor>0.01</factor>
 	    <step>10</step>
 	    <bias>0.005</bias>
@@ -807,7 +807,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>digit-lap</object-name>
-        <property>Honda-RC213V/race-lap</property>
+        <property>Motorcycle/race-lap</property>
         <factor>0.1</factor>
         <step>1</step>
         <bias>0.005</bias>
@@ -827,7 +827,7 @@
    	    <button>0</button>
               <binding>	    
   	    	  <command>property-toggle</command>
-  			<property>instrumentation/Honda-RC213V/speed-indicator/selection</property>
+  			<property>instrumentation/Motorcycle/speed-indicator/selection</property>
   			<step>1</step>
   			<min>0</min>
   			<max>1</max>
@@ -844,7 +844,7 @@
    	    <button>0</button>
               <binding>	    
   	    	  <command>property-toggle</command>
-  			<property>instrumentation/Honda-RC213V/race-mode/selection</property>
+  			<property>instrumentation/Motorcycle/race-mode/selection</property>
   			<step>1</step>
   			<min>0</min>
   			<max>1</max>
@@ -861,7 +861,7 @@
    	    <button>0</button>
               <binding>	    
   	    	  <command>property-toggle</command>
-  			<property>instrumentation/Honda-RC213V/race-mode/selection</property>
+  			<property>instrumentation/Motorcycle/race-mode/selection</property>
   			<step>1</step>
   			<min>0</min>
   			<max>1</max>

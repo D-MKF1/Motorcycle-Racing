@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--###################################################################################
 		Lake of Constance Hangar :: M.Kraus
-		Honda-RC213V for Flightgear April 2015
+		KTM-RC16 for Flightgear September 2016
 		This file is licenced under the terms of the GNU General Public Licence V2 or later
 		###################################################################################
 -->
@@ -11,7 +11,7 @@
  
   <engine>
         <name>engineidle</name>
-        <path>Aircraft/Honda-RC213V/Sounds/engine.wav</path>
+        <path>Aircraft/Motorcycle-Racing/MR-Sounds/engine.wav</path>
         <mode>looped</mode>
          <condition>
          <less-than> 
@@ -43,7 +43,7 @@
 
     <engine>
         <name>engine</name>
-        <path>Aircraft/Honda-RC213V/Sounds/engine-high.wav</path>
+        <path>Aircraft/Motorcycle-Racing/MR-Sounds/engine-high.wav</path>
         <mode>looped</mode>
          <condition>
           <greater-than>
@@ -71,7 +71,7 @@
 
     	<engine>
     	    <name>enginecrash</name>
-    	    <path>Aircraft/Honda-RC213V/Sounds/broken.wav</path>
+    	    <path>Aircraft/Motorcycle-Racing/MR-Sounds/broken.wav</path>
     	    <mode>once</mode>
     	     <condition>
   			 <greater-than>

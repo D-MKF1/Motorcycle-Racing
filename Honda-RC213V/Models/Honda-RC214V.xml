@@ -9,11 +9,11 @@
 <PropertyList>
   <path>Honda-RC213V.ac</path> 
   
-  <sound><path>Aircraft/Honda-RC213V/Sounds/mp-sound.xml</path></sound>
+  <sound><path>Aircraft/Motorcycle-Racing/Honda-RC213V/Sounds/mp-sound.xml</path></sound>
 
   <nasal>
     <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/Honda-RC213V/Models/Liveries", 10);
+      var livery_update = aircraft.livery_update.new("Aircraft/Motorcycle-Racing/Honda-RC213V/Models/Liveries", 10);
     </load>
 
     <unload>
@@ -104,7 +104,7 @@
   <!-- shadow without rembrandt -->
 	<model>
 		<name>NewShadow</name>
-		<path>Aircraft/Honda-RC213V/Models/shadow.xml</path>
+		<path>Aircraft/Motorcycle-Racing/Honda-RC213V/Models/shadow.xml</path>
 	    <offsets>
 	      <x-m>  0.0 </x-m>
 	      <y-m>  0.0 </y-m>
@@ -146,7 +146,7 @@
   <!-- 1. SPEED --> 
   <model>
 	<name>RPM</name>
-    <path>Aircraft/Honda-RC213V/Models/Instruments/combi/tacho.xml</path>
+    <path>Aircraft/Motorcycle-Racing/Honda-RC213V/Models/Instruments/combi/tacho.xml</path>
     <offsets>
       <x-m> -0.72 </x-m>
       <y-m> 0.0 </y-m>
@@ -157,7 +157,7 @@
   
   <model>
 	<name>SL</name>
-    <path>Aircraft/Honda-RC213V/Models/Instruments/sl/speedlimiter.xml</path>
+    <path>Aircraft/Motorcycle-Racing/Honda-RC213V/Models/Instruments/sl/speedlimiter.xml</path>
     <offsets>
       <x-m> -0.63 </x-m>
       <y-m> -0.07 </y-m>
@@ -168,7 +168,7 @@
   
   <model>
 	<name>TRANSPONDER</name>
-    <path>Aircraft/Honda-RC213V/Models/Instruments/transponder/transponder.xml</path>
+    <path>Aircraft/Motorcycle-Racing/Honda-RC213V/Models/Instruments/transponder/transponder.xml</path>
     <offsets>
         <x-m> -0.65 </x-m>
         <y-m> 0.07</y-m>
@@ -180,7 +180,7 @@
   
   <model>
 	<name>OEHLINS</name>
-    <path>Aircraft/Honda-RC213V/Models/Instruments/oehlins/oehlins.xml</path>
+    <path>Aircraft/Motorcycle-Racing/Honda-RC213V/Models/Instruments/oehlins/oehlins.xml</path>
     <offsets>
         <x-m> -0.46 </x-m>
         <y-m> 0.0</y-m>
@@ -207,7 +207,7 @@
   
   <model>
 	<name>SMOKE</name>
-    <path>Aircraft/Honda-RC213V/Effects/smoke.xml</path>
+    <path>Aircraft/Motorcycle-Racing/MR-Effects/smoke.xml</path>
     <offsets>
       <x-m> -0.352 </x-m>
       <y-m>  0.0 </y-m>
@@ -217,7 +217,7 @@
   
   <model>
 	<name>SMOKE-LIGHT</name>
-    <path>Aircraft/Honda-RC213V/Effects/smoke-light.xml</path>
+    <path>Aircraft/Motorcycle-Racing/MR-Effects/smoke-light.xml</path>
     <offsets>
       <x-m> -0.352 </x-m>
       <y-m>  0.0 </y-m>
@@ -249,7 +249,7 @@
   
   <model>
 	<name>REARLIGHT</name>
-    <path>Aircraft/Honda-RC213V/Models/Lights/rearlight.xml</path>
+    <path>Aircraft/Motorcycle-Racing/MR-Lights/rearlight.xml</path>
     <offsets>
       <x-m>0.6 </x-m>
       <y-m>  0.0 </y-m>
@@ -271,7 +271,7 @@
   <!-- Driver -->
   	<model>
   		<name>Driver</name>
-  		<path>Aircraft/Honda-RC213V/Models/Driver/driver.xml</path>
+  		<path>Aircraft/Motorcycle-Racing/Honda-RC213V/Models/Driver/driver.xml</path>
 	    <offsets>
 	      <x-m>  0.0 </x-m>
 	      <y-m>  0.0 </y-m>
@@ -294,7 +294,7 @@
 	
   	<model>
   		<name>Driver_quick_glance_over_shoulder</name>
-  		<path>Aircraft/Honda-RC213V/Models/Driver/driver_special.xml</path>
+  		<path>Aircraft/Motorcycle-Racing/Honda-RC213V/Models/Driver/driver_special.xml</path>
   	</model>
 
     <animation>
@@ -316,7 +316,7 @@
 	    <button>0</button>
         <binding>	    
     	  <command>property-toggle</command>
-		<property>controls/Honda-RC213V/Akrapovic/fit</property>
+		<property>controls/Motorcycle/Akrapovic/fit</property>
 		<step>1</step>
 		<min>0</min>
 		<max>1</max>

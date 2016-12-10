@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--###################################################################################
 		Lake of Constance Hangar :: M.Kraus
-		Honda-RC213V for Flightgear April 2015
+		KTM-RC16 for Flightgear September 2016
 		This file is licenced under the terms of the GNU General Public Licence V2 or later
 		###################################################################################
 -->
@@ -23,12 +23,9 @@
 
 	<engine>
 	    <name>enginehight</name>
-	    <path>Aircraft/Honda-RC213V/Sounds/engine-high.wav</path>
+	    <path>Aircraft/Motorcycle-Racing/MR-Sounds/engine-high.wav</path>
 	    <mode>looped</mode>
  	     <condition>
-  	     <not>
-			 <property>/controls/Honda-RC213V/Akrapovic/fit</property>
-		 </not>
 		 <greater-than>
  	      	   <property>/engines/engine/rpm</property>
 		   <value>3000</value>
@@ -45,48 +42,16 @@
 	      <property>/engines/engine/rpm</property>
 	      <factor>0.00012</factor>
 	      <min>0.001</min>
-	      <max>7.0</max>
-	      <offset>0.012</offset>
+	      <max>10.0</max>
+	      <offset>0.007</offset>
 	    </pitch>
 	    <reference-dist>180</reference-dist>
 	    <max-dist>500</max-dist>
 	  </engine>
-
-  	<engine>
-  	    <name>enginehightAkra</name>
-  	    <path>Aircraft/Honda-RC213V/Sounds/engine-high.wav</path>
-  	    <mode>looped</mode>
-   	     <condition>
-		 <equals>
-  	     	<property>/controls/Honda-RC213V/Akrapovic/fit</property>
-			<value>true</value>
-	 	 </equals>
-  		 <greater-than>
-   	      	   <property>/engines/engine/rpm</property>
-  		   <value>3000</value>
-  	   </greater-than>
-   	    </condition>
-  	    <volume>
-  	      <property>/engines/engine/mp-osi</property>
-  	      <factor>0.04</factor>
-  	      <min>0.9</min>
-  	      <max>8</max>
-  	      <offset>0.001</offset>
-  	    </volume>
-  	    <pitch>
-  	      <property>/engines/engine/rpm</property>
-  	      <factor>0.00010</factor>
-  	      <min>0.001</min>
-  	      <max>5.5</max>
-  	      <offset>0.012</offset>
-  	    </pitch>
-  	    <reference-dist>180</reference-dist>
-  	    <max-dist>500</max-dist>
-  	  </engine>
 	  
   	<engine>
   	    <name>enginecrash</name>
-  	    <path>Aircraft/Honda-RC213V/Sounds/broken.wav</path>
+  	    <path>Aircraft/Motorcycle-Racing/MR-Sounds/broken.wav</path>
   	    <mode>once</mode>
   	     <condition>
 			 <greater-than>
@@ -103,12 +68,12 @@
 	  
   	<engine>
   	    <name>enginelow</name>
-  	    <path>Aircraft/Honda-RC213V/Sounds/engine.wav</path>
+  	    <path>Aircraft/Motorcycle-Racing/MR-Sounds/engine.wav</path>
   	    <mode>looped</mode>
 	     <condition>
 			 <less-than>
 			   <property>/engines/engine/rpm</property>
-			   <value>4000</value>
+			   <value>3600</value>
 		   </less-than>		 
 		   <greater-than>
  	      	  	<property>/engines/engine/rpm</property>
@@ -136,7 +101,7 @@
   <gear>
    <name>gearclutch</name>
    <mode>once</mode>
-   <path>Aircraft/Honda-RC213V/Sounds/gear.wav</path>
+   <path>Aircraft/Motorcycle-Racing/MR-Sounds/gear.wav</path>
    <condition>
      <property>/engines/engine/gear-sound</property>
    </condition>
@@ -197,7 +162,7 @@
   
 <start>
     <name>startsignal1</name>
-    <path>Aircraft/Honda-RC213V/Sounds/beepStart.wav</path>
+    <path>Aircraft/Motorcycle-Racing/MR-Sounds/beepStart.wav</path>
     <mode>once</mode>
      <condition>
 	 <equals>
@@ -214,7 +179,7 @@
 
 	<start>
 	    <name>startsignal2</name>
-	    <path>Aircraft/Honda-RC213V/Sounds/beepStart.wav</path>
+	    <path>Aircraft/Motorcycle-Racing/MR-Sounds/beepStart.wav</path>
 	    <mode>once</mode>
 	     <condition>
 		 <equals>
@@ -231,7 +196,7 @@
   
 	<start>
 	    <name>startsignal3</name>
-	    <path>Aircraft/Honda-RC213V/Sounds/beepStart.wav</path>
+	    <path>Aircraft/Motorcycle-Racing/MR-Sounds/beepStart.wav</path>
 	    <mode>once</mode>
 	     <condition>
 		 <equals>
@@ -248,7 +213,7 @@
 
   	<start>
   	    <name>startsignal4</name>
-  	    <path>Aircraft/Honda-RC213V/Sounds/beepStart.wav</path>
+  	    <path>Aircraft/Motorcycle-Racing/MR-Sounds/beepStart.wav</path>
   	    <mode>once</mode>
   	     <condition>
   		 <equals>
@@ -265,7 +230,7 @@
   
   	<start>
   	    <name>startsignal5</name>
-  	    <path>Aircraft/Honda-RC213V/Sounds/beepStart.wav</path>
+  	    <path>Aircraft/Motorcycle-Racing/MR-Sounds/beepStart.wav</path>
   	    <mode>once</mode>
   	     <condition>
   		 <equals>
@@ -281,7 +246,7 @@
   	  </start> 
 	<start>
 	    <name>startsignal7</name>
-	    <path>Aircraft/Honda-RC213V/Sounds/beepStartGo.wav</path>
+	    <path>Aircraft/Motorcycle-Racing/MR-Sounds/beepStartGo.wav</path>
 	    <mode>once</mode>
 	     <condition>
 		 <equals>
