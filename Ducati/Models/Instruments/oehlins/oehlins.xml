@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: Marc Kraus
+		Racebikes Steering Damper for Flightgear March 2016
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+<path>oehlins.ac</path>
+
+	
+	<animation>
+		<type>translate</type>
+		<object-name>damper</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<factor>-0.01</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>setting</object-name>
+		<property>/controls/steering-damper</property>
+		<factor>-20</factor>
+		<center>
+			<x-m> -0.0127</x-m>
+			<y-m> 0</y-m>
+			<z-m> 0.0044</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	  <animation>
+	    <type>pick</type>
+	    <object-name>setting</object-name>
+	    <visible>true</visible>
+	    <action>
+	        <button>3</button>
+	        <repeatable>true</repeatable>
+	        <binding>		          
+			<command>property-adjust</command>
+			<property>/controls/steering-damper</property>
+			<step>1</step>
+			<min>1</min>
+			<max>16</max>
+			<wrap>0</wrap>
+	        </binding>
+	    </action>
+	    <action>
+	        <button>4</button>
+	        <repeatable>true</repeatable>
+	        <binding>		          
+	        <command>property-adjust</command>
+	        <property>/controls/steering-damper</property>
+	        <step>-1</step>
+	        <min>1</min>
+	        <max>16</max>
+	        <wrap>0</wrap>
+	        </binding>            
+	    </action>
+	    <action>
+	      <name>increase</name>
+	      <button>0</button>
+	      <repeatable>true</repeatable>
+	      <binding>
+	        <command>property-adjust</command>
+	        <property>/controls/steering-damper</property>
+	        <step>1</step>
+	        <min>1</min>
+	        <max>16</max>
+	        <wrap>0</wrap>
+	      </binding>
+	    </action>
+	    <action>
+	      <name>decrease</name>
+	      <button>1</button>
+	      <repeatable>true</repeatable>
+	      <binding>
+	        <command>property-adjust</command>
+	        <property>/controls/steering-damper</property>
+	        <step>-1</step>
+	        <min>1</min>
+	        <max>16</max>
+	        <wrap>0</wrap>
+	      </binding>
+	    </action>
+	  </animation>
+	  
+</PropertyList>

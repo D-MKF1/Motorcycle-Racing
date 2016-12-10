@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Ducati for Flightgear April 2015
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+  <path>Desmo-GP16.ac</path> 
+  
+  <sound><path>Aircraft/Motorcycle-Racing/Ducati/Sounds/mp-sound.xml</path></sound>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Motorcycle-Racing/Ducati/Models/Liveries", 10);
+    </load>
+
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+  
+  <offsets>
+    <z-m>0.06</z-m>
+  </offsets>
+
+  <animation>
+    <type>material</type>
+    <object-name>oehlinssup</object-name>
+    <object-name>oehlinssup.001</object-name>
+    <object-name>carrd</object-name>
+    <object-name>carrd01</object-name>
+    <object-name>carrd03</object-name>
+    <object-name>carrd03.inner</object-name>
+    <object-name>screws</object-name>
+    <object-name>carrd04</object-name>
+    <object-name>carrd05</object-name>
+    <object-name>carrd06</object-name>
+    <object-name>carrd07</object-name>
+    <object-name>cro</object-name>
+    <object-name>wing.l</object-name>
+    <object-name>wing.h</object-name>
+    <object-name>di</object-name>
+    <object-name>e</object-name>
+    <object-name>e01</object-name>
+    <object-name>ex</object-name>
+    <object-name>f</object-name>
+    <object-name>gb</object-name>
+    <object-name>gb.001</object-name>
+    <object-name>gls</object-name>
+    <object-name>holder</object-name>
+    <object-name>lk01</object-name>
+    <object-name>m01</object-name>
+    <object-name>m2</object-name>
+    <object-name>m4</object-name>
+    <object-name>m5</object-name>
+    <object-name>m6</object-name>
+    <object-name>m7</object-name>
+    <object-name>m8</object-name>
+    <object-name>mu</object-name>
+    <object-name>p1</object-name>
+    <object-name>p2</object-name>
+    <object-name>pl3</object-name>
+    <object-name>r1</object-name>
+    <object-name>w</object-name>
+    <object-name>w01</object-name>
+    <object-name>starter</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>Ducati.png</texture>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>holder</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+	  <type>rotate</type>
+      <object-name>holder</object-name>
+      <property>sim/multiplay/generic/float[3]</property>
+      <factor>48</factor>
+      <center>
+       <x-m> 0.9064</x-m>
+       <y-m> 0.1283</y-m>
+       <z-m> 0.1972</z-m>
+      </center>
+      <axis>
+       <x>0</x>
+       <y>1</y>
+       <z>0</z>
+      </axis>
+    </animation>
+
+<effect>
+	<inherits-from>Effects/model-transparent</inherits-from>
+	<object-name>gls03</object-name>
+</effect>
+  
+  <!-- shadow without rembrandt -->
+	<model>
+		<name>NewShadow</name>
+		<path>Aircraft/Motorcycle-Racing/Ducati/Models/shadow.xml</path>
+	    <offsets>
+	      <x-m>  0.0 </x-m>
+	      <y-m>  0.0 </y-m>
+	      <z-m>  0.02 </z-m>
+	    </offsets>
+	</model>
+
+	<animation>
+		<type>select</type>
+		<object-name>NewShadow</object-name>
+		<condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+			<not><property>sim/multiplay/generic/int[3]</property></not>
+		</condition>
+	</animation>
+
+  <!-- 1. SPEED --> 
+  <model>
+	<name>RPM</name>
+    <path>Aircraft/Motorcycle-Racing/Ducati/Models/Instruments/tacho/tacho.xml</path>
+    <offsets>
+      <x-m> -0.71 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.94 </z-m>
+      <pitch-deg> -38 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>SL</name>
+    <path>Aircraft/Motorcycle-Racing/Ducati/Models/Instruments/sl/speedlimiter.xml</path>
+    <offsets>
+      <x-m> -0.63 </x-m>
+      <y-m> -0.07 </y-m>
+      <z-m>  0.87 </z-m>
+      <pitch-deg> 45 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>TRANSPONDER</name>
+    <path>Aircraft/Motorcycle-Racing/Ducati/Models/Instruments/transponder/transponder.xml</path>
+    <offsets>
+        <x-m> -0.65 </x-m>
+        <y-m> 0.07</y-m>
+        <z-m> 0.84 </z-m>
+      <heading-deg>90</heading-deg>
+      <roll-deg> -42 </roll-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>TRANSPONDER</object-name>
+    <condition>
+	 <or>
+		<equals>
+        	<property>sim/menubar/default/menu[14]/item[0]/name</property>
+			<value>Button_1</value>
+		</equals>
+		<equals>
+        	<property>i-am-a-racebike</property>
+			<value>1</value>
+		</equals>		
+	 </or>
+    </condition>
+  </animation>
+  
+  <model>
+	<name>OEHLINS</name>
+    <path>Aircraft/Motorcycle-Racing/Ducati/Models/Instruments/oehlins/oehlins.xml</path>
+    <offsets>
+        <x-m> -0.52 </x-m>
+        <y-m> 0.0</y-m>
+        <z-m> 0.88 </z-m>
+    </offsets>
+  </model>
+    
+  <model>
+	<name>SMOKE</name>
+    <path>Aircraft/Motorcycle-Racing/MR-Effects/smoke.xml</path>
+    <offsets>
+      <x-m> -0.352 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  0.43 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>SMOKE-LIGHT</name>
+    <path>Aircraft/Motorcycle-Racing/MR-Effects/smoke-light.xml</path>
+    <offsets>
+      <x-m> -0.352 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  0.43 </z-m>
+    </offsets>
+  </model>
+   
+  <animation>
+    <type>select</type>
+    <object-name>SMOKE</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[4]</property>
+		<value>0.9</value>
+      </greater-than>
+    </condition>
+  </animation>
+   
+  <animation>
+    <type>select</type>
+    <object-name>SMOKE-LIGHT</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[4]</property>
+		<value>0.2</value>
+      </greater-than>
+    </condition>
+  </animation>  
+  
+  <model>
+	<name>REARLIGHT</name>
+    <path>Aircraft/Motorcycle-Racing/MR-Lights/rearlight.xml</path>
+    <offsets>
+      <x-m>0.72 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>0.83 </z-m>
+    </offsets>
+  </model>
+  
+<animation>
+  <type>select</type>
+  <object-name>REARLIGHT</object-name>
+  <condition>
+	<greater-than>
+ 		<property>/sim/time/sun-angle-rad</property>
+		<value>1.4</value>
+	</greater-than>
+ </condition>
+</animation>
+   
+  <!-- Driver -->
+  	<model>
+  		<name>Driver</name>
+  		<path>Aircraft/Motorcycle-Racing/Ducati/Models/Driver/driver.xml</path>
+	    <offsets>
+	      <x-m>  0.0 </x-m>
+	      <y-m>  0.0 </y-m>
+	      <z-m>  0.055 </z-m>
+	    </offsets>
+  	</model>
+	
+    <animation>
+      <type>select</type>
+      <object-name>Driver</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <not>
+          <property>sim/multiplay/generic/int[4]</property>
+        </not>
+      </condition>
+    </animation>
+	
+  	<model>
+  		<name>Driver_quick_glance_over_shoulder</name>
+  		<path>Aircraft/Motorcycle-Racing/Ducati/Models/Driver/driver_special.xml</path>
+  	</model>
+
+    <animation>
+      <type>select</type>
+      <object-name>Driver_quick_glance_over_shoulder</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <property>sim/multiplay/generic/int[4]</property>
+      </condition>
+    </animation>
+ 
+  <!-- right left -->
+  <animation>
+	  <type>rotate</type>
+      <object-name>RPM</object-name>
+      <object-name>SI</object-name>
+      <object-name>SL</object-name>
+      <object-name>TRANSPONDER</object-name>
+      <object-name>OEHLINS</object-name>
+      <object-name>REARLIGHT</object-name>
+      <object-name>oehlinssup</object-name>
+      <object-name>oehlinssup.001</object-name>
+      <object-name>Driver</object-name>
+      <object-name>Driver_quick_glance_over_shoulder</object-name>
+      <object-name>carrd</object-name>
+      <object-name>carrd01</object-name>
+      <object-name>carrd03</object-name>
+      <object-name>carrd03.inner</object-name>
+      <object-name>screws</object-name>
+      <object-name>carrd04</object-name>
+      <object-name>carrd05</object-name>
+      <object-name>carrd06</object-name>
+      <object-name>carrd07</object-name>
+      <object-name>cro</object-name>
+      <object-name>wing.l</object-name>
+      <object-name>wing.h</object-name>
+      <object-name>di</object-name>
+      <object-name>e</object-name>
+      <object-name>e01</object-name>
+      <object-name>ex</object-name>
+      <object-name>f</object-name>
+      <object-name>gb</object-name>
+      <object-name>gb.001</object-name>
+      <object-name>gls</object-name>
+      <object-name>gls03</object-name>
+      <object-name>screws</object-name>
+      <object-name>holder</object-name>
+      <object-name>lk01</object-name>
+      <object-name>m01</object-name>
+      <object-name>m2</object-name>
+      <object-name>m4</object-name>
+      <object-name>m5</object-name>
+      <object-name>m6</object-name>
+      <object-name>m7</object-name>
+      <object-name>m8</object-name>
+      <object-name>mu</object-name>
+      <object-name>p1</object-name>
+      <object-name>p2</object-name>
+      <object-name>pl3</object-name>
+      <object-name>r1</object-name>
+      <object-name>w</object-name>
+      <object-name>w01</object-name>
+      <object-name>starter</object-name> 
+      <object-name>tube1</object-name> 
+      <object-name>tube2</object-name> 
+      <object-name>tube3</object-name> 
+      <condition>
+        <not>
+          <equals>
+          <property>sim/current-view/name</property>
+          <value type="string">Cockpit View</value>
+          </equals>
+        </not>
+      </condition> 
+      <property>surface-positions/left-aileron-pos-norm</property>
+      <interpolation>
+		<entry><ind>-1.0 </ind><dep>    57 </dep></entry>
+        <entry><ind>-0.3 </ind><dep>    57 </dep></entry>
+        <entry><ind> 0 </ind><dep>     0 </dep></entry>
+        <entry><ind> 0.3 </ind><dep>   -57 </dep></entry>
+        <entry><ind> 1.0 </ind><dep>   -57 </dep></entry>
+      </interpolation>
+      <center>
+       <x-m> 0.0</x-m>
+       <y-m> 0.0</y-m>
+       <z-m>-0.175</z-m>
+      </center>
+      <axis>
+        <x>  1 </x>
+        <y>  0 </y>
+        <z>  0 </z>
+      </axis>
+    </animation>
+	
+    <animation>
+  	  <type>rotate</type>
+        <object-name>RPM</object-name>
+        <object-name>SI</object-name>
+        <object-name>SL</object-name>
+        <object-name>TRANSPONDER</object-name>
+        <object-name>OEHLINS</object-name>
+        <object-name>REARLIGHT</object-name>
+        <object-name>oehlinssup</object-name>
+        <object-name>oehlinssup.001</object-name>
+        <object-name>Driver</object-name>
+        <object-name>Driver_quick_glance_over_shoulder</object-name>
+        <object-name>carrd</object-name>
+        <object-name>carrd01</object-name>
+        <object-name>carrd03</object-name>
+        <object-name>carrd03.inner</object-name>
+        <object-name>screws</object-name>
+        <object-name>carrd04</object-name>
+        <object-name>carrd05</object-name>
+        <object-name>carrd06</object-name>
+        <object-name>carrd07</object-name>
+        <object-name>cro</object-name>
+        <object-name>wing.l</object-name>
+        <object-name>wing.h</object-name>
+        <object-name>di</object-name>
+        <object-name>e</object-name>
+        <object-name>e01</object-name>
+        <object-name>ex</object-name>
+        <object-name>f</object-name>
+        <object-name>gb</object-name>
+        <object-name>gb.001</object-name>
+        <object-name>gls</object-name>
+        <object-name>gls03</object-name>
+        <object-name>screws</object-name>
+        <object-name>holder</object-name>
+        <object-name>lk01</object-name>
+        <object-name>m01</object-name>
+        <object-name>m2</object-name>
+        <object-name>m4</object-name>
+        <object-name>m5</object-name>
+        <object-name>m6</object-name>
+        <object-name>m7</object-name>
+        <object-name>m8</object-name>
+        <object-name>mu</object-name>
+        <object-name>p1</object-name>
+        <object-name>p2</object-name>
+        <object-name>pl3</object-name>
+        <object-name>r1</object-name>
+        <object-name>w</object-name>
+        <object-name>w01</object-name>
+        <object-name>starter</object-name>
+        <object-name>tube1</object-name> 
+        <object-name>tube2</object-name> 
+        <object-name>tube3</object-name> 
+        <condition>
+          <equals>
+            <property>sim/current-view/name</property>
+            <value type="string">Cockpit View</value>
+          </equals>
+        </condition> 
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <interpolation>
+  		<entry><ind>-1.0 </ind><dep>    42 </dep></entry>
+          <entry><ind>-0.2 </ind><dep>    42 </dep></entry>
+          <entry><ind> 0 </ind><dep>     0 </dep></entry>
+          <entry><ind> 0.2 </ind><dep>   -42 </dep></entry>
+          <entry><ind> 1.0 </ind><dep>   -42 </dep></entry>
+        </interpolation>
+        <center>
+         <x-m> 0.0</x-m>
+         <y-m> 0.0</y-m>
+         <z-m>-0.175</z-m>
+        </center>
+        <axis>
+          <x>  1 </x>
+          <y>  0 </y>
+          <z>  0 </z>
+        </axis>
+      </animation>
+
+    <!-- front fork -->
+    <animation>
+  	  <type>rotate</type>
+        <object-name>OEHLINS</object-name>
+        <object-name>oehlinssup.001</object-name>
+        <object-name>SL</object-name>
+        <object-name>carrd05</object-name>
+        <object-name>carrd06</object-name>
+        <object-name>carrd07</object-name>
+        <object-name>di</object-name>
+        <object-name>e</object-name>
+        <object-name>m2</object-name>
+        <object-name>m4</object-name>
+        <object-name>m5</object-name>
+        <object-name>m6</object-name>
+        <object-name>m7</object-name>
+        <object-name>m8</object-name>
+        <object-name>p1</object-name>
+        <object-name>p2</object-name>
+        <object-name>w</object-name>
+	    <object-name>starter</object-name>
+        <object-name>tube1</object-name> 
+        <object-name>tube2</object-name> 
+        <property>surface-positions/rudder-pos-norm</property>
+        <interpolation>
+          <entry><ind> -1 </ind><dep> -20 </dep></entry>
+          <entry><ind>  0 </ind><dep>  0 </dep></entry>
+          <entry><ind>  1 </ind><dep>  20 </dep></entry>
+        </interpolation>
+        <axis>   
+          <x1-m> -0.4961</x1-m>
+          <y1-m>  0.0</y1-m>
+          <z1-m>  0.9231</z1-m>
+          <x2-m> -0.6059</x2-m>
+          <y2-m>  0.00</y2-m>
+          <z2-m>  0.6766</z2-m>
+        </axis>
+      </animation>
+	  
+      <animation>
+          <type>translate</type>
+          <object-name>carrd05</object-name>
+          <object-name>di</object-name>
+          <object-name>e</object-name>
+          <object-name>m2</object-name>
+          <object-name>m4</object-name>
+          <object-name>p1</object-name>
+          <object-name>p2</object-name>
+          <object-name>w</object-name>
+          <property>sim/multiplay/generic/float[2]</property>
+          <factor>-0.08</factor>
+	          <axis>   
+	            <x1-m> -0.4961</x1-m>
+	            <y1-m>  0.0</y1-m>
+	            <z1-m>  0.9231</z1-m>
+	            <x2-m> -0.6059</x2-m>
+	            <y2-m>  0.00</y2-m>
+	            <z2-m>  0.6766</z2-m>
+	          </axis>
+      </animation>
+	  
+	  <!-- rear wheel suspension -->
+      <animation>
+          <type>rotate</type>
+          <object-name>e01</object-name>
+          <object-name>gb.001</object-name>
+          <object-name>gls</object-name>
+          <object-name>ex</object-name>
+          <object-name>pl3</object-name>
+          <object-name>w01</object-name>
+          <object-name>holder</object-name>
+          <property>sim/multiplay/generic/float[5]</property>
+          <factor>-10</factor>
+	      <center>
+	       <x-m>0.17</x-m>
+	       <y-m>0.0</y-m>
+	       <z-m>0.252</z-m>
+	      </center>
+	      <axis>
+	        <x>  0 </x>
+	        <y>  1 </y>
+	        <z>  0 </z>
+	      </axis>
+      </animation>
+
+     <animation>
+         <type>rotate</type>
+         <object-name>carrd07</object-name>
+	  <condition>
+	    <greater-than>
+	      <property>/controls/flight/throttle-input</property>
+	     <value>0</value>
+	    </greater-than>
+	  </condition>
+      <property>/controls/flight/throttle-input</property>
+         <factor>-90</factor>
+         <axis>   
+          <x1-m> -0.487</x1-m>
+          <y1-m>  0.323</y1-m>
+          <z1-m>  0.771</z1-m>
+          <x2-m> -0.557</x2-m>
+          <y2-m>  0.181</y2-m>
+          <z2-m>  0.810</z2-m>
+         </axis>
+       </animation>
+
+		<!-- clutch -->
+        <animation>
+            <type>rotate</type>
+            <object-name>m7</object-name>
+            <property>/engines/engine/clutch</property>
+            <factor>15/</factor>
+		      <center>
+		       <x-m> -0.593</x-m>
+		       <y-m> -0.164</y-m>
+		       <z-m>0.891</z-m>
+		      </center>
+		      <axis>
+		        <x>  0 </x>
+		        <y>  0 </y>
+		        <z>  1 </z>
+		      </axis>
+		    </animation>
+			
+		<!-- front brake -->
+        <animation>
+            <type>rotate</type>
+            <object-name>m8</object-name>
+            <property>/controls/gear/brake-left</property>
+            <factor>-15</factor>
+		      <center>
+		       <x-m> -0.594</x-m>
+		       <y-m>  0.155</y-m>
+		       <z-m>0.908</z-m>
+		      </center>
+		      <axis>
+		        <x>  0 </x>
+		        <y>  0 </y>
+		        <z>  1 </z>
+		      </axis>
+		    </animation>
+
+		    <animation>
+		        <type>pick</type>
+		        <object-name>starter</object-name>
+				<visible>true</visible>
+		        <action>
+		 	    <button>0</button>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/start-idling</property>
+				</binding>         
+		        </action>
+		    </animation>	
+
+	        <animation>
+	            <type>rotate</type>
+	            <object-name>starter</object-name>
+                <property>/controls/engines/engine/starter</property>
+	            <factor>8</factor>
+			      <axis>
+			          <x1-m> -0.573</x1-m>
+			          <y1-m>  0.0</y1-m>
+			          <z1-m>  0.889</z1-m>
+			          <x2-m> -0.581</x2-m>
+			          <y2-m>  0.0</y2-m>
+			          <z2-m>  0.874</z2-m>
+			      </axis>
+			    </animation>  
+	  
+ <!-- Wheel rollspeed -->
+
+  <animation>
+   <object-name>e</object-name>
+   <object-name>p2</object-name>
+   <object-name>w</object-name>
+   <property>sim/multiplay/generic/float[0]</property>
+   <type>spin</type>
+   <factor>26</factor>
+   <center>
+    <x-m> -0.8694</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 0.182</z-m>
+   </center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+  </animation>
+  
+  <animation>
+   <object-name>e01</object-name>
+   <object-name>pl3</object-name>
+   <object-name>w01</object-name>
+   <object-name>gls</object-name>
+   <property>sim/multiplay/generic/float[1]</property>
+   <type>spin</type>
+   <factor>26</factor>
+   <center>
+   <x-m> 0.9064</x-m>
+   <y-m> 0.1283</y-m>
+   <z-m> 0.1972</z-m>
+   </center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+  </animation>
+
+</PropertyList>

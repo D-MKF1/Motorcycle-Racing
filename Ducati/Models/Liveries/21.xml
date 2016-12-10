@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+	Lake of Constance Hangar :: M.Kraus
+	Flightgear March 2016
+	This file is licenced under the terms of the GNU General Public Licence V2 or later
+	###################################################################################
+-->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">No.21 Luca Negrassus</name>
+            <texture>Liveries/Desmo-GP16-21.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

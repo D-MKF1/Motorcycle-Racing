@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Ducati for Flightgear April 2015
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList include="motorcycle-basis.xml">
+ <sim>
+		<description>Panigale-1299R</description>
+		<author>LAKE OF CONSTANCE HANGAR :: M.Kraus</author>
+		<aircraft-version>0.0.1</aircraft-version>
+		<status>alpha</status>
+		<flight-model>yasim</flight-model>
+		<aero>Panigale-1299R-yasim</aero>
+
+		<sound>
+			<path>Aircraft/Motorcycle-Racing/Ducati/Sounds/sound.xml</path>
+		</sound>
+
+		<model>
+			<path>Aircraft/Motorcycle-Racing/Ducati/Models/Panigale-1299R.xml</path>
+		</model> 
+
+		<startup>
+			<splash-texture>Aircraft/Motorcycle-Racing/Ducati/splash-Panigale-R.png</splash-texture>
+		</startup>
+
+		<fuel-fraction>1.0</fuel-fraction>
+
+		<systems>
+			<electrical>
+			<path>Aircraft/Generic/generic-electrical.xml</path>
+			</electrical>
+		</systems> 
+
+		<virtual-cockpit archive="y">true</virtual-cockpit>
+		<allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+		<view n="0">
+			<internal archive="y">true</internal>
+			<config>
+			 <limits>
+			    <enabled archive="y" type="bool">false</enabled>
+			 </limits>
+			  <!-- x/y/z == right/up/back -->
+				<x-offset-m archive="y" type="double">0.0</x-offset-m>
+				<y-offset-m archive="y" type="double">1.35</y-offset-m>  <!-- up-down -->
+				<z-offset-m archive="y" type="double">-0.13</z-offset-m> <!-- fore-back -->
+				<pitch-offset-deg>-8</pitch-offset-deg>
+				<default-field-of-view-deg type="double">72</default-field-of-view-deg>
+			</config>
+		</view>
+
+		<view n="1">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="2">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="3">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="4">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="5">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="6">
+			<config>
+			<target-z-offset-m archive="y" type="double">0.0</target-z-offset-m>
+			</config>
+		</view>
+
+		<hud>
+		<enable3d>false</enable3d>
+		</hud>
+
+  <help>
+		    <key>
+		      <name>Home or ></name>
+		      <desc>Shift up</desc>
+		    </key>
+		    <key>
+		      <name>End or Shift + ></name>
+		      <desc>Shift down</desc>
+		    </key>
+		    <key>
+		      <name>Backspace or Ctrl key</name>
+		      <desc>Clutch</desc>
+		    </key>
+			<key>
+			  <name>s</name>
+			  <desc>engine starter</desc>
+			</key>
+			<key>
+			  <name>g/G and b/B</name>
+			  <desc>toggle workstand</desc>
+			</key>
+			<key>
+			  <name>1</name>
+			  <desc>Quick glance over the shoulder</desc>
+			</key>
+			<key>
+			  <name>F7</name>
+			  <desc>Open map</desc>
+			</key>
+			<key>
+			  <name>F8</name>
+			  <desc>Open results</desc>
+			</key>
+			<key>
+			  <name>l</name>
+			  <desc>switch last and fastest lap</desc>
+			</key>
+			<key>
+			  <name>F9</name>
+			  <desc>Open fuel menu</desc>
+			</key>
+		<text>*** ISLE OF MAN EDITION ***
+"Ladies and Gentleman, start your engines"
+and have fun!</text>
+  </help>
+	<menubar>
+		<default>
+		<menu n="10">
+			<label>YFZ-R1</label>
+			<enabled type="bool">true</enabled>
+			<item>
+				<label>--- Tools ---</label>
+				<enabled>false</enabled>
+			</item>			
+			<item>
+				<label>Autostart / shutdown</label>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/start-idling</property>
+				</binding>
+			</item> 		
+			<enabled type="bool">true</enabled>
+			<item>
+				<label>Repair engine</label>
+				<binding>
+					<command>nasal</command>
+					<script>
+						var iskilled = getprop("/engines/engine/killed") or 0;
+						if(iskilled > 0.2){
+							settimer(func{ setprop("/engines/engine/killed",0); }, 20);
+				    		screen.log.write(sprintf("Please wait 20 sec. for engine overhaul."), 1, 1, 0.0);
+						}else{
+				    		screen.log.write(sprintf("Everything is ok with your engine - nothing to do."), 1, 1, 0.0);
+						}
+					</script>
+				</binding>
+			</item>
+			<enabled type="bool">true</enabled>				
+			<item>
+				<label>Show Sector/Lap Results</label>
+				<binding>
+					<command>property-toggle</command>
+					<property>Motorcycle/show-race-times</property>
+				</binding>
+			</item>	
+			<enabled type="bool">true</enabled>				
+			<item>
+				<label>Switch last or fastest Results</label>
+				<binding>
+					<command>property-toggle</command>
+					<property>Motorcycle/switch-last-fastest</property>
+				</binding>
+			</item>		
+			<item>
+				<label>--- Painting ---</label>
+				<enabled>false</enabled>
+			</item>
+			<item>
+				<label>Select Livery</label>
+				<binding>
+					<command>nasal</command>
+					<script>aircraft.livery.dialog.toggle()</script>
+				</binding>
+			</item>
+			<enabled type="bool">true</enabled>
+			<item>
+				<label>--- Old mens mode ---</label>
+				<enabled>false</enabled>
+			</item>			
+			<item>
+				<label>Toggle greybeard view</label>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/Motorcycle/old-mens-mode</property>
+				</binding>
+			</item> 			
+			<item>
+				<label>Toggle throttle input axis</label>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/flight/select-throttle-input</property>
+				</binding>
+			</item>
+			<item>
+				<label>--- Roadraces ---</label>
+				<enabled>false</enabled>
+			</item>				
+	        <item>
+	          <label>Race settings</label>
+	          <binding>
+	            <command>nasal</command>
+	            <script>motorcycle.config_dlg.open()</script>
+	          </binding>
+	        </item>
+		</menu>
+
+		</default>
+	</menubar>
+
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>170</weight-lb>
+      <max-lb>230</max-lb>
+      <min-lb>140</min-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Backwheel</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>200</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+		
+	<flaps>
+	 <setting>0.6</setting>
+	 <setting>0.5</setting> 
+	 <setting>0.4</setting> 
+	 <setting>0.3</setting> 
+	 <setting>0.2</setting> 
+	 <setting>0.1</setting> 
+	 <setting>0.0</setting> 
+	</flaps>
+ </sim>
+
+<!-- -NASAL- -->
+ <nasal>
+  <motorcycle>
+   <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
+   <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
+   <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
+
+   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/view.nas</file>
+   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/gearbox.nas</file>
+   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/liveries.nas</file>
+  </motorcycle>
+ </nasal>
+</PropertyList>
+
+
+
+
