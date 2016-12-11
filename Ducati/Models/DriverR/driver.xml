@@ -1,0 +1,1271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		KTM-RC16 for Flightgear October 2016
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+
+  <path>driver.ac</path>	
+  <animation>
+    <type>noshadow</type>
+    <object-name>helm.001</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>helm.001</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>head</object-name>
+    <object-name>body</object-name>
+    <object-name>newbie</object-name>
+    <object-name>helm</object-name>
+    <object-name>l_boot</object-name>
+    <object-name>l_feet</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+    <object-name>l_glove_hand</object-name>
+    <object-name>l_glove_middle_phalanx</object-name>
+    <object-name>l_glove_distal_phalanx</object-name>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_thigh</object-name>
+    <object-name>l_upperarm</object-name>    
+	<object-name>r_boot</object-name>
+    <object-name>r_feet</object-name> 
+	<object-name>r_forearm</object-name>   
+	<object-name>r_glove</object-name>  
+    <object-name>r_glove_hand</object-name>
+    <object-name>r_glove_middle_phalanx</object-name>
+    <object-name>r_glove_distal_phalanx</object-name>
+    <object-name>r_lowerleg</object-name>
+    <object-name>r_thigh</object-name>
+    <object-name>r_upperarm</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>beirer</value>
+      </equals>
+    </condition>
+    <texture>driver.png</texture>
+  </animation>
+
+  <animation>
+  <type>select</type>
+  <object-name>head</object-name>
+  <object-name>helm</object-name>
+  <object-name>helm.001</object-name>
+  <object-name>body</object-name>
+  <object-name>newbie</object-name>
+  <object-name>l_upperarm</object-name>
+  <object-name>r_upperarm</object-name>
+    <condition>
+      <not>
+        <equals>
+        <property>sim/current-view/name</property>
+        <value type="string">Cockpit View</value>
+        </equals>
+      </not>
+    </condition>
+  </animation>
+  
+  <animation>
+  <type>select</type>
+  <object-name>newbie</object-name>
+    <condition>
+		<property>sim/multiplay/generic/int[0]</property>
+    </condition>
+  </animation>
+  
+  <!-- rudder animation while driving -->
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>head</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>	
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-30</factor>
+    <center>
+      <x-m>-0.16 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.09 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+     
+  <animation>
+    <type>rotate</type>
+    <object-name>r_upperarm</object-name>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-18</factor>
+    <center>
+      <x-m>-0.136 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.084 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>r_glove</object-name>
+    <object-name>r_forearm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 13 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep>-6 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.141 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.73 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> -1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>r_glove</object-name>
+    <object-name>r_forearm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -2 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep>8</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.114 </x-m>
+      <y-m> 0.256 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+
+  <animation>
+    <type>rotate</type>
+    <object-name>r_glove_hand</object-name>
+    <object-name>r_glove_middle_phalanx</object-name>
+    <object-name>r_glove_distal_phalanx</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-18</factor>
+    <center>
+      <x-m>-0.523 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>translate</type>
+    <object-name>r_glove_hand</object-name>
+    <object-name>r_glove_middle_phalanx</object-name>
+    <object-name>r_glove_distal_phalanx</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.01</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-0.04</factor>
+    <center>
+      <x-m>-0.605 </x-m>
+      <y-m> 0.250 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>l_upperarm</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>18</factor>
+    <center>
+      <x-m>-0.136 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.084 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>l_glove</object-name>
+    <object-name>l_forearm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep>6 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep>-13 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.141 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.73 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>l_glove</object-name>
+    <object-name>l_forearm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep>-10 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep>3</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.114 </x-m>
+      <y-m>-0.256 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+
+  <animation>
+    <type>rotate</type>
+    <object-name>l_glove_hand</object-name>
+    <object-name>l_glove_middle_phalanx</object-name>
+    <object-name>l_glove_distal_phalanx</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-18</factor>
+    <center>
+      <x-m>-0.523 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>translate</type>
+    <object-name>l_glove_hand</object-name>
+    <object-name>l_glove_middle_phalanx</object-name>
+    <object-name>l_glove_distal_phalanx</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.01</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>0.04</factor>
+    <center>
+      <x-m>-0.605 </x-m>
+      <y-m>-0.250 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+  
+  <!-- finger rotation for clutch and frontbrake -->
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>r_glove_middle_phalanx</object-name>
+    <object-name>r_glove_distal_phalanx</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>/controls/gear/brake-left</property>
+    <factor>-30</factor>
+    <center>
+      <x-m>-0.58 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.853 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>r_glove_distal_phalanx</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>/controls/gear/brake-left</property>
+    <factor>-50</factor>
+    <center>
+      <x-m>-0.61 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.848 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>l_glove_middle_phalanx</object-name>
+    <object-name>l_glove_distal_phalanx</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>/engines/engine/clutch</property>
+    <factor>-30</factor>
+    <center>
+      <x-m>-0.58 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.853 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>l_glove_distal_phalanx</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>/engines/engine/clutch</property>
+    <factor>-50</factor>
+    <center>
+      <x-m>-0.61 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.848 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+
+  <!-- tinki winki with his arm in stand -->
+  <animation>
+    <type>rotate</type>
+    <object-name>r_glove_hand</object-name>
+    <object-name>r_glove_middle_phalanx</object-name>
+    <object-name>r_glove_distal_phalanx</object-name>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>
+	<condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/rudder-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 128 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.41 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.188 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <!-- right hand for throttle -->
+  <animation>
+    <type>rotate</type> 
+    <object-name>r_glove_hand</object-name>
+    <object-name>r_glove_middle_phalanx</object-name>
+    <object-name>r_glove_distal_phalanx</object-name>
+ 	<condition>
+		<not>
+        <greater-than>
+          <property>sim/multiplay/generic/float[3]</property>
+          <value>0.8</value>
+        </greater-than>
+		</not>
+  	</condition>
+   	<property>/controls/flight/throttle-input</property>
+      <factor>-25</factor>
+      <axis>   
+       <x1-m> -0.4987</x1-m>
+       <y1-m>  0.38</y1-m>
+       <z1-m>  0.773</z1-m>
+       <x2-m> -0.575</x2-m>
+       <y2-m>  0.2188</y2-m>
+       <z2-m>  0.8441</z2-m>
+      </axis>
+    </animation>
+  
+    <animation>
+      <type>rotate</type> 
+      <object-name>r_glove</object-name>
+      <object-name>r_forearm</object-name>
+   	<condition>
+		<not>
+        <greater-than>
+          <property>sim/multiplay/generic/float[3]</property>
+          <value>0.8</value>
+        </greater-than>
+		</not>
+    	</condition>
+     	<property>/controls/flight/throttle-input</property>
+        <factor>-10</factor>
+	    <center>
+	      <x-m>-0.13 </x-m>
+	      <y-m> 0.0 </y-m>
+	      <z-m> 0.724 </z-m>
+	    </center>
+	    <axis>
+	      <x> 0 </x>
+	      <y> 1 </y>
+	      <z> -0.4 </z>
+	    </axis>
+      </animation>
+	   
+  <!-- body while driving -->
+  <animation>
+    <type>translate</type>
+    <object-name>body</object-name>
+    <object-name>newbie</object-name>
+    <object-name>r_thigh</object-name>
+    <object-name>l_thigh</object-name>
+    <object-name>r_upperarm</object-name>
+    <object-name>l_upperarm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -0.14 </dep></entry>
+      <entry><ind> -0.05</ind><dep> -0.14 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.05</ind><dep> 0.14 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0.14 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>head</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -0.2 </dep></entry>
+      <entry><ind> -0.05</ind><dep> -0.2 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.05</ind><dep> 0.2 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0.2 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <!-- head while driving -->
+  <animation>
+    <type>rotate</type>
+    <object-name>head</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name> 
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>   
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 15 </dep></entry>
+      <entry><ind> -0.05</ind><dep> 15 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.05</ind><dep> -15 </dep></entry>
+      <entry><ind>  1 </ind><dep> -15 </dep></entry>
+    </interpolation>
+    <center>
+        <x-m>-0.136 </x-m>
+        <y-m> 0.0 </y-m>
+        <z-m> 1.084 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <!-- legs and arms while driving -->
+  
+  <!-- right arm -->
+  <animation>
+    <type>rotate</type>
+    <object-name>r_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 27 </dep></entry>
+      <entry><ind> -0.05 </ind><dep> 27 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.44 </x-m>
+      <y-m> 0.25 </y-m>
+      <z-m> 0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>r_forearm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 33 </dep></entry>
+      <entry><ind> -0.05 </ind><dep> 33 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+        <x-m>-0.44 </x-m>
+        <y-m> 0.26 </y-m>
+        <z-m> 0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>r_upperarm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -15 </dep></entry>
+      <entry><ind> -0.05 </ind><dep> -15 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.18 </y-m>
+      <z-m> 1.001 </z-m>
+    </center>
+    <axis>
+      <x> -0.6 </x>
+      <y> -1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>translate</type>
+    <object-name>r_upperarm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -0.04 </dep></entry>
+      <entry><ind> -0.05 </ind><dep> -0.04 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+  
+  <!-- left arm -->  
+  <animation>
+    <type>rotate</type>
+    <object-name>l_glove</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -27 </dep></entry>
+      <entry><ind> -0.05 </ind><dep> -27 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.44 </x-m>
+      <y-m>-0.25 </y-m>
+      <z-m> 0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>l_forearm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -33 </dep></entry>
+      <entry><ind> -0.05 </ind><dep> -33 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+        <x-m>-0.44 </x-m>
+        <y-m>-0.25 </y-m>
+        <z-m> 0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>l_upperarm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -15 </dep></entry>
+      <entry><ind> -0.05 </ind><dep> -15 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m>-0.18 </y-m>
+      <z-m> 1.001 </z-m>
+    </center>
+    <axis>
+      <x> 0.6 </x>
+      <y> -1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+  
+  <animation>
+    <type>translate</type>
+    <object-name>l_upperarm</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -0.04 </dep></entry>
+      <entry><ind> -0.05 </ind><dep> -0.04 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind>  1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation> 
+   
+  <!-- legs left right turn -->
+  <animation>
+    <type>rotate</type>
+    <object-name>l_thigh</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 20 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> 20 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.05 </ind><dep> 18 </dep></entry>
+      <entry><ind> 1 </ind><dep> 18 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m> 0.384 </x-m>
+	    <y-m>-0.113 </y-m>
+	    <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_boot</object-name>
+    <object-name>l_feet</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> 42 </dep></entry>
+      <entry><ind> -0.08 </ind><dep> 42 </dep></entry>
+      <entry><ind> -0.03 </ind><dep> 22 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.05 </ind><dep> -4 </dep></entry>
+      <entry><ind> 1 </ind><dep> -4 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m> 0.386 </x-m>
+	    <y-m>-0.3 </y-m>
+	    <z-m> 0.33 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0.21 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+
+  <animation>
+    <type>rotate</type>
+    <object-name>r_thigh</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -20 </dep></entry>
+      <entry><ind> -0.1 </ind><dep> -20 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.05 </ind><dep> -18 </dep></entry>
+      <entry><ind> 1 </ind><dep> -18 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m> 0.384 </x-m>
+	    <y-m> 0.113 </y-m>
+	    <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>r_lowerleg</object-name>
+    <object-name>r_boot</object-name>
+    <object-name>r_feet</object-name>
+	<condition>
+      <less-than>
+        <property>sim/multiplay/generic/float[3]</property>
+        <value>0.1</value>
+      </less-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -1 </ind><dep> -42 </dep></entry>
+      <entry><ind> -0.08 </ind><dep> -42 </dep></entry>
+      <entry><ind> -0.03 </ind><dep> -22 </dep></entry>
+      <entry><ind>  0 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.05 </ind><dep> 4 </dep></entry>
+      <entry><ind> 1 </ind><dep> 4 </dep></entry>
+    </interpolation>
+    <center>
+	    <x-m> 0.386 </x-m>
+	    <y-m> 0.3 </y-m>
+	    <z-m> 0.33 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> -0.21 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <!-- animation in stand on wheelsholder --> 
+  <animation>
+    <type>rotate</type>
+    <object-name>head</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>63</factor>
+    <center>
+      <x-m> 0.47 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.84 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+   
+  <animation>
+    <type>rotate</type>
+    <object-name>body</object-name>
+    <object-name>newbie</object-name>
+    <object-name>l_upperarm</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+    <object-name>l_glove_hand</object-name>
+    <object-name>l_glove_middle_phalanx</object-name>
+    <object-name>l_glove_distal_phalanx</object-name>
+    <object-name>r_upperarm</object-name>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>  
+    <object-name>r_glove_hand</object-name>
+    <object-name>r_glove_middle_phalanx</object-name>
+    <object-name>r_glove_distal_phalanx</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>70</factor>
+    <center>
+      <x-m> 0.47 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.9 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>l_upperarm</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+    <object-name>l_glove_hand</object-name>
+    <object-name>l_glove_middle_phalanx</object-name>
+    <object-name>l_glove_distal_phalanx</object-name>
+    <object-name>r_upperarm</object-name>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>  
+    <object-name>r_glove_hand</object-name>
+    <object-name>r_glove_middle_phalanx</object-name>
+    <object-name>r_glove_distal_phalanx</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-70</factor>
+    <center>
+      <x-m>-0.108 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.056 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>r_forearm</object-name>
+    <object-name>r_glove</object-name>  
+    <object-name>r_glove_hand</object-name>
+    <object-name>r_glove_middle_phalanx</object-name>
+    <object-name>r_glove_distal_phalanx</object-name>
+    <object-name>l_glove_middle_phalanx</object-name>
+    <object-name>l_glove_distal_phalanx</object-name>
+    <object-name>l_forearm</object-name>
+    <object-name>l_glove</object-name>
+    <object-name>l_glove_hand</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-80</factor>
+    <center>
+      <x-m> -0.1244 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.7519 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+
+    <object-name>r_thigh</object-name>
+    <object-name>r_lowerleg</object-name>
+    <object-name>r_boot</object-name>
+    <object-name>r_feet</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-46</factor>
+    <center>
+      <x-m> 0.387 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.898 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+	  
+  <animation>
+    <type>rotate</type>
+    <object-name>r_lowerleg</object-name>
+    <object-name>r_boot</object-name>
+    <object-name>r_feet</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>85</factor>
+    <center>
+      <x-m> 0.01 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.643 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+	<type>translate</type>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_boot</object-name>
+    <object-name>l_feet</object-name>
+      <property>sim/multiplay/generic/float[3]</property>
+	<factor>0.15</factor>
+	<axis>
+		<x>1</x>
+		<y>0</y>
+		<z>0.6</z>
+	</axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>l_lowerleg</object-name>
+    <object-name>l_boot</object-name>
+    <object-name>l_feet</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-18</factor>
+    <center>
+      <x-m> 0.35 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.33 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>		
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>r_feet</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-8</factor>
+    <center>
+      <x-m> 0.4 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.39 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>  
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>head</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <factor>-40</factor>
+    <center>
+      <x-m>-0.149 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.042 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>head</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+  	<interpolation>
+    	<entry><ind> -1.0</ind><dep>   -50</dep></entry>
+    	<entry><ind> -0.3</ind><dep>   -50</dep></entry>
+    	<entry><ind>  0.0</ind><dep>    0.0</dep></entry>
+    	<entry><ind>  0.3</ind><dep>    50</dep></entry>
+    	<entry><ind>  1.0</ind><dep>    50</dep></entry>
+  	</interpolation>
+    <center>
+      <x-m> -0.16 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.05 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>head</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+  	<interpolation>
+    	<entry><ind> -1.0</ind><dep>   20</dep></entry>
+    	<entry><ind> -0.3</ind><dep>   20</dep></entry>
+    	<entry><ind>  0.0</ind><dep>   0.0</dep></entry>
+    	<entry><ind>  0.3</ind><dep>   20</dep></entry>
+    	<entry><ind>  1.0</ind><dep>   20</dep></entry>
+  	</interpolation>
+    <center>
+      <x-m> -0.12 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.03 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>helm.001</object-name>
+    <property>engines/engine/rpm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 40 </dep></entry>
+      <entry><ind> 1000 </ind><dep> 40 </dep></entry>
+      <entry><ind> 3000 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.278</x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 1.22 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+
+</PropertyList>
