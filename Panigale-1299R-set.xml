@@ -140,7 +140,7 @@ and have fun!</text>
 	<menubar>
 		<default>
 		<menu n="10">
-			<label>YFZ-R1</label>
+			<label>Panigale-R</label>
 			<enabled type="bool">true</enabled>
 			<item>
 				<label>--- Tools ---</label>

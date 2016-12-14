@@ -22,7 +22,7 @@
   </nasal>
   
   <offsets>
-    <z-m>0.06</z-m>
+    <z-m>0.12</z-m>
   </offsets>
 
   <animation>
@@ -72,9 +72,9 @@
       <property>sim/multiplay/generic/float[3]</property>
       <factor>48</factor>
       <center>
-       <x-m> 0.881</x-m>
+       <x-m> 0.771</x-m>
        <y-m> 0.0</y-m>
-       <z-m> 0.232</z-m>
+       <z-m> 0.196</z-m>
       </center>
       <axis>
        <x>0</x>
@@ -91,7 +91,7 @@
   <!-- shadow without rembrandt -->
 	<model>
 		<name>NewShadow</name>
-		<path>Aircraft/Motorcycle-Racing/KTM-RC16/Models/shadow.xml</path>
+		<path>Aircraft/Motorcycle-Racing/Ducati/Models/shadow.xml</path>
 	    <offsets>
 	      <x-m>  0.0 </x-m>
 	      <y-m>  0.0 </y-m>
@@ -159,9 +159,9 @@
 	<name>RPM</name>
     <path>Aircraft/Motorcycle-Racing/Ducati/Models/Instruments/tacho/tacho.xml</path>
     <offsets>
-      <x-m> -0.74 </x-m>
+      <x-m> -0.80 </x-m>
       <y-m> 0.005 </y-m>
-      <z-m> 0.975 </z-m>
+      <z-m> 0.90 </z-m>
       <pitch-deg> -38 </pitch-deg>
     </offsets>
   </model>
@@ -236,25 +236,29 @@
       </greater-than>
     </condition>
   </animation>
-  
-  <model>
-	<name>REARLIGHT</name>
-    <path>Aircraft/Motorcycle-Racing/MR-Lights/rearlight.xml</path>
-    <offsets>
-      <x-m>0.6 </x-m>
-      <y-m>  0.0 </y-m>
-      <z-m>0.785 </z-m>
-    </offsets>
-  </model>
+
+  	<animation>
+  		 <type>material</type>
+  		 <object-name>rearlight</object-name>
+  		 <emission>
+  		  <red>1</red>
+  		  <green>1</green>
+  		  <blue>1</blue>
+  		  <factor>2</factor>
+  	   	</emission>
+  	</animation>
   
 <animation>
   <type>select</type>
-  <object-name>REARLIGHT</object-name>
+  <object-name>rearlight</object-name>
   <condition>
-	<greater-than>
- 		<property>/sim/time/sun-angle-rad</property>
-		<value>1.4</value>
-	</greater-than>
+	  <and>
+		<property>engines/engine/rpm</property>
+		<greater-than>
+			<property>/sim/time/sun-angle-rad</property>
+			<value>1.4</value>
+		</greater-than>
+	</and>
  </condition>
 </animation>
 
@@ -552,6 +556,7 @@
       <object-name>butUp</object-name>
       <object-name>boxenschalter</object-name>
       <object-name>bremseH</object-name>
+	  <object-name>bremsscheibeH</object-name>
       <object-name>bremseV</object-name>
       <object-name>bremsscheibeV</object-name>
       <object-name>felgeH</object-name>
@@ -623,6 +628,7 @@
         <object-name>butUp</object-name>
 	    <object-name>boxenschalter</object-name>
 	    <object-name>bremseH</object-name>
+	    <object-name>bremsscheibeH</object-name>
 	    <object-name>bremseV</object-name>
 	    <object-name>bremsscheibeV</object-name>
 	    <object-name>felgeH</object-name>
@@ -745,16 +751,16 @@
           <object-name>felgeH</object-name>
           <object-name>kette</object-name>
           <object-name>bremseH</object-name>
+          <object-name>bremsscheibeH</object-name>
           <object-name>schwinge</object-name>
           <object-name>kettenrad</object-name>
           <object-name>reifenH</object-name>
-          <object-name>staender</object-name>
           <property>sim/multiplay/generic/float[5]</property>
           <factor>-10</factor>
 	      <center>
-	       <x-m>0.17</x-m>
+	       <x-m>0.7676</x-m>
 	       <y-m>0.0</y-m>
-	       <z-m>0.252</z-m>
+	       <z-m>0.2022</z-m>
 	      </center>
 	      <axis>
 	        <x>  0 </x>
@@ -830,9 +836,9 @@
    <type>spin</type>
    <factor>26</factor>
    <center>
-    <x-m> -0.8897</x-m>
+    <x-m> -0.8927</x-m>
     <y-m> 0.0</y-m>
-    <z-m> 0.1707</z-m>
+    <z-m> 0.1681</z-m>
    </center>
    <axis>
     <x>0</x>
@@ -845,14 +851,14 @@
    <object-name>felgeH</object-name>
    <object-name>kettenrad</object-name>
    <object-name>reifenH</object-name>
-   <object-name>bremseH</object-name>
+   <object-name>bremsscheibeH</object-name>
    <property>sim/multiplay/generic/float[1]</property>
    <type>spin</type>
    <factor>26</factor>
    <center>
-    <x-m> 0.8484</x-m>
+    <x-m> 0.7676</x-m>
     <y-m> 0.0</y-m>
-    <z-m> 0.1983</z-m>
+    <z-m> 0.2022</z-m>
    </center>
    <axis>
     <x>0</x>
