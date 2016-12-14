@@ -7,23 +7,23 @@
 -->
 <PropertyList include="motorcycle-basis.xml">
  <sim>
-		<description>Panigale-1299R</description>
+		<description>Panigale-1299S</description>
 		<author>LAKE OF CONSTANCE HANGAR :: M.Kraus</author>
 		<aircraft-version>0.0.1</aircraft-version>
 		<status>alpha</status>
 		<flight-model>yasim</flight-model>
-		<aero>Panigale-1299R-yasim</aero>
+		<aero>Panigale-1299S-yasim</aero>
 
 		<sound>
 			<path>Aircraft/Motorcycle-Racing/Ducati/Sounds/sound.xml</path>
 		</sound>
 
 		<model>
-			<path>Aircraft/Motorcycle-Racing/Ducati/Models/Panigale-1299R.xml</path>
+			<path>Aircraft/Motorcycle-Racing/Ducati/Models/Panigale-1299S.xml</path>
 		</model> 
 
 		<startup>
-			<splash-texture>Aircraft/Motorcycle-Racing/Ducati/splash-Panigale-R.png</splash-texture>
+			<splash-texture>Aircraft/Motorcycle-Racing/Ducati/splash-Panigale-S.png</splash-texture>
 		</startup>
 
 		<fuel-fraction>1.0</fuel-fraction>
@@ -140,7 +140,7 @@ and have fun!</text>
 	<menubar>
 		<default>
 		<menu n="10">
-			<label>Panigale-R</label>
+			<label>Panigale 1299 S</label>
 			<enabled type="bool">true</enabled>
 			<item>
 				<label>--- Tools ---</label>
@@ -259,13 +259,14 @@ and have fun!</text>
 <!-- -NASAL- -->
  <nasal>
   <motorcycle>
+   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/panigale.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
 
-   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/view.nas</file>
-   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/gearbox.nas</file>
-   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/liveries.nas</file>
+   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/view-s.nas</file>
+   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/gearbox-s.nas</file>
+   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/liveries-s.nas</file>
   </motorcycle>
  </nasal>
 </PropertyList>

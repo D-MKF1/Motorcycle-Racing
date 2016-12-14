@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--###################################################################################
 		Lake of Constance Hangar :: M.Kraus
-		Ducati for Flightgear April 2015
+		Ducati Panigale for Flightgear April 2015
 		This file is licenced under the terms of the GNU General Public Licence V2 or later
 		###################################################################################
 -->
@@ -88,11 +88,23 @@
     <animation>
       <type>select</type>		 
 	  	 <object-name>rpm.0</object-name>
-		 <object-name>oil.btn</object-name>
       <condition>
         <not>
           <property>engines/engine/running</property>
         </not>
+      </condition>
+    </animation>
+	
+    <animation>
+      <type>select</type>		 
+		 <object-name>oil.btn</object-name>
+      <condition>
+		<or>
+        	<not>
+          	  <property>engines/engine/running</property>
+        	</not>
+			<property>engines/engine/killed</property>
+		</or>
       </condition>
     </animation>
 	
@@ -154,7 +166,7 @@
      <y-min>1.0</y-min>
      <z-min>1.0</z-min>
      <x-factor>0</x-factor>
-     <y-factor>0.0009</y-factor>
+     <y-factor>0.0012</y-factor>
      <z-factor>0</z-factor>
     </animation>
 
@@ -167,7 +179,7 @@
         </equal>
 		<less-than>
           <property>engines/engine/rpm</property>
-		  <value>6000</value>
+		  <value>3000</value>
 		</less-than>
 	  </condition>
 	</animation>
@@ -182,11 +194,11 @@
         </equal>
 		<greater-than>
           <property>engines/engine/rpm</property>
-		  <value>6000</value>
+		  <value>3000</value>
 		</greater-than>
 		<less-than>
           <property>engines/engine/rpm</property>
-		  <value>14000</value>
+		  <value>9000</value>
 		</less-than>
 	  </condition>
 	</animation>
@@ -201,11 +213,11 @@
         </equal>
 		<greater-than>
           <property>engines/engine/rpm</property>
-		  <value>14000</value>
+		  <value>9000</value>
 		</greater-than>
 		<less-than>
           <property>engines/engine/rpm</property>
-		  <value>18750</value>
+		  <value>13500</value>
 		</less-than>
 	  </condition>
 	</animation>
@@ -220,7 +232,7 @@
         </equal>
 		<greater-than>
           <property>engines/engine/rpm</property>
-		  <value>18750</value>
+		  <value>13500</value>
 		</greater-than>
 	  </condition>
 	</animation>
@@ -309,7 +321,7 @@
 		  <or>
 	        <less-than>
 	          <property>consumables/fuel/total-fuel-lbs</property>
-			  <value>5.0</value>
+			  <value>6.0</value>
 	        </less-than>
 	        <not>
 	          <property>engines/engine/running</property>
@@ -676,13 +688,13 @@
     <animation>
      <type>scale</type>
      <object-name>ctrl.comp.rear</object-name>
-     <property>gear/gear[1]/compression-norm</property>
+     <property>gear/gear[1]/compression-m</property>
      <x-min>1.0</x-min>
      <y-min>1.0</y-min>
      <z-min>1.0</z-min>
      <x-factor>0</x-factor>
      <y-factor>0</y-factor>
-     <z-factor>16</z-factor>
+     <z-factor>70</z-factor>
     </animation>
 		
 </PropertyList>

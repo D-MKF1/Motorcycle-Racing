@@ -7,7 +7,7 @@
 -->
 
 <PropertyList>
-  <path>Panigale_R.ac</path> 
+  <path>Panigale_S.ac</path> 
   
   <sound><path>Aircraft/Motorcycle-Racing/Ducati/Sounds/mp-sound.xml</path></sound>
 
@@ -29,6 +29,7 @@
     <type>material</type>
     <object-name>auspuff</object-name>
     <object-name>bremseH</object-name>
+    <object-name>bremsscheibeH</object-name>
     <object-name>bremseV</object-name>
     <object-name>bremsscheibeV</object-name>
     <object-name>felgeH</object-name>
@@ -157,12 +158,12 @@
   <!-- 1. SPEED --> 
   <model>
 	<name>RPM</name>
-    <path>Aircraft/Motorcycle-Racing/Ducati/Models/Instruments/tacho/tacho.xml</path>
+    <path>Aircraft/Motorcycle-Racing/Ducati/Models/Instruments/combi/combi.xml</path>
     <offsets>
-      <x-m> -0.80 </x-m>
-      <y-m> 0.005 </y-m>
-      <z-m> 0.90 </z-m>
-      <pitch-deg> -38 </pitch-deg>
+      <x-m> -0.76 </x-m>
+      <y-m>-0.075 </y-m>
+      <z-m> 0.93 </z-m>
+      <pitch-deg> -20 </pitch-deg>
     </offsets>
   </model>
   
@@ -758,9 +759,9 @@
           <property>sim/multiplay/generic/float[5]</property>
           <factor>-10</factor>
 	      <center>
-	       <x-m>0.7676</x-m>
+	       <x-m>0.169</x-m>
 	       <y-m>0.0</y-m>
-	       <z-m>0.2022</z-m>
+	       <z-m>0.2554</z-m>
 	      </center>
 	      <axis>
 	        <x>  0 </x>
