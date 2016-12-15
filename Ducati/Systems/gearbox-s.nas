@@ -38,7 +38,7 @@ var speedlimiter = props.globals.getNode("/instrumentation/Motorcycle/speed-indi
 var speedlimstate = props.globals.getNode("/instrumentation/Motorcycle/speed-indicator/speed-limiter-switch");
 var speed = 0;
 var gspeed = 0;
-var ascon = props.globals.initNode("/controls/Motorcycle/SCS/on-off",1,"BOOL");
+var ascon = props.globals.initNode("/controls/Motorcycle/SCS/on-off",0,"BOOL");
 
 ###########################################################################
 
@@ -148,10 +148,18 @@ var loop = func {
 		if (gear.getValue() > 0 and clutch.getValue() == 0) {
 			if(fastcircuit.getValue() == 0.1){
 			  transmissionpower = throttle.getValue()*2;
-			  setprop("/sim/weight[1]/weight-lb", throttle.getValue()*300);
+			  if(ascon.getBoolValue()==0) {
+			  	setprop("/sim/weight[1]/weight-lb", throttle.getValue()*300);
+			  }else{
+			  	setprop("/sim/weight[1]/weight-lb", 0);
+			  }
 			}else if(fastcircuit.getValue() == 0.2){
 			  transmissionpower = 0.95*throttle.getValue()-propulsion.getValue()/maxrpm;
-			  setprop("/sim/weight[1]/weight-lb", throttle.getValue()*100);
+			  if(ascon.getBoolValue()==0) {
+			  	setprop("/sim/weight[1]/weight-lb", throttle.getValue()*100);
+			  }else{
+			  	setprop("/sim/weight[1]/weight-lb", 0);
+			  }
 			}else if(fastcircuit.getValue() == 0.3){
 			  transmissionpower = 0.85*throttle.getValue()-propulsion.getValue()/maxrpm;
 			  setprop("/sim/weight[1]/weight-lb", 0);

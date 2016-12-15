@@ -219,8 +219,6 @@ setlistener("/controls/flight/elevator", func (position){
 	} 
 	if (ms == 1 and position >= 0) setprop("/controls/flight/throttle-input", position*4);
 	
-	
-	
 },0,1);
 
 

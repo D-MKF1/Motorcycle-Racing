@@ -103,7 +103,10 @@
         	<not>
           	  <property>engines/engine/running</property>
         	</not>
-			<property>engines/engine/killed</property>
+			<greater-than>
+			  <property>engines/engine/killed</property>
+			  <value>0.2</value>
+			</greater-than>
 		</or>
       </condition>
     </animation>
@@ -124,7 +127,9 @@
 	        <not>
 	          <property>engines/engine/running</property>
 	        </not>
-	  	  	<property>controls/Motorcycle/SCS/ctrl-light</property>
+	        <not>
+	  	  	  <property>controls/Motorcycle/SCS/on-off</property>
+	        </not>
 		</or>
       </condition>
     </animation>
