@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--###################################################################################
 		Lake of Constance Hangar :: M.Kraus
-		KTM-RC16 for Flightgear October 2016
+		Ducati for Flightgear October 2016
 		This file is licenced under the terms of the GNU General Public Licence V2 or later
 		###################################################################################
 -->
@@ -48,10 +48,20 @@
     <object-name>r_thigh</object-name>
     <object-name>r_upperarm</object-name>
     <condition>
+		<or>
       <equals>
         <property>sim/model/livery/file</property>
-        <value>beirer</value>
+        <value>default</value>
       </equals>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>red</value>
+      </equals>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>red-white</value>
+      </equals>
+  </or>
     </condition>
     <texture>driver.png</texture>
   </animation>
