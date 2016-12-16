@@ -10,7 +10,7 @@
 <sim>
     <model>
         <livery>
-            <name type="string">Red</name>
+            <name type="string">Diavolo rosso</name>
             <texture>Liveries-S/Panigale_red.png</texture>
         </livery>
     </model>

@@ -10,7 +10,7 @@
 <sim>
     <model>
         <livery>
-            <name type="string">Red/White</name>
+            <name type="string">Anniversario</name>
             <texture>Panigale.png</texture>
         </livery>
     </model>
