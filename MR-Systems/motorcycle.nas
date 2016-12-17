@@ -285,6 +285,12 @@ setlistener("/controls/gear/gear-down", func (gd){
 	}
 });
 
+var show_performance = func {
+	var perf = getprop("engines/engine/killed")*100;
+	perf = math.round(100 - perf);
+	help_win.write("Engine performance: "~perf~"%");
+}
+
 #----- AUTOSTART  ------
 
 # startup/shutdown functions

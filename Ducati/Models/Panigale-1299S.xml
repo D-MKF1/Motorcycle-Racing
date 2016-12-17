@@ -468,12 +468,6 @@
 		<z>0</z>
 	</axis>
 </animation>
-
-  <!-- Neutral switch -->
-  <model>
-	<name>Neutral</name>
-	<path>Aircraft/Motorcycle-Racing/Ducati/Models/Instruments/neutral/switch.xml</path>
-  </model>
 	
   <!-- Driver -->
   	<model>
@@ -544,7 +538,6 @@
 	  <type>rotate</type>
       <object-name>RPM</object-name>
       <object-name>TRANSPONDER</object-name>
-      <object-name>REARLIGHT</object-name>
       <object-name>Driver</object-name>
       <object-name>Driver_quick_glance_over_shoulder</object-name>
       <object-name>auspuff</object-name>
@@ -571,6 +564,7 @@
       <object-name>kettenrad</object-name>
       <object-name>lenkkopf</object-name>
       <object-name>radabdeckung</object-name>
+      <object-name>rearlight</object-name>
       <object-name>reifenH</object-name>
       <object-name>reifenV</object-name>
       <object-name>schalter</object-name>
@@ -616,7 +610,6 @@
   	  <type>rotate</type>
         <object-name>RPM</object-name>
         <object-name>TRANSPONDER</object-name>
-        <object-name>REARLIGHT</object-name>
         <object-name>Driver</object-name>
         <object-name>Driver_quick_glance_over_shoulder</object-name>
 	    <object-name>auspuff</object-name>
@@ -643,6 +636,7 @@
 	    <object-name>kettenrad</object-name>
 	    <object-name>lenkkopf</object-name>
 	    <object-name>radabdeckung</object-name>
+        <object-name>rearlight</object-name>
 	    <object-name>reifenH</object-name>
 	    <object-name>reifenV</object-name>
 	    <object-name>schalter</object-name>

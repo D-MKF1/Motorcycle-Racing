@@ -111,6 +111,19 @@
       </condition>
     </animation>
 	
+    <animation>
+        <type>pick</type>
+        <object-name>oil.btn</object-name>
+		<visible>true</visible>
+        <action>
+ 	    <button>0</button>
+        <binding>
+          <command>nasal</command>
+          <script>motorcycle.show_performance();</script>
+        </binding>        
+        </action>
+    </animation>
+	
 	<animation>
 	  <type>select</type>
 		 <object-name>rpm.bg</object-name>
@@ -347,7 +360,7 @@
     </animation>
 	
 	<model>
-	<path>Aircraft/MR-Lights/lightcone-mini.xml</path>
+	<path>Aircraft/Motorcycle-Racing/MR-Lights/lightcone-mini.xml</path>
 	<name>lights</name>
 	<offsets>   
 	  <x-m> 0.25</x-m>
