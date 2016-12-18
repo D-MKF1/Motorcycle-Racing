@@ -269,26 +269,32 @@ and have fun!</text>
 		    <gear n="0">
 		   		<gearteeth n="0" type="int">37</gearteeth>
 		   		<gearteeth n="1" type="int">15</gearteeth>
+		   		<speedpercent type="double">1.0</speedpercent>
 			</gear>
 		    <gear n="1">
 		   		<gearteeth n="0" type="int">30</gearteeth>
 		   		<gearteeth n="1" type="int">16</gearteeth>
+		   		<speedpercent type="double">1.0</speedpercent>
 			</gear>
 		    <gear n="2">
 		   		<gearteeth n="0" type="int">27</gearteeth>
 		   		<gearteeth n="1" type="int">18</gearteeth>
+		   		<speedpercent type="double">1.0</speedpercent>
 			</gear>
 		    <gear n="3">
 		   		<gearteeth n="0" type="int">25</gearteeth>
 		   		<gearteeth n="1" type="int">20</gearteeth>
+		   		<speedpercent type="double">1.0</speedpercent>
 			</gear>
 		    <gear n="4">
 		   		<gearteeth n="0" type="int">24</gearteeth>
 		   		<gearteeth n="1" type="int">22</gearteeth>
+		   		<speedpercent type="double">1.0</speedpercent>
 			</gear>
 		    <gear n="5">
 		   		<gearteeth n="0" type="int">23</gearteeth>
 		   		<gearteeth n="1" type="int">24</gearteeth>
+		   		<speedpercent type="double">1.0</speedpercent>
 			</gear>
 	   </gearbox>
     </Motorcycle>

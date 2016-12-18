@@ -397,6 +397,11 @@ setlistener("sim/model/start-idling", func()
 		var zahn2 = 0;
 		var zahn1default = 0;
 		var zahn2default = 0;
+		var maxratio = 0.0;
+		var minratio = 0.0;
+		var defaultratio = 0.0;
+		var ratio = 0.0;
+		var speedpercent = 1.0;
 		
 		for(var i = 0; i < tt; i += 1) {
 		
@@ -404,6 +409,7 @@ setlistener("sim/model/start-idling", func()
 			zahn2 = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]");
 			zahn1default = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[0]");
 			zahn2default = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[1]");
+			defaultratio = zahn1default/zahn2default;	
 			
 			if(abs(zahn1default - zahn1) > 4){
 				screen.log.write("You fitted your gearbox with wrong gears - was reset to default!", 1.0, 0.0, 0.0);
@@ -414,9 +420,20 @@ setlistener("sim/model/start-idling", func()
 				screen.log.write("You fitted your gearbox with wrong gears - was reset to default!", 1.0, 0.0, 0.0);
 			}
 		    
-			setprop("controls/Motorcycle/gearbox/gear["~i~"]/ratio", getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]")/getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]"));
+			ratio = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]")/getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]");
+			
+			setprop("controls/Motorcycle/gearbox/gear["~i~"]/ratio", ratio);
+			
+			# wenn ratio größer als default ratio =  ratio - default ratio = speedpercent
+			if(ratio > defaultratio){
+				setprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent", ratio-defaultratio);
+			}
+			# wenn ratio kleiner als default ratio = default ratio - ratio = speedpercent
+			if(ratio < defaultratio){
+				setprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent", defaultratio-ratio);
+			}
 		}
-	}  
+	 }  
   }
   
   var set_default_gearbox = func(gearnr=0){
