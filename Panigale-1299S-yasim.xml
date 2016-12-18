@@ -58,14 +58,14 @@
 
   <thruster 
     x="0.4" y="0" z="-0.16"
-    thrust="1200"
+    thrust="950"
     vx="1" vy="0" vz="0">
     <control-input axis="/engines/engine/propulsion" control="THROTTLE" src0="0" src1="1" dst0="0" dst1="1"/>
   </thruster>
   
   <thruster 
     x="2" y="0" z="0"
-    thrust="950"
+    thrust="850"
     vx="1" vy="0" vz="0">
     <control-input axis="/controls/gear/brake-front" control="THROTTLE" src0="0" src1="1" dst0="0" dst1="-1"/>
   </thruster>

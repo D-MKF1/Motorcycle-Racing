@@ -118,6 +118,13 @@
 					</script>
 				</binding>
 			</item>
+			<item>
+	          <label>Gearbox settings</label>
+	          <binding>
+	            <command>nasal</command>
+	            <script>motorcycle.ratio_dlg.open()</script>
+	          </binding>
+	        </item>
 			<enabled type="bool">true</enabled>				
 			<item>
 				<label>Show Sector/Lap Results</label>
@@ -205,6 +212,37 @@
 	</flaps>
 
 </sim>
+ 
+<controls>
+    <Motorcycle>
+	   <gearbox>
+		    <gear n="0">
+		   		<gearteeth n="0" type="int">37</gearteeth>
+		   		<gearteeth n="1" type="int">14</gearteeth>
+			</gear>
+		    <gear n="1">
+		   		<gearteeth n="0" type="int">31</gearteeth>
+		   		<gearteeth n="1" type="int">15</gearteeth>
+			</gear>
+		    <gear n="2">
+		   		<gearteeth n="0" type="int">28</gearteeth>
+		   		<gearteeth n="1" type="int">16</gearteeth>
+			</gear>
+		    <gear n="3">
+		   		<gearteeth n="0" type="int">27</gearteeth>
+		   		<gearteeth n="1" type="int">18</gearteeth>
+			</gear>
+		    <gear n="4">
+		   		<gearteeth n="0" type="int">26</gearteeth>
+		   		<gearteeth n="1" type="int">19</gearteeth>
+			</gear>
+		    <gear n="5">
+		   		<gearteeth n="0" type="int">24</gearteeth>
+		   		<gearteeth n="1" type="int">20</gearteeth>
+			</gear>
+	   </gearbox>
+    </Motorcycle>
+</controls>
 
 <!-- -NASAL- -->
 <nasal>

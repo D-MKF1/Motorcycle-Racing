@@ -8,7 +8,6 @@ var fuel = props.globals.getNode("consumables/fuel/tank/level-m3");
 var fuel_lev = 0;
 var fuel_weight = props.globals.getNode("consumables/fuel/total-fuel-lbs"); # max 31lbs
 var running = props.globals.getNode("/engines/engine/running");
-var ratio = props.globals.getNode("controls/Motorcycle/gearbox/").getChildren("gear");
 var gear = props.globals.getNode("/engines/engine/gear");
 var gearsound = props.globals.getNode("/engines/engine/gear-sound");
 var fastcircuit = props.globals.getNode("/controls/flight/flaps");
@@ -126,53 +125,52 @@ var loop = func {
 			vmax = 0;
 			fastcircuit.setValue(0);
 		} else if (gear.getValue() == 1) {
-			vmax = 80;
+			vmax = 78;
 			fastcircuit.setValue(0.1);
 		} else if (gear.getValue() == 2) {
-			vmax =  110;
+			vmax =  100;
 			fastcircuit.setValue(0.2);
 		} else if (gear.getValue() == 3) {
-			vmax = 123;
+			vmax = 125;
 			fastcircuit.setValue(0.3);
 		} else if (gear.getValue() == 4) {
-			vmax = 152;
+			vmax = 156;
 			fastcircuit.setValue(0.4);
 		} else if (gear.getValue() == 5) {
 			vmax = 184;
 			fastcircuit.setValue(0.5);
 		} else if (gear.getValue() == 6) {
-			vmax = 215;
+			vmax = 230;
 			fastcircuit.setValue(0.6);
 		}
 
 		# everthing is ok - let him go
 		if (gear.getValue() > 0 and clutch.getValue() == 0) {
 			if(fastcircuit.getValue() == 0.1){
-			  transmissionpower = throttle.getValue()*(ratio[0].getValue('ratio')-0.5);
+			  transmissionpower = throttle.getValue()*2;
 			  if(ascon.getBoolValue()==0) {
 			  	setprop("/sim/weight[1]/weight-lb", throttle.getValue()*300);
 			  }else{
 			  	setprop("/sim/weight[1]/weight-lb", 0);
 			  }
 			}else if(fastcircuit.getValue() == 0.2){
-			  transmissionpower = (ratio[1].getValue('ratio')-0.5)*throttle.getValue()-propulsion.getValue()/maxrpm;
+			  transmissionpower = 0.95*throttle.getValue()-propulsion.getValue()/maxrpm;
 			  if(ascon.getBoolValue()==0) {
 			  	setprop("/sim/weight[1]/weight-lb", throttle.getValue()*100);
 			  }else{
 			  	setprop("/sim/weight[1]/weight-lb", 0);
 			  }
 			}else if(fastcircuit.getValue() == 0.3){
-			  transmissionpower = (ratio[2].getValue('ratio')-0.5)*throttle.getValue()-propulsion.getValue()/maxrpm;
+			  transmissionpower = 0.85*throttle.getValue()-propulsion.getValue()/maxrpm;
 			  setprop("/sim/weight[1]/weight-lb", 0);
 			}else if(fastcircuit.getValue() == 0.4){
-			  transmissionpower = (ratio[3].getValue('ratio')-0.5)*throttle.getValue()-propulsion.getValue()/maxrpm;
+			  transmissionpower = 0.75*throttle.getValue()-propulsion.getValue()/maxrpm;
 			}else if(fastcircuit.getValue() == 0.5){
-			  transmissionpower = (ratio[4].getValue('ratio')-0.5)*throttle.getValue()-propulsion.getValue()/maxrpm;
+			  transmissionpower = 0.62*throttle.getValue()-propulsion.getValue()/maxrpm;
 			}else{
-			  transmissionpower = (ratio[5].getValue('ratio')-0.5)*throttle.getValue()-propulsion.getValue()/maxrpm;
+			  transmissionpower = 0.42*throttle.getValue()-propulsion.getValue()/maxrpm;
 			}
 			transmissionpower = transmissionpower * (1- killed.getValue());
-			
 			propulsion.setValue(transmissionpower);
 			
 			if(bwspeed < 3 and gspeed < 30){

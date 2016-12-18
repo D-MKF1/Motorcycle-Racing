@@ -4,6 +4,7 @@
 #		This file is licenced under the terms of the GNU General Public Licence V2 or later
 ###############################################################################################
 var config_dlg = gui.Dialog.new("/sim/gui/dialogs/config/dialog", getprop("/sim/aircraft-dir")~"/MR-Systems/config.xml");
+var ratio_dlg = gui.Dialog.new("/sim/gui/dialogs/ratio/dialog", getprop("/sim/aircraft-dir")~"/MR-Systems/ratio.xml");
 var hangoffspeed = props.globals.initNode("/controls/hang-off-speed",0,"DOUBLE");
 var hangoffhdg = props.globals.initNode("/controls/hang-off-hdg",0,"DOUBLE");
 var hangoffviewdeg = props.globals.initNode("/controls/hang-off-view-deg",0,"DOUBLE");
@@ -386,6 +387,59 @@ setlistener("sim/model/start-idling", func()
 		}
    }
   }, 1, 1);
+  
+  #-------------------------- Gearbox settings --------------------------
+  var recalc_gearbox = func{
+	if(getprop("controls/Motorcycle/gearbox/gear[0]/gearteeth[0]")){
+		var wgbdef = props.globals.getNode("controls/Motorcycle/gearbox/").getChildren("gear");
+		var tt = size(wgbdef);
+		var zahn1 = 0;
+		var zahn2 = 0;
+		var zahn1default = 0;
+		var zahn2default = 0;
+		
+		for(var i = 0; i < tt; i += 1) {
+		
+			zahn1 = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]");
+			zahn2 = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]");
+			zahn1default = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[0]");
+			zahn2default = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[1]");
+			
+			if(abs(zahn1default - zahn1) > 4){
+				screen.log.write("You fitted your gearbox with wrong gears - was reset to default!", 1.0, 0.0, 0.0);
+				setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]",getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[0]"));
+			}
+			if(abs(zahn2default - zahn2) > 4){
+				setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]",getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[1]"));
+				screen.log.write("You fitted your gearbox with wrong gears - was reset to default!", 1.0, 0.0, 0.0);
+			}
+		    
+			setprop("controls/Motorcycle/gearbox/gear["~i~"]/ratio", getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]")/getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]"));
+		}
+	}  
+  }
+  
+  var set_default_gearbox = func(gearnr=0){
+	if(getprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/gearteeth[0]")){
+		setprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/gearteeth[0]", getprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/gearteethdefault[0]") or 0);
+		setprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/gearteeth[1]", getprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/gearteethdefault[1]") or 0);
+		recalc_gearbox();
+	}
+  }
+  
+  var write_gearbox_defaults = func{
+	if(getprop("controls/Motorcycle/gearbox/gear[0]/gearteeth[0]")){
+		var wgbdef = props.globals.getNode("controls/Motorcycle/gearbox/").getChildren("gear");
+		var tt = size(wgbdef);
+		for(var i = 0; i < tt; i += 1) {
+			setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[0]", getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]") or 0);
+			setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[1]", getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]") or 0);
+		}
+	}
+  }
+  
+  write_gearbox_defaults();
+  recalc_gearbox();
 
  
 
