@@ -13,7 +13,7 @@
 
   <nasal>
     <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/Motorcycle-Racing/Ducati/Models/Liveries-R", 10);
+      var livery_update = aircraft.livery_update.new("Aircraft/Motorcycle-Racing/Ducati/Models/Liveries-S", 10);
     </load>
 
     <unload>

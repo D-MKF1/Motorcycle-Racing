@@ -414,10 +414,12 @@ setlistener("sim/model/start-idling", func()
 			if(abs(zahn1default - zahn1) > 4){
 				screen.log.write("You fitted your gearbox with wrong gears - was reset to default!", 1.0, 0.0, 0.0);
 				setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]",getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[0]"));
+				setprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent", 1.0);
 			}
 			if(abs(zahn2default - zahn2) > 4){
 				setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]",getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[1]"));
 				screen.log.write("You fitted your gearbox with wrong gears - was reset to default!", 1.0, 0.0, 0.0);
+				setprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent", 1.0);
 			}
 		    
 			ratio = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]")/getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]");
