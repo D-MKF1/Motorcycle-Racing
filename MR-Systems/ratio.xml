@@ -19,7 +19,7 @@
       <stretch>1</stretch>
     </empty>		
     <text>
-      <label>Gearbox settings -- max. 4 teeth up/down each gear</label>
+      <label>Gearbox settings - max 3 teeth up/down each gear</label>
     </text>
     <empty>
       <stretch>1</stretch>
@@ -502,7 +502,7 @@
     <halign>fill</halign>
     <stretch>true</stretch>
     <pref-width>380</pref-width>
-    <pref-height>282</pref-height>
+    <pref-height>330</pref-height>
     <nasal>      
     <!--
          this is the Nasal/canvas section where you can run your own Nasal code 
@@ -516,7 +516,7 @@
                  var root = my_canvas.createGroup();
                  var text = root.createChild("text")
                                 .setText("  1.Gear     2.Gear     3.Gear     4.Gear     5.Gear     6.Gear")
-                                .setTranslation(30, 290)
+                                .setTranslation(30, 370)
                                 .setAlignment("left-top")
                                 .setFontSize(14)
                                 .setFont("LiberationFonts/LiberationSans-Regular.ttf")
@@ -524,47 +524,56 @@
                                 .setColor(1,0,0);
 
                 var text2 = root.createChild("text")
-                               .setText("Ratio")
+                               .setText("Ratio (i)")
                                .setTranslation(150, 30)
                                .setAlignment("left-top")
                                .setFontSize(14)
                                .setFont("LiberationFonts/LiberationSans-Regular.ttf")
                                .set("max-width", 380)
-                               .setColor(0,0,1);
+                               .setColor(0,0.2,1);
 
                 var text3 = root.createChild("text")
                                .setText("vMax")
-                               .setTranslation(190, 30)
+                               .setTranslation(210, 30)
                                .setAlignment("left-top")
                                .setFontSize(14)
                                .setFont("LiberationFonts/LiberationSans-Regular.ttf")
                                .set("max-width", 380)
                                .setColor(0,1,1);
+
+                var text3 = root.createChild("text")
+                               .setText("(km/h)")
+                               .setTranslation(244, 32)
+                               .setAlignment("left-top")
+                               .setFontSize(12)
+                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                               .set("max-width", 380)
+                               .setColor(0.4,0.4,0.4);
 							   
                  var graph = root.createChild("group");
 
                  var x_axis = graph.createChild("path", "x-axis")
-                                   .moveTo(30, 280)
-                                   .lineTo(380, 280)
+                                   .moveTo(30, 360)
+                                   .lineTo(380, 360)
                                    .setColor(1,0,0)
                                    .setStrokeLineWidth(3);
 
                  var y_axis = graph.createChild("path", "y-axis")
                                    .moveTo(30, 30)
-                                   .lineTo(30, 280)
+                                   .lineTo(30, 360)
                                    .setColor(1,0,0)
                                    .setStrokeLineWidth(3);
 								   
-				 var gear1 = 282 - getprop("controls/Motorcycle/gearbox/gear[0]/ratio")*70;
-				 var gear2 = 282 - getprop("controls/Motorcycle/gearbox/gear[1]/ratio")*70;
-				 var gear3 = 282 - getprop("controls/Motorcycle/gearbox/gear[2]/ratio")*70;
-				 var gear4 = 282 - getprop("controls/Motorcycle/gearbox/gear[3]/ratio")*70;
-				 var gear5 = 282 - getprop("controls/Motorcycle/gearbox/gear[4]/ratio")*70;
-				 var gear6 = 282 - getprop("controls/Motorcycle/gearbox/gear[5]/ratio")*70;
+				 var gear1 = 360 - getprop("controls/Motorcycle/gearbox/gear[0]/ratio")*100;
+				 var gear2 = 360 - getprop("controls/Motorcycle/gearbox/gear[1]/ratio")*100;
+				 var gear3 = 360 - getprop("controls/Motorcycle/gearbox/gear[2]/ratio")*100;
+				 var gear4 = 360 - getprop("controls/Motorcycle/gearbox/gear[3]/ratio")*100;
+				 var gear5 = 360 - getprop("controls/Motorcycle/gearbox/gear[4]/ratio")*100;
+				 var gear6 = 360 - getprop("controls/Motorcycle/gearbox/gear[5]/ratio")*100;
 
                  var plot = graph.createChild("path", "data")
                                  .setStrokeLineWidth(2)
-                                 .setColor(0,0,1)
+                                 .setColor(0,0.2,1)
                                  .moveTo(40,gear1); # origin
 
                  var samples = [ # absolute coordinates
@@ -575,12 +584,102 @@
                                              plot.lineTo( set[0], set[1]);
                  }
 
-				 var speed1 = 282 - getprop("controls/Motorcycle/gearbox/gear[0]/vmax")*getprop("controls/Motorcycle/gearbox/gear[0]/speedpercent")*0.8;
-				 var speed2 = 282 - getprop("controls/Motorcycle/gearbox/gear[1]/vmax")*getprop("controls/Motorcycle/gearbox/gear[1]/speedpercent")*0.8;
-				 var speed3 = 282 - getprop("controls/Motorcycle/gearbox/gear[2]/vmax")*getprop("controls/Motorcycle/gearbox/gear[2]/speedpercent")*0.8;
-				 var speed4 = 282 - getprop("controls/Motorcycle/gearbox/gear[3]/vmax")*getprop("controls/Motorcycle/gearbox/gear[3]/speedpercent")*0.8;
-				 var speed5 = 282 - getprop("controls/Motorcycle/gearbox/gear[4]/vmax")*getprop("controls/Motorcycle/gearbox/gear[4]/speedpercent")*0.8;
-				 var speed6 = 282 - getprop("controls/Motorcycle/gearbox/gear[5]/vmax")*getprop("controls/Motorcycle/gearbox/gear[5]/speedpercent")*0.8;
+				 var speed1 = 360 - getprop("controls/Motorcycle/gearbox/gear[0]/vmax");
+				 var speed2 = 360 - getprop("controls/Motorcycle/gearbox/gear[1]/vmax");
+				 var speed3 = 360 - getprop("controls/Motorcycle/gearbox/gear[2]/vmax");
+				 var speed4 = 360 - getprop("controls/Motorcycle/gearbox/gear[3]/vmax");
+				 var speed5 = 360 - getprop("controls/Motorcycle/gearbox/gear[4]/vmax");
+				 var speed6 = 360 - getprop("controls/Motorcycle/gearbox/gear[5]/vmax");
+
+                 var a_axis = graph.createChild("path", "y-axis")
+                                   .moveTo(30, speed1)
+                                   .lineTo(370, speed1)
+                                   .setColor(0.2,0.2,0.2)
+                                   .setStrokeLineWidth(1);
+
+                var a_text = root.createChild("text")
+                               .setText(math.round(getprop("controls/Motorcycle/gearbox/gear[0]/vmax")*1.609))
+                               .setTranslation(376,355-getprop("controls/Motorcycle/gearbox/gear[0]/vmax"))
+                               .setAlignment("left-top")
+                               .setFontSize(10)
+                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                               .set("max-width", 380)
+                               .setColor(0.4,0.4,0.4);
+
+                 var b_axis = graph.createChild("path", "y-axis")
+                                   .moveTo(30, speed2)
+                                   .lineTo(370, speed2)
+                                   .setColor(0.2,0.2,0.2)
+                                   .setStrokeLineWidth(1);
+
+                var b_text = root.createChild("text")
+                               .setText(math.round(getprop("controls/Motorcycle/gearbox/gear[1]/vmax")*1.609))
+                               .setTranslation(376,355-getprop("controls/Motorcycle/gearbox/gear[1]/vmax"))
+                               .setAlignment("left-top")
+                               .setFontSize(10)
+                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                               .set("max-width", 380)
+                               .setColor(0.4,0.4,0.4);
+
+                 var c_axis = graph.createChild("path", "y-axis")
+                                   .moveTo(30, speed3)
+                                   .lineTo(370, speed3)
+                                   .setColor(0.2,0.2,0.2)
+                                   .setStrokeLineWidth(1);
+
+                var c_text = root.createChild("text")
+                               .setText(math.round(getprop("controls/Motorcycle/gearbox/gear[2]/vmax")*1.609))
+                               .setTranslation(376,355-getprop("controls/Motorcycle/gearbox/gear[2]/vmax"))
+                               .setAlignment("left-top")
+                               .setFontSize(10)
+                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                               .set("max-width", 380)
+                               .setColor(0.4,0.4,0.4);
+
+                 var d_axis = graph.createChild("path", "y-axis")
+                                   .moveTo(30, speed4)
+                                   .lineTo(370, speed4)
+                                   .setColor(0.2,0.2,0.2)
+                                   .setStrokeLineWidth(1);
+
+                var d_text = root.createChild("text")
+                               .setText(math.round(getprop("controls/Motorcycle/gearbox/gear[3]/vmax")*1.609))
+                               .setTranslation(376,355-getprop("controls/Motorcycle/gearbox/gear[3]/vmax"))
+                               .setAlignment("left-top")
+                               .setFontSize(10)
+                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                               .set("max-width", 380)
+                               .setColor(0.4,0.4,0.4);
+
+                 var e_axis = graph.createChild("path", "y-axis")
+                                   .moveTo(30, speed5)
+                                   .lineTo(370, speed5)
+                                   .setColor(0.2,0.2,0.2)
+                                   .setStrokeLineWidth(1);
+
+                var e_text = root.createChild("text")
+                               .setText(math.round(getprop("controls/Motorcycle/gearbox/gear[4]/vmax")*1.609))
+                               .setTranslation(376,355-getprop("controls/Motorcycle/gearbox/gear[4]/vmax"))
+                               .setAlignment("left-top")
+                               .setFontSize(10)
+                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                               .set("max-width", 380)
+                               .setColor(0.4,0.4,0.4);
+
+                 var f_axis = graph.createChild("path", "y-axis")
+                                   .moveTo(30, speed6)
+                                   .lineTo(370, speed6)
+                                   .setColor(0.2,0.2,0.2)
+                                   .setStrokeLineWidth(1);
+
+                var f_text = root.createChild("text")
+                               .setText(math.round(getprop("controls/Motorcycle/gearbox/gear[5]/vmax")*1.609))
+                               .setTranslation(376,355-getprop("controls/Motorcycle/gearbox/gear[5]/vmax"))
+                               .setAlignment("left-top")
+                               .setFontSize(10)
+                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                               .set("max-width", 380)
+                               .setColor(0.4,0.4,0.4);
 				 
 
                  var plot2 = graph.createChild("path", "data")

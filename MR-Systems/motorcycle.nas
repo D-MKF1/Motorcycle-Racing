@@ -397,11 +397,9 @@ setlistener("sim/model/start-idling", func()
 		var zahn2 = 0;
 		var zahn1default = 0;
 		var zahn2default = 0;
-		var maxratio = 0.0;
-		var minratio = 0.0;
 		var defaultratio = 0.0;
 		var ratio = 0.0;
-		var speedpercent = 1.0;
+		var vmaxnew = 0.0;
 		
 		for(var i = 0; i < tt; i += 1) {
 		
@@ -411,11 +409,11 @@ setlistener("sim/model/start-idling", func()
 			zahn2default = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[1]");
 			defaultratio = zahn1default/zahn2default;	
 			
-			if(abs(zahn1default - zahn1) > 4){
+			if(abs(zahn1default - zahn1) > 3){
 				screen.log.write("You fitted your gearbox with wrong gears - was reset to default!", 1.0, 0.0, 0.0);
 				setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]",getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[0]"));
 			}
-			if(abs(zahn2default - zahn2) > 4){
+			if(abs(zahn2default - zahn2) > 3){
 				setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]",getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[1]"));
 				screen.log.write("You fitted your gearbox with wrong gears - was reset to default!", 1.0, 0.0, 0.0);
 			}
@@ -423,19 +421,9 @@ setlistener("sim/model/start-idling", func()
 			ratio = getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]")/getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]");
 			
 			setprop("controls/Motorcycle/gearbox/gear["~i~"]/ratio", ratio);
+			vmaxnew = getprop("controls/Motorcycle/gearbox/gear["~i~"]/vmaxdefault")/ratio*defaultratio;
+			setprop("controls/Motorcycle/gearbox/gear["~i~"]/vmax", vmaxnew);
 			
-			# wenn ratio größer als default ratio =  ratio - default ratio = speedpercent
-			if(ratio > defaultratio){
-				setprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent", ratio-defaultratio);
-			}
-			# wenn ratio kleiner als default ratio = default ratio - ratio = speedpercent
-			else if(ratio < defaultratio){
-			    setprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent", defaultratio-ratio);
-			}else{
-				setprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent", 1.0);
-			}
-			
-			setprop("controls/Motorcycle/gearbox/gear["~i~"]/vmax", getprop("controls/Motorcycle/gearbox/gear["~i~"]/vmaxdefault")*getprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent"));
 		}
 	 }  
   }

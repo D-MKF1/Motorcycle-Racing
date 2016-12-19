@@ -131,28 +131,28 @@ var loop = func {
 			interpolate("/engines/engine/rpm" , 0, 3);
 			engine_brake.setValue(0.7);
 		}
-
+		
 		# max speed per gear in kts
 		if (gear.getValue() == 0) {
 			vmax = 0;
 			fastcircuit.setValue(0);
 		} else if (gear.getValue() == 1) {
-			vmax = 76;
+			vmax = getprop("controls/Motorcycle/gearbox/gear[0]/vmax");
 			fastcircuit.setValue(0.1);
 		} else if (gear.getValue() == 2) {
-			vmax = 100;
+			vmax =  getprop("controls/Motorcycle/gearbox/gear[1]/vmax");
 			fastcircuit.setValue(0.2);
 		} else if (gear.getValue() == 3) {
-			vmax = 123;
+			vmax = getprop("controls/Motorcycle/gearbox/gear[2]/vmax");
 			fastcircuit.setValue(0.3);
 		} else if (gear.getValue() == 4) {
-			vmax = 144;
+			vmax = getprop("controls/Motorcycle/gearbox/gear[3]/vmax");
 			fastcircuit.setValue(0.4);
 		} else if (gear.getValue() == 5) {
-			vmax = 168;
+			vmax = getprop("controls/Motorcycle/gearbox/gear[4]/vmax");
 			fastcircuit.setValue(0.5);
 		} else if (gear.getValue() == 6) {
-			vmax = 200;
+			vmax = getprop("controls/Motorcycle/gearbox/gear[5]/vmax");
 			fastcircuit.setValue(0.6);
 		}
 
