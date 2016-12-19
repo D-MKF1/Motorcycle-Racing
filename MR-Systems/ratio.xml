@@ -11,6 +11,7 @@
   <modal>false</modal>
   <layout>vbox</layout>
   <padding>20</padding>
+  <pref-width>420</pref-width>
 
   <group>
     <layout>hbox</layout>
@@ -45,6 +46,7 @@
   	      <halign>left</halign>
   	    </text>
   	    <input>
+      	  <pref-width>40</pref-width>
   	      <property>controls/Motorcycle/gearbox/gear[0]/gearteeth[0]</property>
   	      <type>INTEGER</type>
   	    </input>
@@ -53,16 +55,31 @@
   	      <halign>center</halign>
   	    </text>
   	    <input>
+      	  <pref-width>40</pref-width>
   	      <property>controls/Motorcycle/gearbox/gear[0]/gearteeth[1]</property>
   	      <type>INTEGER</type>
   	    </input>
   	    <text>
+      	  <pref-width>15</pref-width>
     	  <property>controls/Motorcycle/gearbox/gear[0]/ratio</property>
     	  <label>0123456</label>
     	  <format>%.2f</format>
     	  <live>true</live>
   	      <halign>center</halign>
   	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[0]/vmax</property>
+      	  <label>0123456</label>
+      	  <format>%.0f</format>
+      	  <live>true</live>
+    	      <halign>right</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+    	      <label>mph</label>
+    	      <halign>left</halign>
+    	    </text>
         <button>
           <legend>Reset</legend>
           <default>false</default>
@@ -99,30 +116,46 @@
   	  </group>
 	  
   	  <group>
-  	    <layout>hbox</layout>
-  	    <text>
-  	      <label>2. Gear</label>
-  	      <halign>left</halign>
-  	    </text>
-  	    <input>
-  	      <property>controls/Motorcycle/gearbox/gear[1]/gearteeth[0]</property>
-  	      <type>INTEGER</type>
-  	    </input>
-  	    <text>
-  	      <label>:</label>
-  	      <halign>center</halign>
-  	    </text>
-  	    <input>
-  	      <property>controls/Motorcycle/gearbox/gear[1]/gearteeth[1]</property>
-  	      <type>INTEGER</type>
-  	    </input>
-  	    <text>
-    	  <property>controls/Motorcycle/gearbox/gear[1]/ratio</property>
-    	  <label>0123456</label>
-    	  <format>%.2f</format>
-    	  <live>true</live>
-  	      <halign>center</halign>
-  	    </text>
+    	    <layout>hbox</layout>
+    	    <text>
+    	      <label>2. Gear</label>
+    	      <halign>left</halign>
+    	    </text>
+    	    <input>
+        	  <pref-width>40</pref-width>
+    	      <property>controls/Motorcycle/gearbox/gear[1]/gearteeth[0]</property>
+    	      <type>INTEGER</type>
+    	    </input>
+    	    <text>
+    	      <label>:</label>
+    	      <halign>center</halign>
+    	    </text>
+    	    <input>
+        	  <pref-width>40</pref-width>
+    	      <property>controls/Motorcycle/gearbox/gear[1]/gearteeth[1]</property>
+    	      <type>INTEGER</type>
+    	    </input>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[1]/ratio</property>
+      	  <label>0123456</label>
+      	  <format>%.2f</format>
+      	  <live>true</live>
+    	      <halign>center</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[1]/vmax</property>
+      	  <label>0123456</label>
+      	  <format>%.0f</format>
+      	  <live>true</live>
+    	      <halign>right</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+    	      <label>mph</label>
+    	      <halign>left</halign>
+    	    </text>
         <button>
           <legend>Reset</legend>
           <default>false</default>
@@ -159,30 +192,46 @@
   	  </group>
 	    	  
   	  <group>
-  	    <layout>hbox</layout>
-  	    <text>
-  	      <label>3. Gear</label>
-  	      <halign>left</halign>
-  	    </text>
-  	    <input>
-  	      <property>controls/Motorcycle/gearbox/gear[2]/gearteeth[0]</property>
-  	      <type>INTEGER</type>
-  	    </input>
-  	    <text>
-  	      <label>:</label>
-  	      <halign>center</halign>
-  	    </text>
-  	    <input>
-  	      <property>controls/Motorcycle/gearbox/gear[2]/gearteeth[1]</property>
-  	      <type>INTEGER</type>
-  	    </input>
-  	    <text>
-    	  <property>controls/Motorcycle/gearbox/gear[2]/ratio</property>
-    	  <label>0123456</label>
-    	  <format>%.2f</format>
-    	  <live>true</live>
-  	      <halign>center</halign>
-  	    </text>
+    	    <layout>hbox</layout>
+    	    <text>
+    	      <label>3. Gear</label>
+    	      <halign>left</halign>
+    	    </text>
+    	    <input>
+        	  <pref-width>40</pref-width>
+    	      <property>controls/Motorcycle/gearbox/gear[2]/gearteeth[0]</property>
+    	      <type>INTEGER</type>
+    	    </input>
+    	    <text>
+    	      <label>:</label>
+    	      <halign>center</halign>
+    	    </text>
+    	    <input>
+        	  <pref-width>40</pref-width>
+    	      <property>controls/Motorcycle/gearbox/gear[2]/gearteeth[1]</property>
+    	      <type>INTEGER</type>
+    	    </input>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[2]/ratio</property>
+      	  <label>0123456</label>
+      	  <format>%.2f</format>
+      	  <live>true</live>
+    	      <halign>center</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[2]/vmax</property>
+      	  <label>0123456</label>
+      	  <format>%.0f</format>
+      	  <live>true</live>
+    	      <halign>right</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+    	      <label>mph</label>
+    	      <halign>left</halign>
+    	    </text>
         <button>
           <legend>Reset</legend>
           <default>false</default>
@@ -219,30 +268,46 @@
   	  </group>	  	  
 	  
   	  <group>
-  	    <layout>hbox</layout>
-  	    <text>
-  	      <label>4. Gear</label>
-  	      <halign>left</halign>
-  	    </text>
-  	    <input>
-  	      <property>controls/Motorcycle/gearbox/gear[3]/gearteeth[0]</property>
-  	      <type>INTEGER</type>
-  	    </input>
-  	    <text>
-  	      <label>:</label>
-  	      <halign>center</halign>
-  	    </text>
-  	    <input>
-  	      <property>controls/Motorcycle/gearbox/gear[3]/gearteeth[1]</property>
-  	      <type>INTEGER</type>
-  	    </input>
-  	    <text>
-    	  <property>controls/Motorcycle/gearbox/gear[3]/ratio</property>
-    	  <label>0123456</label>
-    	  <format>%.2f</format>
-    	  <live>true</live>
-  	      <halign>center</halign>
-  	    </text>
+    	    <layout>hbox</layout>
+    	    <text>
+    	      <label>4. Gear</label>
+    	      <halign>left</halign>
+    	    </text>
+    	    <input>
+        	  <pref-width>40</pref-width>
+    	      <property>controls/Motorcycle/gearbox/gear[3]/gearteeth[0]</property>
+    	      <type>INTEGER</type>
+    	    </input>
+    	    <text>
+    	      <label>:</label>
+    	      <halign>center</halign>
+    	    </text>
+    	    <input>
+        	  <pref-width>40</pref-width>
+    	      <property>controls/Motorcycle/gearbox/gear[3]/gearteeth[1]</property>
+    	      <type>INTEGER</type>
+    	    </input>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[3]/ratio</property>
+      	  <label>0123456</label>
+      	  <format>%.2f</format>
+      	  <live>true</live>
+    	      <halign>center</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[3]/vmax</property>
+      	  <label>0123456</label>
+      	  <format>%.0f</format>
+      	  <live>true</live>
+    	      <halign>right</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+    	      <label>mph</label>
+    	      <halign>left</halign>
+    	    </text>
         <button>
           <legend>Reset</legend>
           <default>false</default>
@@ -279,30 +344,46 @@
   	  </group> 	  	  
 	  
   	  <group>
-  	    <layout>hbox</layout>
-  	    <text>
-  	      <label>5. Gear</label>
-  	      <halign>left</halign>
-  	    </text>
-  	    <input>
-  	      <property>controls/Motorcycle/gearbox/gear[4]/gearteeth[0]</property>
-  	      <type>INTEGER</type>
-  	    </input>
-  	    <text>
-  	      <label>:</label>
-  	      <halign>center</halign>
-  	    </text>
-  	    <input>
-  	      <property>controls/Motorcycle/gearbox/gear[4]/gearteeth[1]</property>
-  	      <type>INTEGER</type>
-  	    </input>
-  	    <text>
-    	  <property>controls/Motorcycle/gearbox/gear[4]/ratio</property>
-    	  <label>0123456</label>
-    	  <format>%.2f</format>
-    	  <live>true</live>
-  	      <halign>center</halign>
-  	    </text>
+    	    <layout>hbox</layout>
+    	    <text>
+    	      <label>5. Gear</label>
+    	      <halign>left</halign>
+    	    </text>
+    	    <input>
+        	  <pref-width>40</pref-width>
+    	      <property>controls/Motorcycle/gearbox/gear[4]/gearteeth[0]</property>
+    	      <type>INTEGER</type>
+    	    </input>
+    	    <text>
+    	      <label>:</label>
+    	      <halign>center</halign>
+    	    </text>
+    	    <input>
+        	  <pref-width>40</pref-width>
+    	      <property>controls/Motorcycle/gearbox/gear[4]/gearteeth[1]</property>
+    	      <type>INTEGER</type>
+    	    </input>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[4]/ratio</property>
+      	  <label>0123456</label>
+      	  <format>%.2f</format>
+      	  <live>true</live>
+    	      <halign>center</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[4]/vmax</property>
+      	  <label>0123456</label>
+      	  <format>%.0f</format>
+      	  <live>true</live>
+    	      <halign>right</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+    	      <label>mph</label>
+    	      <halign>left</halign>
+    	    </text>
         <button>
           <legend>Reset</legend>
           <default>false</default>
@@ -339,30 +420,46 @@
   	  </group> 		  	  
 	  
   	  <group>
-  	    <layout>hbox</layout>
-  	    <text>
-  	      <label>6. Gear</label>
-  	      <halign>left</halign>
-  	    </text>
-  	    <input>
-  	      <property>controls/Motorcycle/gearbox/gear[5]/gearteeth[0]</property>
-  	      <type>INTEGER</type>
-  	    </input>
-  	    <text>
-  	      <label>:</label>
-  	      <halign>center</halign>
-  	    </text>
-  	    <input>
-  	      <property>controls/Motorcycle/gearbox/gear[5]/gearteeth[1]</property>
-  	      <type>INTEGER</type>
-  	    </input>
-  	    <text>
-    	  <property>controls/Motorcycle/gearbox/gear[5]/ratio</property>
-    	  <label>0123456</label>
-    	  <format>%.2f</format>
-    	  <live>true</live>
-  	      <halign>center</halign>
-  	    </text>
+    	    <layout>hbox</layout>
+    	    <text>
+    	      <label>6. Gear</label>
+    	      <halign>left</halign>
+    	    </text>
+    	    <input>
+        	  <pref-width>40</pref-width>
+    	      <property>controls/Motorcycle/gearbox/gear[5]/gearteeth[0]</property>
+    	      <type>INTEGER</type>
+    	    </input>
+    	    <text>
+    	      <label>:</label>
+    	      <halign>center</halign>
+    	    </text>
+    	    <input>
+        	  <pref-width>40</pref-width>
+    	      <property>controls/Motorcycle/gearbox/gear[5]/gearteeth[1]</property>
+    	      <type>INTEGER</type>
+    	    </input>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[5]/ratio</property>
+      	  <label>0123456</label>
+      	  <format>%.2f</format>
+      	  <live>true</live>
+    	      <halign>center</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+      	  <property>controls/Motorcycle/gearbox/gear[5]/vmax</property>
+      	  <label>0123456</label>
+      	  <format>%.0f</format>
+      	  <live>true</live>
+    	      <halign>right</halign>
+    	    </text>
+    	    <text>
+        	  <pref-width>15</pref-width>
+    	      <label>mph</label>
+    	      <halign>left</halign>
+    	    </text>
         <button>
           <legend>Reset</legend>
           <default>false</default>
@@ -398,6 +495,111 @@
         </button>
   	  </group> 	
   <hrule/>
+  
+  <canvas>
+    <name>gearsettings</name>
+    <valign>fill</valign>
+    <halign>fill</halign>
+    <stretch>true</stretch>
+    <pref-width>380</pref-width>
+    <pref-height>282</pref-height>
+    <nasal>      
+    <!--
+         this is the Nasal/canvas section where you can run your own Nasal code 
+         to access the canvas section 
+    -->
+      <load>
+        <![CDATA[
+                 # you can add your canvas-specific code here
+                 var my_canvas = canvas.get( cmdarg() ); # this will get a handle to the parent canvas:
+
+                 var root = my_canvas.createGroup();
+                 var text = root.createChild("text")
+                                .setText("  1.Gear     2.Gear     3.Gear     4.Gear     5.Gear     6.Gear")
+                                .setTranslation(30, 290)
+                                .setAlignment("left-top")
+                                .setFontSize(14)
+                                .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                                .set("max-width", 380)
+                                .setColor(1,0,0);
+
+                var text2 = root.createChild("text")
+                               .setText("Ratio")
+                               .setTranslation(150, 30)
+                               .setAlignment("left-top")
+                               .setFontSize(14)
+                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                               .set("max-width", 380)
+                               .setColor(0,0,1);
+
+                var text3 = root.createChild("text")
+                               .setText("vMax")
+                               .setTranslation(190, 30)
+                               .setAlignment("left-top")
+                               .setFontSize(14)
+                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                               .set("max-width", 380)
+                               .setColor(0,1,1);
+							   
+                 var graph = root.createChild("group");
+
+                 var x_axis = graph.createChild("path", "x-axis")
+                                   .moveTo(30, 280)
+                                   .lineTo(380, 280)
+                                   .setColor(1,0,0)
+                                   .setStrokeLineWidth(3);
+
+                 var y_axis = graph.createChild("path", "y-axis")
+                                   .moveTo(30, 30)
+                                   .lineTo(30, 280)
+                                   .setColor(1,0,0)
+                                   .setStrokeLineWidth(3);
+								   
+				 var gear1 = 282 - getprop("controls/Motorcycle/gearbox/gear[0]/ratio")*70;
+				 var gear2 = 282 - getprop("controls/Motorcycle/gearbox/gear[1]/ratio")*70;
+				 var gear3 = 282 - getprop("controls/Motorcycle/gearbox/gear[2]/ratio")*70;
+				 var gear4 = 282 - getprop("controls/Motorcycle/gearbox/gear[3]/ratio")*70;
+				 var gear5 = 282 - getprop("controls/Motorcycle/gearbox/gear[4]/ratio")*70;
+				 var gear6 = 282 - getprop("controls/Motorcycle/gearbox/gear[5]/ratio")*70;
+
+                 var plot = graph.createChild("path", "data")
+                                 .setStrokeLineWidth(2)
+                                 .setColor(0,0,1)
+                                 .moveTo(40,gear1); # origin
+
+                 var samples = [ # absolute coordinates
+                                 [130,gear2], [190,gear3], [250, gear4], [310, gear5], [370, gear6]
+                               ];
+
+                 foreach(var set; samples) {
+                                             plot.lineTo( set[0], set[1]);
+                 }
+
+				 var speed1 = 282 - getprop("controls/Motorcycle/gearbox/gear[0]/vmax")*getprop("controls/Motorcycle/gearbox/gear[0]/speedpercent")*0.8;
+				 var speed2 = 282 - getprop("controls/Motorcycle/gearbox/gear[1]/vmax")*getprop("controls/Motorcycle/gearbox/gear[1]/speedpercent")*0.8;
+				 var speed3 = 282 - getprop("controls/Motorcycle/gearbox/gear[2]/vmax")*getprop("controls/Motorcycle/gearbox/gear[2]/speedpercent")*0.8;
+				 var speed4 = 282 - getprop("controls/Motorcycle/gearbox/gear[3]/vmax")*getprop("controls/Motorcycle/gearbox/gear[3]/speedpercent")*0.8;
+				 var speed5 = 282 - getprop("controls/Motorcycle/gearbox/gear[4]/vmax")*getprop("controls/Motorcycle/gearbox/gear[4]/speedpercent")*0.8;
+				 var speed6 = 282 - getprop("controls/Motorcycle/gearbox/gear[5]/vmax")*getprop("controls/Motorcycle/gearbox/gear[5]/speedpercent")*0.8;
+				 
+
+                 var plot2 = graph.createChild("path", "data")
+                                 .setStrokeLineWidth(2)
+                                 .setColor(0,1,1)
+                                 .moveTo(40,speed1); # origin
+
+                 var samples2 = [ # absolute coordinates
+                                 [130,speed2], [190,speed3], [250, speed4], [310, speed5], [370, speed6]
+                               ];
+
+                 foreach(var set; samples2) {
+                                             plot2.lineTo( set[0], set[1]);
+                 }
+        ]]>
+      </load>
+    </nasal>
+  </canvas>
+  
   <button>
     <legend>Save All</legend>
     <default>false</default>
@@ -416,6 +618,9 @@
       <command>dialog-close</command>
     </binding>
   </button>
+  
+  <hrule/>
+  
   <button>
     <legend>Close</legend>
     <default>true</default>
@@ -427,7 +632,7 @@
       <command>dialog-close</command>
     </binding>
   </button>
-
+  
   <nasal>
     <open></open>
   </nasal>

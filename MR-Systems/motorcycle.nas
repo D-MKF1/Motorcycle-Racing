@@ -430,10 +430,12 @@ setlistener("sim/model/start-idling", func()
 			}
 			# wenn ratio kleiner als default ratio = default ratio - ratio = speedpercent
 			else if(ratio < defaultratio){
-				setprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent", defaultratio-ratio);
+			    setprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent", defaultratio-ratio);
 			}else{
 				setprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent", 1.0);
 			}
+			
+			setprop("controls/Motorcycle/gearbox/gear["~i~"]/vmax", getprop("controls/Motorcycle/gearbox/gear["~i~"]/vmaxdefault")*getprop("controls/Motorcycle/gearbox/gear["~i~"]/speedpercent"));
 		}
 	 }  
   }
@@ -442,6 +444,7 @@ setlistener("sim/model/start-idling", func()
 	if(getprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/gearteeth[0]")){
 		setprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/gearteeth[0]", getprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/gearteethdefault[0]") or 0);
 		setprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/gearteeth[1]", getprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/gearteethdefault[1]") or 0);
+		setprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/vmax", getprop("controls/Motorcycle/gearbox/gear["~gearnr~"]/vmaxdefault") or 0);
 		recalc_gearbox();
 	}
   }
@@ -453,6 +456,7 @@ setlistener("sim/model/start-idling", func()
 		for(var i = 0; i < tt; i += 1) {
 			setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[0]", getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]") or 0);
 			setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[1]", getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]") or 0);
+			setprop("controls/Motorcycle/gearbox/gear["~i~"]/vmaxdefault", getprop("controls/Motorcycle/gearbox/gear["~i~"]/vmax") or 0);
 		}
 	}
   }
