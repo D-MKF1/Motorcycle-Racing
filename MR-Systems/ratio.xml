@@ -19,7 +19,7 @@
       <stretch>1</stretch>
     </empty>		
     <text>
-      <label>Gearbox settings - max 3 teeth up/down each gear</label>
+      <label>GEARBOX SETTINGS - max 3 teeth up/down each gear</label>
     </text>
     <empty>
       <stretch>1</stretch>
@@ -555,14 +555,14 @@
                  var x_axis = graph.createChild("path", "x-axis")
                                    .moveTo(30, 360)
                                    .lineTo(380, 360)
-                                   .setColor(1,0,0)
-                                   .setStrokeLineWidth(3);
+                                   .setColor(0.5,0.5,0.5)
+                                   .setStrokeLineWidth(2);
 
                  var y_axis = graph.createChild("path", "y-axis")
-                                   .moveTo(30, 30)
+                                   .moveTo(30, 40)
                                    .lineTo(30, 360)
-                                   .setColor(1,0,0)
-                                   .setStrokeLineWidth(3);
+                                   .setColor(0.5,0.5,0.5)
+                                   .setStrokeLineWidth(2);
 								   
 				 var gear1 = 360 - getprop("controls/Motorcycle/gearbox/gear[0]/ratio")*100;
 				 var gear2 = 360 - getprop("controls/Motorcycle/gearbox/gear[1]/ratio")*100;

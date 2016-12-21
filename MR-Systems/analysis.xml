@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Motorcycles for Flightgear December 2016
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+  <name>analysis</name>
+  <modal>false</modal>
+  <layout>vbox</layout>
+  <padding>20</padding>
+  <pref-width>850</pref-width>
+
+  <group>
+    <layout>hbox</layout>
+    <empty>
+      <stretch>1</stretch>
+    </empty>		
+    <text>
+      <label>RACELAPS ANALYSIS TOOL</label>
+    </text>
+    <empty>
+      <stretch>1</stretch>
+    </empty>
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+  
+	<hrule/>
+
+      <button>
+        <legend>Lap 1</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(1);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+	<canvas>
+		<name>analysis_toolbox</name>
+		<valign>fill</valign>
+		<halign>fill</halign>
+		<stretch>true</stretch>
+		<pref-width>840</pref-width>
+		<pref-height>380</pref-height>
+		<nasal>      
+			<load>
+			<![CDATA[
+				# you can add your canvas-specific code here
+				var alll = props.globals.getNode("/instrumentation/Motorcycle/blackbox");
+				var my_canvas = canvas.get( cmdarg() ); # this will get a handle to the parent canvas:
+
+				var root = my_canvas.createGroup();
+				var text = root.createChild("text")
+				            .setText("1.Lap")
+				            .setTranslation(30, 30)
+				            .setAlignment("left-top")
+				            .setFontSize(14)
+				            .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+				            .set("max-width", 380)
+				            .setColor(1,0,0);
+
+
+				var graph = root.createChild("group");
+
+				var x_axis = graph.createChild("path", "x-axis")
+				               .moveTo(30, 400)
+				               .lineTo(830, 400)
+				       		   .setColor(0.5,0.5,0.5)
+				       		   .setStrokeLineWidth(2);
+
+				var y_axis = graph.createChild("path", "y-axis")
+				               .moveTo(30, 30)
+				               .lineTo(30, 400)
+				       		   .setColor(0.5,0.5,0.5)
+				       		   .setStrokeLineWidth(2);
+
+				var n = 1;
+				var samples = [];
+				
+		   		foreach(var l;alll.getChildren("lap")){
+
+		   			var nlt = 0;
+					
+					
+                    var plot = graph.createChild("path", "data")
+                                    .setStrokeLineWidth(2)
+                                    .setColor(0,1,1)
+                                    .moveTo(40,400); # origin
+
+		   			
+
+		   			foreach(var lt;l.getChildren("laptime")){
+		   				var splt = getprop("instrumentation/Motorcycle/blackbox/lap["~n~"]/laptime["~nlt~"]/speed") or 0;
+		   				print("Runde "~n~" bei "~nlt~"sec "~splt~"km/h");
+		   				append(samples,[nlt,splt]);
+		   				nlt +=1;
+		   			}
+
+		            n+=1;  
+
+		    	}
+					
+                foreach(var set; samples) {
+                       plot.lineTo( set[0], set[1]);
+                }
+
+
+			]]>
+			</load>
+		</nasal>
+	</canvas>
+
+ 
+  
+  <button>
+    <legend>Close</legend>
+    <default>true</default>
+    <key>Esc</key>
+    <binding>
+      <command>dialog-apply</command>
+    </binding>
+    <binding>
+      <command>dialog-close</command>
+    </binding>
+  </button>
+  
+  <nasal>
+    <open></open>
+  </nasal>
+</PropertyList>

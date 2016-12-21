@@ -191,7 +191,15 @@ and have fun!</text>
 					<command>property-toggle</command>
 					<property>Motorcycle/switch-last-fastest</property>
 				</binding>
-			</item>		
+			</item>
+			<enabled type="bool">true</enabled>				
+			<item>
+				<label>Race Analysis</label>
+				<binding>
+		            <command>nasal</command>
+		            <script>motorcycle.analysis_dlg.open()</script>
+				</binding>
+			</item>	
 			<item>
 				<label>--- Painting ---</label>
 				<enabled>false</enabled>
