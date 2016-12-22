@@ -179,6 +179,14 @@ and have fun!</text>
 			</item>	
 			<enabled type="bool">true</enabled>				
 			<item>
+				<label>Race Analysis</label>
+				<binding>
+		            <command>nasal</command>
+		            <script>motorcycle.analysis_dlg.open()</script>
+				</binding>
+			</item>	
+			<enabled type="bool">true</enabled>				
+			<item>
 				<label>Switch last or fastest Results</label>
 				<binding>
 					<command>property-toggle</command>

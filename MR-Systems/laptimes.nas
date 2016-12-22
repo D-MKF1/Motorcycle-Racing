@@ -14,6 +14,8 @@ var laptimediff = props.globals.initNode("/Motorcycle/this-lap-time-diff",0,"DOU
 var laptimediffmin = props.globals.initNode("/Motorcycle/this-lap-time-diff-m",0,"DOUBLE");
 var laptimediffsec = props.globals.initNode("/Motorcycle/this-lap-time-diff-s",0,"DOUBLE");
 var analyser = props.globals.initNode("/instrumentation/Motorcycle/blackbox/on",1,"INT");
+var analyselapst = 0;
+var analyselastlap = 0;
 var inrange = 0;
 
 ################# Geo coordinates from the sector start points ############
@@ -468,10 +470,18 @@ var show_lap_and_sector_time = func{
 	# only for mp
 	laptime.setValue(lapt);
 	racetime.setValue(tr);
-	
+
 	# for the lap analysis
 	if(analyser.getBoolValue()&racelap.getValue()>0){
-		save_laptime_speed_rpm_for_analysis(racelap.getValue(),lapt,getprop("engines/engine/rpm"),getprop("instrumentation/Motorcycle/speed-indicator/speed-meter"),getprop("instrumentation/Motorcycle/speed-indicator/selection"));
+		if(racelap.getValue() != analyselastlap){analyselapst = 0};
+		analyselastlap = racelap.getValue();
+		analyselapst += 1;
+		var anrl = racelap.getValue();
+			setprop("/instrumentation/Motorcycle/blackbox/lap["~racelap.getValue()~"]/selected", 0);
+			setprop("/instrumentation/Motorcycle/blackbox/lap["~racelap.getValue()~"]/lapstep["~analyselapst~"]/laptime", lapt);
+			setprop("/instrumentation/Motorcycle/blackbox/lap["~racelap.getValue()~"]/lapstep["~analyselapst~"]/rpm", getprop("engines/engine/rpm"));
+			setprop("/instrumentation/Motorcycle/blackbox/lap["~racelap.getValue()~"]/lapstep["~analyselapst~"]/speed", getprop("instrumentation/Motorcycle/speed-indicator/speed-meter"));
+			setprop("/instrumentation/Motorcycle/blackbox/lap["~racelap.getValue()~"]/lapstep["~analyselapst~"]/kmhormph", getprop("instrumentation/Motorcycle/speed-indicator/selection"));
 	}
 }
 
@@ -765,12 +775,4 @@ var clear_race_datas = func{
 #-------------------------- Race laps analysis -------------------------- 
 var set_analysis_lap = func(lapno=0){
  	screen.log.write("Lap Nr. "~lapno, 1.0, 0.0, 0.0);
-}
-
-var save_laptime_speed_rpm_for_analysis = func(anlap=0,anlapt=0,anrpm=0,anspeed=0, anselect=0){
-	#print("#"~anlap~" Rundenzeit: "~anlapt~" RPM: "~anrpm~" Geschwindigkeit: "~anspeed~" km/h: "~anselect);
-		anlapt = math.round(anlapt);
-		setprop("/instrumentation/Motorcycle/blackbox/lap["~anlap~"]/laptime["~anlapt~"]/rpm", anrpm);
-		setprop("/instrumentation/Motorcycle/blackbox/lap["~anlap~"]/laptime["~anlapt~"]/speed", anspeed);
-		setprop("/instrumentation/Motorcycle/blackbox/lap["~anlap~"]/laptime["~anlapt~"]/kmhormph", anselect);
 }	

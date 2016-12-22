@@ -158,6 +158,14 @@
 					<script>aircraft.livery.dialog.toggle()</script>
 				</binding>
 			</item>
+			<enabled type="bool">true</enabled>				
+			<item>
+				<label>Race Analysis</label>
+				<binding>
+		            <command>nasal</command>
+		            <script>motorcycle.analysis_dlg.open()</script>
+				</binding>
+			</item>	
 			<enabled type="bool">true</enabled>
 			<item>
 				<label>--- Old mens mode ---</label>

@@ -11,7 +11,7 @@
   <modal>false</modal>
   <layout>vbox</layout>
   <padding>20</padding>
-  <pref-width>850</pref-width>
+  <pref-width>1024</pref-width>
 
   <group>
     <layout>hbox</layout>
@@ -59,7 +59,7 @@
 		<valign>fill</valign>
 		<halign>fill</halign>
 		<stretch>true</stretch>
-		<pref-width>840</pref-width>
+		<pref-width>1000</pref-width>
 		<pref-height>380</pref-height>
 		<nasal>      
 			<load>
@@ -83,7 +83,7 @@
 
 				var x_axis = graph.createChild("path", "x-axis")
 				               .moveTo(30, 400)
-				               .lineTo(830, 400)
+				               .lineTo(980, 400)
 				       		   .setColor(0.5,0.5,0.5)
 				       		   .setStrokeLineWidth(2);
 
@@ -94,35 +94,51 @@
 				       		   .setStrokeLineWidth(2);
 
 				var n = 1;
-				var samples = [];
+				var ncolor1 = 0.0;
+				var ncolor2 = 0.0;
+				var ncolor3 = 0.0;
+				
+				var berechnungszahl = size(alll.getChild("lap",1).getChildren("lapstep"));
+				berechnungszahl = 940/berechnungszahl;
 				
 		   		foreach(var l;alll.getChildren("lap")){
 
 		   			var nlt = 0;
+					var samples = [];
+					var zeitleiste = 40;
+					var firstspeed = 0;
 					
+					ncolor1 += 0.2;
+					ncolor2 += 0.25;
+					ncolor3 += 0.5;
 					
-                    var plot = graph.createChild("path", "data")
-                                    .setStrokeLineWidth(2)
-                                    .setColor(0,1,1)
-                                    .moveTo(40,400); # origin
+					ncolor1 = (ncolor1 >= 1.0)? 0.0 : ncolor1;
+					ncolor2 = (ncolor2 >= 1.0)? 0.0 : ncolor2;
+					ncolor3 = (ncolor3 >= 1.0)? 0.0 : ncolor3;
 
-		   			
+					firstspeed = getprop("instrumentation/Motorcycle/blackbox/lap["~n~"]/lapstep[1]/speed") or 0;
+					firstspeed = 400-firstspeed/1.2;
 
-		   			foreach(var lt;l.getChildren("laptime")){
-		   				var splt = getprop("instrumentation/Motorcycle/blackbox/lap["~n~"]/laptime["~nlt~"]/speed") or 0;
-		   				print("Runde "~n~" bei "~nlt~"sec "~splt~"km/h");
-		   				append(samples,[nlt,splt]);
+		   			foreach(var lt;l.getChildren("lapstep")){
+		   				var splt = getprop("instrumentation/Motorcycle/blackbox/lap["~n~"]/lapstep["~nlt~"]/speed") or 0;
+						var spee = 400-splt/1.2;
+		   				zeitleiste+=berechnungszahl;
+		   				append(samples,[zeitleiste,spee]);
 		   				nlt +=1;
 		   			}
 
-		            n+=1;  
+		            n+=1;
+					
+                    var plot = graph.createChild("path", "data")
+                                    .setStrokeLineWidth(2)
+                                    .setColor(ncolor1,ncolor2,ncolor3)
+                                    .moveTo(40,firstspeed); # origin  
+					
+	                foreach(var set; samples) {
+	                       plot.lineTo( set[0], set[1]);
+	                }
 
 		    	}
-					
-                foreach(var set; samples) {
-                       plot.lineTo( set[0], set[1]);
-                }
-
 
 			]]>
 			</load>
