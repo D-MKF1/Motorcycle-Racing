@@ -476,8 +476,7 @@ var show_lap_and_sector_time = func{
 		if(racelap.getValue() != analyselastlap){analyselapst = 0};
 		analyselastlap = racelap.getValue();
 		analyselapst += 1;
-		var anrl = racelap.getValue();
-			setprop("/instrumentation/Motorcycle/blackbox/lap["~racelap.getValue()~"]/selected", 0);
+			setprop("/instrumentation/Motorcycle/blackbox/lap["~racelap.getValue()~"]/selected", 1);
 			setprop("/instrumentation/Motorcycle/blackbox/lap["~racelap.getValue()~"]/lapstep["~analyselapst~"]/laptime", lapt);
 			setprop("/instrumentation/Motorcycle/blackbox/lap["~racelap.getValue()~"]/lapstep["~analyselapst~"]/rpm", getprop("engines/engine/rpm"));
 			setprop("/instrumentation/Motorcycle/blackbox/lap["~racelap.getValue()~"]/lapstep["~analyselapst~"]/speed", getprop("instrumentation/Motorcycle/speed-indicator/speed-meter"));
@@ -774,5 +773,10 @@ var clear_race_datas = func{
   
 #-------------------------- Race laps analysis -------------------------- 
 var set_analysis_lap = func(lapno=0){
- 	screen.log.write("Lap Nr. "~lapno, 1.0, 0.0, 0.0);
+	var active = getprop("instrumentation/Motorcycle/blackbox/lap["~lapno~"]/selected") or 0;
+	if(active){
+		setprop("instrumentation/Motorcycle/blackbox/lap["~lapno~"]/selected",0);
+	}else{
+		setprop("instrumentation/Motorcycle/blackbox/lap["~lapno~"]/selected",1);
+	}
 }	

@@ -37,7 +37,11 @@
   </group>
   
 	<hrule/>
-
+	<group>
+	    <layout>hbox</layout>
+	    <empty>
+	      <stretch>1</stretch>
+	    </empty>
       <button>
         <legend>Lap 1</legend>
         <default>false</default>
@@ -54,6 +58,215 @@
 	    </binding>
       </button>
 
+      <button>
+        <legend>Lap 2</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(2);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 3</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(3);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 4</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(4);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 5</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(5);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 6</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(6);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 7</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(7);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 8</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(8);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 9</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(9);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 10</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(10);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 11</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(11);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 12</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(12);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 13</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(13);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+
+      <button>
+        <legend>Lap 14</legend>
+        <default>false</default>
+		<binding>
+			<command>nasal</command>
+			<script>motorcycle.set_analysis_lap(14);</script>
+		</binding>
+          <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+          </binding>
+	    <binding>
+	      <command>dialog-close</command>
+	    </binding>
+      </button>
+	</group>  
+
 	<canvas>
 		<name>analysis_toolbox</name>
 		<valign>fill</valign>
@@ -66,18 +279,11 @@
 			<![CDATA[
 				# you can add your canvas-specific code here
 				var alll = props.globals.getNode("/instrumentation/Motorcycle/blackbox");
+				var berechnungszahl = 0.0;
 				var my_canvas = canvas.get( cmdarg() ); # this will get a handle to the parent canvas:
+				#my_canvas.setColorBackground(0.9,0.9,0.9,0.9);
 
 				var root = my_canvas.createGroup();
-				var text = root.createChild("text")
-				            .setText("1.Lap")
-				            .setTranslation(30, 30)
-				            .setAlignment("left-top")
-				            .setFontSize(14)
-				            .setFont("LiberationFonts/LiberationSans-Regular.ttf")
-				            .set("max-width", 380)
-				            .setColor(1,0,0);
-
 
 				var graph = root.createChild("group");
 
@@ -97,46 +303,60 @@
 				var ncolor1 = 0.0;
 				var ncolor2 = 0.0;
 				var ncolor3 = 0.0;
+				if(getprop("Motorcycle/race-lap")>=1){
+					berechnungszahl = size(alll.getChild("lap",1).getChildren("lapstep"))-1;
+					berechnungszahl = 940/berechnungszahl;
+				}
 				
-				var berechnungszahl = size(alll.getChild("lap",1).getChildren("lapstep"));
-				berechnungszahl = 940/berechnungszahl;
-				
-		   		foreach(var l;alll.getChildren("lap")){
 
-		   			var nlt = 0;
-					var samples = [];
-					var zeitleiste = 40;
-					var firstspeed = 0;
-					
+		   		foreach(var l;alll.getChildren("lap")){
+				
 					ncolor1 += 0.2;
 					ncolor2 += 0.25;
 					ncolor3 += 0.5;
-					
+
 					ncolor1 = (ncolor1 >= 1.0)? 0.0 : ncolor1;
 					ncolor2 = (ncolor2 >= 1.0)? 0.0 : ncolor2;
 					ncolor3 = (ncolor3 >= 1.0)? 0.0 : ncolor3;
+				
+					var test = alll.getChild("lap",n);
+					if(test.getValue("selected")){
+						var text = root.createChild("text")
+					            .setText(n~".Lap")
+					            .setTranslation(45*n, 10)
+					            .setAlignment("left-top")
+					            .setFontSize(14)
+					            .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+					            .set("max-width", 980)
+					            .setColor(ncolor1,ncolor2,ncolor3);
 
-					firstspeed = getprop("instrumentation/Motorcycle/blackbox/lap["~n~"]/lapstep[1]/speed") or 0;
-					firstspeed = 400-firstspeed/1.2;
+						var samples = [];
+						var zeitleiste = 40;
+						var firstspeed = 0;
 
-		   			foreach(var lt;l.getChildren("lapstep")){
-		   				var splt = getprop("instrumentation/Motorcycle/blackbox/lap["~n~"]/lapstep["~nlt~"]/speed") or 0;
-						var spee = 400-splt/1.2;
-		   				zeitleiste+=berechnungszahl;
-		   				append(samples,[zeitleiste,spee]);
-		   				nlt +=1;
-		   			}
+						firstspeed = getprop("instrumentation/Motorcycle/blackbox/lap["~n~"]/lapstep[1]/speed") or 0;
+						firstspeed = 400-firstspeed/1.2;
 
-		            n+=1;
-					
-                    var plot = graph.createChild("path", "data")
-                                    .setStrokeLineWidth(2)
-                                    .setColor(ncolor1,ncolor2,ncolor3)
-                                    .moveTo(40,firstspeed); # origin  
-					
-	                foreach(var set; samples) {
-	                       plot.lineTo( set[0], set[1]);
-	                }
+						var al = size(l.getChildren("lapstep"));
+			
+						for (var i=2; i < al; i+=1) {
+							var splt = getprop("instrumentation/Motorcycle/blackbox/lap["~n~"]/lapstep["~i~"]/speed") or 0;
+							var spee = 400-splt/1.2;
+							zeitleiste+=berechnungszahl;
+							append(samples,[zeitleiste,spee]);
+						}
+
+			            var plot = graph.createChild("path", "data")
+			                            .setStrokeLineWidth(2)
+			                            .setColor(ncolor1,ncolor2,ncolor3)
+			                            .moveTo(30,firstspeed); # origin  
+			
+			            foreach(var set; samples) {
+			                   plot.lineTo( set[0], set[1]);
+			            }
+					}
+
+		            n+=1;			
 
 		    	}
 
