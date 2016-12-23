@@ -39,11 +39,12 @@
 	<hrule/>
 	<group>
 	    <layout>hbox</layout>
+        <halign>center</halign>
 	    <empty>
 	      <stretch>1</stretch>
 	    </empty>
       <button>
-        <legend>Lap 1</legend>
+        <legend>Lap 1 </legend>
         <default>false</default>
 		<binding>
 			<command>nasal</command>
@@ -59,7 +60,7 @@
       </button>
 
       <button>
-        <legend>Lap 2</legend>
+        <legend>Lap 2 </legend>
         <default>false</default>
 		<binding>
 			<command>nasal</command>
@@ -75,7 +76,7 @@
       </button>
 
       <button>
-        <legend>Lap 3</legend>
+        <legend>Lap 3 </legend>
         <default>false</default>
 		<binding>
 			<command>nasal</command>
@@ -91,7 +92,7 @@
       </button>
 
       <button>
-        <legend>Lap 4</legend>
+        <legend>Lap 4 </legend>
         <default>false</default>
 		<binding>
 			<command>nasal</command>
@@ -107,7 +108,7 @@
       </button>
 
       <button>
-        <legend>Lap 5</legend>
+        <legend>Lap 5 </legend>
         <default>false</default>
 		<binding>
 			<command>nasal</command>
@@ -123,7 +124,7 @@
       </button>
 
       <button>
-        <legend>Lap 6</legend>
+        <legend>Lap 6 </legend>
         <default>false</default>
 		<binding>
 			<command>nasal</command>
@@ -139,7 +140,7 @@
       </button>
 
       <button>
-        <legend>Lap 7</legend>
+        <legend>Lap 7 </legend>
         <default>false</default>
 		<binding>
 			<command>nasal</command>
@@ -155,7 +156,7 @@
       </button>
 
       <button>
-        <legend>Lap 8</legend>
+        <legend>Lap 8 </legend>
         <default>false</default>
 		<binding>
 			<command>nasal</command>
@@ -171,7 +172,7 @@
       </button>
 
       <button>
-        <legend>Lap 9</legend>
+        <legend>Lap 9 </legend>
         <default>false</default>
 		<binding>
 			<command>nasal</command>
@@ -249,22 +250,6 @@
 	      <command>dialog-close</command>
 	    </binding>
       </button>
-
-      <button>
-        <legend>Lap 14</legend>
-        <default>false</default>
-		<binding>
-			<command>nasal</command>
-			<script>motorcycle.set_analysis_lap(14);</script>
-		</binding>
-          <binding>
-              <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
-          </binding>
-	    <binding>
-	      <command>dialog-close</command>
-	    </binding>
-      </button>
 	</group>  
 
 	<canvas>
@@ -280,6 +265,9 @@
 				# you can add your canvas-specific code here
 				var alll = props.globals.getNode("/instrumentation/Motorcycle/blackbox");
 				var berechnungszahl = 0.0;
+				var maxv = 0.0;
+				var minv = 300.0;
+				var averagev = 0.0;
 				var my_canvas = canvas.get( cmdarg() ); # this will get a handle to the parent canvas:
 				#my_canvas.setColorBackground(0.9,0.9,0.9,0.9);
 
@@ -344,8 +332,13 @@
 							var spee = 400-splt/1.2;
 							zeitleiste+=berechnungszahl;
 							append(samples,[zeitleiste,spee]);
+							
+							maxv = (maxv < splt)? splt : maxv;
+							minv = (minv > splt)? splt : minv;
+							averagev += splt;
 						}
-
+						
+						averagev = averagev/(al-2);
 			            var plot = graph.createChild("path", "data")
 			                            .setStrokeLineWidth(2)
 			                            .setColor(ncolor1,ncolor2,ncolor3)
@@ -355,10 +348,53 @@
 			                   plot.lineTo( set[0], set[1]);
 			            }
 					}
-
 		            n+=1;			
-
 		    	}
+				
+                var e_axis = graph.createChild("path", "y-axis")
+               					  .moveTo(30, 400-maxv/1.2)
+               				   	  .lineTo(977,400-maxv/1.2)
+                                  .setColor(0.2,0.2,0.2)
+                                  .setStrokeLineWidth(1);
+								  				
+                var e_text = root.createChild("text")
+                               .setText(math.round(maxv)~"km/h")
+                               .setTranslation(980,394-maxv/1.2)
+                               .setAlignment("left-top")
+                               .setFontSize(10)
+                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                               .set("max-width", 100)
+                               .setColor(0.4,0.4,0.4);
+		
+               var av_axis = graph.createChild("path", "y-axis")
+              					  .moveTo(30, 400-averagev/1.2)
+              				   	  .lineTo(977,400-averagev/1.2)
+                                 .setColor(0.2,0.2,0.2)
+                                 .setStrokeLineWidth(1);
+			
+               var av_text = root.createChild("text")
+                              .setText(math.round(averagev)~"km/h")
+                              .setTranslation(980,394-averagev/1.2)
+                              .setAlignment("left-top")
+                              .setFontSize(10)
+                              .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                              .set("max-width", 100)
+                              .setColor(0.4,0.4,0.4);							   
+				
+               var f_axis = graph.createChild("path", "y-axis")
+              					  .moveTo(30, 400-minv/1.2)
+              				   	  .lineTo(977,400-minv/1.2)
+                                 .setColor(0.2,0.2,0.2)
+                                 .setStrokeLineWidth(1);
+				  				
+               var f_text = root.createChild("text")
+                              .setText(math.round(minv)~"km/h")
+                              .setTranslation(980,394-minv/1.2)
+                              .setAlignment("left-top")
+                              .setFontSize(10)
+                              .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+                              .set("max-width", 100)
+                              .setColor(0.4,0.4,0.4);
 
 			]]>
 			</load>
