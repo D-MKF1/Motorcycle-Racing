@@ -138,53 +138,55 @@ var loop = func {
 
 		# max speed per gear in kts
 		if(akrapovic.getValue()){
+			# max speed per gear in kts
 			if (gear.getValue() == 0) {
 				vmax = 0;
 				fastcircuit.setValue(0);
 			} else if (gear.getValue() == 1) {
-				vmax = 78;
+				vmax = getprop("controls/Motorcycle/gearbox/gear[0]/vmax")+10;
 				fastcircuit.setValue(0.1);
 			} else if (gear.getValue() == 2) {
-				vmax =  115;
+				vmax =  getprop("controls/Motorcycle/gearbox/gear[1]/vmax")+11;
 				fastcircuit.setValue(0.2);
 			} else if (gear.getValue() == 3) {
-				vmax = 136;
+				vmax = getprop("controls/Motorcycle/gearbox/gear[2]/vmax")+12;
 				fastcircuit.setValue(0.3);
 			} else if (gear.getValue() == 4) {
-				vmax = 174;
+				vmax = getprop("controls/Motorcycle/gearbox/gear[3]/vmax")+13;
 				fastcircuit.setValue(0.4);
 			} else if (gear.getValue() == 5) {
-				vmax = 208;
+				vmax = getprop("controls/Motorcycle/gearbox/gear[4]/vmax")+14;
 				fastcircuit.setValue(0.5);
 			} else if (gear.getValue() == 6) {
-				vmax = 240;
+				vmax = getprop("controls/Motorcycle/gearbox/gear[5]/vmax")+15;
 				fastcircuit.setValue(0.6);
 			}
 		}else{
+			# max speed per gear in kts
 			if (gear.getValue() == 0) {
 				vmax = 0;
 				fastcircuit.setValue(0);
 			} else if (gear.getValue() == 1) {
-				vmax = 70;
+				vmax = getprop("controls/Motorcycle/gearbox/gear[0]/vmax");
 				fastcircuit.setValue(0.1);
 			} else if (gear.getValue() == 2) {
-				vmax =  100;
+				vmax =  getprop("controls/Motorcycle/gearbox/gear[1]/vmax");
 				fastcircuit.setValue(0.2);
 			} else if (gear.getValue() == 3) {
-				vmax = 130;
+				vmax = getprop("controls/Motorcycle/gearbox/gear[2]/vmax");
 				fastcircuit.setValue(0.3);
 			} else if (gear.getValue() == 4) {
-				vmax = 160;
+				vmax = getprop("controls/Motorcycle/gearbox/gear[3]/vmax");
 				fastcircuit.setValue(0.4);
 			} else if (gear.getValue() == 5) {
-				vmax = 190;
+				vmax = getprop("controls/Motorcycle/gearbox/gear[4]/vmax");
 				fastcircuit.setValue(0.5);
 			} else if (gear.getValue() == 6) {
-				vmax = 225;
+				vmax = getprop("controls/Motorcycle/gearbox/gear[5]/vmax");
 				fastcircuit.setValue(0.6);
 			}		
 		}
-		
+
 
 		# everthing is ok - let him go
 		if (gear.getValue() > 0 and clutch.getValue() == 0) {

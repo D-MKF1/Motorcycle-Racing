@@ -744,6 +744,10 @@ MotorINIT = setlistener("/sim/signals/fdm-initialized", func {
 var clear_race_datas = func{
 
 	if(pa != nil and inrange != nil and inrange == 1){
+	
+	    var raceanalysislaps = props.globals.getNode("instrumentation/Motorcycle/blackbox");
+		raceanalysislaps.removeChildren("lap");
+		
 		flaginfo.setValue(0);
 		racelap.setValue(0);
 		thissector.setValue(0);
