@@ -32,7 +32,6 @@
         sweep="4"
         dihedral="26">
         <flap0 start="0.0" end="1.0" lift="1.41" drag="1.13"/>
-
         <control-input axis="/controls/flight/aileron-manual" control="STEER" split="true" src0="-1.0" src1="1.0" dst0="-0.5" dst1="0.5"/>
         <control-output control="STEER" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="STEER" side="right" prop="/surface-positions/right-aileron-pos-norm"/>

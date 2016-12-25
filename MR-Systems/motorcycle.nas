@@ -187,9 +187,9 @@ setlistener("/controls/flight/aileron", func (position){
 			var np = math.round(position*position*position*100);
 			np = np/100;
 			#print("NP: ", np);
-			# the *0.0625 is the calculation number for the 16clicks Oehlins steering damper
-			var sensibility = (np == 0 or abs(np) < steeringdamper.getValue()*0.0625) ? steeringdamper.getValue()*0.0625 : abs(np);
-			sensibility = (sensibility < 0.1)? 0.1 : sensibility;
+			# the *0.04 is the calculation number for the 16clicks Oehlins steering damper
+			var sensibility = (np == 0 or abs(np) < steeringdamper.getValue()*0.0625) ? steeringdamper.getValue()*0.04 : abs(np);
+			sensibility = (sensibility < 0.07)? 0.07 : sensibility;
 			interpolate("/controls/flight/aileron-manual", np, sensibility);
 		}
 	}

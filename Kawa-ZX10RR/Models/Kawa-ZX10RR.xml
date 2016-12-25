@@ -119,6 +119,18 @@
     </condition>
     <texture>88.png</texture>
   </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>kawagls03</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>saigerH</value>
+      </equals>
+    </condition>
+    <texture>H.png</texture>
+  </animation>
 
  <animation>
     <type>material</type>

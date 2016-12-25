@@ -88,10 +88,16 @@
     <object-name>piedG</object-name>
     <object-name>piedD</object-name>
     <condition>
+		<or>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>saigerH</value>
+      </equals>
       <equals>
         <property>sim/model/livery/file</property>
         <value>saiger</value>
       </equals>
+  		</or>
     </condition>
     <texture>saiger.png</texture>
   </animation>
