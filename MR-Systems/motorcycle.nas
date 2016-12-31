@@ -6,6 +6,7 @@
 var config_dlg = gui.Dialog.new("/sim/gui/dialogs/config/dialog", getprop("/sim/aircraft-dir")~"/MR-Systems/config.xml");
 var ratio_dlg = gui.Dialog.new("/sim/gui/dialogs/ratio/dialog", getprop("/sim/aircraft-dir")~"/MR-Systems/ratio.xml");
 var analysis_dlg = gui.Dialog.new("/sim/gui/dialogs/analysis/dialog", getprop("/sim/aircraft-dir")~"/MR-Systems/analysis.xml");
+var elecsettings_dlg = gui.Dialog.new("/sim/gui/dialogs/elecsettings/dialog", getprop("/sim/aircraft-dir")~"/MR-Systems/elecsettings.xml");
 var hangoffspeed = props.globals.initNode("/controls/hang-off-speed",0,"DOUBLE");
 var hangoffhdg = props.globals.initNode("/controls/hang-off-hdg",0,"DOUBLE");
 var hangoffviewdeg = props.globals.initNode("/controls/hang-off-view-deg",0,"DOUBLE");

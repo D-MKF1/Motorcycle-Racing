@@ -125,6 +125,13 @@
 	            <script>motorcycle.ratio_dlg.open()</script>
 	          </binding>
 	        </item>
+			<item>
+	          <label>Electronic control system settings</label>
+	          <binding>
+	            <command>nasal</command>
+	            <script>motorcycle.elecsettings_dlg.open()</script>
+	          </binding>
+	        </item>
 			<enabled type="bool">true</enabled>				
 			<item>
 				<label>Show Sector/Lap Results</label>
@@ -252,9 +259,11 @@
  		    <gear n="5">
  		   		<gearteeth n="0" type="int">23</gearteeth>
  		   		<gearteeth n="1" type="int">24</gearteeth>
- 				<vmax type="double">202.0</vmax>
+ 				<vmax type="double">212.0</vmax>
  			</gear>
  	   </gearbox>
+	   <minrpm type="int">2100</minrpm>
+	   <maxrpm type="int">19500</maxrpm>
     </Motorcycle>
 </controls>
 
@@ -263,10 +272,10 @@
  <motorcycle>
   <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
   <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
+  <file>Aircraft/Motorcycle-Racing/MR-Systems/gearbox.nas</file>
   <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
 
   <file>Aircraft/Motorcycle-Racing/BMW-S-RR/Systems/view.nas</file>
-  <file>Aircraft/Motorcycle-Racing/BMW-S-RR/Systems/gearbox.nas</file>
   <file>Aircraft/Motorcycle-Racing/BMW-S-RR/Systems/liveries.nas</file>
  </motorcycle>
 </nasal>

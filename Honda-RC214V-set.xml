@@ -169,6 +169,20 @@ and have fun!</text>
 					</script>
 				</binding>
 			</item>
+			<item>
+	          <label>Gearbox settings</label>
+	          <binding>
+	            <command>nasal</command>
+	            <script>motorcycle.ratio_dlg.open()</script>
+	          </binding>
+	        </item>
+			<item>
+	          <label>Electronic control system settings</label>
+	          <binding>
+	            <command>nasal</command>
+	            <script>motorcycle.elecsettings_dlg.open()</script>
+	          </binding>
+	        </item>
 			<enabled type="bool">true</enabled>				
 			<item>
 				<label>Show Sector/Lap Results</label>
@@ -264,15 +278,52 @@ and have fun!</text>
 	</flaps><!-- -NASAL- -->
 
 </sim>
-	
+<controls>
+    <Motorcycle>
+ 	   <gearbox>
+ 		    <gear n="0">
+ 		   		<gearteeth n="0" type="int">37</gearteeth>
+ 		   		<gearteeth n="1" type="int">15</gearteeth>
+ 				<vmax type="double">70.0</vmax>
+ 			</gear>
+ 		    <gear n="1">
+ 		   		<gearteeth n="0" type="int">30</gearteeth>
+ 		   		<gearteeth n="1" type="int">16</gearteeth>
+ 				<vmax type="double">100.0</vmax>
+ 			</gear>
+ 		    <gear n="2">
+ 		   		<gearteeth n="0" type="int">27</gearteeth>
+ 		   		<gearteeth n="1" type="int">18</gearteeth>
+ 				<vmax type="double">130.0</vmax>
+ 			</gear>
+ 		    <gear n="3">
+ 		   		<gearteeth n="0" type="int">25</gearteeth>
+ 		   		<gearteeth n="1" type="int">20</gearteeth>
+ 				<vmax type="double">160.0</vmax>
+ 			</gear>
+ 		    <gear n="4">
+ 		   		<gearteeth n="0" type="int">24</gearteeth>
+ 		   		<gearteeth n="1" type="int">22</gearteeth>
+ 				<vmax type="double">190.0</vmax>
+ 			</gear>
+ 		    <gear n="5">
+ 		   		<gearteeth n="0" type="int">23</gearteeth>
+ 		   		<gearteeth n="1" type="int">24</gearteeth>
+ 				<vmax type="double">220.0</vmax>
+ 			</gear>
+ 	   </gearbox>
+	   <minrpm type="int">2100</minrpm>
+	   <maxrpm type="int">19500</maxrpm>
+    </Motorcycle>
+</controls>	
 	<nasal>
 		<motorcycle>
 			<file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
 			<file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
+   		    <file>Aircraft/Motorcycle-Racing/MR-Systems/gearbox.nas</file>
 			<file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
 
 			<file>Aircraft/Motorcycle-Racing/Honda-RC213V/Systems/view.nas</file>
-			<file>Aircraft/Motorcycle-Racing/Honda-RC213V/Systems/gearbox.nas</file>
 			<file>Aircraft/Motorcycle-Racing/Honda-RC213V/Systems/liveries.nas</file>
 		</motorcycle>
 	</nasal>

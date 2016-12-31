@@ -52,7 +52,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -68,7 +68,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -84,7 +84,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -100,7 +100,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -116,7 +116,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -132,7 +132,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -148,7 +148,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -164,7 +164,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -180,7 +180,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -196,7 +196,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -212,7 +212,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -228,7 +228,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -244,7 +244,7 @@
 		</binding>
           <binding>
               <command>nasal</command>
-              <script>settimer(func{motorcycle.analysis_dlg.open()},0.25)</script>
+              <script>settimer(func{motorcycle.analysis_dlg.open()},0.1)</script>
           </binding>
 	    <binding>
 	      <command>dialog-close</command>
@@ -262,7 +262,6 @@
 		<nasal>      
 			<load>
 			<![CDATA[
-				# you can add your canvas-specific code here
 				var alll = props.globals.getNode("/instrumentation/Motorcycle/blackbox");
 				var berechnungszahl = 0.0;
 				var maxv = 0.0;
@@ -395,6 +394,77 @@
                               .setFont("LiberationFonts/LiberationSans-Regular.ttf")
                               .set("max-width", 100)
                               .setColor(0.4,0.4,0.4);
+							  
+			
+			  # hard coded course layouts
+		  	  var n_Airp = getprop("/sim/airport/closest-airport-id") or "";
+			  
+			  # Wanganui
+		  	  if(n_Airp == "NZWU"){		  				
+		          var a_point_text = root.createChild("text")
+		                         .setText("Mars Petcare")
+		                         .setTranslation(90,410)
+		                         .setAlignment("left-top")
+		                         .setFontSize(8)
+		                         .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+		                         .set("max-width", 100)
+		                         .setColor(0.4,0.4,0.4);
+		  				
+		          var b_point_text = root.createChild("text")
+		                         .setText("Bridgestone")
+		                         .setTranslation(220,410)
+		                         .setAlignment("left-top")
+		                         .setFontSize(8)
+		                         .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+		                         .set("max-width", 100)
+		                         .setColor(0.4,0.4,0.4);
+		  				
+		          var c_point_text = root.createChild("text")
+		                         .setText("Suzuki Crossing")
+		                         .setTranslation(355,410)
+		                         .setAlignment("left-top")
+		                         .setFontSize(8)
+		                         .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+		                         .set("max-width", 100)
+		                         .setColor(0.4,0.4,0.4);
+		  				
+		          var d_point_text = root.createChild("text")
+		                         .setText("Old Cemetery")
+		                         .setTranslation(460,410)
+		                         .setAlignment("left-top")
+		                         .setFontSize(8)
+		                         .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+		                         .set("max-width", 100)
+		                         .setColor(0.4,0.4,0.4);
+		  				
+		          var e_point_text = root.createChild("text")
+		                         .setText("Robert Holder Corner")
+		                         .setTranslation(575,410)
+		                         .setAlignment("left-top")
+		                         .setFontSize(8)
+		                         .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+		                         .set("max-width", 100)
+		                         .setColor(0.4,0.4,0.4);
+		  				
+		          var f_point_text = root.createChild("text")
+		                         .setText("Total Span Corner")
+		                         .setTranslation(680,410)
+		                         .setAlignment("left-top")
+		                         .setFontSize(8)
+		                         .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+		                         .set("max-width", 100)
+		                         .setColor(0.4,0.4,0.4);
+		  				
+		          var g_point_text = root.createChild("text")
+		                         .setText("Vesrah Overbridge")
+		                         .setTranslation(870,410)
+		                         .setAlignment("left-top")
+		                         .setFontSize(8)
+		                         .setFont("LiberationFonts/LiberationSans-Regular.ttf")
+		                         .set("max-width", 100)
+		                         .setColor(0.4,0.4,0.4);
+			  			  
+			  }
 
 			]]>
 			</load>

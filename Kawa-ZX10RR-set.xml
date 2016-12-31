@@ -138,6 +138,13 @@
 	            <script>motorcycle.ratio_dlg.open()</script>
 	          </binding>
 	        </item>
+			<item>
+	          <label>Electronic control system settings</label>
+	          <binding>
+	            <command>nasal</command>
+	            <script>motorcycle.elecsettings_dlg.open()</script>
+	          </binding>
+	        </item>
 			<enabled type="bool">true</enabled>				
 			<item>
 				<label>Show Sector/Lap Results</label>
@@ -268,6 +275,8 @@
   				<vmax type="double">202.0</vmax>
   			</gear>
   	   </gearbox>
+	   <minrpm type="int">2200</minrpm>
+	   <maxrpm type="int">18500</maxrpm>
      </Motorcycle>
  </controls>
 
@@ -276,10 +285,10 @@
   <motorcycle>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
+   <file>Aircraft/Motorcycle-Racing/MR-Systems/gearbox.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
 
    <file>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Systems/view.nas</file>
-   <file>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Systems/gearbox.nas</file>
    <file>Aircraft/Motorcycle-Racing/Kawa-ZX10RR/Systems/liveries.nas</file>
   </motorcycle>
  </nasal>

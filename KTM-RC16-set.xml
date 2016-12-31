@@ -138,6 +138,13 @@
 	            <script>motorcycle.ratio_dlg.open()</script>
 	          </binding>
 	        </item>
+			<item>
+	          <label>Electronic control system settings</label>
+	          <binding>
+	            <command>nasal</command>
+	            <script>motorcycle.elecsettings_dlg.open()</script>
+	          </binding>
+	        </item>
 			<enabled type="bool">true</enabled>				
 			<item>
 				<label>Show Sector/Lap Results</label>
@@ -267,6 +274,8 @@
   				<vmax type="double">225.0</vmax>
   			</gear>
   	   </gearbox>
+	   <minrpm type="int">2100</minrpm>
+	   <maxrpm type="int">19500</maxrpm>
      </Motorcycle>
  </controls>
 <!-- -NASAL- -->
@@ -275,10 +284,10 @@
    <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/ktm.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
+   <file>Aircraft/Motorcycle-Racing/MR-Systems/gearbox.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
 
    <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/view.nas</file>
-   <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/gearbox.nas</file>
    <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/liveries.nas</file>
   </motorcycle>
  </nasal>

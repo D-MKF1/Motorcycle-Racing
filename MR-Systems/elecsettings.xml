@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Motorcycles for Flightgear September 2016
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+	<name>elecsettings</name>
+	<modal>false</modal>
+	<layout>vbox</layout>
+	<group>
+		<layout>hbox</layout>
+		
+		
+		<text>
+			<label>ELECTRONIC CONTROL SYSTEM SETTINGS</label>
+		</text>
+		
+		<empty><stretch>1</stretch></empty>
+		
+		<button>
+			<pref-width>16</pref-width>
+			<pref-height>16</pref-height>
+			<legend></legend>
+			<default>1</default>
+			<keynum>267</keynum>
+			<border>2</border>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+	<hrule/>
+	<group>
+		<layout>table</layout>
+		<layout>hbox</layout>
+		<checkbox>
+			<row>0</row>
+			<col>0</col>
+			<halign>left</halign>
+			<name>eng_brake_active</name>
+			<label>Engine Brake System</label>
+			<property>/controls/Motorcycle/elec-engine-brake/active</property>
+			<live>true</live>
+			<binding>
+				<command>dialog-apply</command>
+				<object-name>eng_brake_active</object-name>
+			</binding>
+		</checkbox>
+	    <slider>  		  
+			<row>0</row>
+			<col>1</col>
+			<halign>right</halign>
+			<property>/controls/Motorcycle/elec-engine-brake/force</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<min>0</min>
+			<max>100</max>
+	    </slider>
+	    <text>  		  
+			<row>0</row>
+			<col>2</col>
+			<halign>right</halign>
+			<property>/controls/Motorcycle/elec-engine-brake/force</property>
+			<label>0123456</label>
+			<format>%1.0f</format>
+			<live>1</live>
+	    </text> 
+	    <text>  		  
+			<row>0</row>
+			<col>3</col>
+			<halign>left</halign>
+			<label>%</label>
+	    </text>
+        <button> 		  
+			<row>0</row>
+			<col>4</col>
+          <legend>Reset</legend>
+          <default>false</default>
+		    <binding>
+		     <command>property-assign</command>
+		     <property>/controls/Motorcycle/elec-engine-brake/force</property>
+		     <value>20</value>
+		    </binding>
+            <binding>
+              <command>nasal</command>
+              <script>settimer(func{motorcycle.elecsettings_dlg.open()},0.1)</script>
+            </binding>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+        </button>
+		<empty><stretch>1</stretch></empty>		
+	</group>
+	<group>
+		<layout>table</layout>
+		<layout>hbox</layout>
+		<checkbox>
+			<row>1</row>
+			<col>0</col> 	
+			<halign>left</halign>
+			<name>eng_overspeed_active</name>
+			<label>Engine Overspeed Regulation</label>
+			<property>/engines/engine[0]/rpm_regulation</property>
+			<live>true</live>
+			<binding>
+				<command>dialog-apply</command>
+				<object-name>eng_overspeed_active</object-name>
+			</binding>
+		</checkbox>
+		<empty><stretch>1</stretch></empty>	
+	</group>
+	<group>
+		<layout>table</layout>
+		<layout>hbox</layout>
+		<checkbox>
+			<row>2</row>
+			<col>0</col> 	
+			<halign>left</halign>
+			<name>traction_control_active</name>
+			<label>Traction Control</label>
+			<property>/controls/Motorcycle/ASC/on-off</property>
+			<live>true</live>
+			<binding>
+				<command>dialog-apply</command>
+				<object-name>traction_control_active</object-name>
+			</binding>
+		</checkbox>
+		<empty><stretch>1</stretch></empty>
+	</group>
+	<group>
+		<layout>table</layout>
+		<layout>hbox</layout>
+		<checkbox>
+			<row>3</row>
+			<col>0</col> 	
+			<halign>left</halign>
+			<name>wheelie_control_active</name>
+			<label>Wheelie Control</label>
+			<property>/controls/Motorcycle/WC/on-off</property>
+			<live>true</live>
+			<binding>
+				<command>dialog-apply</command>
+				<object-name>wheelie_control_active</object-name>
+			</binding>
+		</checkbox>
+		<empty><stretch>1</stretch></empty>
+	</group>
+	<hrule/>
+    <button>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+</PropertyList>

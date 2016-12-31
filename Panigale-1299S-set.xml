@@ -176,6 +176,13 @@ and have fun!</text>
 	            <script>motorcycle.ratio_dlg.open()</script>
 	          </binding>
 	        </item>
+			<item>
+	          <label>Electronic control system settings</label>
+	          <binding>
+	            <command>nasal</command>
+	            <script>motorcycle.elecsettings_dlg.open()</script>
+	          </binding>
+	        </item>
 			<enabled type="bool">true</enabled>				
 			<item>
 				<label>Show Sector/Lap Results</label>
@@ -305,6 +312,8 @@ and have fun!</text>
 				<vmax type="double">212.0</vmax>
 			</gear>
 	   </gearbox>
+	   <minrpm type="int">2100</minrpm>
+	   <maxrpm type="int">15500</maxrpm>
     </Motorcycle>
 </controls>
 
@@ -314,10 +323,10 @@ and have fun!</text>
    <file>Aircraft/Motorcycle-Racing/Ducati/Systems/panigale.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
+   <file>Aircraft/Motorcycle-Racing/MR-Systems/gearbox.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
 
    <file>Aircraft/Motorcycle-Racing/Ducati/Systems/view-s.nas</file>
-   <file>Aircraft/Motorcycle-Racing/Ducati/Systems/gearbox-s.nas</file>
    <file>Aircraft/Motorcycle-Racing/Ducati/Systems/liveries-s.nas</file>
   </motorcycle>
  </nasal>

@@ -1623,6 +1623,10 @@ and have fun!</text>
 	<controls>
 	    <Motorcycle>
 	 	   <newbie type="bool">0</newbie>
+		   <elec-engine-brake>
+			   <active type="bool">1</active>
+			   <force type="float">20.0</force>
+		   </elec-engine-brake>
 	    </Motorcycle>
 		<!--engines-->
 		<engines>
@@ -1808,7 +1812,6 @@ and have fun!</text>
 
 	</keyboard>
 </input>
-
 </PropertyList>
 
 
