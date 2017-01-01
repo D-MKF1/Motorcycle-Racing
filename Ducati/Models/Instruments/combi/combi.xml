@@ -133,17 +133,34 @@
 	</animation>
 
     <animation>
-      <type>select</type>		 
-	  	 <object-name>scs</object-name>
-      <condition>
-		  <or>
+      <type>select</type>
+		 <object-name>abs</object-name>
+      <condition>   
+		  <or>     
+			 <greater-than>
+	          	<property>controls/Motorcycle/ABS/ctrl-light</property>
+			  	<value>0</value>
+	        </greater-than>
 	        <not>
 	          <property>engines/engine/running</property>
 	        </not>
+		  </or>
+      </condition>
+    </animation>
+
+    <animation>
+      <type>select</type>
+		 <object-name>scs</object-name>
+      <condition> 
+		  <or>     
+			 <greater-than>
+	          	<property>controls/Motorcycle/ASC/ctrl-light</property>
+			  	<value>0</value>
+	        </greater-than>
 	        <not>
-	  	  	  <property>controls/Motorcycle/SCS/on-off</property>
+	          <property>engines/engine/running</property>
 	        </not>
-		</or>
+		  </or>
       </condition>
     </animation>
 

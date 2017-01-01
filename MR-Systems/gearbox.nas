@@ -70,7 +70,6 @@ var loop = func {
 	setprop("/instrumentation/Motorcycle/distance-calculator/dmzaehler", tagesm);
 
 	# properties for ABS and SCS at the bottom of this script
-	var comp_m = getprop("/gear/gear[1]/compression-m") or 0;
 	var brake_ctrl_left = getprop("/controls/gear/brake-left") or 0;
 	var brake_ctrl_right = getprop("/controls/gear/brake-right") or 0;
 	

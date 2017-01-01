@@ -419,7 +419,7 @@
     <button>0</button>
      <binding>	    
  	  <command>property-toggle</command>
-	<property>controls/Motorcycle/SCS/on-off</property>
+	<property>controls/Motorcycle/ASC/on-off</property>
 	<step>1</step>
 	<min>0</min>
 	<max>1</max>
@@ -431,7 +431,7 @@
 <animation>
 	<type>translate</type>
     <object-name>butTc</object-name>
-	<property>controls/Motorcycle/SCS/on-off</property>
+	<property>controls/Motorcycle/ASC/on-off</property>
 	<factor>-0.003</factor>
 	<axis>
 		<x>1</x>
