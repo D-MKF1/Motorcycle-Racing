@@ -198,8 +198,8 @@ var loop = func {
 			}
 			transmissionpower = transmissionpower * (1- killed.getValue());
 			
-			# First part of the Traction Control or BMW called it ASC (0.133 is a trial and error value)
-			if((lastthrottle+0.133) < throttle.getValue()){
+			# First part of the Traction Control or BMW called it ASC (0.134 is a trial and error value)
+			if((lastthrottle+0.134) < throttle.getValue()){
 				if(ascon.getValue() == 0){
 					transmissionpower -= transmissionpower/2;
 					propulsion.setValue(transmissionpower);

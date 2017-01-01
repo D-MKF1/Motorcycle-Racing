@@ -243,38 +243,56 @@
 
  <controls>
      <Motorcycle>
-  	   <gearbox>
-  		    <gear n="0">
-  		   		<gearteeth n="0" type="int">31</gearteeth>
-  		   		<gearteeth n="1" type="int">14</gearteeth>
-  				<vmax type="double">76.0</vmax>
-  			</gear>
-  		    <gear n="1">
-  		   		<gearteeth n="0" type="int">35</gearteeth>
-  		   		<gearteeth n="1" type="int">18</gearteeth>
-  				<vmax type="double">103.0</vmax>
-  			</gear>
-  		    <gear n="2">
-  		   		<gearteeth n="0" type="int">31</gearteeth>
-  		   		<gearteeth n="1" type="int">18</gearteeth>
-  				<vmax type="double">124.0</vmax>
-  			</gear>
-  		    <gear n="3">
-  		   		<gearteeth n="0" type="int">31</gearteeth>
-  		   		<gearteeth n="1" type="int">20</gearteeth>
-  				<vmax type="double">144.0</vmax>
-  			</gear>
-  		    <gear n="4">
-  		   		<gearteeth n="0" type="int">32</gearteeth>
-  		   		<gearteeth n="1" type="int">23</gearteeth>
-  				<vmax type="double">168.0</vmax>
-  			</gear>
-  		    <gear n="5">
-  		   		<gearteeth n="0" type="int">39</gearteeth>
-  		   		<gearteeth n="1" type="int">17</gearteeth>
-  				<vmax type="double">208.0</vmax>
-  			</gear>
-  	   </gearbox>
+		<gearbox>
+		    <gear n="0">
+		   		<gearteeth n="0" type="int">31</gearteeth>
+		   		<gearteeth n="1" type="int">14</gearteeth>
+		   		<gearteethdefault n="0" type="int">31</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">14</gearteethdefault>
+				<vmax type="double">76.0</vmax>
+				<vmaxdefault type="double">76.0</vmaxdefault>
+			</gear>
+		    <gear n="1">
+		   		<gearteeth n="0" type="int">35</gearteeth>
+		   		<gearteeth n="1" type="int">18</gearteeth>
+		   		<gearteethdefault n="0" type="int">35</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">18</gearteethdefault>
+				<vmax type="double">103.0</vmax>
+				<vmaxdefault type="double">103.0</vmaxdefault>
+			</gear>
+		    <gear n="2">
+		   		<gearteeth n="0" type="int">31</gearteeth>
+		   		<gearteeth n="1" type="int">18</gearteeth>
+		   		<gearteethdefault n="0" type="int">31</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">18</gearteethdefault>
+				<vmax type="double">124.0</vmax>
+				<vmaxdefault type="double">124.0</vmaxdefault>
+			</gear>
+		    <gear n="3">
+		   		<gearteeth n="0" type="int">31</gearteeth>
+		   		<gearteeth n="1" type="int">20</gearteeth>
+		   		<gearteethdefault n="0" type="int">31</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">20</gearteethdefault>
+				<vmax type="double">144.0</vmax>
+				<vmaxdefault type="double">144.0</vmaxdefault>
+			</gear>
+		    <gear n="4">
+		   		<gearteeth n="0" type="int">32</gearteeth>
+		   		<gearteeth n="1" type="int">23</gearteeth>
+		   		<gearteethdefault n="0" type="int">32</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">23</gearteethdefault>
+				<vmax type="double">168.0</vmax>
+				<vmaxdefault type="double">168.0</vmaxdefault>
+			</gear>
+		    <gear n="5">
+		   		<gearteeth n="0" type="int">39</gearteeth>
+		   		<gearteeth n="1" type="int">17</gearteeth>
+		   		<gearteethdefault n="0" type="int">39</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">17</gearteethdefault>
+				<vmax type="double">209.0</vmax>
+				<vmaxdefault type="double">209.0</vmaxdefault>
+			</gear>
+	   </gearbox>
 	   <minrpm type="int">2200</minrpm>
 	   <maxrpm type="int">18500</maxrpm>
      </Motorcycle>

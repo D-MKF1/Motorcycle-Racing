@@ -202,6 +202,18 @@ and have fun!</text>
 		<path>/controls/Motorcycle/elec-engine-brake/active</path>
 		<path>/controls/Motorcycle/elec-engine-brake/force</path>
 		<path>/engines/engine[0]/rpm_regulation</path>
+		<path>/controls/Motorcycle/gearbox/gear[0]/gearteeth[0]</path>
+		<path>/controls/Motorcycle/gearbox/gear[0]/gearteeth[1]</path>
+		<path>/controls/Motorcycle/gearbox/gear[1]/gearteeth[0]</path>
+		<path>/controls/Motorcycle/gearbox/gear[1]/gearteeth[1]</path>
+		<path>/controls/Motorcycle/gearbox/gear[2]/gearteeth[0]</path>
+		<path>/controls/Motorcycle/gearbox/gear[2]/gearteeth[1]</path>
+		<path>/controls/Motorcycle/gearbox/gear[3]/gearteeth[0]</path>
+		<path>/controls/Motorcycle/gearbox/gear[3]/gearteeth[1]</path>
+		<path>/controls/Motorcycle/gearbox/gear[4]/gearteeth[0]</path>
+		<path>/controls/Motorcycle/gearbox/gear[4]/gearteeth[1]</path>
+		<path>/controls/Motorcycle/gearbox/gear[5]/gearteeth[0]</path>
+		<path>/controls/Motorcycle/gearbox/gear[5]/gearteeth[1]</path>
 	</aircraft-data> 
 	<current-view>
 		<x-offset-m>0</x-offset-m>

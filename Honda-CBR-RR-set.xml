@@ -234,32 +234,50 @@
 		    <gear n="0">
 		   		<gearteeth n="0" type="int">33</gearteeth>
 		   		<gearteeth n="1" type="int">13</gearteeth>
+		   		<gearteethdefault n="0" type="int">33</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">13</gearteethdefault>
 				<vmax type="double">65.0</vmax>
+				<vmaxdefault type="double">65.0</vmaxdefault>
 			</gear>
 		    <gear n="1">
 		   		<gearteeth n="0" type="int">33</gearteeth>
 		   		<gearteeth n="1" type="int">17</gearteeth>
+		   		<gearteethdefault n="0" type="int">33</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">17</gearteethdefault>
 				<vmax type="double">85.0</vmax>
+				<vmaxdefault type="double">85.0</vmaxdefault>
 			</gear>
 		    <gear n="2">
 		   		<gearteeth n="0" type="int">30</gearteeth>
 		   		<gearteeth n="1" type="int">19</gearteeth>
+		   		<gearteethdefault n="0" type="int">30</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">19</gearteethdefault>
 				<vmax type="double">115.0</vmax>
+				<vmaxdefault type="double">115.0</vmaxdefault>
 			</gear>
 		    <gear n="3">
 		   		<gearteeth n="0" type="int">29</gearteeth>
 		   		<gearteeth n="1" type="int">21</gearteeth>
+		   		<gearteethdefault n="0" type="int">29</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">21</gearteethdefault>
 				<vmax type="double">140.0</vmax>
+				<vmaxdefault type="double">140.0</vmaxdefault>
 			</gear>
 		    <gear n="4">
 		   		<gearteeth n="0" type="int">25</gearteeth>
 		   		<gearteeth n="1" type="int">20</gearteeth>
+		   		<gearteethdefault n="0" type="int">25</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">20</gearteethdefault>
 				<vmax type="double">160.0</vmax>
+				<vmaxdefault type="double">160.0</vmaxdefault>
 			</gear>
 		    <gear n="5">
 		   		<gearteeth n="0" type="int">29</gearteeth>
 		   		<gearteeth n="1" type="int">25</gearteeth>
+		   		<gearteethdefault n="0" type="int">29</gearteethdefault>
+		   		<gearteethdefault n="1" type="int">25</gearteethdefault>
 				<vmax type="double">205.0</vmax>
+				<vmaxdefault type="double">205.0</vmaxdefault>
 			</gear>
 	   </gearbox>
 	   <minrpm type="int">3100</minrpm>

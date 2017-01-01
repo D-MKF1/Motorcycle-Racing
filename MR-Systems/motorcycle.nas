@@ -440,18 +440,5 @@ setlistener("sim/model/start-idling", func()
 		recalc_gearbox();
 	}
   }
-  
-  var write_gearbox_defaults = func{
-	if(getprop("controls/Motorcycle/gearbox/gear[0]/gearteeth[0]")){
-		var wgbdef = props.globals.getNode("controls/Motorcycle/gearbox/").getChildren("gear");
-		var tt = size(wgbdef);
-		for(var i = 0; i < tt; i += 1) {
-			setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[0]", getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[0]") or 0);
-			setprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteethdefault[1]", getprop("controls/Motorcycle/gearbox/gear["~i~"]/gearteeth[1]") or 0);
-			setprop("controls/Motorcycle/gearbox/gear["~i~"]/vmaxdefault", getprop("controls/Motorcycle/gearbox/gear["~i~"]/vmax") or 0);
-		}
-	}
-  }
-  
-  write_gearbox_defaults();
+
   recalc_gearbox();  
