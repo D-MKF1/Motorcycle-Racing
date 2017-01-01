@@ -122,8 +122,26 @@
 			<row>2</row>
 			<col>0</col> 	
 			<halign>left</halign>
+			<name>abs_control_active</name>
+			<label>Antilock Braking System (ABS)</label>
+			<property>/controls/Motorcycle/ABS/on-off</property>
+			<live>true</live>
+			<binding>
+				<command>dialog-apply</command>
+				<object-name>abs_control_active</object-name>
+			</binding>
+		</checkbox>
+		<empty><stretch>1</stretch></empty>
+	</group>
+	<group>
+		<layout>table</layout>
+		<layout>hbox</layout>
+		<checkbox>
+			<row>2</row>
+			<col>0</col> 	
+			<halign>left</halign>
 			<name>traction_control_active</name>
-			<label>Traction Control</label>
+			<label>Traction Control (TC)</label>
 			<property>/controls/Motorcycle/ASC/on-off</property>
 			<live>true</live>
 			<binding>
@@ -141,7 +159,7 @@
 			<col>0</col> 	
 			<halign>left</halign>
 			<name>wheelie_control_active</name>
-			<label>Wheelie Control</label>
+			<label>Wheelie Control (WC)</label>
 			<property>/controls/Motorcycle/WC/on-off</property>
 			<live>true</live>
 			<binding>

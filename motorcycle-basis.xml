@@ -196,6 +196,12 @@ and have fun!</text>
 		<path>/controls/hang-off-view-deg</path>
 		<path>/controls/steering-damper</path>
 		<path>/controls/fuel/remember-level</path>
+		<path>/controls/Motorcycle/ABS/on-off</path>
+		<path>/controls/Motorcycle/ASC/on-off</path>
+		<path>/controls/Motorcycle/WC/on-off</path>
+		<path>/controls/Motorcycle/elec-engine-brake/active</path>
+		<path>/controls/Motorcycle/elec-engine-brake/force</path>
+		<path>/engines/engine[0]/rpm_regulation</path>
 	</aircraft-data> 
 	<current-view>
 		<x-offset-m>0</x-offset-m>

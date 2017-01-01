@@ -39,7 +39,9 @@ var speedlimstate = props.globals.getNode("/instrumentation/Motorcycle/speed-ind
 var speed = 0;
 var gspeed = 0;
 var akrapovic = props.globals.initNode("/controls/Motorcycle/Akrapovic/fit",0,"BOOL");
-var ascon = props.globals.initNode("/controls/Motorcycle/ASC/on-off",1,"BOOL");
+var ascon = props.globals.initNode("/controls/Motorcycle/ASC/on-off",0,"BOOL");
+var abson = props.globals.initNode("/controls/Motorcycle/ABS/on-off",0,"BOOL");
+var wcon = props.globals.initNode("/controls/Motorcycle/WC/on-off",0,"BOOL");
 
 ###########################################################################
 
@@ -172,14 +174,14 @@ var loop = func {
 		if (gear.getValue() > 0 and clutch.getValue() == 0) {
 			if(fastcircuit.getValue() == 0.1){
 			  transmissionpower = throttle.getValue()*(ratio[0].getValue('ratio')-0.5);
-			  if(ascon.getBoolValue()==0) {
+			  if(wcon.getBoolValue()==0) {
 			  	setprop("/sim/weight[1]/weight-lb", throttle.getValue()*300);
 			  }else{
 			  	setprop("/sim/weight[1]/weight-lb", 0);
 			  }
 			}else if(fastcircuit.getValue() == 0.2){
 			  transmissionpower = (ratio[1].getValue('ratio')-0.5)*throttle.getValue()-propulsion.getValue()/maxrpm.getValue();
-			  if(ascon.getBoolValue()==0) {
+			  if(wcon.getBoolValue()==0) {
 			  	setprop("/sim/weight[1]/weight-lb", throttle.getValue()*100);
 			  }else{
 			  	setprop("/sim/weight[1]/weight-lb", 0);
@@ -195,7 +197,22 @@ var loop = func {
 			  transmissionpower = (ratio[5].getValue('ratio')-0.5)*throttle.getValue()-propulsion.getValue()/maxrpm.getValue();
 			}
 			transmissionpower = transmissionpower * (1- killed.getValue());
-			propulsion.setValue(transmissionpower);
+			
+			# First part of the Traction Control or BMW called it ASC (0.133 is a trial and error value)
+			if((lastthrottle+0.133) < throttle.getValue()){
+				if(ascon.getValue() == 0){
+					transmissionpower -= transmissionpower/2;
+					propulsion.setValue(transmissionpower);
+					setprop("/controls/Motorcycle/ASC/ctrl-light", 1);
+				}else{
+					propulsion.setValue(transmissionpower);
+					setprop("/controls/Motorcycle/ASC/ctrl-light", 0);
+				}
+			}else{
+				propulsion.setValue(transmissionpower);
+				setprop("/controls/Motorcycle/ASC/ctrl-light", 0);
+			}
+			
 			
 			if(bwspeed < 3 and gspeed < 30){
 				newrpm = throttle.getValue()*(maxrpm.getValue());
@@ -204,6 +221,13 @@ var loop = func {
 				newrpm = (maxrpm.getValue()+minrpm.getValue())/vmax*gspeed;
 				#newrpm = (newrpm < lastrpm) ? (lastrpm - newrpm)/2 + newrpm: newrpm;
 				newrpm = (newrpm < minrpm.getValue()+ 1000) ? minrpm.getValue() + 1000 : newrpm;
+				
+				# second part of the Traction Control
+				if(getprop("/controls/Motorcycle/ASC/ctrl-light")==1){
+					newrpm = newrpm+3000;
+					setprop("/controls/flight/aileron-manual",getprop("/controls/flight/aileron-manual")*4);
+				}
+				
 				interpolate("/engines/engine/rpm",newrpm,0.125);
 			}
 			
@@ -240,11 +264,11 @@ var loop = func {
 		}
 		
 		# Automatic RPM overspeed regulation
-		if(rpm.getValue() > maxrpm.getValue()-750){
+		if(rpm.getValue() > maxrpm.getValue()-730){
 			if(engine_rpm_regulation.getValue() == 1 ){
 				propulsion.setValue(0);
 				if (speed > 20) engine_brake.setValue(0.8);
-				rpm.setValue(maxrpm.getValue()-100);
+				rpm.setValue(maxrpm.getValue()-80);
 				setprop("/controls/Motorcycle/ctrl-light-overspeed", 1);
 			}else{
 				setprop("/controls/Motorcycle/ctrl-light-overspeed", 1);
@@ -252,14 +276,6 @@ var loop = func {
 			
 		}else{
 			setprop("/controls/Motorcycle/ctrl-light-overspeed", 0);
-		}
-
-		# Anti - slip regulation BMW called ASC
-		if(comp_m < 0.06 and brake_ctrl_right <= 0.5 and brake_ctrl_left <= 0.5 and gspeed > 70 and ascon.getValue() == 1){
-			propulsion.setValue(propulsion.getValue() + 0.25);
-			setprop("/controls/Motorcycle/ASC/ctrl-light", 1);
-		}else{
-			setprop("/controls/Motorcycle/ASC/ctrl-light", 0);
 		}
 		
 		#help_win.write(sprintf("Leistung (in PS): %.2f", propulsion.getValue()*273.85));
@@ -272,7 +288,7 @@ var loop = func {
 	   	 else {
 	   	  fuel_lev = fuel.getValue();
 		  setprop("/controls/fuel/remember-level", fuel.getValue()); # save it for restart
-	   	  fuel.setValue(fuel_lev - (throttle.getValue()+0.1)*0.0000012);
+	   	  fuel.setValue(fuel_lev - (throttle.getValue()+0.1)*0.000001);
 	   	 }
 		
 		#-------------- ENGINE RUNNING END --------------------
@@ -286,10 +302,14 @@ var loop = func {
 	#-------------- ENGINE END --------------------
 	
 	# Anti - blog brake regulation
-	if(comp_m < 0.05 and brake_ctrl_right > 0.5 and brake_ctrl_left > 0.5 and gspeed > 70){
-		setprop("/controls/Motorcycle/ABS/ctrl-light", 1);
-		setprop("/controls/Motorcycle/ABS/brake-right", brake_ctrl_right*0.34);
-		setprop("/controls/Motorcycle/ABS/brake-left", brake_ctrl_left*0.34);		
+	if(brake_ctrl_right > 0.5 and brake_ctrl_left > 0.5 and gspeed > 30){
+		if(abson.getValue() == 1){
+			setprop("/controls/Motorcycle/ABS/ctrl-light", 0);		
+		}else{
+			setprop("/controls/Motorcycle/ABS/ctrl-light", 1);
+			setprop("/controls/gear/brake-right", brake_ctrl_right*0.8);
+			setprop("/controls/gear/brake-left", brake_ctrl_left*0.8);
+		}			
 	}else{
 		setprop("/controls/Motorcycle/ABS/ctrl-light", 0);
 		setprop("/controls/Motorcycle/ABS/brake-right", brake_ctrl_right);

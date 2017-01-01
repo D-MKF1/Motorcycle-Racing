@@ -271,7 +271,7 @@
   		    <gear n="5">
   		   		<gearteeth n="0" type="int">23</gearteeth>
   		   		<gearteeth n="1" type="int">24</gearteeth>
-  				<vmax type="double">225.0</vmax>
+  				<vmax type="double">220.0</vmax>
   			</gear>
   	   </gearbox>
 	   <minrpm type="int">2100</minrpm>

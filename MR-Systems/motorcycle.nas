@@ -134,8 +134,10 @@ var temp_fake_calc = func{
 	if(eru){
 		if (ek > 0) {
 			net = et * ek + et;
+			net = (net > 125)? net + eat/3 : net;
 		}else{
 			net = eat + 74 + erp/990;
+			net = (net > 125)? net - eat/3 : net;
 		}
 	}else{
 		net = eat;
