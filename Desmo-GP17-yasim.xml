@@ -58,7 +58,7 @@
 
   <thruster 
     x="0.4" y="0" z="-0.16"
-    thrust="1100"
+    thrust="1080"
     vx="1" vy="0" vz="0">
     <control-input axis="/engines/engine/propulsion" control="THROTTLE" src0="0" src1="1" dst0="0" dst1="1"/>
   </thruster>
