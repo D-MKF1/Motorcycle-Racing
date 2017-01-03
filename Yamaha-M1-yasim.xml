@@ -65,7 +65,7 @@
   
   <thruster 
     x="2" y="0" z="0"
-    thrust="1050"
+    thrust="880"
     vx="1" vy="0" vz="0">
     <control-input axis="/controls/gear/brake-front" control="THROTTLE" src0="0" src1="1" dst0="0" dst1="-1"/>
   </thruster>

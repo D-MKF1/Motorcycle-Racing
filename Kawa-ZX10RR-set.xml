@@ -289,8 +289,8 @@
 		   		<gearteeth n="1" type="int">17</gearteeth>
 		   		<gearteethdefault n="0" type="int">39</gearteethdefault>
 		   		<gearteethdefault n="1" type="int">17</gearteethdefault>
-				<vmax type="double">209.0</vmax>
-				<vmaxdefault type="double">209.0</vmaxdefault>
+				<vmax type="double">199.0</vmax>
+				<vmaxdefault type="double">199.0</vmaxdefault>
 			</gear>
 	   </gearbox>
 	   <minrpm type="int">2200</minrpm>
