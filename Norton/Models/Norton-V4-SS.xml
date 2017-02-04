@@ -26,38 +26,6 @@
   </offsets>
 
   <animation>
-    <type>material</type>
-    <object-name>auspuff</object-name>
-    <object-name>bremseH</object-name>
-    <object-name>bremsscheibeH</object-name>
-    <object-name>bremseV</object-name>
-    <object-name>bremsscheibeV</object-name>
-    <object-name>felgeH</object-name>
-    <object-name>felgeV</object-name>
-    <object-name>fussraster</object-name>
-    <object-name>hebelKupplung</object-name>
-    <object-name>gabelV</object-name>
-    <object-name>hebelBremse</object-name>
-    <object-name>kette</object-name>
-    <object-name>kettenrad</object-name>
-    <object-name>lenkkopf</object-name>
-    <object-name>radabdeckung</object-name>
-    <object-name>reifenH</object-name>
-    <object-name>reifenV</object-name>
-    <object-name>schalter</object-name>
-    <object-name>schwinge</object-name>
-    <object-name>staender</object-name>
-    <object-name>standrohr</object-name>
-    <object-name>stummelLi</object-name>
-    <object-name>stummelRe</object-name>
-    <object-name>headlight</object-name>
-    <object-name>verkleidung</object-name>
-    <property-base>sim/model/livery</property-base>
-    <texture-prop>texture</texture-prop>
-    <texture>Panigale.png</texture>
-  </animation>
-  
-  <animation>
     <type>select</type>
     <object-name>staender</object-name>
     <condition>
@@ -575,6 +543,7 @@
       <object-name>Neutral</object-name>
       <object-name>headlight</object-name>
       <object-name>verkleidung</object-name>
+      <object-name>verkleidungInnen</object-name>
       <object-name>verschraubungen</object-name>
       <condition>
         <not>
@@ -648,6 +617,7 @@
 	    <object-name>Neutral</object-name>
         <object-name>headlight</object-name>
 	    <object-name>verkleidung</object-name>
+        <object-name>verkleidungInnen</object-name>
 	    <object-name>verschraubungen</object-name>
         <condition>
           <equals>
