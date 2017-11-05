@@ -319,21 +319,10 @@
    <file>Aircraft/Motorcycle-Racing/MR-Systems/gearbox.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
 
-   <file>Aircraft/Motorcycle-Racing/DMR/Systems/view.nas</file>
+   <!--<file>Aircraft/Motorcycle-Racing/DMR/Systems/view.nas</file>-->
    <file>Aircraft/Motorcycle-Racing/DMR/Systems/liveries.nas</file>
   </motorcycle>
  </nasal>
-<!-- 
- <nasal>
-	<lcr>
-		<file>Aircraft/LCR/Systems/LCR.nas</file>
-		<file>Aircraft/LCR/Systems/gearbox.nas</file>
-		<file>Aircraft/LCR/Systems/liveries.nas</file>
-		<file>Aircraft/LCR/Systems/laptimes.nas</file>
-  	  	<file>Aircraft/LCR/Systems/virtual_racer.nas</file>
-	</lcr> 
-</nasal>
- -->
 </PropertyList>
 
 
