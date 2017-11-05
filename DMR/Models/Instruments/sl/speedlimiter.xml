@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--###################################################################################
-		Lake of Constance Hangar :: M.Kraus
-		DMR-F2 for Flightgear Oktober 2014
+		Lake of Constance Hangar :: L.Negrassus 
+		DMR-F2 for Flightgear November 2017
 		This file is licenced under the terms of the GNU General Public Licence V2 or later
 		###################################################################################
 -->
@@ -31,7 +31,7 @@
  	    <button>0</button>
             <binding>	    
 	    	  <command>property-toggle</command>
-			  <property>/instrumentation/DMR/speed-indicator/speed-limiter-switch</property>
+			  <property>/instrumentation/Motorcycle/speed-indicator/speed-limiter-switch</property>
 			<step>1</step>
 			<min>0</min>
 			<max>1</max>
@@ -43,7 +43,7 @@
 	 <animation>
 	    <type>translate</type>
 	    <object-name>switch</object-name>
-	    <property>/instrumentation/DMR/speed-indicator/speed-limiter-switch</property>
+	    <property>/instrumentation/Motorcycle/speed-indicator/speed-limiter-switch</property>
 	    <factor>0.02</factor>
 	    <step>1</step>
 	    <axis>
@@ -56,7 +56,7 @@
 	<animation>
 	  <type>rotate</type>
 	  <object-name>limiter</object-name>
-	  <property>/instrumentation/DMR/speed-indicator/speed-limiter</property>
+	  <property>/instrumentation/Motorcycle/speed-indicator/speed-limiter</property>
 	  <interpolation>
 	    <entry><ind>  0</ind><dep>    0</dep></entry>
 	    <entry><ind> 50</ind><dep> 46.0</dep></entry>
@@ -86,7 +86,7 @@
 	            <not><property>devices/status/keyboard/super</property></not>
 			        </condition>
 		          <command>property-adjust</command>
-		          <property>/instrumentation/DMR/speed-indicator/speed-limiter</property>
+		          <property>/instrumentation/Motorcycle/speed-indicator/speed-limiter</property>
 		          <step>1</step>
 		          <min>0</min>
 		          <max>250</max>
@@ -100,7 +100,7 @@
 	           </or>
 			        </condition>
 		          <command>property-adjust</command>
-		          <property>/instrumentation/DMR/speed-indicator/speed-limiter</property>
+		          <property>/instrumentation/Motorcycle/speed-indicator/speed-limiter</property>
 		          <step>5</step>
 		          <min>0</min>
 		          <max>250</max>
@@ -120,7 +120,7 @@
 	            <not><property>devices/status/keyboard/super</property></not>
 			        </condition>
 	        <command>property-adjust</command>
-	        <property>/instrumentation/DMR/speed-indicator/speed-limiter</property>
+	        <property>/instrumentation/Motorcycle/speed-indicator/speed-limiter</property>
 	        <step>-1</step>
 	        <min>0</min>
 	        <max>250</max>
@@ -134,7 +134,7 @@
 	           </or>
 			        </condition>
 	        <command>property-adjust</command>
-	        <property>/instrumentation/DMR/speed-indicator/speed-limiter</property>
+	        <property>/instrumentation/Motorcycle/speed-indicator/speed-limiter</property>
 	        <step>-5</step>
 	        <min>0</min>
 	        <max>250</max>
@@ -147,7 +147,7 @@
 	      <repeatable>true</repeatable>
 	      <binding>
 	        <command>property-adjust</command>
-	        <property>/instrumentation/DMR/speed-indicator/speed-limiter</property>
+	        <property>/instrumentation/Motorcycle/speed-indicator/speed-limiter</property>
 	        <step>10</step>
 	        <min>0</min>
 	        <max>250</max>
@@ -160,7 +160,7 @@
 	      <repeatable>true</repeatable>
 	      <binding>
 	        <command>property-adjust</command>
-	        <property>/instrumentation/DMR/speed-indicator/speed-limiter</property>
+	        <property>/instrumentation/Motorcycle/speed-indicator/speed-limiter</property>
 	        <step>-10</step>
 	        <min>0</min>
 	        <max>250</max>

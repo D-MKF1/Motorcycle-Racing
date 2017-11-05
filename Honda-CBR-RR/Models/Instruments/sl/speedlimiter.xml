@@ -24,7 +24,7 @@
 <!-- selection -->
     <animation>
         <type>pick</type>
-        <object-name>box</object-name>Motorcycle/
+        <object-name>box</object-name>
         <object-name>switch</object-name>
 		<visible>true</visible>
         <action>
