@@ -32,7 +32,7 @@
 	</effect>
 
 	<model>
-	<path>Aircraft/Motorcycle-Racing/DMR/Models/Lights/lightcone-mini.xml</path>
+	<path>Aircraft/Motorcycle-Racing/MR-Lights/lightcone-mini.xml</path>
 	<name>lights</name>
 	<offsets>   
 	  <x-m> 0.25</x-m>
@@ -169,7 +169,7 @@
    	 <animation>
    	    <type>textranslate</type>
    	    <object-name>digit-1</object-name>
-   	    <property>instrumentation/DMR/speed-indicator/speed-meter</property>
+   	    <property>instrumentation/Motorcycle/speed-indicator/speed-meter</property>
    	    <factor>0.1</factor>
    	    <step>1</step>
    	    <bias>0.005</bias>
@@ -183,7 +183,7 @@
        <animation>
            <type>textranslate</type>
            <object-name>digit-10</object-name>
-           <property>instrumentation/DMR/speed-indicator/speed-meter</property>
+           <property>instrumentation/Motorcycle/speed-indicator/speed-meter</property>
            <factor>0.01</factor>
            <step>10</step>
            <bias>0.005</bias>
@@ -197,7 +197,7 @@
        <animation>
            <type>textranslate</type>
            <object-name>digit-100</object-name>
-           <property>instrumentation/DMR/speed-indicator/speed-meter</property>
+           <property>instrumentation/Motorcycle/speed-indicator/speed-meter</property>
            <factor>0.001</factor>
            <step>100</step>
            <bias>0.005</bias>
@@ -231,7 +231,7 @@
     	    <button>0</button>
                <binding>	    
    	    	  <command>property-toggle</command>
-   			<property>instrumentation/DMR/speed-indicator/selection</property>
+   			<property>instrumentation/Motorcycle/speed-indicator/selection</property>
    			<step>1</step>
    			<min>0</min>
    			<max>1</max>
@@ -263,7 +263,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>select</object-name>
-		<property>instrumentation/DMR/speed-indicator/selection</property>
+		<property>instrumentation/Motorcycle/speed-indicator/selection</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
