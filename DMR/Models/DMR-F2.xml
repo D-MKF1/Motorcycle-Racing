@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		DMR-F2 for Flightgear Oktober 2014
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+
+  <path>DMR-F2.ac</path>  
+  
+  <sound><path>Aircraft/Motorcycle-Racing/DMR/Sounds/mp-sound.xml</path></sound>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Motorcycle-Racing/DMR/Models/Liveries", 10);
+    </load>
+
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+  
+  <offsets>
+    <z-m>0.05</z-m>
+  </offsets>
+
+  <animation>
+    <type>material</type>
+    <object-name>fairing</object-name> 
+    <object-name>floor</object-name> 
+    <object-name>handle01</object-name>
+    <object-name>handle02</object-name>
+    <object-name>handle03</object-name>
+    <object-name>handle04</object-name>
+    <object-name>handle05</object-name>
+    <object-name>interieur</object-name>
+    <object-name>wheel_f</object-name>
+    <object-name>wheel_r</object-name>
+    <object-name>wheel_s</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>DMR-white.png</texture>
+  </animation>
+	
+  <animation>
+    <type>noshadow</type>
+    <object-name>windshield</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>windshield</object-name>
+  </animation>
+  
+  <!-- shadow without rembrandt -->
+	<model>
+		<name>NewShadow</name>
+		<path>Aircraft/Motorcycle-Racing/DMR/Models/shadow.xml</path>
+	    <offsets>
+	      <x-m>  0.0 </x-m>
+	      <y-m>  0.0 </y-m>
+	      <z-m>  0.02 </z-m>
+	    </offsets>
+	</model>
+
+	<animation>
+		<type>select</type>
+		<object-name>NewShadow</object-name>
+		<condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+		</condition>
+	</animation>
+
+  <!-- 1. SPEED --> 
+  <model>
+	<name>COMBI</name>
+    <path>Aircraft/Motorcycle-Racing/DMR/Models/Instruments/combi/combi.xml</path>
+    <offsets>
+      <x-m> -0.841 </x-m>
+      <y-m>-0.0333 </y-m>
+      <z-m> 0.57 </z-m>
+      <pitch-deg> -50 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>SL</name>
+    <path>Aircraft/Motorcycle-Racing/DMR/Models/Instruments/sl/speedlimiter.xml</path>
+    <offsets>
+      <x-m> -0.8833 </x-m>
+      <y-m> -0.1487 </y-m>
+      <z-m>  0.5822 </z-m>
+      <pitch-deg> 40 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+	<name>TRANSPONDER</name>
+    <path>Aircraft/Motorcycle-Racing/DMR/Models/Instruments/transponder/transponder.xml</path>
+    <offsets>
+        <x-m> -0.838 </x-m>
+        <y-m>0.135 </y-m>
+        <z-m> 0.58 </z-m>
+        <roll-deg> -43 </roll-deg>
+      <heading-deg>90</heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>TRANSPONDER</object-name>
+    <condition>
+	 <or>
+		<equals>
+        	<property>sim/menubar/default/menu[14]/item[0]/name</property>
+			<value>Button_1</value>
+		</equals>
+		<equals>
+        	<property>i-am-a-racebike</property>
+			<value>1</value>
+		</equals>		
+	 </or>
+    </condition>
+  </animation>
+  
+  <model>
+	<name>SMOKE</name>
+    <path>Aircraft/Motorcycle-Racing/DMR/Effects/smoke.xml</path>
+    <offsets>
+      <x-m> -0.352 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  0.43 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+	<name>SMOKE-LIGHT</name>
+    <path>Aircraft/Motorcycle-Racing/DMR/Effects/smoke-light.xml</path>
+    <offsets>
+      <x-m> -0.352 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  0.43 </z-m>
+    </offsets>
+  </model>
+   
+  <animation>
+    <type>select</type>
+    <object-name>SMOKE</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[4]</property>
+		<value>0.9</value>
+      </greater-than>
+    </condition>
+  </animation>
+   
+  <animation>
+    <type>select</type>
+    <object-name>SMOKE-LIGHT</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[4]</property>
+		<value>0.2</value>
+      </greater-than>
+    </condition>
+  </animation>
+   
+  <!-- Driver -->
+  	<model>
+  		<name>Driver</name>
+  		<path>Aircraft/Motorcycle-Racing/DMR/Models/Driver/driver.xml</path>
+  	</model>
+  	<model>
+  		<name>Passenger</name>
+  		<path>Aircraft/Motorcycle-Racing/DMR/Models/Driver/passenger.xml</path>
+  	</model>
+  	<model>
+  		<name>Passenger1</name>
+  		<path>Aircraft/Motorcycle-Racing/DMR/Models/Driver/passenger1.xml</path>
+  	</model>
+  	<model>
+  		<name>Passenger2</name>
+  		<path>Aircraft/Motorcycle-Racing/DMR/Models/Driver/passenger2.xml</path>
+  	</model>
+  	<model>
+  		<name>Passenger3</name>
+  		<path>Aircraft/Motorcycle-Racing/DMR/Models/Driver/passenger3.xml</path>
+  	</model>
+
+    <animation>
+      <type>select</type>
+      <object-name>Driver</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+      </condition>
+    </animation>
+	
+    <animation>
+      <type>select</type>
+      <object-name>Passenger</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+		<property>sim/multiplay/generic/float[3]</property>
+      </condition>
+    </animation>
+	
+    <animation>
+      <type>select</type>
+      <object-name>Passenger1</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <not>
+			<property>sim/multiplay/generic/float[3]</property>
+        </not>
+		<less-than>
+		    <property>surface-positions/left-aileron-pos-norm</property>
+			<value>0.15</value>
+		</less-than>
+		<greater-than>
+		    <property>surface-positions/left-aileron-pos-norm</property>
+			<value>-0.15</value>
+		</greater-than>
+      </condition>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>Passenger2</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <not>
+			<property>sim/multiplay/generic/float[3]</property>
+        </not>
+		<greater-than>
+		    <property>surface-positions/left-aileron-pos-norm</property>
+			<value>0.15</value>
+		</greater-than>
+      </condition>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>Passenger3</object-name>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[3]</property>
+        </not>
+        <not>
+			<property>sim/multiplay/generic/float[3]</property>
+        </not>
+		<less-than>
+		    <property>surface-positions/left-aileron-pos-norm</property>
+			<value>-0.15</value>
+		</less-than>
+      </condition>
+    </animation>
+  
+    <!-- front fork -->
+    <animation>
+  	  <type>rotate</type>
+        <object-name>handle01</object-name>
+        <object-name>handle02</object-name>
+        <object-name>handle03</object-name>
+        <object-name>handle04</object-name>
+        <object-name>handle05</object-name>
+        <property>surface-positions/rudder-pos-norm</property>
+        <interpolation>
+          <entry><ind> -1 </ind><dep>  20 </dep></entry>
+          <entry><ind>  0 </ind><dep>  0 </dep></entry>
+          <entry><ind>  1 </ind><dep> -20 </dep></entry>
+        </interpolation>
+	      <center>
+	       <x-m>-0.91</x-m>
+	       <y-m> 0.0</y-m>
+	       <z-m> 0.0</z-m>
+	      </center>
+	      <axis>
+	        <x>  0 </x>
+	        <y>  0 </y>
+	        <z>  1 </z>
+	      </axis>
+      </animation>
+
+     <animation>
+         <type>rotate</type>
+         <object-name>handle02</object-name>
+	  <condition>
+	    <greater-than>
+	      <property>/controls/flight/throttle-input</property>
+	     <value>0</value>
+	    </greater-than>
+	  </condition>
+      <property>/controls/flight/throttle-input</property>
+         <factor>90</factor>
+         <axis>   
+          <x1-m> -0.915</x1-m>
+          <y1-m>  0.137</y1-m>
+          <z1-m>  0.469</z1-m>
+          <x2-m> -0.915</x2-m>
+          <y2-m>  0.235</y2-m>
+          <z2-m>  0.356</z2-m>
+         </axis>
+       </animation>
+
+		<!-- clutch -->
+        <animation>
+            <type>rotate</type>
+            <object-name>handle05</object-name>
+            <property>/engines/engine/clutch</property>
+            <factor>-15</factor>
+            <axis>   
+             <x1-m> -0.9162</x1-m>
+             <y1-m> -0.1776</y1-m>
+             <z1-m>  0.5615</z1-m>
+             <x2-m> -0.9618</x2-m>
+             <y2-m> -0.0757</y2-m>
+             <z2-m>  0.4938</z2-m>
+            </axis>
+		    </animation>
+			
+		<!-- front brake -->
+        <animation>
+            <type>rotate</type>
+            <object-name>handle03</object-name>
+            <property>/controls/gear/brake-left</property>
+            <factor>-15</factor>
+            <axis>   
+             <x1-m> -0.9719</x1-m>
+             <y1-m>  0.0615</y1-m>
+             <z1-m>  0.4816</z1-m>
+             <x2-m> -0.9263</x2-m>
+             <y2-m>  0.1581</y2-m>
+             <z2-m>  0.5604</z2-m>
+            </axis>
+		    </animation>
+	  
+ <!-- Wheel rollspeed -->
+
+  <animation>
+   <object-name>wheel_f</object-name>
+   <property>sim/multiplay/generic/float[0]</property>
+   <type>spin</type>
+   <factor>26</factor>
+   <center>
+    <x-m> -1.205</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 0.18</z-m>
+   </center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+  </animation>
+  
+  <animation>
+   <object-name>wheel_r</object-name>
+   <property>sim/multiplay/generic/float[1]</property>
+   <type>spin</type>
+   <factor>26</factor>
+   <center>
+    <x-m> 0.68</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 0.18</z-m>
+   </center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+  </animation>  
+  
+  <animation>
+   <object-name>wheel_s</object-name>
+   <property>sim/multiplay/generic/float[1]</property>
+   <type>spin</type>
+   <factor>26</factor>
+   <center>
+    <x-m> 0.22</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 0.18</z-m>
+   </center>
+   <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+   </axis>
+  </animation>
+
+</PropertyList>

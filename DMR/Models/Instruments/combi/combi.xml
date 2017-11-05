@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		DMR-F2 for Flightgear Octobre 2014
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+<path>combi.ac</path>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>CTRL.eng</object-name>
+		<object-name>digit-1</object-name>
+		<object-name>digit-10</object-name>
+		<object-name>digit-100</object-name>
+		<object-name>digit-gear</object-name>
+		<object-name>select</object-name>
+		<object-name>shadow</object-name>
+	</animation>
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>CTRL.eng</object-name>
+		<object-name>digit-1</object-name>
+		<object-name>digit-10</object-name>
+		<object-name>digit-100</object-name>
+		<object-name>digit-gear</object-name>
+		<object-name>select</object-name>
+		<object-name>shadow</object-name>
+	</effect>
+
+	<model>
+	<path>Aircraft/Motorcycle-Racing/DMR/Models/Lights/lightcone-mini.xml</path>
+	<name>lights</name>
+	<offsets>   
+	  <x-m> 0.25</x-m>
+	  <y-m> 0.03</y-m>
+	  <z-m> 0.08</z-m>
+	  <pitch-deg>75</pitch-deg>
+	</offsets>
+	</model>
+	
+	<animation>
+		 <type>material</type>
+		 <object-name>CTRL.eng</object-name>
+		 <emission>
+		  <red>1</red>
+		  <green>1</green>
+		  <blue>1</blue>
+		  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+	   	</emission>
+	</animation>
+
+	<animation>
+		 <type>material</type>
+		 <object-name>fuel</object-name>
+		 <object-name>warning</object-name>
+		 <emission>
+		  <red>1</red>
+		  <green>0</green>
+		  <blue>0</blue>
+		  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+	   	</emission>
+	</animation>
+
+	<animation>
+		 <type>material</type>
+		 <object-name>neutral</object-name>
+		 <emission>
+		  <red>0</red>
+		  <green>1</green>
+		  <blue>0</blue>
+		  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+	   	</emission>
+	</animation>
+	
+	<animation>
+		 <type>material</type>
+		 <object-name>box</object-name>
+		 <emission>
+		  <red>0.0028</red>
+		  <green>0.0014</green>
+		  <blue>0.0007</blue>
+		  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+	   	</emission>
+	</animation>
+	
+	<animation>
+		 <type>material</type>
+		 <object-name>RPM.Face</object-name>
+		 <object-name>RPM.Needle</object-name>		
+		 <condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+			<property>systems/electrical/outputs/instrument-lights</property>
+		</condition>
+		 <emission>
+   	  <red>0.3</red>
+   	  <green>0.016</green>
+   	  <blue>0.016</blue>
+		  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+       	</emission>
+	</animation>
+	
+    <animation>
+     <type>material</type>
+     <object-name>lcd-back</object-name>		
+		 <condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+			<property>systems/electrical/outputs/instrument-lights</property>
+		</condition>
+     <emission>
+   	  <red>0.3</red>
+   	  <green>0.016</green>
+   	  <blue>0.016</blue>
+   	  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+           </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+		 <object-name>CTRL.eng</object-name>
+      <condition>
+        <greater-than>
+          <property>engines/engine/rpm</property>
+		  <value>16490</value>
+        </greater-than>
+      </condition>
+    </animation>
+	
+    <animation>
+      <type>select</type>
+		 <object-name>warning</object-name>
+      <condition>
+        <not>
+          <property>engines/engine/running</property>
+        </not>
+      </condition>
+    </animation>
+	
+    <animation>
+      <type>select</type>
+		 <object-name>fuel</object-name>
+      <condition>
+		  <or>
+	        <less-than>
+	          <property>consumables/fuel/total-fuel-lbs</property>
+			  <value>5.0</value>
+	        </less-than>
+	        <not>
+	          <property>engines/engine/running</property>
+	        </not>
+		  </or>
+      </condition>
+    </animation>
+ 
+    <animation>
+      <type>select</type>
+      <object-name>neutral</object-name>
+      <condition>
+        <equals>
+          <property>engines/engine/gear</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </animation>
+
+   	 <animation>
+   	    <type>textranslate</type>
+   	    <object-name>digit-1</object-name>
+   	    <property>instrumentation/DMR/speed-indicator/speed-meter</property>
+   	    <factor>0.1</factor>
+   	    <step>1</step>
+   	    <bias>0.005</bias>
+   	    <axis>
+   	        <x>1</x>
+   	        <y>0</y>
+   	        <z>0</z>
+   	    </axis>
+   	</animation>
+	
+       <animation>
+           <type>textranslate</type>
+           <object-name>digit-10</object-name>
+           <property>instrumentation/DMR/speed-indicator/speed-meter</property>
+           <factor>0.01</factor>
+           <step>10</step>
+           <bias>0.005</bias>
+           <axis>
+               <x>1</x>
+               <y>0</y>
+               <z>0</z>
+           </axis>
+       </animation>
+	
+       <animation>
+           <type>textranslate</type>
+           <object-name>digit-100</object-name>
+           <property>instrumentation/DMR/speed-indicator/speed-meter</property>
+           <factor>0.001</factor>
+           <step>100</step>
+           <bias>0.005</bias>
+           <axis>
+               <x>1</x>
+               <y>0</y>
+               <z>0</z>
+           </axis>
+       </animation>
+	
+       <animation>
+           <type>textranslate</type>
+           <object-name>digit-gear</object-name>
+           <property>engines/engine/gear</property>
+           <factor>0.1</factor>
+           <step>1</step>
+           <bias>0.005</bias>
+           <axis>
+               <x>1</x>
+               <y>0</y>
+               <z>0</z>
+           </axis>
+       </animation>1
+    
+   <!-- selection -->
+       <animation>
+           <type>pick</type>
+           <object-name>select-button-plane</object-name>
+   		<visible>false</visible>
+           <action>
+    	    <button>0</button>
+               <binding>	    
+   	    	  <command>property-toggle</command>
+   			<property>instrumentation/DMR/speed-indicator/selection</property>
+   			<step>1</step>
+   			<min>0</min>
+   			<max>1</max>
+   			<wrap>1</wrap>		
+               </binding>           
+           </action>
+       </animation>	
+			
+	<!-- rpm -->
+
+	<animation>
+	  <type>rotate</type>
+	  <object-name>RPM.Needle</object-name>
+	  <property>engines/engine/rpm</property>
+	  <interpolation>
+	    <entry><ind>    0</ind><dep>    0</dep></entry>
+		<entry><ind> 2000</ind><dep> 15.0</dep></entry>
+	    <entry><ind>16000</ind><dep>216.0</dep></entry>
+	    <entry><ind>16000</ind><dep>245.0</dep></entry>
+	    <entry><ind>40000</ind><dep>245.0</dep></entry>
+	  </interpolation>
+	  <axis>
+	    <x>-1</x>
+	    <y>0</y>
+	    <z>0</z>
+	  </axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>select</object-name>
+		<property>instrumentation/DMR/speed-indicator/selection</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+		    <x>1</x>
+		    <y>0</y>
+		    <z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>
+
+

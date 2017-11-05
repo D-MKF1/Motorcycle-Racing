@@ -1,0 +1,498 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		DMR-F2 for Flightgear Oktober 2014
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+
+  <path>passenger1.ac</path>	
+  <animation>
+    <type>noshadow</type>
+    <object-name>helm.001</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>helm.001</object-name>
+  </animation>
+  
+  <nopreview/>
+
+  <animation>
+    <type>material</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+  	<object-name>hair</object-name>
+    <object-name>helm</object-name>
+    <object-name>tete</object-name>
+    <condition>
+		<or>
+	      <equals>
+	        <property>sim/model/livery/file</property>
+	        <value>white</value>
+	      </equals>
+	      <equals>
+	        <property>sim/model/livery/file</property>
+	        <value>black</value>
+	      </equals>
+	      <equals>
+	        <property>sim/model/livery/file</property>
+	        <value>red</value>
+	      </equals>
+	      <equals>
+	        <property>sim/model/livery/file</property>
+	        <value>yellow</value>
+	      </equals>
+	  	</or>
+    </condition>
+    <texture>driver.png</texture>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+  	<object-name>hair</object-name>
+    <object-name>helm</object-name>
+    <object-name>tete</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>harrison</value>
+      </equals>
+    </condition>
+    <texture>Harrison_driver.png</texture>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+  	<object-name>hair</object-name>
+    <object-name>helm</object-name>
+    <object-name>tete</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>holden</value>
+      </equals>
+    </condition>
+    <texture>JohnHolden_driver.png</texture>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+  	<object-name>hair</object-name>
+    <object-name>helm</object-name>
+    <object-name>tete</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>reeves</value>
+      </equals>
+    </condition>
+    <texture>Green_driver.png</texture>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+  	<object-name>hair</object-name>
+    <object-name>helm</object-name>
+    <object-name>tete</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>tinmouth</value>
+      </equals>
+    </condition>
+    <texture>GuyMartin_driver.png</texture>
+  </animation>
+  
+  <animation>
+  <type>select</type>
+  <object-name>tete</object-name>
+  <object-name>helm</object-name>
+  <object-name>helm.001</object-name>
+  <object-name>hair</object-name>
+	  <condition>
+		  <not>
+		      <equals>
+		      <property>/sim/current-view/name</property>
+		      <value type="string">Passenger View</value>
+		      </equals>
+		  </not>
+	  </condition>
+  </animation>  
+  
+  <animation>
+  <type>select</type>
+  <object-name>hair</object-name>
+	  <condition>
+	    <equals>
+	      <property>sim/model/livery/file</property>
+	      <value>black</value>
+	    </equals>
+	  </condition>
+  </animation>
+  
+  <animation>
+  <type>select</type>
+  <object-name>gilet</object-name>
+    <condition>
+      	  <property>sim/multiplay/generic/int[0]</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+ 	<object-name>hair</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>gilet</object-name>
+    <condition>
+      <greater-than>
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+	    <entry><ind>  0</ind><dep>  0</dep></entry>
+	    <entry><ind>0.09</ind><dep> 0</dep></entry>
+	    <entry><ind>0.15</ind><dep>25</dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.95 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.298 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+ 	<object-name>hair</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>gilet</object-name>
+    <condition>
+      <greater-than>
+        <property>surface-positions/right-aileron-pos-norm</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+	    <entry><ind>  0</ind><dep>  0</dep></entry>
+	    <entry><ind>0.09</ind><dep> 0</dep></entry>
+	    <entry><ind>0.15</ind><dep>25</dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.95 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.298 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+ 	<object-name>hair</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>gilet</object-name>
+    <condition>
+      <greater-than>
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+	    <entry><ind>  0</ind><dep>  0</dep></entry>
+	    <entry><ind>0.11</ind><dep> 0</dep></entry>
+	    <entry><ind>0.15</ind><dep>-25</dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.95 </x-m>
+      <y-m>-0.5365 </y-m>
+      <z-m> 0.298 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <object-name>helm</object-name>
+    <object-name>helm.001</object-name>
+ 	<object-name>hair</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>gilet</object-name>
+    <condition>
+      <greater-than>
+        <property>surface-positions/right-aileron-pos-norm</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+	    <entry><ind>  0</ind><dep>  0</dep></entry>
+	    <entry><ind>0.15</ind><dep>25</dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.95 </x-m>
+      <y-m>-0.5365 </y-m>
+      <z-m> 0.298 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <!-- left turn -->
+  <animation>
+    <type>rotate</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>brasG</object-name>
+    <condition>
+      <greater-than>
+        <property>surface-positions/right-aileron-pos-norm</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+	    <entry><ind>   0</ind><dep> 0</dep></entry>
+	    <entry><ind>0.09</ind><dep> 0</dep></entry>
+	    <entry><ind>0.15</ind><dep>30</dep></entry>
+	    <entry><ind>1.00</ind><dep>30</dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.402 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.3832 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>avantbrasG</object-name>
+    <condition>
+      <greater-than>
+        <property>surface-positions/right-aileron-pos-norm</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+	    <entry><ind>0.0</ind><dep>  0</dep></entry>
+	    <entry><ind>0.1</ind><dep>  0</dep></entry>
+	    <entry><ind>0.3</ind><dep> 40</dep></entry>
+	    <entry><ind>1.00</ind><dep>40</dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.1612 </x-m>
+      <y-m>-0.8488 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <!-- right turn -->
+  <animation>
+    <type>rotate</type>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasD</object-name>
+    <condition>
+      <greater-than>
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+	    <entry><ind>  0</ind><dep>  0</dep></entry>
+	    <entry><ind>0.09</ind><dep> 0</dep></entry>
+	    <entry><ind>0.15</ind><dep>-90</dep></entry>
+	    <entry><ind>1.00</ind><dep>-90</dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.402 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.3832 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>avantbrasD</object-name>
+    <condition>
+      <greater-than>
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+	    <entry><ind>0.0</ind><dep>  0</dep></entry>
+	    <entry><ind>0.1</ind><dep>  0</dep></entry>
+	    <entry><ind>0.3</ind><dep> 40</dep></entry>
+	    <entry><ind>1.00</ind><dep>40</dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.572 </x-m>
+      <y-m>-0.2695 </y-m>
+      <z-m> 0.1 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasD</object-name>
+    <condition>
+      <greater-than>
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+	    <entry><ind>0.0</ind><dep>  0</dep></entry>
+	    <entry><ind>0.1</ind><dep>  0</dep></entry>
+	    <entry><ind>0.3</ind><dep> 60</dep></entry>
+	    <entry><ind>1.00</ind><dep>60</dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.377 </x-m>
+      <y-m>-0.7207 </y-m>
+      <z-m> 0.1 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>brasG</object-name>
+    <condition>
+      <greater-than>
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+	    <entry><ind>0.0</ind><dep>  0</dep></entry>
+	    <entry><ind>0.3</ind><dep> 90</dep></entry>
+	    <entry><ind>1.00</ind><dep>90</dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.377 </x-m>
+      <y-m>-0.7207 </y-m>
+      <z-m> 0.1 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+
+</PropertyList>
+

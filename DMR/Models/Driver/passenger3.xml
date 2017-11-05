@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		DMR-F2 for Flightgear Oktober 2014
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+
+  <path>passenger3.ac</path>	
+  <animation>
+    <type>noshadow</type>
+    <object-name>helm.001</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>helm.001</object-name>
+  </animation>
+
+
+  <animation>
+    <type>material</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+  	<object-name>hair</object-name>
+    <object-name>helm</object-name>
+    <object-name>tete</object-name>
+    <condition>
+		<or>
+	      <equals>
+	        <property>sim/model/livery/file</property>
+	        <value>white</value>
+	      </equals>
+	      <equals>
+	        <property>sim/model/livery/file</property>
+	        <value>black</value>
+	      </equals>
+	      <equals>
+	        <property>sim/model/livery/file</property>
+	        <value>red</value>
+	      </equals>
+	      <equals>
+	        <property>sim/model/livery/file</property>
+	        <value>yellow</value>
+	      </equals>
+	  	</or>
+    </condition>
+    <texture>driver.png</texture>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+  	<object-name>hair</object-name>
+    <object-name>helm</object-name>
+    <object-name>tete</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>harrison</value>
+      </equals>
+    </condition>
+    <texture>Harrison_driver.png</texture>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+  	<object-name>hair</object-name>
+    <object-name>helm</object-name>
+    <object-name>tete</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>holden</value>
+      </equals>
+    </condition>
+    <texture>JohnHolden_driver.png</texture>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+  	<object-name>hair</object-name>
+    <object-name>helm</object-name>
+    <object-name>tete</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>reeves</value>
+      </equals>
+    </condition>
+    <texture>Green_driver.png</texture>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>corps</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+  	<object-name>hair</object-name>
+    <object-name>helm</object-name>
+    <object-name>tete</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/file</property>
+        <value>tinmouth</value>
+      </equals>
+    </condition>
+    <texture>GuyMartin_driver.png</texture>
+  </animation>
+  
+  <animation>
+  <type>select</type>
+  <object-name>tete</object-name>
+  <object-name>helm</object-name>
+  <object-name>helm.001</object-name>
+  <object-name>hair</object-name>
+	  <condition>
+		  <not>
+		      <equals>
+		      <property>/sim/current-view/name</property>
+		      <value type="string">Passenger View</value>
+		      </equals>
+		  </not>
+	  </condition>
+  </animation>  
+  
+  <animation>
+  <type>select</type>
+  <object-name>hair</object-name>
+	  <condition>
+	    <equals>
+	      <property>sim/model/livery/file</property>
+	      <value>black</value>
+	    </equals>
+	  </condition>
+  </animation>
+  
+  <animation>
+  <type>select</type>
+  <object-name>gilet</object-name>
+    <condition>
+      	  <property>sim/multiplay/generic/int[0]</property>
+    </condition>
+  </animation>
+
+
+</PropertyList>
+

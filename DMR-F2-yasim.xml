@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--###################################################################################
 		Lake of Constance Hangar :: M.Kraus
-		KAWA-ZX10R for Flightgear Nov 2016
+		LCR-F2 for Flightgear Oktober 2014
 		This file is licenced under the terms of the GNU General Public Licence V2 or later
 		###################################################################################
+
+	The LCR-F2 is a DMR racing sidecar with a Yamaha YZF-R6
 -->
 <airplane mass="900" version="YASIM_VERSION_CURRENT">
 
@@ -19,9 +21,10 @@
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="3.5"/>
   </cruise>
   
-  <cockpit x="-0.3" y="0" z="0.8"/>
+  <cockpit x="0.0" y="0" z="0.4"/>
 
-  <fuselage ax="-1.2"  ay="0" az="0.5" bx="1.2" by="0" bz="0.5" width="0.8" taper="0.3" cy="0.5" cz="0.5" midpoint="0.1"/>
+  <fuselage ax="-1.2" ay="-0.2" az="0.3" bx="1.2" by="0.0" bz="0.3" width="1.2" taper="0.4" midpoint="0.4"/>
+  <fuselage ax="-0.8" ay="0.7" az="0.2" bx="1.2" by="0.0" bz="0.2" width="0.9" taper="0.6" midpoint="0.4"/>
 
   <wing x="0.12" y="0.0" z="0.7"
       	length="1.2"
@@ -32,6 +35,7 @@
         sweep="4"
         dihedral="26">
         <flap0 start="0.0" end="1.0" lift="1.41" drag="1.13"/>
+
         <control-input axis="/controls/flight/aileron-manual" control="STEER" split="true" src0="-1.0" src1="1.0" dst0="-0.5" dst1="0.5"/>
         <control-output control="STEER" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="STEER" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
@@ -52,19 +56,19 @@
   <mstab x="0" y="0" z="0" chord="0.1" length="0.1">
    <control-input axis="/controls/flight/throttle-input" control="FLAP0"/>
    <control-output control="FLAP0" prop="/controls/flight/throttle-on-elev-axis"/>
-   <control-speed control="FLAP0" transition-time="2.0"/>
+   <control-speed control="FLAP0" transition-time="3.0"/>
   </mstab>
 
   <thruster 
-    x="0.4" y="0" z="-0.16"
-    thrust="915"
+    x="0.6" y="0" z="-0.21"
+    thrust="1900"
     vx="1" vy="0" vz="0">
-    <control-input axis="/engines/engine/propulsion" control="THROTTLE" src0="0" src1="1" dst0="0" dst1="1"/>
+    <control-input axis="/engines/engine/propulsion" control="THROTTLE"/>
   </thruster>
   
   <thruster 
     x="2" y="0" z="0"
-    thrust="800"
+    thrust="1600"
     vx="1" vy="0" vz="0">
     <control-input axis="/controls/gear/brake-front" control="THROTTLE" src0="0" src1="1" dst0="0" dst1="-1"/>
   </thruster>
@@ -73,65 +77,60 @@
 
   <!-- frontwheel -->
 
-    <gear x="0.9" y="0.0" z="-0.21"
-			compression="0.19"
+    <gear x="0.88" y="0.0" z="-0.21"
+			compression="0.2"
 			sfric="0.7"
 			dfric="0.8"
 			spring="4.0"
 			damp="6.2">
           <control-input axis="/controls/gear/brake-parking" control="BRAKE"/> 
           <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
-          <control-input axis="/surface-positions/left-aileron-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
-      	  <control-input axis="/surface-positions/rudder-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+          <control-input axis="/surface-positions/left-aileron-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.9" dst1="0.9"/>
+      	  <control-input axis="/surface-positions/rudder-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.9" dst1="0.9"/>
     </gear>
 
   <!-- rearwheel -->
 
-    <gear x="-0.76" y="0.0" z="-0.21"
-			compression="0.22"
+    <gear x="-0.80" y="0.0" z="-0.21"
+			compression="0.2"
 			sfric="0.8"
 			dfric="3.0"
 			spring="4.0"
 			damp="6.2">
-          <control-input axis="/engines/engine[0]/brake-engine" control="BRAKE"/> 
+          <control-input axis="/engines/engine[0]/brake-engine" control="BRAKE"/>  
           <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
           <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
-          <control-input axis="/surface-positions/left-aileron-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="1.0" dst1="-1.0"/>
+          <control-input axis="/surface-positions/left-aileron-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="0.9" dst1="-0.9"/>
     </gear>
-
+	
     <!-- support wheel left -->
 
-     <gear x="0.04" y="0.3" z="-0.21"
-			compression="0.24"
+     <gear x="0.04" y="0.8" z="-0.21"
+			compression="0.2"
 			sfric="0.8"
 			dfric="3.0"
 			spring="4.0"
 			damp="6.2">
-          <control-input axis="/engines/engine[0]/brake-engine" control="BRAKE"/> 
-          <control-input axis="/controls/gear/brake-right" control="BRAKE"/> 
-          <control-input axis="/surface-positions/left-aileron-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
-       	<control-input axis="/surface-positions/rudder-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/> 
+          <control-input axis="/surface-positions/left-aileron-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.9" dst1="0.9"/>
+       	<control-input axis="/surface-positions/rudder-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.9" dst1="0.9"/> 
      </gear>
 
     <!-- support wheel right -->
 
-     <gear x="0.04" y="-0.3" z="-0.21"
-			compression="0.24"
+     <gear x="0.04" y="-0.8" z="-0.21"
+			compression="0.2"
 			sfric="0.8"
 			dfric="3.0"
 			spring="4.0"
 			damp="6.2">
-          <control-input axis="/engines/engine[0]/brake-engine" control="BRAKE"/> 
-          <control-input axis="/controls/gear/brake-right" control="BRAKE"/> 
-          <control-input axis="/surface-positions/left-aileron-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
-       	<control-input axis="/surface-positions/rudder-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+          <control-input axis="/surface-positions/left-aileron-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.9" dst1="0.9"/>
+       	<control-input axis="/surface-positions/rudder-pos-norm" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.9" dst1="0.9"/>
      </gear>
-
   
        <!-- rider's body mass -->
 
   <weight x="-0.068" y="0.0" z="0.38" mass-prop="/sim/weight[0]/weight-lb"/>
-  <weight x="-0.68" y="0.0" z="0.38" mass-prop="/sim/weight[1]/weight-lb"/>
  
-  <ballast x="0.5" y="0" z="-3.4" mass="220"/>
+  <ballast x="0.6" y="0" z="-3.46" mass="220"/>
+  
 </airplane>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		DMR-F2 for Flightgear Oktober 2014
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+	<path>shadow.ac</path>
+
+	<animation>
+		<object-name>shadow</object-name>
+		<nopreview/>
+	</animation>
+ 
+  	<animation>
+  	  <type>rotate</type>
+  	  <object-name>shadow</object-name>
+  	  <property>orientation/pitch-deg</property>
+	  <factor>-1</factor>
+	<center>
+	    <x-m>-0.49</x-m>
+	    <y-m> 0.0</y-m>
+	    <z-m>-0.04</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+  	 </animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>shadow</object-name>
+		<condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+			<not><property>sim/multiplay/generic/int[3]</property></not>
+		</condition>
+	</animation>
+	
+</PropertyList>

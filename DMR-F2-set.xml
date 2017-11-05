@@ -24,23 +24,23 @@
 -->
 <PropertyList include="motorcycle-basis.xml">
  <sim>
-		<description>KTM-RC16</description>
+		<description>DMR-F2</description>
 		<author>LAKE OF CONSTANCE HANGAR :: Marc Kraus</author>
 		<aircraft-version>0.0.1</aircraft-version>
 		<status>alpha</status>
 		<flight-model>yasim</flight-model>
-		<aero>KTM-RC16-yasim</aero>
+		<aero>DMR-F2-yasim</aero>
 
 		<sound>
-			<path>Aircraft/Motorcycle-Racing/KTM-RC16/Sounds/sound.xml</path>
+			<path>Aircraft/Motorcycle-Racing/DMR/Sounds/sound.xml</path>
 		</sound>
 
 		<model>
-			<path>Aircraft/Motorcycle-Racing/KTM-RC16/Models/KTM-RC16.xml</path>
+			<path>Aircraft/Motorcycle-Racing/DMR/Models/DMR-F2.xml</path>
 		</model> 
 
 		<startup>
-			<splash-texture>Aircraft/Motorcycle-Racing/KTM-RC16/splash-KTM-RC16.png</splash-texture>
+			<splash-texture>Aircraft/Motorcycle-Racing/DMR/splash-DMR-F2.png</splash-texture>
 		</startup>
 
 		<virtual-cockpit archive="y">true</virtual-cockpit>
@@ -54,9 +54,9 @@
 			 </limits>
 			  <!-- x/y/z == right/up/back -->
 				<x-offset-m archive="y" type="double">0.0</x-offset-m>
-				<y-offset-m archive="y" type="double">1.35</y-offset-m>  <!-- up-down -->
+				<y-offset-m archive="y" type="double">2.19</y-offset-m>  <!-- up-down -->
 				<z-offset-m archive="y" type="double">-0.13</z-offset-m> <!-- fore-back -->
-				<pitch-offset-deg>-8</pitch-offset-deg>
+				<pitch-offset-deg>-6</pitch-offset-deg>
 				<default-field-of-view-deg type="double">72</default-field-of-view-deg>
 			</config>
 		</view>
@@ -97,123 +97,121 @@
 			</config>
 		</view>
 
-
-
-	<menubar>
-		<default>
-		<menu n="10">
-			<label>KTM-RC16</label>
-			<enabled type="bool">true</enabled>
-			<item>
-				<label>--- Tools ---</label>
-				<enabled>false</enabled>
-			</item>			
-			<item>
-				<label>Autostart / shutdown</label>
-				<binding>
-					<command>property-toggle</command>
-					<property>sim/model/start-idling</property>
-				</binding>
-			</item> 		
-			<enabled type="bool">true</enabled>
-			<item>
-				<label>Repair engine</label>
-				<binding>
-					<command>nasal</command>
-					<script>
-						var iskilled = getprop("/engines/engine/killed") or 0;
-						if(iskilled > 0.2){
-							settimer(func{ setprop("/engines/engine/killed",0); }, 20);
-				    		screen.log.write(sprintf("Please wait 20 sec. for engine overhaul."), 1, 1, 0.0);
-						}else{
-				    		screen.log.write(sprintf("Everything is ok with your engine - nothing to do."), 1, 1, 0.0);
-						}
-					</script>
-				</binding>
-			</item>
-			<item>
-	          <label>Gearbox settings</label>
-	          <binding>
-	            <command>nasal</command>
-	            <script>motorcycle.ratio_dlg.open()</script>
-	          </binding>
-	        </item>
-			<item>
-	          <label>Electronic control system settings</label>
-	          <binding>
-	            <command>nasal</command>
-	            <script>motorcycle.elecsettings_dlg.open()</script>
-	          </binding>
-	        </item>
-			<enabled type="bool">true</enabled>				
-			<item>
-				<label>Show Sector/Lap Results</label>
-				<binding>
-					<command>property-toggle</command>
-					<property>/Motorcycle/show-race-times</property>
-				</binding>
-			</item>	
-			<enabled type="bool">true</enabled>				
-			<item>
-				<label>Switch last or fastest Results</label>
-				<binding>
-					<command>property-toggle</command>
-					<property>/Motorcycle/switch-last-fastest</property>
-				</binding>
-			</item>
-			<enabled type="bool">true</enabled>				
-			<item>
-				<label>Race Analysis</label>
-				<binding>
+		<menubar>
+			<default>
+			<menu n="10">
+				<label>DMR-F2</label>
+				<enabled type="bool">true</enabled>
+				<item>
+					<label>--- Tools ---</label>
+					<enabled>false</enabled>
+				</item>			
+				<item>
+					<label>Autostart / shutdown</label>
+					<binding>
+						<command>property-toggle</command>
+						<property>sim/model/start-idling</property>
+					</binding>
+				</item> 		
+				<enabled type="bool">true</enabled>
+				<item>
+					<label>Repair engine</label>
+					<binding>
+						<command>nasal</command>
+						<script>
+							var iskilled = getprop("/engines/engine/killed") or 0;
+							if(iskilled > 0.2){
+								settimer(func{ setprop("/engines/engine/killed",0); }, 20);
+					    		screen.log.write(sprintf("Please wait 20 sec. for engine overhaul."), 1, 1, 0.0);
+							}else{
+					    		screen.log.write(sprintf("Everything is ok with your engine - nothing to do."), 1, 1, 0.0);
+							}
+						</script>
+					</binding>
+				</item>
+				<item>
+		          <label>Gearbox settings</label>
+		          <binding>
 		            <command>nasal</command>
-		            <script>motorcycle.analysis_dlg.open()</script>
-				</binding>
-			</item>			
-			<item>
-				<label>--- Painting ---</label>
-				<enabled>false</enabled>
-			</item>
-			<item>
-				<label>Select Livery</label>
-				<binding>
-					<command>nasal</command>
-					<script>aircraft.livery.dialog.toggle()</script>
-				</binding>
-			</item>
-			<enabled type="bool">true</enabled>
-			<item>
-				<label>--- Old mens mode ---</label>
-				<enabled>false</enabled>
-			</item>			
-			<item>
-				<label>Toggle greybeard view</label>
-				<binding>
-					<command>property-toggle</command>
-					<property>/controls/Motorcycle/old-mens-mode</property>
-				</binding>
-			</item> 			
-			<item>
-				<label>Toggle throttle input axis</label>
-				<binding>
-					<command>property-toggle</command>
-					<property>/controls/flight/select-throttle-input</property>
-				</binding>
-			</item>
-			<item>
-				<label>--- Roadraces ---</label>
-				<enabled>false</enabled>
-			</item>				
-	        <item>
-	          <label>Race settings</label>
-	          <binding>
-	            <command>nasal</command>
-	            <script>motorcycle.config_dlg.open()</script>
-	          </binding>
-	        </item>
-		</menu>
+		            <script>motorcycle.ratio_dlg.open()</script>
+		          </binding>
+		        </item>
+				<item>
+		          <label>Electronic control system settings</label>
+		          <binding>
+		            <command>nasal</command>
+		            <script>motorcycle.elecsettings_dlg.open()</script>
+		          </binding>
+		        </item>
+				<enabled type="bool">true</enabled>				
+				<item>
+					<label>Show Sector/Lap Results</label>
+					<binding>
+						<command>property-toggle</command>
+						<property>/Motorcycle/show-race-times</property>
+					</binding>
+				</item>	
+				<enabled type="bool">true</enabled>				
+				<item>
+					<label>Switch last or fastest Results</label>
+					<binding>
+						<command>property-toggle</command>
+						<property>/Motorcycle/switch-last-fastest</property>
+					</binding>
+				</item>
+				<enabled type="bool">true</enabled>				
+				<item>
+					<label>Race Analysis</label>
+					<binding>
+			            <command>nasal</command>
+			            <script>motorcycle.analysis_dlg.open()</script>
+					</binding>
+				</item>			
+				<item>
+					<label>--- Painting ---</label>
+					<enabled>false</enabled>
+				</item>
+				<item>
+					<label>Select Livery</label>
+					<binding>
+						<command>nasal</command>
+						<script>aircraft.livery.dialog.toggle()</script>
+					</binding>
+				</item>
+				<enabled type="bool">true</enabled>
+				<item>
+					<label>--- Old mens mode ---</label>
+					<enabled>false</enabled>
+				</item>			
+				<item>
+					<label>Toggle greybeard view</label>
+					<binding>
+						<command>property-toggle</command>
+						<property>/controls/Motorcycle/old-mens-mode</property>
+					</binding>
+				</item> 			
+				<item>
+					<label>Toggle throttle input axis</label>
+					<binding>
+						<command>property-toggle</command>
+						<property>/controls/flight/select-throttle-input</property>
+					</binding>
+				</item>
+				<item>
+					<label>--- Roadraces ---</label>
+					<enabled>false</enabled>
+				</item>				
+		        <item>
+		          <label>Race settings</label>
+		          <binding>
+		            <command>nasal</command>
+		            <script>motorcycle.config_dlg.open()</script>
+		          </binding>
+		        </item>
+			</menu>
 
-		</default>
-	</menubar>
+			</default>
+		</menubar>
 
     <weight n="0">
       <name>Pilot</name>
@@ -225,7 +223,7 @@
     <weight n="1">
       <name>Backwheel</name>
       <weight-lb>0</weight-lb>
-      <max-lb>200</max-lb>
+      <max-lb>300</max-lb>
       <min-lb>0</min-lb>
     </weight>
 		
@@ -240,6 +238,7 @@
 	</flaps>
 
  </sim>
+
  <controls>
      <Motorcycle>
    	   <gearbox>
@@ -292,24 +291,34 @@
    				<vmaxdefault type="double">217.0</vmaxdefault>
    			</gear>
    	   </gearbox>
-	   <minrpm type="int">2100</minrpm>
-	   <maxrpm type="int">19500</maxrpm>
+	   <minrpm type="int">2000</minrpm>
+	   <maxrpm type="int">18500</maxrpm>
      </Motorcycle>
  </controls>
+
 <!-- -NASAL- -->
  <nasal>
   <motorcycle>
-   <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/ktm.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/motorcycle.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/laptimes.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-Systems/gearbox.nas</file>
    <file>Aircraft/Motorcycle-Racing/MR-VirtualRacer/virtual_racer.nas</file>
 
-   <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/view.nas</file>
-   <file>Aircraft/Motorcycle-Racing/KTM-RC16/Systems/liveries.nas</file>
+   <file>Aircraft/Motorcycle-Racing/DMR/Systems/view.nas</file>
+   <file>Aircraft/Motorcycle-Racing/DMR/Systems/liveries.nas</file>
   </motorcycle>
  </nasal>
- 
+<!-- 
+ <nasal>
+	<lcr>
+		<file>Aircraft/LCR/Systems/LCR.nas</file>
+		<file>Aircraft/LCR/Systems/gearbox.nas</file>
+		<file>Aircraft/LCR/Systems/liveries.nas</file>
+		<file>Aircraft/LCR/Systems/laptimes.nas</file>
+  	  	<file>Aircraft/LCR/Systems/virtual_racer.nas</file>
+	</lcr> 
+</nasal>
+ -->
 </PropertyList>
 
 
